@@ -47,10 +47,12 @@ body {
 .sacred-circle {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 3rem;
     padding: 2rem;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
+    justify-items: center;
+    align-items: center;
 }
 
 .portal {
@@ -60,8 +62,8 @@ body {
     border-radius: 15px;
     padding: 2rem;
     margin: 1rem;
-    width: 280px;
-    height: 320px;
+    width: 200px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,20 +74,17 @@ body {
     overflow: hidden;
 }
 
-.portal:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--portal-hover-shadow);
-}
-
 .portal-icon {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 }
 
 /* Styles de base pour tous les polygrammes */
@@ -102,52 +101,86 @@ body {
 
 /* Point (Porte 1) */
 .portal[data-number="1"] .portal-icon::before {
-    width: 10px;
-    height: 10px;
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
     background: var(--color-gold);
     border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Ligne (Porte 2) */
 .portal[data-number="2"] .portal-icon::before {
-    width: 40px;
+    content: '';
+    position: absolute;
+    width: 80px;
     height: 2px;
     background: var(--color-gold);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Triangle (Porte 3) */
 .portal[data-number="3"] .portal-icon::before {
+    content: '';
+    position: absolute;
     width: 0;
     height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 43.3px solid var(--color-gold);
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 60px solid var(--color-gold);
     background: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Carré (Porte 4) */
 .portal[data-number="4"] .portal-icon::before {
-    width: 40px;
-    height: 40px;
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
     border: 2px solid var(--color-gold);
     background: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Pentagramme (Porte 5) */
 .portal[data-number="5"] .portal-icon::before {
-    width: 40px;
-    height: 40px;
-    background: var(--color-gold);
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: 2px solid var(--color-gold);
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Hexagramme (Porte 6) */
 .portal[data-number="6"] .portal-icon::before,
 .portal[data-number="6"] .portal-icon::after {
-    width: 40px;
-    height: 40px;
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
     border: 2px solid var(--color-gold);
     background: transparent;
+    top: 50%;
+    left: 50%;
+}
+
+.portal[data-number="6"] .portal-icon::before {
+    transform: translate(-50%, -50%);
 }
 
 .portal[data-number="6"] .portal-icon::after {
@@ -156,19 +189,33 @@ body {
 
 /* Heptagramme (Porte 7) */
 .portal[data-number="7"] .portal-icon::before {
-    width: 40px;
-    height: 40px;
-    background: var(--color-gold);
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: 2px solid var(--color-gold);
     clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 90%, 25% 90%, 0% 60%, 10% 20%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Octogramme (Porte 8) */
 .portal[data-number="8"] .portal-icon::before,
 .portal[data-number="8"] .portal-icon::after {
-    width: 40px;
-    height: 40px;
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
     border: 2px solid var(--color-gold);
     background: transparent;
+    top: 50%;
+    left: 50%;
+}
+
+.portal[data-number="8"] .portal-icon::before {
+    transform: translate(-50%, -50%);
 }
 
 .portal[data-number="8"] .portal-icon::after {
@@ -177,32 +224,39 @@ body {
 
 /* Ennéagramme (Porte 9) */
 .portal[data-number="9"] .portal-icon::before {
-    width: 40px;
-    height: 40px;
-    background: var(--color-gold);
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: 2px solid var(--color-gold);
     clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-}
-
-/* Effet de survol */
-.portal:hover .portal-icon::before,
-.portal:hover .portal-icon::after {
-    opacity: 1;
-    filter: drop-shadow(0 0 5px var(--color-gold-glow));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .portal-number {
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--color-gold);
-    margin: 0.5rem 0;
-    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
 .portal-title {
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--color-gold);
     text-align: center;
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
 
 .portal-description {
@@ -257,37 +311,39 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .sacred-circle {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 600px;
     }
     
     .portal {
-        width: 240px;
-        height: 280px;
-        padding: 1.5rem;
+        width: 180px;
+        height: 180px;
     }
     
     .portal-icon {
-        font-size: 2.5rem;
-    }
-    
-    .portal-number {
-        font-size: 2rem;
-    }
-    
-    .portal-title {
-        font-size: 1.1rem;
-    }
-    
-    .portal-description {
-        font-size: 0.8rem;
+        width: 80px;
+        height: 80px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .sacred-circle {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 300px;
+    }
+    
+    .portal {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .portal-icon {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -1100,12 +1156,13 @@ footer {
 .timer-display {
     font-size: 3rem;
     font-family: 'Cinzel Decorative', serif;
-    color: var(--color-gold);
+    color: var(--portal-color);
     margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(var(--portal-color), 0.5);
 }
 
 .start-meditation {
-    background: var(--color-gold);
+    background: var(--portal-color);
     color: var(--color-black);
     border: none;
     padding: 1rem 2rem;
@@ -1113,13 +1170,12 @@ footer {
     font-family: 'Cinzel Decorative', serif;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
 .start-meditation:hover {
     transform: scale(1.05);
-    background: var(--color-pearl);
-    box-shadow: 0 0 15px var(--color-gold-glow);
+    box-shadow: 0 0 20px rgba(var(--portal-color), 0.4);
 }
 
 /* Animation spéciale pour le portail central */
@@ -1621,53 +1677,84 @@ footer {
 
 /* En-tête uniforme pour toutes les portes */
 .portal-header {
-    text-align: center;
-    margin-bottom: 4rem;
-    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.5rem;
-}
-
-.portal-number {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 10rem;
-    color: var(--color-gold);
-    opacity: 0.9;
-    line-height: 1;
-    margin: 0;
-    text-shadow: 0 0 30px var(--color-gold-glow);
+    text-align: center;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    padding-top: 4rem;
 }
 
 .portal-header h1 {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 4.5rem;
-    color: var(--color-gold);
+    font-size: 5rem;
+    letter-spacing: 1rem;
     margin: 0;
-    line-height: 1.2;
-    letter-spacing: 0.1em;
+    color: var(--color-gold);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
 }
 
-.subtitle {
-    font-family: 'EB Garamond', serif;
+.portal-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.portal-title h1 {
+    font-size: 6rem;
+    font-family: 'Cinzel Decorative', cursive;
     color: var(--color-gold);
-    font-size: 2rem;
+    letter-spacing: 1rem;
     margin: 0;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    line-height: 1;
+}
+
+.principle-number {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.principle-label {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2rem;
+    color: var(--color-gold);
+    letter-spacing: 0.5rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.principle-number .number {
+    font-size: 10rem;
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--color-gold);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    line-height: 1;
+}
+
+.portal-title .subtitle {
+    font-size: 2rem;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    color: var(--color-gold);
     opacity: 0.9;
+    margin: 0;
 }
 
 .principle-quote {
     font-family: 'EB Garamond', serif;
     font-style: italic;
+    font-size: 1.8rem;
     color: var(--color-pearl);
-    text-align: center;
     max-width: 800px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    font-size: 1.4rem;
     line-height: 1.6;
+    margin: 0;
     opacity: 0.9;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
 }
 
 .portal-symbol {
