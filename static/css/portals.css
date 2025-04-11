@@ -1,0 +1,348 @@
+/* Variables communes */
+:root {
+    --portal-transition: all 0.3s ease;
+    --portal-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+    --portal-hover-transform: translateY(-5px);
+    --portal-card-padding: 2rem;
+    --portal-margin: 2rem;
+    --portal-border-radius: 10px;
+    --portal-square-size: 120px;
+    --color-gold: #FFD700;
+    --portal-1-color: var(--color-gold);
+    --portal-2-color: var(--color-gold);
+    --portal-3-color: var(--color-gold);
+    --portal-4-color: var(--color-gold);
+    --portal-5-color: var(--color-gold);
+    --portal-6-color: var(--color-gold);
+    --portal-7-color: var(--color-gold);
+    --portal-8-color: var(--color-gold);
+    --portal-9-color: var(--color-gold);
+}
+
+/* Styles de base pour toutes les portes */
+.portal-page {
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fond décoratif avec motifs elfiques */
+.portal-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(255,215,0,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,215,0,0.1) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 0%, rgba(255,215,0,0.05) 50%, transparent 100%);
+    z-index: 0;
+}
+
+/* En-tête de la porte */
+.portal-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid var(--color-gold);
+    padding-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.portal-symbol {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    color: var(--color-gold);
+}
+
+.portal-number {
+    font-size: 2rem !important;
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--color-gold) !important;
+    line-height: 1;
+    margin: 0.25rem 0;
+    text-align: center;
+}
+
+/* Styles pour les menus déroulants */
+.portal-menu {
+    color: var(--color-gold);
+}
+
+.portal-title {
+    color: var(--color-gold);
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+/* Styles pour les symboles de porte */
+.portal-symbol i {
+    color: var(--color-gold);
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Styles pour les titres et sous-titres */
+.subtitle {
+    color: var(--color-gold);
+}
+
+/* Cartes de sagesse */
+.wisdom-card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--color-gold);
+    border-radius: var(--portal-border-radius);
+    padding: var(--portal-card-padding);
+    margin-bottom: var(--portal-margin);
+    transition: var(--portal-transition);
+    position: relative;
+    z-index: 1;
+}
+
+.wisdom-card:hover {
+    transform: var(--portal-hover-transform);
+    box-shadow: var(--portal-shadow);
+}
+
+/* Symboles sacrés */
+.sacred-symbol {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 2rem auto;
+}
+
+/* Conteneurs de symboles */
+.pentagram-container,
+.hexagram-container,
+.heptagram-container,
+.octogram-container,
+.enneagram-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 2rem auto;
+}
+
+/* Styles communs pour les symboles */
+.pentagram,
+.hexagram,
+.heptagram,
+.octogram,
+.enneagram {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--color-gold);
+    animation: rotate 20s linear infinite;
+}
+
+/* Overlays des symboles */
+.pentagram-overlay,
+.hexagram-overlay,
+.heptagram-overlay,
+.octogram-overlay,
+.enneagram-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    animation: rotate 20s linear infinite reverse;
+}
+
+/* Principes et listes */
+.principles ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.principles li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-gold);
+    transition: var(--portal-transition);
+}
+
+.principles li:hover {
+    transform: translateX(10px);
+}
+
+/* Section méditation */
+.meditation-section {
+    text-align: center;
+    padding: 1rem;
+}
+
+.start-meditation {
+    background: var(--color-gold);
+    color: var(--color-black);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--portal-transition);
+    font-family: 'Cinzel Decorative', cursive;
+    margin: 1rem 0;
+}
+
+.start-meditation:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--color-gold);
+}
+
+.timer-display {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+/* Typographie */
+h1, h2, h3 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--color-gold);
+}
+
+p {
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Motifs décoratifs */
+.portal-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.portal-decoration::before,
+.portal-decoration::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    border: 2px solid var(--color-gold);
+    opacity: 0.1;
+}
+
+.portal-decoration::before {
+    top: 10%;
+    left: 10%;
+    transform: rotate(45deg);
+}
+
+.portal-decoration::after {
+    bottom: 10%;
+    right: 10%;
+    transform: rotate(-45deg);
+}
+
+/* Styles pour les carrés des portes */
+.portal-square {
+    width: var(--portal-square-size);
+    height: var(--portal-square-size);
+    border: 2px solid var(--color-gold);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+    gap: 0.5rem;
+}
+
+/* Container pour l'icône géométrique */
+.portal-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+.portal-icon i {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+}
+
+/* Container principal des portes */
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hover effect */
+.portal-square:hover {
+    transform: var(--portal-hover-transform);
+    box-shadow: var(--portal-shadow);
+    transition: var(--portal-transition);
+}
+
+/* Styles spécifiques pour l'hexagramme de la porte 6 */
+.hexagram-symbol {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.triangle-up,
+.triangle-down {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.triangle-up::before,
+.triangle-down::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--color-gold);
+}
+
+.triangle-up::before {
+    clip-path: polygon(50% 10%, 90% 90%, 10% 90%);
+}
+
+.triangle-down::before {
+    clip-path: polygon(50% 90%, 90% 10%, 10% 10%);
+}
+
+.portal-square:hover .triangle-up {
+    animation: rotate 8s linear infinite;
+}
+
+.portal-square:hover .triangle-down {
+    animation: rotate 8s linear infinite reverse;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+} 

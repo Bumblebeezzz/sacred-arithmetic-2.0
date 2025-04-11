@@ -3,51 +3,51 @@
 {% block title %}Porte 3 - Trinité{% endblock %}
 
 {% block content %}
-<div class="portal-page trinity-portal">
+<div class="portal-page portal-3">
     <header class="portal-header">
         <h1>La Trinité</h1>
         <div class="portal-symbol">
             <i class="fas fa-triangle"></i>
             <span class="portal-number">3</span>
         </div>
+        <p class="subtitle">Le Trois, manifestation de l'harmonie créatrice</p>
     </header>
 
-    <section class="portal-content">
-        <div class="wisdom-container">
-            <div class="wisdom-card">
-                <h2>Le Triangle Sacré</h2>
-                <p>Le nombre 3 représente la première manifestation complète, l'union parfaite entre la thèse et l'antithèse.</p>
-                <div class="sacred-symbol">▲</div>
-            </div>
-
-            <div class="wisdom-card">
-                <h2>Les Triades Sacrées</h2>
-                <ul class="sacred-list">
+    <div class="portal-content">
+        <div class="wisdom-card">
+            <h2>L'Enseignement de la Trinité</h2>
+            <p>Le Trois représente la première manifestation complète, l'union parfaite entre la thèse et l'antithèse. C'est le nombre de la création et de l'harmonie divine.</p>
+            
+            <div class="principles">
+                <h3>Principes de la Trinité</h3>
+                <ul>
                     <li>Corps - Âme - Esprit</li>
                     <li>Passé - Présent - Futur</li>
                     <li>Père - Mère - Enfant</li>
+                    <li>Création - Préservation - Transformation</li>
                 </ul>
             </div>
+        </div>
 
-            <div class="wisdom-card interactive">
-                <h2>Explorer la Trinité</h2>
-                <div class="trinity-explorer">
-                    <div class="trinity-circle" id="circle1">Thèse</div>
-                    <div class="trinity-circle" id="circle2">Antithèse</div>
-                    <div class="trinity-circle" id="circle3">Synthèse</div>
+        <div class="wisdom-card">
+            <h2>Le Triangle Sacré</h2>
+            <div class="sacred-symbol">
+                <div class="triangle"></div>
+            </div>
+            <p>Le triangle est la première forme géométrique fermée, symbole de la complétude et de la stabilité divine.</p>
+        </div>
+
+        <div class="wisdom-card">
+            <h2>Méditation sur la Trinité</h2>
+            <div class="meditation-section">
+                <p>Contemplez le mouvement triple de la création : naissance, vie, transformation.</p>
+                <div class="meditation-timer">
+                    <button id="startMeditation" class="start-meditation">Commencer la Méditation</button>
+                    <div id="timer" class="timer-display">03:33</div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="meditation-section">
-        <h2>Méditation sur le Trois</h2>
-        <p>Contemplez le mouvement triple de la création : naissance, vie, transformation.</p>
-        <div class="meditation-timer">
-            <button id="startMeditation">Commencer la Méditation</button>
-            <div id="meditationTimer">03:33</div>
-        </div>
-    </section>
+    </div>
 </div>
 {% endblock %}
 
@@ -116,34 +116,36 @@
 
 {% block extra_js %}
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const circles = document.querySelectorAll('.trinity-circle');
-    let meditationInterval;
-    
-    circles.forEach(circle => {
-        circle.addEventListener('click', function() {
-            circles.forEach(c => c.style.transform = 'scale(1)');
-            this.style.transform = 'scale(1.2)';
-        });
-    });
+function startMeditation() {
+    const timer = document.getElementById('timer');
+    const button = document.getElementById('startMeditation');
+    let timeLeft = 3 * 60 + 33; // 3:33 minutes
+    let interval;
 
-    document.getElementById('startMeditation').addEventListener('click', function() {
-        let time = 213; // 3:33 en secondes
-        this.disabled = true;
+    if (button.textContent === 'Arrêter') {
+        clearInterval(interval);
+        button.textContent = 'Commencer la Méditation';
+        timer.textContent = '03:33';
+        return;
+    }
+
+    button.textContent = 'Arrêter';
+    
+    interval = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
         
-        meditationInterval = setInterval(() => {
-            const minutes = Math.floor(time / 60);
-            const seconds = time % 60;
-            document.getElementById('meditationTimer').textContent = 
-                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            
-            if (time === 0) {
-                clearInterval(meditationInterval);
-                this.disabled = false;
-            }
-            time--;
-        }, 1000);
-    });
-});
+        timer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        
+        if (timeLeft <= 0) {
+            clearInterval(interval);
+            button.textContent = 'Commencer la Méditation';
+        }
+        
+        timeLeft--;
+    }, 1000);
+}
+
+document.getElementById('startMeditation').addEventListener('click', startMeditation);
 </script>
 {% endblock %} 

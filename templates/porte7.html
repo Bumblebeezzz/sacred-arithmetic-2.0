@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+
+{% block title %}Porte 7 - Sagesse{% endblock %}
+
+{% block content %}
+<div class="portal-page portal-7">
+    <div class="portal-decoration"></div>
+    <header class="portal-header">
+        <h1>La Sagesse</h1>
+        <div class="portal-symbol">
+            <i class="fas fa-crown"></i>
+            <span class="portal-number">7</span>
+        </div>
+        <p class="subtitle">Le Sept, nombre de la sagesse divine</p>
+    </header>
+
+    <div class="portal-content">
+        <div class="wisdom-card">
+            <h2>L'Enseignement de la Sagesse</h2>
+            <p>Le Sept représente la sagesse divine, la connaissance profonde et la compréhension des mystères de l'univers. C'est le nombre de la perfection spirituelle.</p>
+            
+            <div class="principles">
+                <h3>Les Sept Piliers de la Sagesse</h3>
+                <ul>
+                    <li>Connaissance</li>
+                    <li>Équilibre</li>
+                    <li>Cycles</li>
+                    <li>Intuition</li>
+                    <li>Illumination</li>
+                    <li>Pratique</li>
+                    <li>Transcendance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wisdom-card">
+            <h2>L'Heptagramme</h2>
+            <div class="sacred-symbol">
+                <div class="heptagram-container">
+                    <div class="heptagram"></div>
+                    <div class="heptagram-overlay"></div>
+                </div>
+            </div>
+            <p>L'heptagramme symbolise les sept niveaux de conscience et les sept chakras, représentant l'ascension spirituelle.</p>
+        </div>
+
+        <div class="wisdom-card">
+            <h2>Méditation sur la Sagesse</h2>
+            <div class="meditation-section">
+                <p>Contemplez les sept niveaux de conscience et la sagesse divine.</p>
+                <div class="meditation-timer">
+                    <button id="startMeditation" class="start-meditation">Commencer la Méditation</button>
+                    <div id="timer" class="timer-display">07:07</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.portal-7 {
+    background: linear-gradient(135deg, var(--portal-7), var(--color-black));
+    padding: 2rem;
+    min-height: 100vh;
+    color: var(--color-gold);
+}
+
+.portal-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid var(--color-gold);
+    padding-bottom: 2rem;
+}
+
+.portal-symbol {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+
+.portal-number {
+    color: var(--portal-7);
+    font-size: 3rem;
+    font-family: 'Cinzel Decorative', cursive;
+    margin-left: 1rem;
+}
+
+.wisdom-card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--color-gold);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.wisdom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+.heptagram-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 2rem auto;
+}
+
+.heptagram {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 90%, 25% 90%, 0% 60%, 10% 20%);
+    background: var(--color-gold);
+    animation: rotate 20s linear infinite;
+}
+
+.heptagram-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 90%, 25% 90%, 0% 60%, 10% 20%);
+    background: rgba(0, 0, 0, 0.7);
+    animation: rotate 20s linear infinite reverse;
+    transform: rotate(51.43deg);
+}
+
+.principles ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.principles li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-gold);
+    transition: all 0.3s ease;
+}
+
+.principles li:hover {
+    color: var(--color-gold);
+}
+
+.meditation-section {
+    text-align: center;
+    padding: 1rem;
+}
+
+.start-meditation {
+    background: var(--color-gold);
+    color: var(--color-black);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel Decorative', cursive;
+    margin: 1rem 0;
+}
+
+.start-meditation:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--color-gold);
+}
+
+.timer-display {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+p {
+    color: #fff;
+    line-height: 1.6;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const timer = document.getElementById('timer');
+    const button = document.getElementById('startMeditation');
+    let timeLeft = 7 * 60 + 7; // 7:07 minutes
+    let interval;
+
+    button.addEventListener('click', function() {
+        if (button.textContent === 'Arrêter') {
+            clearInterval(interval);
+            button.textContent = 'Commencer la Méditation';
+            timer.textContent = '07:07';
+            return;
+        }
+
+        button.textContent = 'Arrêter';
+        
+        interval = setInterval(() => {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            
+            timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
+                clearInterval(interval);
+                button.textContent = 'Commencer la Méditation';
+            }
+            
+            timeLeft--;
+        }, 1000);
+    });
+});
+</script>
+{% endblock %} 

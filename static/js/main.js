@@ -58,6 +58,43 @@ document.addEventListener('DOMContentLoaded', function() {
     cards.forEach(card => {
         observer.observe(card);
     });
+
+    // Gestion du menu des portails
+    const siteTitle = document.querySelector('.site-title');
+    const portalMenu = document.querySelector('.portal-menu');
+    const closeMenu = document.querySelector('.close-menu');
+    let menuTimeout;
+
+    // Ouvrir le menu au survol du titre
+    siteTitle.addEventListener('mouseenter', () => {
+        clearTimeout(menuTimeout);
+        portalMenu.classList.add('open');
+    });
+
+    // Gérer le survol du menu
+    portalMenu.addEventListener('mouseenter', () => {
+        clearTimeout(menuTimeout);
+    });
+
+    // Fermer le menu quand la souris quitte la zone
+    portalMenu.addEventListener('mouseleave', () => {
+        menuTimeout = setTimeout(() => {
+            portalMenu.classList.remove('open');
+        }, 300);
+    });
+
+    // Fermer le menu au clic
+    portalMenu.addEventListener('click', (e) => {
+        if (e.target === portalMenu || e.target.classList.contains('close-menu')) {
+            portalMenu.classList.remove('open');
+        }
+    });
+
+    // Animation séquentielle des portails
+    const portals = document.querySelectorAll('.portal-menu .portal');
+    portals.forEach((portal, index) => {
+        portal.style.setProperty('--portal-index', index);
+    });
 });
 
 // Fonction pour calculer le mod 9

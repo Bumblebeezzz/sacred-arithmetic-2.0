@@ -56,15 +56,15 @@ def porte6():
 
 @app.route('/porte7')
 def porte7():
-    return render_template('porte7_sagesse.html')
+    return render_template('porte7.html')
 
 @app.route('/porte8')
 def porte8():
-    return render_template('porte8_infini.html')
+    return render_template('porte8.html')
 
 @app.route('/porte9')
 def porte9():
-    return render_template('porte9_unite.html')
+    return render_template('porte9.html')
 
 @app.route('/arithmetique-sacree')
 def arithmetique_sacree():
@@ -105,6 +105,10 @@ def soutenir_contribuer():
 @app.route('/lois-hermetiques')
 def lois_hermetiques():
     return render_template('lois_hermetiques.html')
+
+@app.route('/enneagramme')
+def enneagramme():
+    return render_template('enneagramme.html')
 
 if __name__ == '__main__':
     with app.app_context():

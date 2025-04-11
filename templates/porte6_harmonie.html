@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Porte 6 - Harmonie{% endblock %}
+
+{% block content %}
+<div class="portal-page portal-6">
+    <div class="portal-decoration"></div>
+    <header class="portal-header">
+        <h1>L'Harmonie</h1>
+        <div class="portal-symbol">
+            <i class="fas fa-hexagon"></i>
+            <span class="portal-number">6</span>
+        </div>
+        <p class="subtitle">Le Six, équilibre parfait entre le ciel et la terre</p>
+    </header>
+
+    <div class="portal-content">
+        <div class="wisdom-card">
+            <h2>L'Enseignement de l'Harmonie</h2>
+            <p>Le Six représente l'équilibre parfait, l'union du triangle céleste et du triangle terrestre. C'est le nombre de la création accomplie et de la beauté divine.</p>
+            
+            <div class="principles">
+                <h3>Principes de l'Harmonie</h3>
+                <ul>
+                    <li>Équilibre</li>
+                    <li>Beauté</li>
+                    <li>Perfection</li>
+                    <li>Accomplissement</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wisdom-card">
+            <h2>L'Hexagramme</h2>
+            <div class="sacred-symbol">
+                <div class="hexagram-container">
+                    <div class="hexagram"></div>
+                    <div class="hexagram-overlay"></div>
+                </div>
+            </div>
+            <p>L'hexagramme symbolise l'union parfaite du ciel et de la terre, la manifestation de l'harmonie cosmique.</p>
+        </div>
+
+        <div class="wisdom-card">
+            <h2>Méditation sur l'Harmonie</h2>
+            <div class="meditation-section">
+                <p>Ressentez l'équilibre parfait entre les forces célestes et terrestres.</p>
+                <div class="meditation-timer">
+                    <button id="startMeditation" class="start-meditation">Commencer la Méditation</button>
+                    <div id="timer" class="timer-display">06:06</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.portal-6 {
+    background: linear-gradient(135deg, var(--portal-6), var(--color-black));
+}
+
+.hexagram {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.hexagram-overlay {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transform: rotate(60deg);
+}
+
+.principles li:hover {
+    color: var(--portal-6);
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const timer = document.getElementById('timer');
+    const button = document.getElementById('startMeditation');
+    let timeLeft = 6 * 60 + 6; // 6:06 minutes
+    let interval;
+
+    button.addEventListener('click', function() {
+        if (button.textContent === 'Arrêter') {
+            clearInterval(interval);
+            button.textContent = 'Commencer la Méditation';
+            timer.textContent = '06:06';
+            return;
+        }
+
+        button.textContent = 'Arrêter';
+        
+        interval = setInterval(() => {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            
+            timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
+                clearInterval(interval);
+                button.textContent = 'Commencer la Méditation';
+            }
+            
+            timeLeft--;
+        }, 1000);
+    });
+});
+</script>
+{% endblock %} 

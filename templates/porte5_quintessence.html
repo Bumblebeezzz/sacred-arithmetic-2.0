@@ -3,95 +3,51 @@
 {% block title %}Porte 5 - Quintessence{% endblock %}
 
 {% block content %}
-<div class="portal-page quintessence-portal">
+<div class="portal-page portal-5">
     <header class="portal-header">
         <h1>La Quintessence</h1>
         <div class="portal-symbol">
             <i class="fas fa-star"></i>
             <span class="portal-number">5</span>
         </div>
+        <p class="subtitle">Le Cinq, essence subtile qui transcende les éléments</p>
     </header>
 
-    <section class="portal-content">
-        <div class="wisdom-container">
-            <div class="wisdom-card">
-                <h2>L'Étoile à Cinq Branches</h2>
-                <p>Le nombre 5 représente l'harmonie parfaite entre l'esprit et la matière, le microcosme reflétant le macrocosme.</p>
-                <div class="pentagram-container">
-                    <div class="pentagram"></div>
-                    <div class="pentagram-overlay"></div>
-                </div>
+    <div class="portal-content">
+        <div class="wisdom-card">
+            <h2>L'Enseignement de la Quintessence</h2>
+            <p>Le Cinq représente l'éther, l'essence subtile qui transcende et unit les quatre éléments. C'est le principe de transformation et d'élévation spirituelle.</p>
+            
+            <div class="principles">
+                <h3>Principes de la Quintessence</h3>
+                <ul>
+                    <li>Transcendance</li>
+                    <li>Transformation</li>
+                    <li>Harmonie des Éléments</li>
+                    <li>Élévation Spirituelle</li>
+                </ul>
             </div>
+        </div>
 
-            <div class="wisdom-card">
-                <h2>Les Cinq Sens Subtils</h2>
-                <div class="senses-grid">
-                    <div class="sense" data-sense="vision">
-                        <i class="fas fa-eye"></i>
-                        <span>Vision Éthérique</span>
-                    </div>
-                    <div class="sense" data-sense="audition">
-                        <i class="fas fa-ear-listen"></i>
-                        <span>Audition Céleste</span>
-                    </div>
-                    <div class="sense" data-sense="toucher">
-                        <i class="fas fa-hand-sparkles"></i>
-                        <span>Toucher Subtil</span>
-                    </div>
-                    <div class="sense" data-sense="gout">
-                        <i class="fas fa-tongue"></i>
-                        <span>Goût Divin</span>
-                    </div>
-                    <div class="sense" data-sense="odorat">
-                        <i class="fas fa-nose"></i>
-                        <span>Odorat Mystique</span>
-                    </div>
-                </div>
+        <div class="wisdom-card">
+            <h2>Le Pentagramme</h2>
+            <div class="sacred-symbol">
+                <div class="pentagram"></div>
             </div>
+            <p>Le pentagramme symbolise l'humain parfait, maître des éléments et en harmonie avec le cosmos.</p>
+        </div>
 
-            <div class="wisdom-card interactive">
-                <h2>Les Cinq Éléments Subtils</h2>
-                <div class="elements-subtle">
-                    <div class="element-subtle" data-element="ether">
-                        <div class="element-symbol">🌌</div>
-                        <span>Éther</span>
-                    </div>
-                    <div class="element-subtle" data-element="air">
-                        <div class="element-symbol">💨</div>
-                        <span>Air</span>
-                    </div>
-                    <div class="element-subtle" data-element="feu">
-                        <div class="element-symbol">🔥</div>
-                        <span>Feu</span>
-                    </div>
-                    <div class="element-subtle" data-element="eau">
-                        <div class="element-symbol">💧</div>
-                        <span>Eau</span>
-                    </div>
-                    <div class="element-subtle" data-element="terre">
-                        <div class="element-symbol">🌍</div>
-                        <span>Terre</span>
-                    </div>
+        <div class="wisdom-card">
+            <h2>Méditation sur la Quintessence</h2>
+            <div class="meditation-section">
+                <p>Explorez l'essence subtile qui transcende la matière.</p>
+                <div class="meditation-timer">
+                    <button id="startMeditation" class="start-meditation">Commencer la Méditation</button>
+                    <div id="timer" class="timer-display">05:55</div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="meditation-section">
-        <h2>Méditation sur la Quintessence</h2>
-        <p>Élevez votre conscience à travers les cinq niveaux de l'être.</p>
-        <div class="quintessence-meditation">
-            <div class="meditation-levels">
-                <div class="level" data-level="1">Physique</div>
-                <div class="level" data-level="2">Éthérique</div>
-                <div class="level" data-level="3">Astral</div>
-                <div class="level" data-level="4">Mental</div>
-                <div class="level" data-level="5">Causal</div>
-            </div>
-            <button id="startMeditation">Commencer la Méditation</button>
-            <div id="meditationTimer">05:55</div>
-        </div>
-    </section>
+    </div>
 </div>
 {% endblock %}
 
@@ -245,59 +201,36 @@
 
 {% block extra_js %}
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const senses = document.querySelectorAll('.sense');
-    const elements = document.querySelectorAll('.element-subtle');
-    const levels = document.querySelectorAll('.level');
-    let meditationInterval;
-    let activeLevel = 0;
+function startMeditation() {
+    const timer = document.getElementById('timer');
+    const button = document.getElementById('startMeditation');
+    let timeLeft = 5 * 60 + 55; // 5:55 minutes
+    let interval;
 
-    senses.forEach(sense => {
-        sense.addEventListener('click', function() {
-            senses.forEach(s => s.style.transform = 'scale(1)');
-            this.style.transform = 'scale(1.1)';
-        });
-    });
+    if (button.textContent === 'Arrêter') {
+        clearInterval(interval);
+        button.textContent = 'Commencer la Méditation';
+        timer.textContent = '05:55';
+        return;
+    }
 
-    elements.forEach(element => {
-        element.addEventListener('click', function() {
-            elements.forEach(e => e.style.transform = 'scale(1)');
-            this.style.transform = 'scale(1.1) rotate(360deg)';
-        });
-    });
-
-    levels.forEach((level, index) => {
-        level.addEventListener('click', function() {
-            levels.forEach(l => l.style.background = 'rgba(0, 0, 0, 0.7)');
-            this.style.background = 'rgba(255, 215, 0, 0.1)';
-            activeLevel = index;
-        });
-    });
-
-    document.getElementById('startMeditation').addEventListener('click', function() {
-        let time = 355; // 5:55 en secondes
-        this.disabled = true;
+    button.textContent = 'Arrêter';
+    
+    interval = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
         
-        meditationInterval = setInterval(() => {
-            const minutes = Math.floor(time / 60);
-            const seconds = time % 60;
-            document.getElementById('meditationTimer').textContent = 
-                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            
-            if (time % 71 === 0) { // Change de niveau toutes les 71 secondes
-                levels.forEach(l => l.style.background = 'rgba(0, 0, 0, 0.7)');
-                levels[activeLevel].style.background = 'rgba(255, 215, 0, 0.1)';
-                activeLevel = (activeLevel + 1) % 5;
-            }
-            
-            if (time === 0) {
-                clearInterval(meditationInterval);
-                this.disabled = false;
-                levels.forEach(l => l.style.background = 'rgba(0, 0, 0, 0.7)');
-            }
-            time--;
-        }, 1000);
-    });
-});
+        timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
+        if (timeLeft <= 0) {
+            clearInterval(interval);
+            button.textContent = 'Commencer la Méditation';
+        }
+        
+        timeLeft--;
+    }, 1000);
+}
+
+document.getElementById('startMeditation').addEventListener('click', startMeditation);
 </script>
 {% endblock %} 
