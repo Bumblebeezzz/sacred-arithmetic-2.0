@@ -40,39 +40,94 @@
                 <div class="number-grid">
                     <div onclick="highlightNumber(1)" class="number-cell">
                         <span class="number">1</span>
-                        <i class="fas fa-seedling"></i>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="50" cy="50" r="4" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="principle">CONSCIENCE</span>
                     </div>
                     <div onclick="highlightNumber(2)" class="number-cell">
                         <span class="number">2</span>
-                        <i class="fas fa-yin-yang"></i>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <line x1="20" y1="50" x2="80" y2="50" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">ÉQUIVALENCE</span>
                     </div>
                     <div onclick="highlightNumber(3)" class="number-cell special">
                         <span class="number">3</span>
-                        <i class="fas fa-triangle"></i>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <polygon points="50,20 80,70 20,70" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">OSCILLATION</span>
                     </div>
                     <div onclick="highlightNumber(4)" class="number-cell">
                         <span class="number">4</span>
-                        <i class="fas fa-square"></i>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <rect x="25" y="25" width="50" height="50" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">POLARITÉ</span>
                     </div>
                     <div onclick="highlightNumber(5)" class="number-cell">
                         <span class="number">5</span>
-                        <i class="fas fa-star"></i>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M50,15 L61.8,40.9 L94.3,40.9 L67.6,60.5 L79.4,85 L50,71.8 L20.6,85 L32.4,60.5 L5.7,40.9 L38.2,40.9 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">RYTHME</span>
                     </div>
                     <div onclick="highlightNumber(6)" class="number-cell special">
                         <span class="number">6</span>
-                        <i class="fas fa-hexagon"></i>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M50,15 L85,67 L15,67 Z M50,85 L15,33 L85,33 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">CAUSALITÉ</span>
                     </div>
                     <div onclick="highlightNumber(7)" class="number-cell">
                         <span class="number">7</span>
-                        <i class="fas fa-crown"></i>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M50,10 L73.5,20.5 L87,45 L80,72 L57,87 L43,87 L20,72 L13,45 L26.5,20.5 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">ORIENTATION</span>
                     </div>
                     <div onclick="highlightNumber(8)" class="number-cell">
                         <span class="number">8</span>
-                        <i class="fas fa-infinity"></i>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <rect x="30" y="30" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.5" transform="rotate(45, 50, 50)"/>
+                                <rect x="30" y="30" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">ÉQUILIBRE</span>
                     </div>
                     <div onclick="highlightNumber(9)" class="number-cell special">
                         <span class="number">9</span>
-                        <i class="fas fa-circle"></i>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M50,10 L67,15 L80,30 L85,50 L80,70 L67,85 L50,90 L33,85 L20,70 L15,50 L20,30 L33,15 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">DIVIN</span>
                     </div>
                 </div>
                 <div id="number-info" class="number-info"></div>
@@ -169,6 +224,7 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    position: relative;
 }
 
 .number-cell .number {
@@ -177,9 +233,27 @@
     color: var(--color-gold);
 }
 
-.number-cell i {
-    font-size: 1.5rem;
+.portal-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold);
+    transition: all 0.4s ease;
+}
+
+.portal-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.principle {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.8rem;
     color: var(--color-pearl);
+    text-align: center;
+    margin-top: 0.5rem;
     opacity: 0.8;
     transition: all 0.4s ease;
 }
@@ -190,10 +264,13 @@
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
 }
 
-.number-cell:hover i {
+.number-cell:hover .portal-icon {
+    transform: rotate(360deg);
+}
+
+.number-cell:hover .principle {
     color: var(--color-gold);
     opacity: 1;
-    transform: rotate(360deg);
 }
 
 .special {
@@ -244,34 +321,59 @@
 
 {% block extra_js %}
 <script>
-function highlightNumber(num) {
-    // Réinitialiser tous les nombres
-    document.querySelectorAll('.number-grid div').forEach(div => {
-        div.classList.remove('highlighted');
+const numberDescriptions = {
+    1: {
+        title: "CONSCIENCE - Le Principe du Mentalisme",
+        description: "Tout est Esprit, l'Univers est Mental. La réalité que nous percevons est une manifestation de la conscience universelle."
+    },
+    2: {
+        title: "ÉQUIVALENCE - Le Principe de Correspondance",
+        description: "Ce qui est en haut est comme ce qui est en bas. Les lois universelles se reflètent à toutes les échelles de l'existence."
+    },
+    3: {
+        title: "OSCILLATION - Le Principe de Vibration",
+        description: "Rien ne repose, tout est en mouvement, tout vibre. L'univers est en perpétuelle oscillation."
+    },
+    4: {
+        title: "POLARITÉ - Le Principe de Polarité",
+        description: "Tout est double, tout a ses pôles. Les opposés sont identiques en nature mais différents en degré."
+    },
+    5: {
+        title: "RYTHME - Le Principe du Rythme",
+        description: "Tout s'écoule, tout a ses marées. Le mouvement pendulaire se manifeste dans tout phénomène."
+    },
+    6: {
+        title: "CAUSALITÉ - Le Principe de Cause et d'Effet",
+        description: "Toute cause a son effet, tout effet a sa cause. Le hasard n'est que le nom donné à une loi non reconnue."
+    },
+    7: {
+        title: "ORIENTATION - Le Principe de Genre",
+        description: "Le genre est en tout, tout a ses principes masculin et féminin. La création nécessite ces deux aspects."
+    },
+    8: {
+        title: "ÉQUILIBRE - Le Principe d'Harmonie",
+        description: "L'équilibre est la clé de toute existence. La nature cherche toujours à rétablir l'harmonie."
+    },
+    9: {
+        title: "DIVIN - Le Principe de l'Unité",
+        description: "Tout est Un, tout est interconnecté. Le neuf représente la complétude et le retour à l'unité primordiale."
+    }
+};
+
+function highlightNumber(number) {
+    const infoDiv = document.getElementById('number-info');
+    const info = numberDescriptions[number];
+    
+    infoDiv.innerHTML = `
+        <h3>${info.title}</h3>
+        <p>${info.description}</p>
+    `;
+    
+    // Mettre en évidence la cellule sélectionnée
+    document.querySelectorAll('.number-cell').forEach(cell => {
+        cell.classList.remove('active');
     });
-    
-    // Mettre en surbrillance le nombre cliqué
-    document.querySelector(`.number-grid div:nth-child(${num})`).classList.add('highlighted');
-    
-    // Afficher l'information sur le nombre
-    const info = document.getElementById('number-info');
-    const messages = {
-        1: "L'Unité Primordiale : Le commencement de toute chose, la source divine",
-        2: "La Dualité : L'équilibre des opposés, le yin et le yang",
-        3: "La Trinité : La création divine, la manifestation de l'esprit",
-        4: "La Matière : La stabilité, les quatre éléments, la fondation",
-        5: "Le Changement : Le pentagramme, l'homme dans sa totalité",
-        6: "L'Harmonie : La perfection, l'équilibre entre ciel et terre",
-        7: "Le Sacré : Le nombre mystique, les sept chakras",
-        8: "L'Infini : Le pouvoir cosmique, le cycle éternel",
-        9: "La Totalité : L'accomplissement, le retour à l'unité divine"
-    };
-    
-    info.innerHTML = `<div class="number-meaning">${messages[num]}</div>`;
-    info.style.opacity = 0;
-    setTimeout(() => {
-        info.style.opacity = 1;
-    }, 50);
+    document.querySelector(`.number-cell:nth-child(${number})`).classList.add('active');
 }
 
 function exploreCycle() {
@@ -347,5 +449,43 @@ document.getElementById('cycle-input').addEventListener('keypress', function(e) 
         exploreCycle();
     }
 });
+
+// Ajouter les styles pour la cellule active
+document.head.insertAdjacentHTML('beforeend', `
+    <style>
+        .number-cell.active {
+            background: rgba(255, 215, 0, 0.2);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        .number-info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 215, 0, 0.05);
+            border: 2px solid var(--color-gold);
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+        
+        .number-info:not(:empty) {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .number-info h3 {
+            color: var(--color-gold);
+            margin-bottom: 1rem;
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        
+        .number-info p {
+            color: var(--color-pearl);
+            line-height: 1.6;
+        }
+    </style>
+`);
 </script>
 {% endblock %} 
