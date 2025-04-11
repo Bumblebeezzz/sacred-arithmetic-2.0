@@ -1621,27 +1621,55 @@ footer {
 /* En-tête uniforme pour toutes les portes */
 .portal-header {
     text-align: center;
-    padding: 4rem 2rem;
     margin-bottom: 3rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('/static/images/sacred-bg.jpg') center/cover;
-    border-radius: 15px;
-    border: 2px solid var(--color-gold);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.portal-number {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 8rem;
+    color: var(--color-gold);
+    opacity: 0.9;
+    line-height: 1;
+    margin: 0;
+    text-shadow: 0 0 20px var(--color-gold-glow);
 }
 
 .portal-header h1 {
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--color-gold);
-    margin-bottom: 1rem;
-    text-shadow: 0 0 20px var(--color-gold-glow);
+    margin: 0;
+    line-height: 1.2;
 }
 
-.portal-header .subtitle {
-    font-size: 1.5rem;
+.principle-quote {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
     color: var(--color-pearl);
+    text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 2rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.subtitle {
+    font-family: 'EB Garamond', serif;
+    color: var(--color-gold);
+    font-size: 1.5rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.portal-symbol {
+    display: none;
 }
 
 /* Conteneur de contenu uniforme */
@@ -1694,7 +1722,7 @@ footer {
 }
 
 .timer-display {
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Cinzel Decorative', serif;
     font-size: 3rem;
     color: var(--color-gold);
     margin-bottom: 1rem;
@@ -1707,7 +1735,7 @@ footer {
     border: none;
     padding: 1rem 2rem;
     border-radius: 8px;
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Cinzel Decorative', serif;
     font-size: 1.2rem;
     cursor: pointer;
     transition: all var(--transition-medium);
@@ -1850,7 +1878,7 @@ footer {
 }
 
 .timer-display {
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Cinzel Decorative', serif;
     font-size: 3rem;
     color: var(--portal-color);
     margin-bottom: 1rem;
@@ -1863,7 +1891,7 @@ footer {
     border: none;
     padding: 1rem 2rem;
     border-radius: 8px;
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Cinzel Decorative', serif;
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
