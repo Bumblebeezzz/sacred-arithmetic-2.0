@@ -1957,39 +1957,3 @@ footer {
         font-size: 2rem;
     }
 }
-
-/* Language Selector */
-.language-selector {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--color-gold);
-}
-
-.language-selector a {
-    color: var(--color-gold);
-    text-decoration: none;
-    padding: 5px 10px;
-    transition: all 0.3s ease;
-}
-
-.language-selector a.active {
-    color: var(--color-white);
-    background: var(--color-gold);
-    border-radius: 3px;
-}
-
-.language-selector span {
-    color: var(--color-gold);
-    margin: 0 5px;
-}
-
-.language-selector a:hover {
-    color: var(--color-white);
-    background: var(--color-gold);
-    border-radius: 3px;
-}
