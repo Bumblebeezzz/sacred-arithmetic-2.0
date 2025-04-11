@@ -333,9 +333,9 @@ cite {
 {% block extra_js %}
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const portals = document.querySelectorAll('.portal-square');
-    portals.forEach((portal, index) => {
-        portal.style.animationDelay = `${index * 0.1}s`;
+    const doors = document.querySelectorAll('.portal-square');
+    doors.forEach((door, index) => {
+        door.style.animationDelay = `${index * 0.1}s`;
     });
 });
 </script>
