@@ -1,0 +1,266 @@
+{% extends "base.html" %}
+
+{% block title %}Les Lois Hermétiques{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="hero">
+        <h1>Les Lois Hermétiques</h1>
+        <p class="subtitle">Les principes éternels qui gouvernent l'univers</p>
+    </div>
+
+    <div class="principles-grid">
+        <!-- Principe de Conscience -->
+        <div class="principle-card consciousness">
+            <div class="principle-header">
+                <i class="fas fa-brain"></i>
+                <h2>Principe de Conscience</h2>
+                <span class="number">1</span>
+            </div>
+            <div class="principle-content">
+                <p class="quote">"L'Univers est Mental — Le TOUT se manifeste par un mouvement vivant — Le Réel est une spirale inscrite dans l'Éther."</p>
+                <div class="principle-details">
+                    <p>La réalité entière naît d'un Esprit Universel vivant, un Souffle primordial qui imprime sa trace dans l'invisible pour donner naissance au visible.</p>
+                    <ul class="key-points">
+                        <li>L'univers est un rêve en mouvement</li>
+                        <li>Nous sommes des étincelles d'un feu cosmique unifié</li>
+                        <li>La conscience est le souffle créateur</li>
+                    </ul>
+                </div>
+                <div class="sacred-geometry">
+                    <svg viewBox="0 0 200 200" class="spiral-animation">
+                        <path d="M100,100 Q150,50 100,0 T100,100" class="spiral-path"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Principe d'Équivalence -->
+        <div class="principle-card equivalence">
+            <div class="principle-header">
+                <i class="fas fa-infinity"></i>
+                <h2>Principe d'Équivalence</h2>
+                <span class="number">2</span>
+            </div>
+            <div class="principle-content">
+                <p class="quote">"Ce qui est en haut est comme ce qui est en bas"</p>
+                <div class="principle-details">
+                    <p>Les mêmes lois régissent tous les plans de l'existence, du plus subtil au plus dense.</p>
+                    <ul class="key-points">
+                        <li>L'analogie est la clé de la compréhension</li>
+                        <li>Le microcosme reflète le macrocosme</li>
+                        <li>Chaque niveau contient tous les autres</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Autres principes à suivre -->
+    </div>
+
+    <div class="sacred-text">
+        <blockquote>
+            "Les nombres sont les entités vivantes qui gouvernent le monde."
+            <cite>- Pythagore</cite>
+        </blockquote>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.hero h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3rem;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--color-pearl);
+    opacity: 0.9;
+}
+
+.principles-grid {
+    display: grid;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.principle-card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--color-gold);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.principle-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.principle-card:hover::before {
+    opacity: 1;
+}
+
+.principle-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.principle-header i {
+    font-size: 2rem;
+    color: var(--color-gold);
+}
+
+.principle-header h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--color-gold);
+    font-size: 1.8rem;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.principle-header .number {
+    font-size: 3rem;
+    color: rgba(255, 215, 0, 0.2);
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+.quote {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--color-gold);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.principle-details {
+    color: var(--color-pearl);
+    line-height: 1.6;
+}
+
+.key-points {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.key-points li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.key-points li::before {
+    content: '✧';
+    position: absolute;
+    left: 0;
+    color: var(--color-gold);
+}
+
+.sacred-geometry {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.spiral-animation {
+    width: 200px;
+    height: 200px;
+}
+
+.spiral-path {
+    fill: none;
+    stroke: var(--color-gold);
+    stroke-width: 2;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawSpiral 3s ease-out forwards;
+}
+
+@keyframes drawSpiral {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.sacred-text {
+    text-align: center;
+    margin: 4rem 0;
+    padding: 3rem;
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 12px;
+}
+
+blockquote {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    font-style: italic;
+    margin: 0;
+}
+
+cite {
+    display: block;
+    margin-top: 1rem;
+    color: var(--color-pearl);
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .principle-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .principle-header .number {
+        font-size: 2rem;
+    }
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Animation des cartes de principes
+    const cards = document.querySelectorAll('.principle-card');
+    cards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.2}s`;
+    });
+
+    // Animation de la spirale
+    const spiral = document.querySelector('.spiral-path');
+    if (spiral) {
+        spiral.style.animation = 'drawSpiral 3s ease-out forwards';
+    }
+});
+</script>
+{% endblock %} 

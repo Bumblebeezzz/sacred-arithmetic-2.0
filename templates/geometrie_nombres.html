@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+
+{% block title %}Géométrie des Nombres{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="hero">
+        <h1>Géométrie des Nombres</h1>
+        <p class="subtitle">Les formes sacrées dans les nombres</p>
+    </div>
+
+    <div class="sacred-grid">
+        <div class="sacred-card golden-ratio">
+            <h2>Le Nombre d'Or (φ)</h2>
+            <div class="content">
+                <div class="text">
+                    <p>Le nombre d'or (1.618033988749895...) est une proportion divine que l'on retrouve partout dans la nature et l'art. Il représente l'harmonie parfaite entre deux grandeurs.</p>
+                    <ul class="properties">
+                        <li>φ = (1 + √5) / 2</li>
+                        <li>φ² = φ + 1</li>
+                        <li>1/φ = φ - 1</li>
+                    </ul>
+                </div>
+                <div class="golden-spiral">
+                    <svg viewBox="0 0 200 200">
+                        <path d="M200,200 L200,0 L0,0 L0,200 Z" class="golden-rect"/>
+                        <path d="M200,200 Q0,200 0,0" class="spiral" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="sacred-card platonic-solids">
+            <h2>Les Solides de Platon</h2>
+            <div class="content">
+                <p>Les cinq solides platoniciens sont des formes géométriques parfaites qui représentent les éléments fondamentaux de l'univers :</p>
+                <div class="solids-grid">
+                    <div class="solid">
+                        <i class="fas fa-fire"></i>
+                        <h3>Tétraèdre</h3>
+                        <p>4 faces - Feu</p>
+                    </div>
+                    <div class="solid">
+                        <i class="fas fa-cube"></i>
+                        <h3>Cube</h3>
+                        <p>6 faces - Terre</p>
+                    </div>
+                    <div class="solid">
+                        <i class="fas fa-wind"></i>
+                        <h3>Octaèdre</h3>
+                        <p>8 faces - Air</p>
+                    </div>
+                    <div class="solid">
+                        <i class="fas fa-star"></i>
+                        <h3>Dodécaèdre</h3>
+                        <p>12 faces - Éther</p>
+                    </div>
+                    <div class="solid">
+                        <i class="fas fa-tint"></i>
+                        <h3>Icosaèdre</h3>
+                        <p>20 faces - Eau</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sacred-card flower-of-life">
+            <h2>La Fleur de Vie</h2>
+            <div class="content">
+                <div class="text">
+                    <p>Ce motif géométrique sacré est composé de cercles équidistants qui s'entrecroisent. Il contient tous les modèles de la création et représente l'interconnexion de toute vie.</p>
+                    <ul class="properties">
+                        <li>Symbole de la Création Divine</li>
+                        <li>Matrice de l'Arbre de Vie</li>
+                        <li>Source du Fruit de Vie</li>
+                    </ul>
+                </div>
+                <div class="flower-pattern">
+                    <svg viewBox="0 0 200 200">
+                        <!-- Cercles de la Fleur de Vie -->
+                        <circle cx="100" cy="100" r="50" class="flower-circle"/>
+                        <circle cx="150" cy="100" r="50" class="flower-circle"/>
+                        <circle cx="125" cy="150" r="50" class="flower-circle"/>
+                        <circle cx="75" cy="150" r="50" class="flower-circle"/>
+                        <circle cx="50" cy="100" r="50" class="flower-circle"/>
+                        <circle cx="75" cy="50" r="50" class="flower-circle"/>
+                        <circle cx="125" cy="50" r="50" class="flower-circle"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quote-section">
+        <blockquote>
+            "La géométrie est le langage de l'univers."
+            <cite>- Galilée</cite>
+        </blockquote>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.hero h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3rem;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--color-pearl);
+    opacity: 0.9;
+}
+
+.sacred-grid {
+    display: grid;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.sacred-card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--color-gold);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+}
+
+.sacred-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.sacred-card h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--color-gold);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.text p {
+    color: var(--color-pearl);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.properties {
+    list-style: none;
+    padding: 0;
+}
+
+.properties li {
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+}
+
+.golden-spiral svg {
+    width: 100%;
+    height: auto;
+}
+
+.golden-rect {
+    fill: none;
+    stroke: var(--color-gold);
+    stroke-width: 2;
+}
+
+.spiral {
+    fill: none;
+    stroke: var(--color-gold);
+    stroke-width: 2;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawSpiral 3s ease forwards;
+}
+
+@keyframes drawSpiral {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.solids-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.solid {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.solid:hover {
+    transform: scale(1.05);
+    background: rgba(255, 215, 0, 0.15);
+}
+
+.solid i {
+    font-size: 2rem;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+.solid h3 {
+    color: var(--color-pearl);
+    margin-bottom: 0.5rem;
+}
+
+.solid p {
+    color: var(--color-pearl);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.flower-pattern svg {
+    width: 100%;
+    height: auto;
+}
+
+.flower-circle {
+    fill: none;
+    stroke: var(--color-gold);
+    stroke-width: 1;
+    opacity: 0.6;
+}
+
+.quote-section {
+    text-align: center;
+    margin: 4rem 0;
+    padding: 3rem;
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 12px;
+}
+
+blockquote {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    font-style: italic;
+    margin: 0;
+}
+
+cite {
+    display: block;
+    margin-top: 1rem;
+    color: var(--color-pearl);
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .solids-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Animation des solides platoniciens
+    const solids = document.querySelectorAll('.solid');
+    solids.forEach((solid, index) => {
+        solid.style.animationDelay = `${index * 0.2}s`;
+    });
+
+    // Animation de la spirale d'or
+    const spiral = document.querySelector('.spiral');
+    spiral.style.animation = 'drawSpiral 3s ease forwards';
+});
+</script>
+{% endblock %} 

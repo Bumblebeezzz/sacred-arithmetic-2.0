@@ -1,0 +1,354 @@
+{% extends "base.html" %}
+
+{% block title %}Arithmétique Sacrée{% endblock %}
+
+{% block content %}
+<div class="container">
+    <header class="main-header">
+        <h1 class="site-title">Arithmétique Sacrée</h1>
+        <p class="site-subtitle">Explorer les mystères des nombres et leur relation avec l'univers</p>
+    </header>
+
+    <section class="sacred-doors">
+        <div class="doors-grid">
+            <a href="{{ url_for('porte1') }}" class="door-link">
+                <div class="door">
+                    <div class="door-frame">
+                        <i class="fas fa-seedling"></i>
+                        <div class="door-number">1</div>
+                        <div class="door-label">Origine</div>
+                    </div>
+                </div>
+            </a>
+            <a href="{{ url_for('porte2') }}" class="door-link">
+                <div class="door">
+                    <div class="door-frame">
+                        <i class="fas fa-yin-yang"></i>
+                        <div class="door-number">2</div>
+                        <div class="door-label">Dualité</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="door-link">
+                <div class="door">
+                    <div class="door-frame">
+                        <i class="fas fa-triangle"></i>
+                        <div class="door-number">3</div>
+                        <div class="door-label">Trinité</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="door-link">
+                <div class="door">
+                    <div class="door-frame">
+                        <i class="fas fa-square"></i>
+                        <div class="door-number">4</div>
+                        <div class="door-label">Matière</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="door-link">
+                <div class="door">
+                    <div class="door-frame">
+                        <i class="fas fa-star"></i>
+                        <div class="door-number">5</div>
+                        <div class="door-label">Quintessence</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="door-link">
+                <div class="door">
+                    <div class="door-frame">
+                        <i class="fas fa-hexagon"></i>
+                        <div class="door-number">6</div>
+                        <div class="door-label">Harmonie</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="door-link">
+                <div class="door">
+                    <div class="door-frame">
+                        <i class="fas fa-crown"></i>
+                        <div class="door-number">7</div>
+                        <div class="door-label">Sagesse</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="door-link">
+                <div class="door">
+                    <div class="door-frame">
+                        <i class="fas fa-infinity"></i>
+                        <div class="door-number">8</div>
+                        <div class="door-label">Infini</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="door-link">
+                <div class="door">
+                    <div class="door-frame">
+                        <i class="fas fa-circle"></i>
+                        <div class="door-number">9</div>
+                        <div class="door-label">Unité</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="main-sections">
+        <div class="section-grid">
+            <a href="{{ url_for('lois_hermetiques') }}" class="section-card">
+                <div class="card-content">
+                    <i class="fas fa-scroll"></i>
+                    <h2>Lois Hermétiques</h2>
+                    <p>Les principes éternels qui gouvernent l'univers</p>
+                </div>
+            </a>
+            <a href="{{ url_for('cycles_mod9') }}" class="section-card">
+                <div class="card-content">
+                    <i class="fas fa-sync-alt"></i>
+                    <h2>Cycles et Mod 9</h2>
+                    <p>Explorer les cycles mystérieux des nombres</p>
+                </div>
+            </a>
+            <a href="{{ url_for('geometrie_nombres') }}" class="section-card">
+                <div class="card-content">
+                    <i class="fas fa-shapes"></i>
+                    <h2>Géométrie des Nombres</h2>
+                    <p>Les formes sacrées dans les nombres</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="sacred-quote">
+        <blockquote>
+            "Les nombres sont la langue de l'univers, et l'arithmétique est sa grammaire."
+            <cite>- Pythagore</cite>
+        </blockquote>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.site-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3.5rem;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.site-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-pearl);
+    opacity: 0.9;
+}
+
+.sacred-doors {
+    margin-bottom: 4rem;
+}
+
+.doors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.door-link {
+    text-decoration: none;
+    color: var(--color-pearl);
+}
+
+.door {
+    width: 100px;
+    height: 160px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.door-frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(45deg, var(--color-gold), var(--portal-1));
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.door:hover .door-frame {
+    transform: translateY(-10px) rotateY(10deg);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.door i {
+    font-size: 2rem;
+    color: var(--color-pearl);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.door:hover i {
+    transform: scale(1.2) rotate(360deg);
+}
+
+.door-number {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2rem;
+    color: var(--color-pearl);
+    margin-bottom: 0.5rem;
+}
+
+.door-label {
+    font-size: 0.9rem;
+    color: var(--color-pearl);
+    opacity: 0.9;
+    text-align: center;
+}
+
+.main-sections {
+    margin-bottom: 4rem;
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.section-card {
+    text-decoration: none;
+    color: var(--color-pearl);
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--color-gold);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.section-card:hover::before {
+    opacity: 1;
+}
+
+.section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.card-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.card-content i {
+    font-size: 3rem;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+.card-content h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--color-gold);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-content p {
+    color: var(--color-pearl);
+    opacity: 0.9;
+}
+
+.sacred-quote {
+    text-align: center;
+    margin: 4rem 0;
+    padding: 3rem;
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 12px;
+}
+
+blockquote {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    font-style: italic;
+    margin: 0;
+}
+
+cite {
+    display: block;
+    margin-top: 1rem;
+    color: var(--color-pearl);
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 2.5rem;
+    }
+
+    .doors-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .door {
+        width: 80px;
+        height: 120px;
+    }
+
+    .door i {
+        font-size: 1.5rem;
+    }
+
+    .door-number {
+        font-size: 1.5rem;
+    }
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const doors = document.querySelectorAll('.door');
+    doors.forEach((door, index) => {
+        door.style.animationDelay = `${index * 0.1}s`;
+    });
+});
+</script>
+{% endblock %} 

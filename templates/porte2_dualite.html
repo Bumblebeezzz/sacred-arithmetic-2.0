@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="hero">
+        <h1>🔸 La Porte de la Dualité</h1>
+        <p class="subtitle">Le Deux, principe de polarité et de réflexion</p>
+    </div>
+
+    <div class="portal-content">
+        <section class="card teaching-section">
+            <h2>L'Enseignement du Deux</h2>
+            <p>Le Deux représente la première division de l'Unité, créant ainsi la dualité fondamentale qui permet toute manifestation. C'est le principe de la polarité, de la réflexion et du miroir, essentiel à la compréhension de l'univers manifesté.</p>
+            
+            <div class="principles">
+                <h3>Principes Clés</h3>
+                <ul>
+                    <li>La Polarité</li>
+                    <li>Le Miroir</li>
+                    <li>L'Équilibre</li>
+                    <li>La Complémentarité</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="card practice-section">
+            <h2>Pratiques & Exercices</h2>
+            
+            <div class="exercise">
+                <h3>Méditation sur la Dualité</h3>
+                <p>Observez les opposés dans votre vie : inspiration/expiration, jour/nuit, yin/yang. Ressentez comment ces polarités créent un équilibre dynamique.</p>
+                <button class="start-meditation" onclick="startMeditation()">Commencer la Méditation</button>
+                <div id="meditation-timer" class="hidden">
+                    <span id="timer">15:00</span>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <h3>Le Miroir des Nombres</h3>
+                <p>Explorez comment les nombres se reflètent autour du point central.</p>
+                <div class="number-mirror">
+                    <div class="mirror-row">
+                        <span>1</span>
+                        <span>⟷</span>
+                        <span>9</span>
+                    </div>
+                    <div class="mirror-row">
+                        <span>2</span>
+                        <span>⟷</span>
+                        <span>8</span>
+                    </div>
+                    <div class="mirror-row">
+                        <span>3</span>
+                        <span>⟷</span>
+                        <span>7</span>
+                    </div>
+                    <div class="mirror-row">
+                        <span>4</span>
+                        <span>⟷</span>
+                        <span>6</span>
+                    </div>
+                    <div class="mirror-center">
+                        <span>5</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card wisdom-section">
+            <h2>Sagesse de la Dualité</h2>
+            <div class="quote">
+                "Dans la dualité se cache l'unité, dans la séparation se trouve la connexion."
+            </div>
+            <p>La dualité n'est pas une véritable division mais une danse cosmique qui nous rappelle l'unité sous-jacente de toute chose. Le deux nous enseigne que chaque polarité contient son opposé et que l'équilibre est la clé de la compréhension.</p>
+        </section>
+    </div>
+</div>
+
+<style>
+.portal-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    margin-bottom: 3rem;
+    border-color: var(--portal-2);
+}
+
+.principles ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.principles li {
+    background: rgba(255, 127, 0, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--portal-2);
+    backdrop-filter: blur(5px);
+}
+
+.exercise {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 127, 0, 0.05);
+    border-radius: 8px;
+    border: 1px solid var(--portal-2);
+    backdrop-filter: blur(5px);
+}
+
+.start-meditation {
+    background: var(--portal-2);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.start-meditation:hover {
+    transform: scale(1.05);
+    background: rgba(255, 127, 0, 0.8);
+}
+
+.number-mirror {
+    margin: 2rem auto;
+    max-width: 300px;
+}
+
+.mirror-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: rgba(255, 127, 0, 0.1);
+    border-radius: 4px;
+}
+
+.mirror-row span {
+    font-size: 1.5rem;
+    color: var(--portal-2);
+}
+
+.mirror-center {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 2rem;
+    color: var(--color-gold);
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 4px solid var(--portal-2);
+    background: rgba(255, 127, 0, 0.05);
+    border-radius: 0 8px 8px 0;
+    backdrop-filter: blur(5px);
+}
+</style>
+
+<script>
+function startMeditation() {
+    const timer = document.getElementById('timer');
+    const meditationTimer = document.getElementById('meditation-timer');
+    meditationTimer.classList.remove('hidden');
+    
+    let timeLeft = 15 * 60; // 15 minutes
+    
+    const countdown = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        
+        timer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            timer.textContent = "Méditation terminée";
+        }
+        
+        timeLeft--;
+    }, 1000);
+}
+</script>
+{% endblock %} 

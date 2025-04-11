@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="hero">
+        <h1>🔴 La Porte de l'Origine</h1>
+        <p class="subtitle">Le Un, source de toute manifestation</p>
+    </div>
+
+    <div class="portal-content">
+        <section class="card teaching-section">
+            <h2>L'Enseignement du Un</h2>
+            <p>Le Un est le commencement, le point source d'où tout émerge. Il représente l'unité primordiale, l'essence divine qui précède toute manifestation. Dans l'arithmétique sacrée, le Un n'est pas un nombre comme les autres - il est le principe générateur, la source de tous les nombres.</p>
+            
+            <div class="principles">
+                <h3>Principes Clés</h3>
+                <ul>
+                    <li>L'Unité Primordiale</li>
+                    <li>Le Principe Créateur</li>
+                    <li>L'Indivisible</li>
+                    <li>La Source Divine</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="card practice-section">
+            <h2>Pratiques & Exercices</h2>
+            
+            <div class="exercise">
+                <h3>Méditation sur l'Unité</h3>
+                <p>Asseyez-vous dans un endroit calme. Visualisez un point lumineux au centre de votre conscience. Ce point est le Un, la source de tout être. Observez comment toute expérience émerge de ce point et y retourne.</p>
+                <button class="start-meditation" onclick="startMeditation()">Commencer la Méditation</button>
+                <div id="meditation-timer" class="hidden">
+                    <span id="timer">15:00</span>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <h3>Le Carré Magique du Un</h3>
+                <p>Explorez comment le nombre 1 se manifeste dans différentes configurations numériques.</p>
+                <div id="magic-square" class="interactive-square">
+                    <!-- Le carré magique sera généré par JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="card wisdom-section">
+            <h2>Sagesse du Un</h2>
+            <div class="quote">
+                "De l'Un vient le multiple, et dans l'Un tout retourne."
+            </div>
+            <p>Cette porte nous enseigne que toute multiplicité n'est qu'apparente. La véritable compréhension de l'arithmétique sacrée commence par la reconnaissance de l'unité fondamentale qui sous-tend toute existence.</p>
+        </section>
+    </div>
+</div>
+
+<script>
+function startMeditation() {
+    const timer = document.getElementById('timer');
+    const meditationTimer = document.getElementById('meditation-timer');
+    meditationTimer.classList.remove('hidden');
+    
+    let timeLeft = 15 * 60; // 15 minutes en secondes
+    
+    const countdown = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        
+        timer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            timer.textContent = "Méditation terminée";
+            // Jouer un son doux de cloche ici
+        }
+        
+        timeLeft--;
+    }, 1000);
+}
+
+function generateMagicSquare() {
+    const square = document.getElementById('magic-square');
+    const values = [
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1]
+    ];
+    
+    let html = '<table>';
+    for (let i = 0; i < 3; i++) {
+        html += '<tr>';
+        for (let j = 0; j < 3; j++) {
+            html += `<td>${values[i][j]}</td>`;
+        }
+        html += '</tr>';
+    }
+    html += '</table>';
+    
+    square.innerHTML = html;
+}
+
+document.addEventListener('DOMContentLoaded', generateMagicSquare);
+</script>
+
+<style>
+.portal-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    margin-bottom: 3rem;
+    background: rgba(26, 35, 126, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.principles ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.principles li {
+    background: rgba(255, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--portal-1);
+    backdrop-filter: blur(5px);
+}
+
+.exercise {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 0, 0, 0.05);
+    border-radius: 8px;
+    border: 1px solid var(--portal-1);
+    backdrop-filter: blur(5px);
+}
+
+.start-meditation {
+    background: var(--portal-1);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.start-meditation:hover {
+    transform: scale(1.05);
+    background: rgba(255, 0, 0, 0.8);
+}
+
+.hidden {
+    display: none;
+}
+
+#meditation-timer {
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.interactive-square table {
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem auto;
+    border-collapse: collapse;
+}
+
+.interactive-square td {
+    width: 33.33%;
+    height: 80px;
+    border: 1px solid var(--portal-1);
+    text-align: center;
+    font-size: 1.5rem;
+    background: rgba(255, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 4px solid var(--portal-1);
+    background: rgba(255, 0, 0, 0.05);
+    border-radius: 0 8px 8px 0;
+    backdrop-filter: blur(5px);
+}
+</style>
+{% endblock %} 

@@ -1,0 +1,351 @@
+{% extends "base.html" %}
+
+{% block title %}La Science des Cycles Numériques{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="hero">
+        <h1>La Science des Cycles Numériques</h1>
+        <p class="subtitle">Découvrez les secrets cachés dans les nombres</p>
+    </div>
+
+    <div class="portal-content">
+        <section class="card introduction">
+            <h2>Introduction aux Cycles Numériques</h2>
+            <p>En arithmétique sacrée, chaque nombre raconte une histoire à travers sa réduction digitale. Cette science ancestrale révèle comment tous les nombres se réduisent naturellement en un cycle de 1 à 9, créant des motifs fascinants qui se répètent à l'infini.</p>
+        </section>
+
+        <section class="card">
+            <h2>Le Mystère du Nombre 9</h2>
+            <p>Le nombre 9 est la clé de voûte de l'arithmétique sacrée. Il représente la complétude et le retour à l'unité. Tout nombre multiplié par 9 se réduit à 9, créant un cycle parfait.</p>
+            <div class="cycle-example">
+                <h3>Exemples de Réduction Digitale :</h3>
+                <div class="example-grid">
+                    <div class="example">
+                        <p>278 → 2+7+8 = 17 → 1+7 = 8</p>
+                        <span class="explanation">Signification : Expression de l'infini</span>
+                    </div>
+                    <div class="example">
+                        <p>365 → 3+6+5 = 14 → 1+4 = 5</p>
+                        <span class="explanation">Signification : Nombre du changement</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>La Matrice 3-6-9 de Tesla</h2>
+            <p>"Si vous connaissiez la magnificence des nombres 3, 6 et 9, vous auriez la clé de l'univers." - Nikola Tesla</p>
+            <div class="tesla-grid">
+                <div class="number-grid">
+                    <div onclick="highlightNumber(1)" class="number-cell">
+                        <span class="number">1</span>
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div onclick="highlightNumber(2)" class="number-cell">
+                        <span class="number">2</span>
+                        <i class="fas fa-yin-yang"></i>
+                    </div>
+                    <div onclick="highlightNumber(3)" class="number-cell special">
+                        <span class="number">3</span>
+                        <i class="fas fa-triangle"></i>
+                    </div>
+                    <div onclick="highlightNumber(4)" class="number-cell">
+                        <span class="number">4</span>
+                        <i class="fas fa-square"></i>
+                    </div>
+                    <div onclick="highlightNumber(5)" class="number-cell">
+                        <span class="number">5</span>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div onclick="highlightNumber(6)" class="number-cell special">
+                        <span class="number">6</span>
+                        <i class="fas fa-hexagon"></i>
+                    </div>
+                    <div onclick="highlightNumber(7)" class="number-cell">
+                        <span class="number">7</span>
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div onclick="highlightNumber(8)" class="number-cell">
+                        <span class="number">8</span>
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <div onclick="highlightNumber(9)" class="number-cell special">
+                        <span class="number">9</span>
+                        <i class="fas fa-circle"></i>
+                    </div>
+                </div>
+                <div id="number-info" class="number-info"></div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Explorateur de Cycles</h2>
+            <p>Découvrez la signification cachée de n'importe quel nombre en calculant sa réduction digitale :</p>
+            <div class="cycle-explorer">
+                <div class="input-group">
+                    <input type="number" id="cycle-input" class="cycle-input" placeholder="Entrez un nombre">
+                    <button onclick="exploreCycle()" class="cycle-button">
+                        <i class="fas fa-calculator"></i>
+                        Calculer
+                    </button>
+                </div>
+                <div id="cycle-result" class="cycle-result">
+                    <div class="initial-message">
+                        Les résultats s'afficheront ici
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.portal-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.introduction {
+    background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,0,0,0.1));
+    border-width: 2px;
+}
+
+.cycle-example {
+    background: rgba(255, 215, 0, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.example-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.example {
+    background: rgba(0,0,0,0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.example p {
+    font-size: 1.3rem;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+}
+
+.example .explanation {
+    font-size: 0.9rem;
+    color: var(--color-pearl);
+    font-style: italic;
+}
+
+.tesla-grid {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.number-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 400px;
+}
+
+.number-cell {
+    background: rgba(255, 215, 0, 0.05);
+    border: 2px solid var(--color-gold);
+    border-radius: 12px;
+    padding: 2rem 1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.number-cell .number {
+    font-size: 2rem;
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--color-gold);
+}
+
+.number-cell i {
+    font-size: 1.5rem;
+    color: var(--color-pearl);
+    opacity: 0.8;
+    transition: all 0.4s ease;
+}
+
+.number-cell:hover {
+    transform: scale(1.05);
+    background: rgba(255, 215, 0, 0.15);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.number-cell:hover i {
+    color: var(--color-gold);
+    opacity: 1;
+    transform: rotate(360deg);
+}
+
+.special {
+    border-color: var(--portal-1);
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.number-info {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    text-align: center;
+    min-height: 80px;
+    font-size: 1.2rem;
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.highlighted {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--color-gold);
+    background: rgba(255, 215, 0, 0.2) !important;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.cycle-input {
+    flex: 1;
+}
+
+.cycle-button i {
+    margin-right: 0.5rem;
+}
+
+.initial-message {
+    color: var(--color-pearl);
+    opacity: 0.6;
+    font-style: italic;
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function highlightNumber(num) {
+    // Réinitialiser tous les nombres
+    document.querySelectorAll('.number-grid div').forEach(div => {
+        div.classList.remove('highlighted');
+    });
+    
+    // Mettre en surbrillance le nombre cliqué
+    document.querySelector(`.number-grid div:nth-child(${num})`).classList.add('highlighted');
+    
+    // Afficher l'information sur le nombre
+    const info = document.getElementById('number-info');
+    const messages = {
+        1: "L'Unité Primordiale : Le commencement de toute chose, la source divine",
+        2: "La Dualité : L'équilibre des opposés, le yin et le yang",
+        3: "La Trinité : La création divine, la manifestation de l'esprit",
+        4: "La Matière : La stabilité, les quatre éléments, la fondation",
+        5: "Le Changement : Le pentagramme, l'homme dans sa totalité",
+        6: "L'Harmonie : La perfection, l'équilibre entre ciel et terre",
+        7: "Le Sacré : Le nombre mystique, les sept chakras",
+        8: "L'Infini : Le pouvoir cosmique, le cycle éternel",
+        9: "La Totalité : L'accomplissement, le retour à l'unité divine"
+    };
+    
+    info.innerHTML = `<div class="number-meaning">${messages[num]}</div>`;
+    info.style.opacity = 0;
+    setTimeout(() => {
+        info.style.opacity = 1;
+    }, 50);
+}
+
+function exploreCycle() {
+    const input = document.getElementById('cycle-input').value;
+    const result = document.getElementById('cycle-result');
+    
+    if (!input) {
+        result.innerHTML = '<div class="error-message">Veuillez entrer un nombre</div>';
+        return;
+    }
+
+    let number = input;
+    let steps = [];
+    let sum = 0;
+    
+    // Calculer la somme des chiffres
+    for (let digit of number) {
+        sum += parseInt(digit);
+    }
+    
+    // Réduire jusqu'à un seul chiffre
+    while (sum > 9) {
+        steps.push(sum);
+        let newSum = 0;
+        sum.toString().split('').forEach(d => {
+            newSum += parseInt(d);
+        });
+        sum = newSum;
+    }
+    
+    // Afficher le résultat avec animation
+    result.innerHTML = `
+        <div class="cycle-analysis">
+            <div class="number-initial">
+                <h3>Nombre Initial</h3>
+                <span class="value">${input}</span>
+            </div>
+            ${steps.length > 0 ? `
+                <div class="reduction-steps">
+                    <h3>Processus de Réduction</h3>
+                    <div class="steps">
+                        ${input} → ${steps.join(' → ')} → ${sum}
+                    </div>
+                </div>
+            ` : ''}
+            <div class="final-number">
+                <h3>Nombre Racine</h3>
+                <span class="value">${sum}</span>
+                <div class="meaning">${getMeaning(sum)}</div>
+            </div>
+        </div>
+    `;
+}
+
+function getMeaning(num) {
+    const meanings = {
+        1: "Nouveau départ, leadership, indépendance",
+        2: "Coopération, diplomatie, sensibilité",
+        3: "Créativité, expression, joie de vivre",
+        4: "Stabilité, organisation, travail",
+        5: "Liberté, changement, aventure",
+        6: "Harmonie, responsabilité, amour",
+        7: "Spiritualité, sagesse, introspection",
+        8: "Pouvoir, succès, abondance",
+        9: "Humanité, compassion, accomplissement"
+    };
+    return meanings[num];
+}
+
+// Activer le calcul quand on appuie sur Entrée
+document.getElementById('cycle-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        exploreCycle();
+    }
+});
+</script>
+{% endblock %} 

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} | Arithmétique Sacrée</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo">Arithmétique Sacrée</a>
+            <div class="sacred-circle">
+                <div class="circle-menu">
+                    <a href="{{ url_for('porte1') }}" class="portal" data-number="1">
+                        <span class="number">1</span>
+                        <span class="label">Origine</span>
+                    </a>
+                    <a href="{{ url_for('porte2') }}" class="portal" data-number="2">
+                        <span class="number">2</span>
+                        <span class="label">Dualité</span>
+                    </a>
+                    <!-- Commenté temporairement car ces routes n'existent pas encore -->
+                    <!--
+                    <a href="#" class="portal" data-number="3">
+                        <span class="number">3</span>
+                        <span class="label">Vibration</span>
+                    </a>
+                    <a href="#" class="portal" data-number="4">
+                        <span class="number">4</span>
+                        <span class="label">Structure</span>
+                    </a>
+                    <a href="#" class="portal" data-number="5">
+                        <span class="number">5</span>
+                        <span class="label">Passage</span>
+                    </a>
+                    <a href="#" class="portal" data-number="6">
+                        <span class="number">6</span>
+                        <span class="label">Harmonie</span>
+                    </a>
+                    <a href="#" class="portal" data-number="7">
+                        <span class="number">7</span>
+                        <span class="label">Connaissance</span>
+                    </a>
+                    <a href="#" class="portal" data-number="8">
+                        <span class="number">8</span>
+                        <span class="label">Expansion</span>
+                    </a>
+                    <a href="#" class="portal" data-number="9">
+                        <span class="number">9</span>
+                        <span class="label">Totalité</span>
+                    </a>
+                    -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-nav">
+                <a href="{{ url_for('outils_interactifs') }}" class="footer-link">🛠 Outils</a>
+                <a href="{{ url_for('livres_savoirs') }}" class="footer-link">📚 Livres</a>
+                <a href="{{ url_for('communaute_ateliers') }}" class="footer-link">🌐 Communauté</a>
+                <a href="{{ url_for('soutenir_contribuer') }}" class="footer-link">❤️ Soutenir</a>
+            </div>
+            <p class="copyright">© 2024 Arithmétique Sacrée - La Voie des Nombres</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html> 

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}L'Arithmétique Sacrée{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="hero">
+        <h1>L'Arithmétique Sacrée</h1>
+        <p class="subtitle">La science des nombres et leurs vibrations</p>
+    </section>
+
+    <section class="content">
+        <div class="card">
+            <h2>Les Fondements</h2>
+            <p>L'arithmétique sacrée est l'étude des nombres dans leur dimension vibratoire et symbolique. Elle nous révèle comment les nombres sont les briques fondamentales de l'univers, encodant les lois de la création et de l'harmonie cosmique.</p>
+        </div>
+
+        <div class="card">
+            <h2>Les Nombres Premiers</h2>
+            <p>Les nombres premiers sont les atomes de l'arithmétique. Indivisibles et mystérieux, ils forment la base de tous les autres nombres et révèlent des motifs fascinants dans leur distribution.</p>
+        </div>
+
+        <div class="card">
+            <h2>La Séquence de Fibonacci</h2>
+            <p>Cette suite mathématique, où chaque nombre est la somme des deux précédents, se retrouve partout dans la nature : des spirales des galaxies aux motifs de croissance des plantes.</p>
+        </div>
+    </section>
+
+    <section class="quote">
+        <blockquote>
+            "Tout est nombre. Le nombre est dans tout. Le nombre est dans l'individu et tout dérive de lui."
+            <footer>- Pythagore</footer>
+        </blockquote>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 4rem 0;
+    }
+
+    .card {
+        background-color: rgba(26, 35, 126, 0.1);
+        border: 1px solid var(--color-gold);
+        border-radius: 8px;
+        padding: 2rem;
+    }
+
+    .card h2 {
+        color: var(--color-gold);
+        margin-bottom: 1rem;
+    }
+
+    .quote {
+        text-align: center;
+        margin: 4rem 0;
+        padding: 2rem;
+        background-color: rgba(123, 31, 162, 0.1);
+        border-radius: 8px;
+    }
+
+    blockquote {
+        font-size: 1.5rem;
+        font-style: italic;
+        color: var(--color-gold);
+    }
+
+    @media (min-width: 768px) {
+        .content {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+</style>
+{% endblock %} 
