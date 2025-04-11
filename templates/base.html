@@ -14,47 +14,51 @@
         <div class="nav-container">
             <a href="{{ url_for('index') }}" class="logo">Arithmétique Sacrée</a>
             <div class="sacred-circle">
-                <div class="circle-menu">
-                    <a href="{{ url_for('porte1') }}" class="portal" data-number="1">
-                        <span class="number">1</span>
-                        <span class="label">Origine</span>
-                    </a>
-                    <a href="{{ url_for('porte2') }}" class="portal" data-number="2">
-                        <span class="number">2</span>
-                        <span class="label">Dualité</span>
-                    </a>
-                    <!-- Commenté temporairement car ces routes n'existent pas encore -->
-                    <!--
-                    <a href="#" class="portal" data-number="3">
-                        <span class="number">3</span>
-                        <span class="label">Vibration</span>
-                    </a>
-                    <a href="#" class="portal" data-number="4">
-                        <span class="number">4</span>
-                        <span class="label">Structure</span>
-                    </a>
-                    <a href="#" class="portal" data-number="5">
-                        <span class="number">5</span>
-                        <span class="label">Passage</span>
-                    </a>
-                    <a href="#" class="portal" data-number="6">
-                        <span class="number">6</span>
-                        <span class="label">Harmonie</span>
-                    </a>
-                    <a href="#" class="portal" data-number="7">
-                        <span class="number">7</span>
-                        <span class="label">Connaissance</span>
-                    </a>
-                    <a href="#" class="portal" data-number="8">
-                        <span class="number">8</span>
-                        <span class="label">Expansion</span>
-                    </a>
-                    <a href="#" class="portal" data-number="9">
-                        <span class="number">9</span>
-                        <span class="label">Totalité</span>
-                    </a>
-                    -->
-                </div>
+                <a href="{{ url_for('porte1') }}" class="portal" data-number="1">
+                    <span class="number">1</span>
+                    <i class="fas fa-seedling"></i>
+                    <span class="label">Origine</span>
+                </a>
+                <a href="{{ url_for('porte2') }}" class="portal" data-number="2">
+                    <span class="number">2</span>
+                    <i class="fas fa-yin-yang"></i>
+                    <span class="label">Dualité</span>
+                </a>
+                <a href="{{ url_for('porte3') }}" class="portal" data-number="3">
+                    <span class="number">3</span>
+                    <i class="fas fa-triangle"></i>
+                    <span class="label">Trinité</span>
+                </a>
+                <a href="{{ url_for('porte4') }}" class="portal" data-number="4">
+                    <span class="number">4</span>
+                    <i class="fas fa-square"></i>
+                    <span class="label">Matière</span>
+                </a>
+                <a href="{{ url_for('porte5') }}" class="portal" data-number="5">
+                    <span class="number">5</span>
+                    <i class="fas fa-star"></i>
+                    <span class="label">Quintessence</span>
+                </a>
+                <a href="{{ url_for('porte6') }}" class="portal" data-number="6">
+                    <span class="number">6</span>
+                    <i class="fas fa-hexagon"></i>
+                    <span class="label">Harmonie</span>
+                </a>
+                <a href="{{ url_for('porte7') }}" class="portal" data-number="7">
+                    <span class="number">7</span>
+                    <i class="fas fa-crown"></i>
+                    <span class="label">Sagesse</span>
+                </a>
+                <a href="{{ url_for('porte8') }}" class="portal" data-number="8">
+                    <span class="number">8</span>
+                    <i class="fas fa-infinity"></i>
+                    <span class="label">Infini</span>
+                </a>
+                <a href="{{ url_for('porte9') }}" class="portal" data-number="9">
+                    <span class="number">9</span>
+                    <i class="fas fa-circle"></i>
+                    <span class="label">Unité</span>
+                </a>
             </div>
         </div>
     </nav>

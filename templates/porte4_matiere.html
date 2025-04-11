@@ -1,0 +1,274 @@
+{% extends "base.html" %}
+
+{% block title %}Porte 4 - Matière{% endblock %}
+
+{% block content %}
+<div class="portal-page matter-portal">
+    <header class="portal-header">
+        <h1>La Matière</h1>
+        <div class="portal-symbol">
+            <i class="fas fa-square"></i>
+            <span class="portal-number">4</span>
+        </div>
+    </header>
+
+    <section class="portal-content">
+        <div class="wisdom-container">
+            <div class="wisdom-card">
+                <h2>Le Carré Parfait</h2>
+                <p>Le nombre 4 représente la stabilité, la fondation et la manifestation dans le monde matériel.</p>
+                <div class="sacred-geometry">
+                    <div class="square-container">
+                        <div class="square" id="square1"></div>
+                        <div class="square" id="square2"></div>
+                        <div class="square" id="square3"></div>
+                        <div class="square" id="square4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wisdom-card">
+                <h2>Les Quatre Éléments</h2>
+                <div class="elements-grid">
+                    <div class="element" data-element="feu">
+                        <i class="fas fa-fire"></i>
+                        <span>Feu</span>
+                    </div>
+                    <div class="element" data-element="air">
+                        <i class="fas fa-wind"></i>
+                        <span>Air</span>
+                    </div>
+                    <div class="element" data-element="eau">
+                        <i class="fas fa-water"></i>
+                        <span>Eau</span>
+                    </div>
+                    <div class="element" data-element="terre">
+                        <i class="fas fa-mountain"></i>
+                        <span>Terre</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wisdom-card interactive">
+                <h2>Explorer les Dimensions</h2>
+                <div class="dimension-explorer">
+                    <div class="dimension" id="dim1">Point</div>
+                    <div class="dimension" id="dim2">Ligne</div>
+                    <div class="dimension" id="dim3">Surface</div>
+                    <div class="dimension" id="dim4">Volume</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="meditation-section">
+        <h2>Méditation sur le Quatre</h2>
+        <p>Explorez la stabilité et l'ancrage à travers les quatre directions.</p>
+        <div class="compass-meditation">
+            <div class="compass-point north">Nord</div>
+            <div class="compass-point east">Est</div>
+            <div class="compass-point south">Sud</div>
+            <div class="compass-point west">Ouest</div>
+            <button id="startMeditation">Commencer la Méditation</button>
+            <div id="meditationTimer">04:44</div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.matter-portal {
+    background: linear-gradient(135deg, var(--portal-4), var(--color-black));
+    padding: 2rem;
+}
+
+.sacred-geometry {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.square-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform: rotate(45deg);
+}
+
+.square {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--color-gold);
+    transition: all 0.5s ease;
+}
+
+#square1 { top: 0; left: 0; }
+#square2 { top: 0; right: 0; }
+#square3 { bottom: 0; left: 0; }
+#square4 { bottom: 0; right: 0; }
+
+.elements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid var(--color-gold);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.element i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-gold);
+}
+
+.element:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--color-gold);
+}
+
+.dimension-explorer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.dimension {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid var(--color-gold);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dimension:hover {
+    transform: scale(1.1);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.compass-meditation {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 2rem auto;
+}
+
+.compass-point {
+    position: absolute;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--color-gold);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.north { top: 0; left: 50%; transform: translateX(-50%); }
+.east { right: 0; top: 50%; transform: translateY(-50%); }
+.south { bottom: 0; left: 50%; transform: translateX(-50%); }
+.west { left: 0; top: 50%; transform: translateY(-50%); }
+
+.compass-point:hover {
+    background: rgba(255, 215, 0, 0.1);
+    transform: scale(1.1);
+}
+
+#meditationTimer {
+    font-size: 2rem;
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--color-gold);
+    margin: 1rem 0;
+    text-align: center;
+}
+
+#startMeditation {
+    display: block;
+    margin: 2rem auto;
+    background: var(--color-gold);
+    color: var(--color-black);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+#startMeditation:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--color-gold);
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const squares = document.querySelectorAll('.square');
+    const elements = document.querySelectorAll('.element');
+    const dimensions = document.querySelectorAll('.dimension');
+    let meditationInterval;
+    
+    // Animation des carrés
+    squares.forEach(square => {
+        square.addEventListener('mouseover', function() {
+            squares.forEach(s => s.style.transform = 'scale(0.9)');
+            this.style.transform = 'scale(1.1)';
+        });
+        
+        square.addEventListener('mouseout', function() {
+            squares.forEach(s => s.style.transform = 'scale(1)');
+        });
+    });
+
+    // Animation des éléments
+    elements.forEach(element => {
+        element.addEventListener('click', function() {
+            elements.forEach(e => e.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // Animation des dimensions
+    dimensions.forEach(dimension => {
+        dimension.addEventListener('click', function() {
+            dimensions.forEach(d => d.style.transform = 'scale(1)');
+            this.style.transform = 'scale(1.1)';
+        });
+    });
+
+    // Méditation
+    document.getElementById('startMeditation').addEventListener('click', function() {
+        let time = 284; // 4:44 en secondes
+        this.disabled = true;
+        
+        meditationInterval = setInterval(() => {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            document.getElementById('meditationTimer').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (time === 0) {
+                clearInterval(meditationInterval);
+                this.disabled = false;
+            }
+            time--;
+        }, 1000);
+    });
+});
+</script>
+{% endblock %} 

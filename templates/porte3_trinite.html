@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block title %}Porte 3 - Trinité{% endblock %}
+
+{% block content %}
+<div class="portal-page trinity-portal">
+    <header class="portal-header">
+        <h1>La Trinité</h1>
+        <div class="portal-symbol">
+            <i class="fas fa-triangle"></i>
+            <span class="portal-number">3</span>
+        </div>
+    </header>
+
+    <section class="portal-content">
+        <div class="wisdom-container">
+            <div class="wisdom-card">
+                <h2>Le Triangle Sacré</h2>
+                <p>Le nombre 3 représente la première manifestation complète, l'union parfaite entre la thèse et l'antithèse.</p>
+                <div class="sacred-symbol">▲</div>
+            </div>
+
+            <div class="wisdom-card">
+                <h2>Les Triades Sacrées</h2>
+                <ul class="sacred-list">
+                    <li>Corps - Âme - Esprit</li>
+                    <li>Passé - Présent - Futur</li>
+                    <li>Père - Mère - Enfant</li>
+                </ul>
+            </div>
+
+            <div class="wisdom-card interactive">
+                <h2>Explorer la Trinité</h2>
+                <div class="trinity-explorer">
+                    <div class="trinity-circle" id="circle1">Thèse</div>
+                    <div class="trinity-circle" id="circle2">Antithèse</div>
+                    <div class="trinity-circle" id="circle3">Synthèse</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="meditation-section">
+        <h2>Méditation sur le Trois</h2>
+        <p>Contemplez le mouvement triple de la création : naissance, vie, transformation.</p>
+        <div class="meditation-timer">
+            <button id="startMeditation">Commencer la Méditation</button>
+            <div id="meditationTimer">03:33</div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.trinity-portal {
+    background: linear-gradient(135deg, var(--portal-3), var(--color-black));
+    padding: 2rem;
+}
+
+.trinity-explorer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.trinity-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--color-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.trinity-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--color-gold);
+}
+
+.meditation-timer {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#meditationTimer {
+    font-size: 2rem;
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--color-gold);
+    margin: 1rem 0;
+}
+
+#startMeditation {
+    background: var(--color-gold);
+    color: var(--color-black);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+#startMeditation:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--color-gold);
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const circles = document.querySelectorAll('.trinity-circle');
+    let meditationInterval;
+    
+    circles.forEach(circle => {
+        circle.addEventListener('click', function() {
+            circles.forEach(c => c.style.transform = 'scale(1)');
+            this.style.transform = 'scale(1.2)';
+        });
+    });
+
+    document.getElementById('startMeditation').addEventListener('click', function() {
+        let time = 213; // 3:33 en secondes
+        this.disabled = true;
+        
+        meditationInterval = setInterval(() => {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            document.getElementById('meditationTimer').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (time === 0) {
+                clearInterval(meditationInterval);
+                this.disabled = false;
+            }
+            time--;
+        }, 1000);
+    });
+});
+</script>
+{% endblock %} 

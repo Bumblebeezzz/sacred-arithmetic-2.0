@@ -1,22 +1,153 @@
 :root {
+    /* Couleurs de base */
     --color-black: #000000;
     --color-gold: #FFD700;
-    --color-blue: #1a237e;
-    --color-indigo: #283593;
-    --color-violet: #7b1fa2;
-    --color-white: #ffffff;
     --color-pearl: #f8f8f8;
     
-    /* Couleurs des portes avec transparence */
-    --portal-1: rgba(255, 0, 0, 0.8); /* Rouge - Origine */
-    --portal-2: rgba(255, 127, 0, 0.8); /* Orange - Dualité */
-    --portal-3: rgba(255, 255, 0, 0.8); /* Jaune - Vibration */
-    --portal-4: rgba(0, 255, 0, 0.8); /* Vert - Structure */
-    --portal-5: rgba(0, 0, 255, 0.8); /* Bleu - Passage */
-    --portal-6: rgba(75, 0, 130, 0.8); /* Indigo - Harmonie */
-    --portal-7: rgba(139, 0, 255, 0.8); /* Violet - Connaissance */
-    --portal-8: rgba(255, 20, 147, 0.8); /* Rose - Expansion */
-    --portal-9: rgba(255, 215, 0, 0.8); /* Or - Totalité */
+    /* Couleurs des portails avec effets de profondeur */
+    --portal-1: rgba(255, 0, 0, 0.8);    /* Rouge - Origine */
+    --portal-2: rgba(255, 127, 0, 0.8);  /* Orange - Dualité */
+    --portal-3: rgba(255, 255, 0, 0.8);  /* Jaune - Trinité */
+    --portal-4: rgba(0, 255, 0, 0.8);    /* Vert - Matière */
+    --portal-5: rgba(0, 0, 255, 0.8);    /* Bleu - Quintessence */
+    --portal-6: rgba(75, 0, 130, 0.8);   /* Indigo - Harmonie */
+    --portal-7: rgba(139, 0, 255, 0.8);  /* Violet - Sagesse */
+    --portal-8: rgba(255, 20, 147, 0.8); /* Rose - Infini */
+    --portal-9: rgba(255, 215, 0, 0.8);  /* Or - Unité */
+    
+    /* Effets de profondeur */
+    --shadow-soft: 0 5px 15px rgba(255, 215, 0, 0.1);
+    --shadow-medium: 0 8px 25px rgba(255, 215, 0, 0.2);
+    --shadow-strong: 0 12px 35px rgba(255, 215, 0, 0.3);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--color-pearl);
+    font-family: 'EB Garamond', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation et Portails */
+.sacred-circle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portal {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--color-pearl);
+    transition: all var(--transition-medium);
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--color-gold);
+    box-shadow: var(--shadow-soft);
+}
+
+.portal:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-strong);
+}
+
+.portal .number {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2rem;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+}
+
+.portal i {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    margin: 0.5rem 0;
+    transition: all var(--transition-fast);
+}
+
+.portal:hover i {
+    transform: rotate(360deg);
+}
+
+.portal .label {
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--transition-medium);
+}
+
+.portal:hover .label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Cartes de contenu */
+.wisdom-card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--color-gold);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1rem;
+    box-shadow: var(--shadow-medium);
+    transition: all var(--transition-medium);
+}
+
+.wisdom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+}
+
+/* Animations */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px var(--color-gold); }
+    50% { box-shadow: 0 0 20px var(--color-gold); }
+    100% { box-shadow: 0 0 5px var(--color-gold); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sacred-circle {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .portal {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .portal .number {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sacred-circle {
+        grid-template-columns: 1fr;
+    }
 }
 
 * {
@@ -61,76 +192,11 @@ body {
     text-align: center;
 }
 
-.sacred-circle {
-    width: 100%;
-    max-width: 200px;
-    margin: 0.5rem auto;
-    position: relative;
-}
-
 .circle-menu {
     position: relative;
     width: 100%;
     padding-bottom: 30%;
     margin: 0 auto;
-}
-
-.portal {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    transform-origin: center;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 50%;
-    border: 2px solid var(--color-gold);
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-}
-
-.portal .number {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.8rem;
-    color: var(--color-gold);
-    margin-bottom: 0.25rem;
-    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
-}
-
-.portal .icon {
-    font-size: 1.5rem;
-    color: var(--color-gold);
-    margin: 0.25rem 0;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-}
-
-.portal .label {
-    font-size: 0.8rem;
-    color: var(--color-pearl);
-    text-align: center;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-}
-
-.portal:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
-    z-index: 10;
-}
-
-.portal:hover .label {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.portal:hover .icon {
-    opacity: 1;
-    transform: scale(1.2);
 }
 
 /* Positionnement des portes en cercle - ajustement des positions */
@@ -402,31 +468,6 @@ footer {
 .copyright {
     color: var(--color-pearl);
     font-size: 0.9rem;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .sacred-circle {
-        transform: scale(0.8);
-    }
-
-    .portal {
-        width: 60px;
-        height: 60px;
-    }
-
-    .portal .number {
-        font-size: 1.5rem;
-    }
-
-    .portal .label {
-        font-size: 0.7rem;
-    }
-
-    .footer-nav {
-        flex-direction: column;
-        gap: 1rem;
-    }
 }
 
 /* Animations */

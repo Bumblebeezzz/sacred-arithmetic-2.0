@@ -38,6 +38,34 @@ def porte1():
 def porte2():
     return render_template('porte2_dualite.html')
 
+@app.route('/porte3')
+def porte3():
+    return render_template('porte3_trinite.html')
+
+@app.route('/porte4')
+def porte4():
+    return render_template('porte4_matiere.html')
+
+@app.route('/porte5')
+def porte5():
+    return render_template('porte5_quintessence.html')
+
+@app.route('/porte6')
+def porte6():
+    return render_template('porte6_harmonie.html')
+
+@app.route('/porte7')
+def porte7():
+    return render_template('porte7_sagesse.html')
+
+@app.route('/porte8')
+def porte8():
+    return render_template('porte8_infini.html')
+
+@app.route('/porte9')
+def porte9():
+    return render_template('porte9_unite.html')
+
 @app.route('/arithmetique-sacree')
 def arithmetique_sacree():
     return render_template('arithmetique_sacree.html')
