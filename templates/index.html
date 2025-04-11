@@ -4,86 +4,120 @@
 
 {% block content %}
 <div class="container">
-    <header class="main-header">
-        <h1 class="site-title">Arithmétique Sacrée</h1>
-        <p class="site-subtitle">Explorer les mystères des nombres et leur relation avec l'univers</p>
-    </header>
+    <div class="main-header">
+        <div class="title-container">
+            <p class="site-subtitle">Explorer les mystères des nombres et leur relation avec l'univers</p>
+            <p class="welcome-text">Bienvenue dans ce voyage initiatique à travers les nombres sacrés. Chaque porte que vous franchirez vous révélera une facette de la sagesse universelle, où les nombres deviennent les clés de compréhension de l'ordre cosmique.</p>
+        </div>
+    </div>
+
+    <div class="sacred-introduction">
+        <div class="introduction-content">
+            <p>Les neuf portes qui s'offrent à vous représentent les neuf nombres fondamentaux de l'arithmétique sacrée. Chacune d'entre elles est une invitation à explorer une dimension particulière de la réalité, où les nombres ne sont plus de simples quantités, mais des principes vivants qui structurent l'univers.</p>
+            <p>De l'Unité primordiale à l'Infini, en passant par la Dualité et la Trinité, chaque nombre porte en lui une sagesse millénaire. Laissez-vous guider par leur symbolisme et découvrez comment ils s'entrelacent pour former la trame de la création.</p>
+        </div>
+    </div>
 
     <section class="sacred-doors">
         <div class="portal-grid">
-            <a href="{{ url_for('porte1') }}" class="portal-square">
+            <a href="{{ url_for('porte1') }}" class="portal-square portal-1">
                 <div class="portal-icon">
-                    <i class="fas fa-circle"></i>
+                    <svg viewBox="0 0 100 100" class="polygram">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="4" fill="currentColor"/>
+                    </svg>
                 </div>
                 <div class="portal-number">1</div>
-                <div class="portal-title">ORIGINE</div>
+                <div class="portal-title">CONSCIENCE</div>
             </a>
             
-            <a href="{{ url_for('porte2') }}" class="portal-square">
+            <a href="{{ url_for('porte2') }}" class="portal-square portal-2">
                 <div class="portal-icon">
-                    <i class="fas fa-minus"></i>
+                    <svg viewBox="0 0 100 100" class="polygram">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <line x1="20" y1="50" x2="80" y2="50" stroke="currentColor" stroke-width="2.5"/>
+                    </svg>
                 </div>
                 <div class="portal-number">2</div>
-                <div class="portal-title">DUALITÉ</div>
+                <div class="portal-title">ÉQUIVALENCE</div>
             </a>
             
-            <a href="{{ url_for('porte3') }}" class="portal-square">
+            <a href="{{ url_for('porte3') }}" class="portal-square portal-3">
                 <div class="portal-icon">
-                    <i class="fas fa-triangle"></i>
+                    <svg viewBox="0 0 100 100" class="polygram">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <polygon points="50,20 80,70 20,70" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                    </svg>
                 </div>
                 <div class="portal-number">3</div>
-                <div class="portal-title">TRINITÉ</div>
+                <div class="portal-title">OSCILLATION</div>
             </a>
             
-            <a href="{{ url_for('porte4') }}" class="portal-square">
+            <a href="{{ url_for('porte4') }}" class="portal-square portal-4">
                 <div class="portal-icon">
-                    <i class="fas fa-square"></i>
+                    <svg viewBox="0 0 100 100" class="polygram">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <rect x="25" y="25" width="50" height="50" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                    </svg>
                 </div>
                 <div class="portal-number">4</div>
-                <div class="portal-title">MATIÈRE</div>
+                <div class="portal-title">POLARITÉ</div>
             </a>
             
-            <a href="{{ url_for('porte5') }}" class="portal-square">
+            <a href="{{ url_for('porte5') }}" class="portal-square portal-5">
                 <div class="portal-icon">
-                    <i class="fas fa-star"></i>
+                    <svg viewBox="0 0 100 100" class="polygram">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M50,15 L61.8,40.9 L94.3,40.9 L67.6,60.5 L79.4,85 L50,71.8 L20.6,85 L32.4,60.5 L5.7,40.9 L38.2,40.9 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                    </svg>
                 </div>
                 <div class="portal-number">5</div>
-                <div class="portal-title">QUINTESSENCE</div>
+                <div class="portal-title">RYTHME</div>
             </a>
             
-            <a href="{{ url_for('porte6') }}" class="portal-square">
+            <a href="{{ url_for('porte6') }}" class="portal-square portal-6">
                 <div class="portal-icon">
-                    <div class="hexagram-symbol">
-                        <div class="triangle-up"></div>
-                        <div class="triangle-down"></div>
-                    </div>
+                    <svg viewBox="0 0 100 100" class="polygram">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M50,15 L85,67 L15,67 Z M50,85 L15,33 L85,33 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                    </svg>
                 </div>
                 <div class="portal-number">6</div>
-                <div class="portal-title">HARMONIE</div>
+                <div class="portal-title">CAUSALITÉ</div>
             </a>
             
-            <a href="{{ url_for('porte7') }}" class="portal-square">
+            <a href="{{ url_for('porte7') }}" class="portal-square portal-7">
                 <div class="portal-icon">
-                    <i class="fas fa-crown"></i>
+                    <svg viewBox="0 0 100 100" class="polygram">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M50,10 L73.5,20.5 L87,45 L80,72 L57,87 L43,87 L20,72 L13,45 L26.5,20.5 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                    </svg>
                 </div>
                 <div class="portal-number">7</div>
-                <div class="portal-title">SAGESSE</div>
+                <div class="portal-title">ORIENTATION</div>
             </a>
             
-            <a href="{{ url_for('porte8') }}" class="portal-square">
+            <a href="{{ url_for('porte8') }}" class="portal-square portal-8">
                 <div class="portal-icon">
-                    <i class="fas fa-infinity"></i>
+                    <svg viewBox="0 0 100 100" class="polygram">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <rect x="30" y="30" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.5" transform="rotate(45, 50, 50)"/>
+                        <rect x="30" y="30" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                    </svg>
                 </div>
                 <div class="portal-number">8</div>
-                <div class="portal-title">INFINI</div>
+                <div class="portal-title">ÉQUILIBRE</div>
             </a>
             
-            <a href="{{ url_for('porte9') }}" class="portal-square">
+            <a href="{{ url_for('porte9') }}" class="portal-square portal-center">
                 <div class="portal-icon">
-                    <i class="fas fa-circle"></i>
+                    <svg viewBox="0 0 100 100" class="polygram">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M50,10 L67,15 L80,30 L85,50 L80,70 L67,85 L50,90 L33,85 L20,70 L15,50 L20,30 L33,15 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                    </svg>
                 </div>
                 <div class="portal-number">9</div>
-                <div class="portal-title">UNITÉ</div>
+                <div class="portal-title">DIVIN</div>
             </a>
         </div>
     </section>
@@ -128,37 +162,58 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .main-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
 }
 
-.site-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 3.5rem;
-    color: var(--color-gold);
-    margin-bottom: 1rem;
-    text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+.title-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 .site-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.welcome-text {
+    font-family: 'EB Garamond', serif;
     font-size: 1.2rem;
     color: var(--color-pearl);
     opacity: 0.9;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    font-style: italic;
 }
 
 .sacred-doors {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .portal-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 2rem;
-    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    position: relative;
 }
 
 .portal-square {
@@ -171,6 +226,62 @@
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.portal-center {
+    grid-column: 2;
+    grid-row: 2;
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.portal-1 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.portal-2 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.portal-3 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.portal-4 {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.portal-5 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.portal-6 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.portal-7 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.portal-8 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.portal-center:hover {
+    transform: scale(1.15) translateY(-5px);
 }
 
 .portal-square::before {
@@ -190,28 +301,60 @@
 }
 
 .portal-square:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.05);
     box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
 }
 
 .portal-icon {
-    font-size: 3rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.polygram {
+    width: 75%;
+    height: 75%;
     color: var(--color-gold);
-    margin-bottom: 1rem;
+    transition: all 0.6s ease;
+    opacity: 0.9;
+}
+
+.portal-square:hover .polygram {
+    transform: scale(1.1) rotate(0deg);
+    color: var(--color-gold-light);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+}
+
+.portal-center .polygram {
+    width: 85%;
+    height: 85%;
+    opacity: 1;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.2));
+}
+
+.portal-center:hover .polygram {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
 }
 
 .portal-number {
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--color-pearl);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .portal-title {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--color-pearl);
     opacity: 0.9;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .main-sections {
@@ -220,8 +363,10 @@
 
 .section-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .section-card {
@@ -230,10 +375,12 @@
     background: rgba(0, 0, 0, 0.6);
     border: 2px solid var(--color-gold);
     border-radius: 12px;
-    padding: 2rem;
+    padding: 1.5rem;
     transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .section-card::before {
@@ -259,12 +406,10 @@
 
 .card-content {
     text-align: center;
-    position: relative;
-    z-index: 1;
 }
 
 .card-content i {
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--color-gold);
     margin-bottom: 1rem;
 }
@@ -272,13 +417,19 @@
 .card-content h2 {
     font-family: 'Cinzel Decorative', cursive;
     color: var(--color-gold);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-content p {
     color: var(--color-pearl);
     opacity: 0.9;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 .sacred-quote {
@@ -287,45 +438,82 @@
     padding: 3rem;
     background: rgba(255, 215, 0, 0.05);
     border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
 }
 
 blockquote {
     font-family: 'EB Garamond', serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--color-gold);
     font-style: italic;
     margin: 0;
+    line-height: 1.6;
 }
 
 cite {
     display: block;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     color: var(--color-pearl);
-    font-size: 1rem;
+    font-size: 0.9rem;
     opacity: 0.8;
 }
 
 @media (max-width: 768px) {
-    .site-title {
-        font-size: 2.5rem;
-    }
-
     .portal-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
     }
-
+    
+    .section-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .portal-square {
-        width: 80px;
-        height: 120px;
+        padding: 1.5rem;
     }
+    
+    .portal-center {
+        transform: scale(1.05);
+    }
+}
 
-    .portal-icon {
-        font-size: 1.5rem;
+@media (max-width: 480px) {
+    .portal-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
     }
+    
+    .portal-square {
+        padding: 1rem;
+    }
+    
+    .portal-center {
+        transform: scale(1.02);
+    }
+}
 
-    .portal-number {
-        font-size: 1.5rem;
-    }
+.sacred-introduction {
+    margin: 4rem 0;
+    padding: 0 2rem;
+}
+
+.introduction-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.introduction-content p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--color-pearl);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.introduction-content p:last-child {
+    margin-bottom: 0;
 }
 </style>
 {% endblock %}

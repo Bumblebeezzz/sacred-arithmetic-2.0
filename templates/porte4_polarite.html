@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 
-{% block title %}Porte 4 - Matière{% endblock %}
+{% block title %}Porte 4 - Polarité{% endblock %}
 
 {% block content %}
-<div class="portal-page matter-portal">
+<div class="portal-page portal-4">
     <header class="portal-header">
-        <h1>La Matière</h1>
         <div class="portal-symbol">
             <i class="fas fa-square"></i>
             <span class="portal-number">4</span>
         </div>
+        <p class="subtitle">La Polarité, principe d'opposition et d'équilibre</p>
     </header>
 
     <section class="portal-content">
         <div class="wisdom-container">
             <div class="wisdom-card">
-                <h2>Le Carré Parfait</h2>
-                <p>Le nombre 4 représente la stabilité, la fondation et la manifestation dans le monde matériel.</p>
+                <h2>Le Carré de Polarité</h2>
+                <p>Le nombre 4 représente l'équilibre parfait entre les forces opposées, créant une stabilité dynamique dans l'univers.</p>
                 <div class="sacred-geometry">
                     <div class="square-container">
                         <div class="square" id="square1"></div>
@@ -28,47 +28,47 @@
             </div>
 
             <div class="wisdom-card">
-                <h2>Les Quatre Éléments</h2>
+                <h2>Les Quatre Pôles</h2>
                 <div class="elements-grid">
-                    <div class="element" data-element="feu">
-                        <i class="fas fa-fire"></i>
-                        <span>Feu</span>
+                    <div class="element" data-element="positif">
+                        <i class="fas fa-plus"></i>
+                        <span>Positif</span>
                     </div>
-                    <div class="element" data-element="air">
-                        <i class="fas fa-wind"></i>
-                        <span>Air</span>
+                    <div class="element" data-element="negatif">
+                        <i class="fas fa-minus"></i>
+                        <span>Négatif</span>
                     </div>
-                    <div class="element" data-element="eau">
-                        <i class="fas fa-water"></i>
-                        <span>Eau</span>
+                    <div class="element" data-element="actif">
+                        <i class="fas fa-bolt"></i>
+                        <span>Actif</span>
                     </div>
-                    <div class="element" data-element="terre">
-                        <i class="fas fa-mountain"></i>
-                        <span>Terre</span>
+                    <div class="element" data-element="passif">
+                        <i class="fas fa-pause"></i>
+                        <span>Passif</span>
                     </div>
                 </div>
             </div>
 
             <div class="wisdom-card interactive">
-                <h2>Explorer les Dimensions</h2>
+                <h2>Explorer les Polarités</h2>
                 <div class="dimension-explorer">
-                    <div class="dimension" id="dim1">Point</div>
-                    <div class="dimension" id="dim2">Ligne</div>
-                    <div class="dimension" id="dim3">Surface</div>
-                    <div class="dimension" id="dim4">Volume</div>
+                    <div class="dimension" id="dim1">Lumière</div>
+                    <div class="dimension" id="dim2">Ombre</div>
+                    <div class="dimension" id="dim3">Chaud</div>
+                    <div class="dimension" id="dim4">Froid</div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="meditation-section">
-        <h2>Méditation sur le Quatre</h2>
-        <p>Explorez la stabilité et l'ancrage à travers les quatre directions.</p>
+        <h2>Méditation sur la Polarité</h2>
+        <p>Explorez l'équilibre entre les forces opposées qui animent l'univers.</p>
         <div class="compass-meditation">
-            <div class="compass-point north">Nord</div>
-            <div class="compass-point east">Est</div>
-            <div class="compass-point south">Sud</div>
-            <div class="compass-point west">Ouest</div>
+            <div class="compass-point north">Positif</div>
+            <div class="compass-point east">Actif</div>
+            <div class="compass-point south">Négatif</div>
+            <div class="compass-point west">Passif</div>
             <button id="startMeditation">Commencer la Méditation</button>
             <div id="meditationTimer">04:44</div>
         </div>
@@ -253,20 +253,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Méditation
     document.getElementById('startMeditation').addEventListener('click', function() {
-        let time = 284; // 4:44 en secondes
-        this.disabled = true;
+        const timer = document.getElementById('meditationTimer');
+        let timeLeft = 4 * 60 + 44; // 4:44 minutes
+        
+        if (this.textContent === 'Arrêter') {
+            clearInterval(meditationInterval);
+            this.textContent = 'Commencer la Méditation';
+            timer.textContent = '04:44';
+            return;
+        }
+        
+        this.textContent = 'Arrêter';
         
         meditationInterval = setInterval(() => {
-            const minutes = Math.floor(time / 60);
-            const seconds = time % 60;
-            document.getElementById('meditationTimer').textContent = 
-                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
             
-            if (time === 0) {
+            timer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
                 clearInterval(meditationInterval);
-                this.disabled = false;
+                this.textContent = 'Commencer la Méditation';
             }
-            time--;
+            
+            timeLeft--;
         }, 1000);
     });
 });

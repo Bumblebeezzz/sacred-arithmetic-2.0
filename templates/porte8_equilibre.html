@@ -1,56 +1,56 @@
 {% extends "base.html" %}
 
-{% block title %}Porte 7 - Sagesse{% endblock %}
+{% block title %}Porte 8 - Équilibre{% endblock %}
 
 {% block content %}
-<div class="portal-page portal-7">
+<div class="portal-page portal-8">
     <div class="portal-decoration"></div>
     <header class="portal-header">
-        <h1>La Sagesse</h1>
         <div class="portal-symbol">
-            <i class="fas fa-crown"></i>
-            <span class="portal-number">7</span>
+            <i class="fas fa-balance-scale"></i>
+            <span class="portal-number">8</span>
         </div>
-        <p class="subtitle">Le Sept, nombre de la sagesse divine</p>
+        <p class="subtitle">L'Équilibre, principe d'harmonie universelle</p>
     </header>
 
     <div class="portal-content">
         <div class="wisdom-card">
-            <h2>L'Enseignement de la Sagesse</h2>
-            <p>Le Sept représente la sagesse divine, la connaissance profonde et la compréhension des mystères de l'univers. C'est le nombre de la perfection spirituelle.</p>
+            <h2>L'Enseignement de l'Équilibre</h2>
+            <p>Le Huit représente le principe d'équilibre parfait dans l'univers. C'est le nombre qui symbolise l'harmonie entre toutes les forces, créant une stabilité dynamique et une symétrie divine.</p>
             
             <div class="principles">
-                <h3>Les Sept Piliers de la Sagesse</h3>
+                <h3>Les Huit Piliers de l'Équilibre</h3>
                 <ul>
-                    <li>Connaissance</li>
-                    <li>Équilibre</li>
-                    <li>Cycles</li>
-                    <li>Intuition</li>
-                    <li>Illumination</li>
-                    <li>Pratique</li>
-                    <li>Transcendance</li>
+                    <li>Équilibre Intérieur</li>
+                    <li>Harmonie Extérieure</li>
+                    <li>Stabilité Dynamique</li>
+                    <li>Symétrie Divine</li>
+                    <li>Équilibre des Forces</li>
+                    <li>Harmonie des Éléments</li>
+                    <li>Stabilité des Cycles</li>
+                    <li>Symétrie Cosmique</li>
                 </ul>
             </div>
         </div>
 
         <div class="wisdom-card">
-            <h2>L'Heptagramme</h2>
+            <h2>Le Double Carré d'Équilibre</h2>
             <div class="sacred-symbol">
-                <div class="heptagram-container">
-                    <div class="heptagram"></div>
-                    <div class="heptagram-overlay"></div>
+                <div class="double-square-container">
+                    <div class="square-outer"></div>
+                    <div class="square-inner"></div>
                 </div>
             </div>
-            <p>L'heptagramme symbolise les sept niveaux de conscience et les sept chakras, représentant l'ascension spirituelle.</p>
+            <p>Le double carré symbolise l'équilibre parfait entre les forces opposées, créant une harmonie stable et durable.</p>
         </div>
 
         <div class="wisdom-card">
-            <h2>Méditation sur la Sagesse</h2>
+            <h2>Méditation sur l'Équilibre</h2>
             <div class="meditation-section">
-                <p>Contemplez les sept niveaux de conscience et la sagesse divine.</p>
+                <p>Explorez l'équilibre parfait qui anime l'univers et votre être intérieur.</p>
                 <div class="meditation-timer">
                     <button id="startMeditation" class="start-meditation">Commencer la Méditation</button>
-                    <div id="timer" class="timer-display">07:07</div>
+                    <div id="timer" class="timer-display">08:08</div>
                 </div>
             </div>
         </div>
@@ -60,8 +60,8 @@
 
 {% block extra_css %}
 <style>
-.portal-7 {
-    background: linear-gradient(135deg, var(--portal-7), var(--color-black));
+.portal-8 {
+    background: linear-gradient(135deg, var(--portal-8), var(--color-black));
     padding: 2rem;
     min-height: 100vh;
     color: var(--color-gold);
@@ -80,7 +80,7 @@
 }
 
 .portal-number {
-    color: var(--portal-7);
+    color: var(--portal-8);
     font-size: 3rem;
     font-family: 'Cinzel Decorative', cursive;
     margin-left: 1rem;
@@ -100,46 +100,52 @@
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
 }
 
-.heptagram-container {
+.double-square-container {
     position: relative;
     width: 200px;
     height: 200px;
     margin: 2rem auto;
 }
 
-.heptagram {
+.square-outer {
     position: absolute;
     width: 100%;
     height: 100%;
-    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 90%, 25% 90%, 0% 60%, 10% 20%);
-    background: var(--color-gold);
+    border: 2px solid var(--color-gold);
+    transform: rotate(45deg);
     animation: rotate 20s linear infinite;
 }
 
-.heptagram-overlay {
+.square-inner {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 90%, 25% 90%, 0% 60%, 10% 20%);
-    background: rgba(0, 0, 0, 0.7);
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+    border: 2px solid var(--color-gold);
     animation: rotate 20s linear infinite reverse;
-    transform: rotate(51.43deg);
 }
 
 .principles ul {
     list-style: none;
     padding: 0;
     margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 }
 
 .principles li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--color-gold);
+    padding: 0.5rem;
+    border: 1px solid var(--color-gold);
+    border-radius: 5px;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .principles li:hover {
-    color: var(--color-gold);
+    background: rgba(255, 215, 0, 0.1);
+    transform: scale(1.05);
 }
 
 .meditation-section {
@@ -191,14 +197,14 @@ p {
 document.addEventListener('DOMContentLoaded', function() {
     const timer = document.getElementById('timer');
     const button = document.getElementById('startMeditation');
-    let timeLeft = 7 * 60 + 7; // 7:07 minutes
+    let timeLeft = 8 * 60 + 8; // 8:08 minutes
     let interval;
 
     button.addEventListener('click', function() {
         if (button.textContent === 'Arrêter') {
             clearInterval(interval);
             button.textContent = 'Commencer la Méditation';
-            timer.textContent = '07:07';
+            timer.textContent = '08:08';
             return;
         }
 

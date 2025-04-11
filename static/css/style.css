@@ -364,7 +364,7 @@ main {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 1rem;
 }
 
 .hero {
@@ -606,45 +606,35 @@ footer {
     animation: portalPulse 2s infinite;
 }
 
-/* Style du titre principal avec zone de détection */
+/* Styles du titre et du lien */
+.site-title-link {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: auto;
+}
+
 .site-title {
     font-family: 'Cinzel Decorative', cursive;
     font-size: 2.5rem;
     color: var(--color-gold);
     text-align: center;
-    margin: 1rem 0;
-    text-shadow: 0 0 20px var(--color-gold-glow);
-    animation: titleGlow 3s ease-in-out infinite;
+    margin: 0;
     padding: 0.5rem;
-    line-height: 1.2;
-    cursor: pointer;
-    position: relative;
 }
 
-/* Zone de menu dynamique */
-.portal-menu {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 999;
-    transition: all 0.5s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+.site-title:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 30px var(--color-gold-glow);
 }
 
-/* État ouvert du menu */
-.portal-menu.open {
-    top: 0;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
+/* Suppression des styles du menu déroulant */
+.portal-menu,
+.portal-menu .portal,
+.portal-menu.open,
+.portal-menu .portal[data-number],
+.portal-menu .close-menu {
+    display: none;
 }
 
 /* Styles spécifiques pour les portes 7, 8, 9 */
@@ -1968,4 +1958,160 @@ footer {
 .door-number,
 .door-label {
     display: none;
+}
+
+/* Styles du titre principal */
+header {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.site-title-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.site-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3.5rem;
+    color: var(--color-gold);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    letter-spacing: 2px;
+    line-height: 1.2;
+    margin: 0;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.site-title:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+}
+
+/* Styles du conteneur principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Styles de l'en-tête */
+.main-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.title-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    pointer-events: none;
+}
+
+.site-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    max-width: 600px;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+.welcome-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--color-pearl);
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+.sacred-introduction {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.introduction-content {
+    pointer-events: none;
+}
+
+.introduction-content p {
+    pointer-events: none;
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.section-card {
+    text-decoration: none;
+    color: var(--color-pearl);
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--color-gold);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.4s ease;
+    height: 100%;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.card-content {
+    pointer-events: none;
+}
+
+.card-content i,
+.card-content h2,
+.card-content p {
+    pointer-events: none;
+}
+
+.header-wrapper {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+
+.site-title-link {
+    text-decoration: none;
+    display: inline-block;
+    pointer-events: auto;
+    position: relative;
+    z-index: 10;
+}
+
+.site-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2.5rem;
+    color: var(--color-gold);
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
 }

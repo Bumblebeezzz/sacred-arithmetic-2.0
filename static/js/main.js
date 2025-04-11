@@ -1,45 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Animation du menu
-    const nav = document.querySelector('.main-nav');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll <= 0) {
-            nav.classList.remove('scroll-up');
-            return;
-        }
-        
-        if (currentScroll > lastScroll && !nav.classList.contains('scroll-down')) {
-            nav.classList.remove('scroll-up');
-            nav.classList.add('scroll-down');
-        } else if (currentScroll < lastScroll && nav.classList.contains('scroll-down')) {
-            nav.classList.remove('scroll-down');
-            nav.classList.add('scroll-up');
-        }
-        lastScroll = currentScroll;
-    });
-
-    // Gestion des tooltips
-    const tooltips = document.querySelectorAll('[data-tooltip]');
-    tooltips.forEach(tooltip => {
-        tooltip.addEventListener('mouseenter', function() {
-            const tooltipText = this.getAttribute('data-tooltip');
-            const tooltipElement = document.createElement('div');
-            tooltipElement.className = 'tooltip';
-            tooltipElement.textContent = tooltipText;
-            document.body.appendChild(tooltipElement);
-
-            const rect = this.getBoundingClientRect();
-            tooltipElement.style.top = `${rect.top - tooltipElement.offsetHeight - 10}px`;
-            tooltipElement.style.left = `${rect.left + (rect.width - tooltipElement.offsetWidth) / 2}px`;
+    // Empêcher toute redirection non désirée
+    const mainTitleLink = document.getElementById('main-title-link');
+    if (mainTitleLink) {
+        mainTitleLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = '/';
         });
-
-        tooltip.addEventListener('mouseleave', function() {
-            document.querySelector('.tooltip').remove();
-        });
-    });
+    }
 
     // Animation des cartes
     const cards = document.querySelectorAll('.card');
@@ -57,43 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     cards.forEach(card => {
         observer.observe(card);
-    });
-
-    // Gestion du menu des portails
-    const siteTitle = document.querySelector('.site-title');
-    const portalMenu = document.querySelector('.portal-menu');
-    const closeMenu = document.querySelector('.close-menu');
-    let menuTimeout;
-
-    // Ouvrir le menu au survol du titre
-    siteTitle.addEventListener('mouseenter', () => {
-        clearTimeout(menuTimeout);
-        portalMenu.classList.add('open');
-    });
-
-    // Gérer le survol du menu
-    portalMenu.addEventListener('mouseenter', () => {
-        clearTimeout(menuTimeout);
-    });
-
-    // Fermer le menu quand la souris quitte la zone
-    portalMenu.addEventListener('mouseleave', () => {
-        menuTimeout = setTimeout(() => {
-            portalMenu.classList.remove('open');
-        }, 300);
-    });
-
-    // Fermer le menu au clic
-    portalMenu.addEventListener('click', (e) => {
-        if (e.target === portalMenu || e.target.classList.contains('close-menu')) {
-            portalMenu.classList.remove('open');
-        }
-    });
-
-    // Animation séquentielle des portails
-    const portals = document.querySelectorAll('.portal-menu .portal');
-    portals.forEach((portal, index) => {
-        portal.style.setProperty('--portal-index', index);
     });
 });
 

@@ -32,39 +32,39 @@ def index():
 
 @app.route('/porte1')
 def porte1():
-    return render_template('porte1_origine.html')
+    return render_template('porte1_conscience.html')
 
 @app.route('/porte2')
 def porte2():
-    return render_template('porte2_dualite.html')
+    return render_template('porte2_equivalence.html')
 
 @app.route('/porte3')
 def porte3():
-    return render_template('porte3_trinite.html')
+    return render_template('porte3_oscillation.html')
 
 @app.route('/porte4')
 def porte4():
-    return render_template('porte4_matiere.html')
+    return render_template('porte4_polarite.html')
 
 @app.route('/porte5')
 def porte5():
-    return render_template('porte5_quintessence.html')
+    return render_template('porte5_rythme.html')
 
 @app.route('/porte6')
 def porte6():
-    return render_template('porte6_harmonie.html')
+    return render_template('porte6_causalite.html')
 
 @app.route('/porte7')
 def porte7():
-    return render_template('porte7.html')
+    return render_template('porte7_orientation.html')
 
 @app.route('/porte8')
 def porte8():
-    return render_template('porte8.html')
+    return render_template('porte8_equilibre.html')
 
 @app.route('/porte9')
 def porte9():
-    return render_template('porte9.html')
+    return render_template('porte9_divin.html')
 
 @app.route('/arithmetique-sacree')
 def arithmetique_sacree():

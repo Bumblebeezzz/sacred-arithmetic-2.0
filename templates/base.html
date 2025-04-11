@@ -8,62 +8,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/portals.css') }}">
+    <style>
+        header {
+            padding: 1rem 0;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 10;
+        }
+        .site-title-link {
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+            z-index: 10;
+        }
+        .site-title {
+            margin: 0;
+            padding: 0.5rem 0;
+            position: relative;
+            z-index: 10;
+            pointer-events: none;
+        }
+        main {
+            padding-top: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
     {% block extra_css %}{% endblock %}
 </head>
 <body>
     <header>
-        <h1 class="site-title">ARITHMÉTIQUE SACRÉE</h1>
-        
-        <!-- Menu des portails -->
-        <div class="portal-menu">
-            <div class="close-menu"><i class="fas fa-times"></i></div>
-            <div class="portal-grid">
-                <a href="{{ url_for('porte1') }}" class="portal" data-number="1">
-                    <div class="portal-icon"></div>
-                    <div class="portal-number">1</div>
-                    <div class="portal-title">Origine</div>
-                </a>
-                <a href="{{ url_for('porte2') }}" class="portal" data-number="2">
-                    <div class="portal-icon"></div>
-                    <div class="portal-number">2</div>
-                    <div class="portal-title">Dualité</div>
-                </a>
-                <a href="{{ url_for('porte3') }}" class="portal" data-number="3">
-                    <div class="portal-icon"></div>
-                    <div class="portal-number">3</div>
-                    <div class="portal-title">Trinité</div>
-                </a>
-                <a href="{{ url_for('porte4') }}" class="portal" data-number="4">
-                    <div class="portal-icon"></div>
-                    <div class="portal-number">4</div>
-                    <div class="portal-title">Matière</div>
-                </a>
-                <a href="{{ url_for('porte5') }}" class="portal" data-number="5">
-                    <div class="portal-icon"></div>
-                    <div class="portal-number">5</div>
-                    <div class="portal-title">Quintessence</div>
-                </a>
-                <a href="{{ url_for('porte6') }}" class="portal" data-number="6">
-                    <div class="portal-icon"></div>
-                    <div class="portal-number">6</div>
-                    <div class="portal-title">Harmonie</div>
-                </a>
-                <a href="{{ url_for('porte7') }}" class="portal" data-number="7">
-                    <div class="portal-icon"></div>
-                    <div class="portal-number">7</div>
-                    <div class="portal-title">Sagesse</div>
-                </a>
-                <a href="{{ url_for('porte8') }}" class="portal" data-number="8">
-                    <div class="portal-icon"></div>
-                    <div class="portal-number">8</div>
-                    <div class="portal-title">Infini</div>
-                </a>
-                <a href="{{ url_for('porte9') }}" class="portal" data-number="9">
-                    <div class="portal-icon"></div>
-                    <div class="portal-number">9</div>
-                    <div class="portal-title">Unité</div>
-                </a>
-            </div>
+        <div class="header-wrapper">
+            <a href="/" class="site-title-link">
+                <h1 class="site-title">ARITHMÉTIQUE SACRÉE</h1>
+            </a>
         </div>
     </header>
 

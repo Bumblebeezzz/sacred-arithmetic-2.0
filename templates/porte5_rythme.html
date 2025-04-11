@@ -1,46 +1,45 @@
 {% extends "base.html" %}
 
-{% block title %}Porte 5 - Quintessence{% endblock %}
+{% block title %}Porte 5 - Rythme{% endblock %}
 
 {% block content %}
 <div class="portal-page portal-5">
     <header class="portal-header">
-        <h1>La Quintessence</h1>
         <div class="portal-symbol">
             <i class="fas fa-star"></i>
             <span class="portal-number">5</span>
         </div>
-        <p class="subtitle">Le Cinq, essence subtile qui transcende les éléments</p>
+        <p class="subtitle">Le Rythme, principe de mouvement cyclique</p>
     </header>
 
     <div class="portal-content">
         <div class="wisdom-card">
-            <h2>L'Enseignement de la Quintessence</h2>
-            <p>Le Cinq représente l'éther, l'essence subtile qui transcende et unit les quatre éléments. C'est le principe de transformation et d'élévation spirituelle.</p>
+            <h2>L'Enseignement du Rythme</h2>
+            <p>Le Cinq représente le rythme fondamental qui anime l'univers, le mouvement cyclique qui crée l'harmonie et l'équilibre. C'est le principe qui donne vie à toute chose à travers des cycles naturels.</p>
             
             <div class="principles">
-                <h3>Principes de la Quintessence</h3>
+                <h3>Principes du Rythme</h3>
                 <ul>
-                    <li>Transcendance</li>
-                    <li>Transformation</li>
-                    <li>Harmonie des Éléments</li>
-                    <li>Élévation Spirituelle</li>
+                    <li>Cycles Naturels</li>
+                    <li>Mouvement Harmonieux</li>
+                    <li>Régularité Universelle</li>
+                    <li>Équilibre Dynamique</li>
                 </ul>
             </div>
         </div>
 
         <div class="wisdom-card">
-            <h2>Le Pentagramme</h2>
+            <h2>Le Pentagramme Rythmique</h2>
             <div class="sacred-symbol">
                 <div class="pentagram"></div>
             </div>
-            <p>Le pentagramme symbolise l'humain parfait, maître des éléments et en harmonie avec le cosmos.</p>
+            <p>Le pentagramme symbolise les cinq phases du cycle universel, créant un mouvement harmonieux et équilibré.</p>
         </div>
 
         <div class="wisdom-card">
-            <h2>Méditation sur la Quintessence</h2>
+            <h2>Méditation sur le Rythme</h2>
             <div class="meditation-section">
-                <p>Explorez l'essence subtile qui transcende la matière.</p>
+                <p>Explorez le rythme naturel qui anime votre être et l'univers.</p>
                 <div class="meditation-timer">
                     <button id="startMeditation" class="start-meditation">Commencer la Méditation</button>
                     <div id="timer" class="timer-display">05:55</div>
@@ -83,14 +82,14 @@
     animation: rotate 20s linear infinite reverse;
 }
 
-.senses-grid {
+.cycles-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin: 2rem 0;
 }
 
-.sense {
+.cycle {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,18 +100,18 @@
     transition: all 0.3s ease;
 }
 
-.sense i {
+.cycle i {
     font-size: 2rem;
     color: var(--color-gold);
     margin-bottom: 0.5rem;
 }
 
-.sense:hover {
+.cycle:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px var(--color-gold);
 }
 
-.elements-subtle {
+.rhythm-phases {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -120,7 +119,7 @@
     margin: 2rem 0;
 }
 
-.element-subtle {
+.phase {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -133,12 +132,12 @@
     transition: all 0.3s ease;
 }
 
-.element-symbol {
+.phase-symbol {
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
-.element-subtle:hover {
+.phase:hover {
     transform: scale(1.1) rotate(360deg);
     box-shadow: 0 0 20px var(--color-gold);
 }

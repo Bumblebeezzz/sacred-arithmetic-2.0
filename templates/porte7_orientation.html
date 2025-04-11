@@ -1,53 +1,55 @@
 {% extends "base.html" %}
 
-{% block title %}Porte 8 - Infini{% endblock %}
+{% block title %}Porte 7 - Orientation{% endblock %}
 
 {% block content %}
-<div class="portal-page portal-8">
+<div class="portal-page portal-7">
     <div class="portal-decoration"></div>
     <header class="portal-header">
-        <h1>L'Infini</h1>
         <div class="portal-symbol">
-            <i class="fas fa-infinity"></i>
-            <span class="portal-number">8</span>
+            <i class="fas fa-compass"></i>
+            <span class="portal-number">7</span>
         </div>
-        <p class="subtitle">Le Huit, symbole de l'éternité et de l'infini</p>
+        <p class="subtitle">L'Orientation, principe de direction</p>
     </header>
 
     <div class="portal-content">
         <div class="wisdom-card">
-            <h2>L'Enseignement de l'Infini</h2>
-            <p>Le Huit représente l'infini, l'éternité et le cycle sans fin. C'est le nombre de l'équilibre cosmique et de la transformation perpétuelle.</p>
+            <h2>L'Enseignement de l'Orientation</h2>
+            <p>Le Sept représente le principe de direction et d'orientation dans l'univers. C'est le nombre qui guide notre chemin et nous aide à trouver notre voie dans le grand schéma cosmique.</p>
             
             <div class="principles">
-                <h3>Les Dimensions de l'Infini</h3>
+                <h3>Les Sept Directions</h3>
                 <ul>
-                    <li>Séquences Infinies</li>
-                    <li>Dimensions Fractales</li>
-                    <li>Cycles Éternels</li>
-                    <li>Connexions Infinies</li>
+                    <li>Nord</li>
+                    <li>Sud</li>
+                    <li>Est</li>
+                    <li>Ouest</li>
+                    <li>Haut</li>
+                    <li>Bas</li>
+                    <li>Centre</li>
                 </ul>
             </div>
         </div>
 
         <div class="wisdom-card">
-            <h2>L'Octogramme</h2>
+            <h2>L'Heptagramme d'Orientation</h2>
             <div class="sacred-symbol">
-                <div class="octogram-container">
-                    <div class="octogram"></div>
-                    <div class="octogram-overlay"></div>
+                <div class="heptagram-container">
+                    <div class="heptagram"></div>
+                    <div class="heptagram-overlay"></div>
                 </div>
             </div>
-            <p>L'octogramme symbolise l'infini et l'éternité, représentant les huit directions de l'espace et du temps.</p>
+            <p>L'heptagramme symbolise les sept directions fondamentales qui structurent notre perception de l'espace et du temps.</p>
         </div>
 
         <div class="wisdom-card">
-            <h2>Méditation sur l'Infini</h2>
+            <h2>Méditation sur l'Orientation</h2>
             <div class="meditation-section">
-                <p>Contemplez l'infini et l'éternité à travers le symbole du huit.</p>
+                <p>Explorez les sept directions et trouvez votre chemin dans l'univers.</p>
                 <div class="meditation-timer">
                     <button id="startMeditation" class="start-meditation">Commencer la Méditation</button>
-                    <div id="timer" class="timer-display">08:08</div>
+                    <div id="timer" class="timer-display">07:07</div>
                 </div>
             </div>
         </div>
@@ -57,8 +59,11 @@
 
 {% block extra_css %}
 <style>
-.portal-8 {
-    background: linear-gradient(135deg, var(--portal-8), var(--color-black));
+.portal-7 {
+    background: linear-gradient(135deg, var(--portal-7), var(--color-black));
+    padding: 2rem;
+    min-height: 100vh;
+    color: var(--color-gold);
 }
 
 .portal-header {
@@ -74,7 +79,7 @@
 }
 
 .portal-number {
-    color: var(--portal-8);
+    color: var(--portal-7);
     font-size: 3rem;
     font-family: 'Cinzel Decorative', cursive;
     margin-left: 1rem;
@@ -94,30 +99,30 @@
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
 }
 
-.octogram-container {
+.heptagram-container {
     position: relative;
     width: 200px;
     height: 200px;
     margin: 2rem auto;
 }
 
-.octogram {
+.heptagram {
     position: absolute;
     width: 100%;
     height: 100%;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 90%, 25% 90%, 0% 60%, 10% 20%);
     background: var(--color-gold);
     animation: rotate 20s linear infinite;
 }
 
-.octogram-overlay {
+.heptagram-overlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 90%, 25% 90%, 0% 60%, 10% 20%);
     background: rgba(0, 0, 0, 0.7);
     animation: rotate 20s linear infinite reverse;
-    transform: rotate(45deg);
+    transform: rotate(51.43deg);
 }
 
 .principles ul {
@@ -185,14 +190,14 @@ p {
 document.addEventListener('DOMContentLoaded', function() {
     const timer = document.getElementById('timer');
     const button = document.getElementById('startMeditation');
-    let timeLeft = 8 * 60 + 8; // 8:08 minutes
+    let timeLeft = 7 * 60 + 7; // 7:07 minutes
     let interval;
 
     button.addEventListener('click', function() {
         if (button.textContent === 'Arrêter') {
             clearInterval(interval);
             button.textContent = 'Commencer la Méditation';
-            timer.textContent = '08:08';
+            timer.textContent = '07:07';
             return;
         }
 

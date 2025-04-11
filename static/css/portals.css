@@ -21,8 +21,9 @@
 
 /* Styles de base pour toutes les portes */
 .portal-page {
+    padding: 1rem;
     min-height: 100vh;
-    padding: 2rem;
+    color: var(--color-gold);
     position: relative;
     overflow: hidden;
 }
@@ -45,26 +46,25 @@
 /* En-tête de la porte */
 .portal-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
     border-bottom: 2px solid var(--color-gold);
-    padding-bottom: 2rem;
     position: relative;
     z-index: 1;
 }
 
 .portal-symbol {
     font-size: 2.5rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     color: var(--color-gold);
 }
 
 .portal-number {
-    font-size: 2rem !important;
+    font-size: 3rem;
     font-family: 'Cinzel Decorative', cursive;
+    margin-left: 1rem;
     color: var(--color-gold) !important;
     line-height: 1;
-    margin: 0.25rem 0;
-    text-align: center;
 }
 
 /* Styles pour les menus déroulants */
@@ -89,6 +89,9 @@
 
 /* Styles pour les titres et sous-titres */
 .subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
     color: var(--color-gold);
 }
 
@@ -96,25 +99,32 @@
 .wisdom-card {
     background: rgba(0, 0, 0, 0.7);
     border: 2px solid var(--color-gold);
-    border-radius: var(--portal-border-radius);
-    padding: var(--portal-card-padding);
-    margin-bottom: var(--portal-margin);
-    transition: var(--portal-transition);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
     position: relative;
     z-index: 1;
 }
 
-.wisdom-card:hover {
-    transform: var(--portal-hover-transform);
-    box-shadow: var(--portal-shadow);
+.wisdom-card h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--color-gold);
+    margin: 0 0 1rem 0;
+}
+
+.wisdom-card p {
+    color: var(--color-pearl);
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
 /* Symboles sacrés */
 .sacred-symbol {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 2rem auto;
+    font-size: 4rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--color-gold);
 }
 
 /* Conteneurs de symboles */
@@ -156,48 +166,61 @@
 }
 
 /* Principes et listes */
+.principles {
+    margin-top: 1rem;
+}
+
+.principles h3 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+}
+
 .principles ul {
     list-style: none;
     padding: 0;
-    margin-top: 1rem;
+    margin: 0;
 }
 
 .principles li {
     padding: 0.5rem 0;
     border-bottom: 1px solid var(--color-gold);
-    transition: var(--portal-transition);
+    transition: all 0.3s ease;
+}
+
+.principles li:last-child {
+    border-bottom: none;
 }
 
 .principles li:hover {
-    transform: translateX(10px);
+    color: var(--color-gold);
+    padding-left: 0.5rem;
 }
 
 /* Section méditation */
 .meditation-section {
     text-align: center;
-    padding: 1rem;
+}
+
+.meditation-timer {
+    margin-top: 1rem;
 }
 
 .start-meditation {
     background: var(--color-gold);
     color: var(--color-black);
     border: none;
-    padding: 1rem 2rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 30px;
     cursor: pointer;
-    transition: var(--portal-transition);
+    transition: all 0.3s ease;
     font-family: 'Cinzel Decorative', cursive;
-    margin: 1rem 0;
-}
-
-.start-meditation:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px var(--color-gold);
+    margin: 0.5rem 0;
 }
 
 .timer-display {
-    font-size: 2.5rem;
-    margin: 1rem 0;
+    font-size: 2rem;
+    margin: 0.5rem 0;
     font-family: 'Cinzel Decorative', cursive;
 }
 
@@ -345,4 +368,10 @@ p {
 @keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
+
+.portal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
 } 

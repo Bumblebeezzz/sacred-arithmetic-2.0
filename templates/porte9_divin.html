@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+
+{% block title %}Porte 9 - Divin{% endblock %}
+
+{% block content %}
+<div class="portal-page portal-9">
+    <div class="portal-decoration"></div>
+    <header class="portal-header">
+        <div class="portal-symbol">
+            <i class="fas fa-star-of-david"></i>
+            <span class="portal-number">9</span>
+        </div>
+        <p class="subtitle">Le Divin, essence de la perfection</p>
+    </header>
+
+    <div class="portal-content">
+        <div class="wisdom-card">
+            <h2>L'Enseignement du Divin</h2>
+            <p>Le Neuf représente l'essence divine, la perfection absolue et l'accomplissement ultime. C'est le nombre qui symbolise la complétude et l'unité avec le divin.</p>
+            
+            <div class="principles">
+                <h3>Les Neuf Attributs du Divin</h3>
+                <ul>
+                    <li>Perfection Absolue</li>
+                    <li>Amour Universel</li>
+                    <li>Sagesse Infinie</li>
+                    <li>Puissance Créatrice</li>
+                    <li>Harmonie Divine</li>
+                    <li>Éternité</li>
+                    <li>Omniscience</li>
+                    <li>Omnipotence</li>
+                    <li>Omniprésence</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wisdom-card">
+            <h2>Le Triple Triangle Divin</h2>
+            <div class="sacred-symbol">
+                <div class="triple-triangle-container">
+                    <div class="triangle-1"></div>
+                    <div class="triangle-2"></div>
+                    <div class="triangle-3"></div>
+                </div>
+            </div>
+            <p>Le triple triangle symbolise la manifestation du divin à travers les trois mondes : physique, mental et spirituel.</p>
+        </div>
+
+        <div class="wisdom-card">
+            <h2>Méditation sur le Divin</h2>
+            <div class="meditation-section">
+                <p>Explorez la présence divine qui habite en vous et dans l'univers.</p>
+                <div class="meditation-timer">
+                    <button id="startMeditation" class="start-meditation">Commencer la Méditation</button>
+                    <div id="timer" class="timer-display">09:09</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.portal-9 {
+    background: linear-gradient(135deg, var(--portal-9), var(--color-black));
+    padding: 2rem;
+    min-height: 100vh;
+    color: var(--color-gold);
+}
+
+.portal-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid var(--color-gold);
+    padding-bottom: 2rem;
+}
+
+.portal-symbol {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+
+.portal-number {
+    color: var(--portal-9);
+    font-size: 3rem;
+    font-family: 'Cinzel Decorative', cursive;
+    margin-left: 1rem;
+}
+
+.wisdom-card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--color-gold);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.wisdom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+.triple-triangle-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 2rem auto;
+}
+
+.triangle-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border: 2px solid var(--color-gold);
+    animation: rotate 20s linear infinite;
+}
+
+.triangle-2 {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border: 2px solid var(--color-gold);
+    animation: rotate 20s linear infinite reverse;
+}
+
+.triangle-3 {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border: 2px solid var(--color-gold);
+    animation: rotate 20s linear infinite;
+}
+
+.principles ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.principles li {
+    padding: 0.5rem;
+    border: 1px solid var(--color-gold);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.principles li:hover {
+    background: rgba(255, 215, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.meditation-section {
+    text-align: center;
+    padding: 1rem;
+}
+
+.start-meditation {
+    background: var(--color-gold);
+    color: var(--color-black);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel Decorative', cursive;
+    margin: 1rem 0;
+}
+
+.start-meditation:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--color-gold);
+}
+
+.timer-display {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+p {
+    color: #fff;
+    line-height: 1.6;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const timer = document.getElementById('timer');
+    const button = document.getElementById('startMeditation');
+    let timeLeft = 9 * 60 + 9; // 9:09 minutes
+    let interval;
+
+    button.addEventListener('click', function() {
+        if (button.textContent === 'Arrêter') {
+            clearInterval(interval);
+            button.textContent = 'Commencer la Méditation';
+            timer.textContent = '09:09';
+            return;
+        }
+
+        button.textContent = 'Arrêter';
+        
+        interval = setInterval(() => {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            
+            timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
+                clearInterval(interval);
+                button.textContent = 'Commencer la Méditation';
+            }
+            
+            timeLeft--;
+        }, 1000);
+    });
+});
+</script>
+{% endblock %}
