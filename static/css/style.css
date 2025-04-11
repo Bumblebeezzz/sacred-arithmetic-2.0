@@ -621,7 +621,19 @@ footer {
     position: relative;
 }
 
-/* Suppression des styles du menu déroulant */
+/* Styles pour le titre et le lien */
+.site-title-link {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.site-title-link:hover {
+    transform: scale(1.02);
+}
+
+/* Suppression du menu déroulant */
 .portal-menu {
     display: none;
 }
@@ -1634,34 +1646,4 @@ footer {
     .timer-display {
         font-size: 2rem;
     }
-}
-
-/* Styles pour le titre et le lien */
-.site-title-link {
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.site-title-link:hover {
-    transform: scale(1.02);
-}
-
-.site-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 2.5rem;
-    color: var(--color-gold);
-    text-align: center;
-    margin: 1rem 0;
-    text-shadow: 0 0 20px var(--color-gold-glow);
-    animation: titleGlow 3s ease-in-out infinite;
-    padding: 0.5rem;
-    line-height: 1.2;
-}
-
-@keyframes titleGlow {
-    0% { text-shadow: 0 0 20px var(--color-gold-glow); }
-    50% { text-shadow: 0 0 30px var(--color-gold-glow); }
-    100% { text-shadow: 0 0 20px var(--color-gold-glow); }
 }
