@@ -86,89 +86,6 @@
                 <div class="portal-title">UNITÉ</div>
             </a>
         </div>
-        <div class="doors-grid">
-            <a href="{{ url_for('porte1') }}" class="door-link">
-                <div class="door">
-                    <div class="door-frame">
-                        <i class="fas fa-seedling"></i>
-                        <div class="door-number">1</div>
-                        <div class="door-label">Origine</div>
-                    </div>
-                </div>
-            </a>
-            <a href="{{ url_for('porte2') }}" class="door-link">
-                <div class="door">
-                    <div class="door-frame">
-                        <i class="fas fa-yin-yang"></i>
-                        <div class="door-number">2</div>
-                        <div class="door-label">Dualité</div>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="door-link">
-                <div class="door">
-                    <div class="door-frame">
-                        <i class="fas fa-triangle"></i>
-                        <div class="door-number">3</div>
-                        <div class="door-label">Trinité</div>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="door-link">
-                <div class="door">
-                    <div class="door-frame">
-                        <i class="fas fa-square"></i>
-                        <div class="door-number">4</div>
-                        <div class="door-label">Matière</div>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="door-link">
-                <div class="door">
-                    <div class="door-frame">
-                        <i class="fas fa-star"></i>
-                        <div class="door-number">5</div>
-                        <div class="door-label">Quintessence</div>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="door-link">
-                <div class="door">
-                    <div class="door-frame">
-                        <i class="fas fa-hexagram"></i>
-                        <div class="door-number">6</div>
-                        <div class="door-label">Harmonie</div>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="door-link">
-                <div class="door">
-                    <div class="door-frame">
-                        <i class="fas fa-crown"></i>
-                        <div class="door-number">7</div>
-                        <div class="door-label">Sagesse</div>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="door-link">
-                <div class="door">
-                    <div class="door-frame">
-                        <i class="fas fa-infinity"></i>
-                        <div class="door-number">8</div>
-                        <div class="door-label">Infini</div>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="door-link">
-                <div class="door">
-                    <div class="door-frame">
-                        <i class="fas fa-circle"></i>
-                        <div class="door-number">9</div>
-                        <div class="door-label">Unité</div>
-                    </div>
-                </div>
-            </a>
-        </div>
     </section>
 
     <section class="main-sections">
@@ -237,65 +154,60 @@
     margin-bottom: 4rem;
 }
 
-.doors-grid {
+.portal-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 2rem;
     justify-items: center;
 }
 
-.door-link {
+.portal-square {
     text-decoration: none;
     color: var(--color-pearl);
-}
-
-.door {
-    width: 100px;
-    height: 160px;
-    perspective: 1000px;
-    cursor: pointer;
-}
-
-.door-frame {
-    width: 100%;
-    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--color-gold);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.4s ease;
     position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    background: linear-gradient(45deg, var(--color-gold), var(--portal-1));
-    border-radius: 10px 10px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+    overflow: hidden;
 }
 
-.door:hover .door-frame {
-    transform: translateY(-10px) rotateY(10deg);
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+.portal-square::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
-.door i {
-    font-size: 2rem;
-    color: var(--color-pearl);
+.portal-square:hover::before {
+    opacity: 1;
+}
+
+.portal-square:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.portal-icon {
+    font-size: 3rem;
+    color: var(--color-gold);
     margin-bottom: 1rem;
-    transition: transform 0.3s ease;
 }
 
-.door:hover i {
-    transform: scale(1.2) rotate(360deg);
-}
-
-.door-number {
+.portal-number {
     font-family: 'Cinzel Decorative', cursive;
     font-size: 2rem;
     color: var(--color-pearl);
     margin-bottom: 0.5rem;
 }
 
-.door-label {
+.portal-title {
     font-size: 0.9rem;
     color: var(--color-pearl);
     opacity: 0.9;
@@ -398,20 +310,20 @@ cite {
         font-size: 2.5rem;
     }
 
-    .doors-grid {
+    .portal-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .door {
+    .portal-square {
         width: 80px;
         height: 120px;
     }
 
-    .door i {
+    .portal-icon {
         font-size: 1.5rem;
     }
 
-    .door-number {
+    .portal-number {
         font-size: 1.5rem;
     }
 }
@@ -421,9 +333,9 @@ cite {
 {% block extra_js %}
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const doors = document.querySelectorAll('.door');
-    doors.forEach((door, index) => {
-        door.style.animationDelay = `${index * 0.1}s`;
+    const portals = document.querySelectorAll('.portal-square');
+    portals.forEach((portal, index) => {
+        portal.style.animationDelay = `${index * 0.1}s`;
     });
 });
 </script>

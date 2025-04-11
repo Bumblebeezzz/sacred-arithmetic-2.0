@@ -1375,412 +1375,107 @@ footer {
 
 /* Container des portails dans le menu */
 .portal-grid {
-    position: relative;
-    width: 800px;
-    height: 800px;
-    margin: 0 auto;
-}
-
-/* Style des portails dans le menu */
-.portal-menu .portal {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid var(--color-gold);
-    border-radius: 15px;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Positionnement circulaire des portails */
-.portal-menu .portal[data-number="1"] { 
-    left: 50%;
-    top: 5%;
-}
-
-.portal-menu .portal[data-number="2"] { 
-    left: 90%;
-    top: 20%;
-}
-
-.portal-menu .portal[data-number="3"] { 
-    left: 95%;
-    top: 50%;
-}
-
-.portal-menu .portal[data-number="4"] { 
-    left: 90%;
-    top: 80%;
-}
-
-.portal-menu .portal[data-number="5"] { 
-    left: 50%;
-    top: 95%;
-}
-
-.portal-menu .portal[data-number="6"] { 
-    left: 10%;
-    top: 80%;
-}
-
-.portal-menu .portal[data-number="7"] { 
-    left: 5%;
-    top: 50%;
-}
-
-.portal-menu .portal[data-number="8"] { 
-    left: 10%;
-    top: 20%;
-}
-
-.portal-menu .portal[data-number="9"] { 
-    left: 50%;
-    top: 50%;
-    width: 180px;
-    height: 180px;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 0 30px var(--color-gold-glow);
-}
-
-/* Animation d'entrée des portails */
-.portal-menu.open .portal {
-    opacity: 1;
-    animation: portalAppear 0.5s ease-out forwards;
-}
-
-@keyframes portalAppear {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-
-/* Styles de l'Ennéagramme */
-.enneagram-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 2rem auto;
-    aspect-ratio: 1;
-}
-
-.enneagram-circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    height: 90%;
-    border: 2px solid var(--color-gold);
-    border-radius: 50%;
-}
-
-.enneagram-point {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--color-black);
-    border: 2px solid var(--color-gold);
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cinzel Decorative', cursive;
-    color: var(--color-gold);
-    cursor: pointer;
-    transition: all var(--transition-medium);
-}
-
-.enneagram-point:hover {
-    background: var(--color-gold);
-    color: var(--color-black);
-    box-shadow: 0 0 15px var(--color-gold-glow);
-}
-
-.enneagram-line {
-    position: absolute;
-    height: 2px;
-    background: var(--color-gold);
-    transform-origin: 0 50%;
-    opacity: 0.6;
-    transition: opacity var(--transition-medium);
-}
-
-.enneagram-line.active {
-    opacity: 1;
-    box-shadow: 0 0 10px var(--color-gold-glow);
-}
-
-.shape-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.shape-button {
-    background: var(--color-black);
-    color: var(--color-gold);
-    border: 1px solid var(--color-gold);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all var(--transition-medium);
-    font-family: 'Cinzel Decorative', cursive;
-}
-
-.shape-button:hover {
-    background: var(--color-gold);
-    color: var(--color-black);
-    box-shadow: 0 0 10px var(--color-gold-glow);
-}
-
-.shape-button.active {
-    background: var(--color-gold);
-    color: var(--color-black);
-}
-
-.enneagram-description {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.9);
-    border: 1px solid var(--color-gold);
-    padding: 1rem;
-    border-radius: 5px;
-    color: var(--color-pearl);
-    font-size: 0.9rem;
-    max-width: 200px;
-    opacity: 0;
-    transition: opacity var(--transition-medium);
-    pointer-events: none;
-    z-index: 10;
-}
-
-.enneagram-point:hover + .enneagram-description {
-    opacity: 1;
-}
-
-/* Animations de l'Ennéagramme */
-@keyframes pointPulse {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.1); }
-    100% { transform: translate(-50%, -50%) scale(1); }
-}
-
-.enneagram-point.active {
-    animation: pointPulse 1s infinite;
-}
-
-/* Responsive design pour l'ennéagramme */
-@media (max-width: 768px) {
-    .enneagram-container {
-        width: 400px;
-        height: 400px;
-    }
-    
-    .enneagram-point {
-        width: 16px;
-        height: 16px;
-        font-size: 0.7rem;
-    }
-    
-    .enneagram-description {
-        width: 150px;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .enneagram-container {
-        width: 300px;
-        height: 300px;
-        padding: 1rem;
-    }
-    
-    .enneagram-point {
-        width: 14px;
-        height: 14px;
-        font-size: 0.6rem;
-    }
-    
-    .enneagram-description {
-        width: 120px;
-        font-size: 0.8rem;
-        padding: 0.5rem;
-    }
-}
-
-/* Styles communs pour toutes les pages de portes */
-.portal-page {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-/* En-tête uniforme pour toutes les portes */
-.portal-header {
-    text-align: center;
-    padding: 4rem 2rem;
-    margin-bottom: 3rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('/static/images/sacred-bg.jpg') center/cover;
-    border-radius: 15px;
-    border: 2px solid var(--color-gold);
-}
-
-.portal-header h1 {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 3rem;
-    color: var(--color-gold);
-    margin-bottom: 1rem;
-    text-shadow: 0 0 20px var(--color-gold-glow);
-}
-
-.portal-header .subtitle {
-    font-size: 1.5rem;
+.portal-square {
+    text-decoration: none;
     color: var(--color-pearl);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Conteneur de contenu uniforme */
-.portal-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* Style uniforme des cartes */
-.wisdom-card {
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid var(--color-gold);
-    border-radius: 15px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    transition: all var(--transition-medium);
-    backdrop-filter: blur(5px);
-}
-
-.wisdom-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px var(--color-gold-glow);
-}
-
-/* Style uniforme des icônes */
-.wisdom-icon {
-    font-size: 2.5rem;
-    color: var(--color-gold);
-    margin-bottom: 1rem;
-    transition: all var(--transition-medium);
-}
-
-.wisdom-card:hover .wisdom-icon {
-    transform: scale(1.1) rotate(360deg);
-}
-
-/* Section de méditation uniforme */
-.meditation-section {
-    text-align: center;
-    margin: 4rem 0;
-    padding: 2rem;
     background: rgba(0, 0, 0, 0.6);
-    border-radius: 15px;
     border: 2px solid var(--color-gold);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
 }
 
-.meditation-timer {
-    margin: 2rem 0;
+.portal-square::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
-.timer-display {
-    font-family: 'Cinzel Decorative', cursive;
+.portal-square:hover::before {
+    opacity: 1;
+}
+
+.portal-square:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.portal-icon {
     font-size: 3rem;
     color: var(--color-gold);
     margin-bottom: 1rem;
-    text-shadow: 0 0 10px var(--color-gold-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
 }
 
-.start-meditation {
-    background: var(--color-gold);
-    color: var(--color-black);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 8px;
+.portal-number {
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all var(--transition-medium);
+    font-size: 2rem;
+    color: var(--color-gold);
+    margin: 0.5rem 0;
 }
 
-.start-meditation:hover {
-    transform: scale(1.05);
-    background: var(--color-pearl);
-    box-shadow: 0 0 15px var(--color-gold-glow);
+.portal-title {
+    font-size: 0.9rem;
+    color: var(--color-pearl);
+    text-align: center;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
-/* Grilles responsives uniformes */
-.wisdom-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+/* Responsive */
+@media (max-width: 900px) {
+    .portal-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .portal-square {
+        padding: 1.5rem;
+    }
+
+    .portal-icon {
+        font-size: 2.5rem;
+        height: 3rem;
+    }
+
+    .portal-number {
+        font-size: 1.75rem;
+    }
+
+    .portal-title {
+        font-size: 0.8rem;
+    }
 }
 
-/* Styles spécifiques aux portails */
-.portal-1 { 
-    background: linear-gradient(135deg, var(--portal-1), var(--color-black));
-    --portal-color: var(--portal-1);
-}
-
-.portal-2 { 
-    background: linear-gradient(135deg, var(--portal-2), var(--color-black));
-    --portal-color: var(--portal-2);
-}
-
-.portal-3 { 
-    background: linear-gradient(135deg, var(--portal-3), var(--color-black));
-    --portal-color: var(--portal-3);
-}
-
-.portal-4 { 
-    background: linear-gradient(135deg, var(--portal-4), var(--color-black));
-    --portal-color: var(--portal-4);
-}
-
-.portal-5 { 
-    background: linear-gradient(135deg, var(--portal-5), var(--color-black));
-    --portal-color: var(--portal-5);
-}
-
-.portal-6 { 
-    background: linear-gradient(135deg, var(--portal-6), var(--color-black));
-    --portal-color: var(--portal-6);
-}
-
-.portal-7 { 
-    background: linear-gradient(135deg, var(--portal-7), var(--color-black));
-    --portal-color: var(--portal-7);
-}
-
-.portal-8 { 
-    background: linear-gradient(135deg, var(--portal-8), var(--color-black));
-    --portal-color: var(--portal-8);
-}
-
-.portal-9 { 
-    background: linear-gradient(135deg, var(--portal-9), var(--color-black));
-    --portal-color: var(--portal-9);
+@media (max-width: 600px) {
+    .portal-grid {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 300px;
+    }
 }
 
 /* Styles des symboles sacrés */
