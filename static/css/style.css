@@ -1106,19 +1106,20 @@ footer {
 
 .start-meditation {
     background: var(--color-gold);
-    color: #000;
+    color: var(--color-black);
     border: none;
     padding: 1rem 2rem;
+    border-radius: 8px;
     font-family: 'Cinzel Decorative', serif;
     font-size: 1.2rem;
     cursor: pointer;
-    border-radius: 5px;
     transition: all 0.3s;
 }
 
 .start-meditation:hover {
-    background: #fff;
-    color: var(--color-gold);
+    transform: scale(1.05);
+    background: var(--color-pearl);
+    box-shadow: 0 0 15px var(--color-gold-glow);
 }
 
 /* Animation spéciale pour le portail central */
@@ -1621,30 +1622,39 @@ footer {
 /* En-tête uniforme pour toutes les portes */
 .portal-header {
     text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
+    margin-bottom: 4rem;
+    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .portal-number {
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 8rem;
+    font-size: 10rem;
     color: var(--color-gold);
     opacity: 0.9;
     line-height: 1;
     margin: 0;
-    text-shadow: 0 0 20px var(--color-gold-glow);
+    text-shadow: 0 0 30px var(--color-gold-glow);
 }
 
 .portal-header h1 {
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     color: var(--color-gold);
     margin: 0;
     line-height: 1.2;
+    letter-spacing: 0.1em;
+}
+
+.subtitle {
+    font-family: 'EB Garamond', serif;
+    color: var(--color-gold);
+    font-size: 2rem;
+    margin: 0;
+    opacity: 0.9;
 }
 
 .principle-quote {
@@ -1655,16 +1665,8 @@ footer {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 2rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1.6;
-    opacity: 0.9;
-}
-
-.subtitle {
-    font-family: 'EB Garamond', serif;
-    color: var(--color-gold);
-    font-size: 1.5rem;
-    margin: 0;
     opacity: 0.9;
 }
 
