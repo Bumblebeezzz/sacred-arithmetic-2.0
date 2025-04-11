@@ -8,6 +8,13 @@
         <div class="title-container">
             <p class="site-subtitle">Explorer les mystères des nombres et leur relation avec l'univers</p>
             <p class="welcome-text">Bienvenue dans ce voyage initiatique à travers les nombres sacrés. Chaque porte que vous franchirez vous révélera une facette de la sagesse universelle, où les nombres deviennent les clés de compréhension de l'ordre cosmique.</p>
+            
+            <div class="mode-selector">
+                <button id="initiationMode" class="mode-button">Mode Parcours Initiatique</button>
+                <button id="musicToggle" class="mode-button">
+                    <i class="fas fa-music"></i> Musique
+                </button>
+            </div>
         </div>
     </div>
 
@@ -20,7 +27,7 @@
 
     <section class="sacred-doors">
         <div class="portal-grid">
-            <a href="{{ url_for('porte1') }}" class="portal-square portal-1">
+            <a href="{{ url_for('porte1') }}" class="portal-square portal-1" data-portal="1">
                 <div class="portal-icon">
                     <svg viewBox="0 0 100 100" class="polygram">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -29,6 +36,9 @@
                 </div>
                 <div class="portal-number">1</div>
                 <div class="portal-title">CONSCIENCE</div>
+                <div class="portal-lock" style="display: none;">
+                    <i class="fas fa-lock"></i>
+                </div>
             </a>
             
             <a href="{{ url_for('porte2') }}" class="portal-square portal-2">
@@ -68,7 +78,7 @@
                 <div class="portal-icon">
                     <svg viewBox="0 0 100 100" class="polygram">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <path d="M50,15 L61.8,40.9 L94.3,40.9 L67.6,60.5 L79.4,85 L50,71.8 L20.6,85 L32.4,60.5 L5.7,40.9 L38.2,40.9 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M50,10 L20.5,80 L97.5,35 L2.5,35 L79.5,80 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
                     </svg>
                 </div>
                 <div class="portal-number">5</div>
@@ -90,7 +100,7 @@
                 <div class="portal-icon">
                     <svg viewBox="0 0 100 100" class="polygram">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <path d="M50,10 L73.5,20.5 L87,45 L80,72 L57,87 L43,87 L20,72 L13,45 L26.5,20.5 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M50,15 L65,45 L95,45 L70,65 L80,95 L50,80 L20,95 L30,65 L5,45 L35,45 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
                     </svg>
                 </div>
                 <div class="portal-number">7</div>
@@ -113,7 +123,7 @@
                 <div class="portal-icon">
                     <svg viewBox="0 0 100 100" class="polygram">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <path d="M50,10 L67,15 L80,30 L85,50 L80,70 L67,85 L50,90 L33,85 L20,70 L15,50 L20,30 L33,15 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M50,10 L56.8,30.9 L77.1,23.4 L73.4,44.3 L93.1,50 L73.4,55.7 L77.1,76.6 L56.8,69.1 L50,90 L43.2,69.1 L22.9,76.6 L26.6,55.7 L6.9,50 L26.6,44.3 L22.9,23.4 L43.2,30.9 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
                     </svg>
                 </div>
                 <div class="portal-number">9</div>
@@ -301,8 +311,12 @@
 }
 
 .portal-square:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.portal-square:hover .portal-icon {
+    animation: pulse 1.5s infinite;
 }
 
 .portal-icon {
@@ -515,15 +529,112 @@ cite {
 .introduction-content p:last-child {
     margin-bottom: 0;
 }
+
+.mode-selector {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.mode-button {
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'EB Garamond', serif;
+}
+
+.mode-button:hover {
+    background: rgba(255, 215, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.portal-lock {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: var(--color-gold);
+    font-size: 1.2rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.portal-square.locked {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.portal-square.locked:hover {
+    transform: none;
+    box-shadow: none;
+}
 </style>
 {% endblock %}
 
 {% block extra_js %}
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const doors = document.querySelectorAll('.portal-square');
-    doors.forEach((door, index) => {
-        door.style.animationDelay = `${index * 0.1}s`;
+document.addEventListener('DOMContentLoaded', function() {
+    // Gestion du mode parcours initiatique
+    const initiationMode = document.getElementById('initiationMode');
+    const portals = document.querySelectorAll('.portal-square');
+    let isInitiationMode = false;
+
+    initiationMode.addEventListener('click', function() {
+        isInitiationMode = !isInitiationMode;
+        this.classList.toggle('active');
+        
+        if (isInitiationMode) {
+            // Verrouiller toutes les portes sauf la première
+            portals.forEach(portal => {
+                if (portal.dataset.portal !== '1') {
+                    portal.classList.add('locked');
+                    portal.querySelector('.portal-lock').style.display = 'block';
+                }
+            });
+        } else {
+            // Déverrouiller toutes les portes
+            portals.forEach(portal => {
+                portal.classList.remove('locked');
+                portal.querySelector('.portal-lock').style.display = 'none';
+            });
+        }
+    });
+
+    // Gestion de la musique ambiante
+    const musicToggle = document.getElementById('musicToggle');
+    const backgroundMusic = new Audio('/static/audio/ambient.mp3');
+    backgroundMusic.loop = true;
+    let isMusicPlaying = false;
+
+    musicToggle.addEventListener('click', function() {
+        isMusicPlaying = !isMusicPlaying;
+        this.classList.toggle('active');
+        
+        if (isMusicPlaying) {
+            backgroundMusic.play();
+        } else {
+            backgroundMusic.pause();
+        }
+    });
+
+    // Effet sonore au survol des portes
+    const hoverSound = new Audio('/static/audio/hover.mp3');
+    
+    portals.forEach(portal => {
+        portal.addEventListener('mouseenter', function() {
+            if (!this.classList.contains('locked')) {
+                hoverSound.currentTime = 0;
+                hoverSound.play();
+            }
+        });
     });
 });
 </script>

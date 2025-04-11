@@ -6,50 +6,88 @@
 <div class="portal-page portal-7">
     <header class="portal-header">
         <h1>ORIENTATION</h1>
-        <div class="portal-number">
-            <span class="principle-text">PRINCIPE 7</span>
-        </div>
-        <p class="subtitle">L'Orientation, direction de l'énergie</p>
-        <p class="principle-quote">« Le genre est en toute chose ; tout a ses principes masculin et féminin ; le genre se manifeste sur tous les plans. »</p>
+        <div class="portal-number">7</div>
+        <p class="subtitle">La direction vers l'essentiel</p>
+        <p class="principle-quote">« Dans le labyrinthe de l'existence, ce n'est pas le chemin qui compte, mais la direction. Cherche le Nord de ton âme et avance avec assurance. »</p>
     </header>
 
     <div class="portal-content">
-        <div class="wisdom-card">
-            <h2>L'Enseignement de l'Orientation</h2>
-            <p>Le Sept représente le principe de direction et d'orientation dans l'univers. C'est le nombre qui guide notre chemin et nous aide à trouver notre voie dans le grand schéma cosmique.</p>
+        <div class="wisdom-section">
+            <h2>L'Art de la Direction</h2>
+            <p>L'Orientation est le principe qui donne sens et direction au mouvement. C'est la boussole intérieure qui nous aide à distinguer entre l'essentiel et l'accessoire, et qui transforme le mouvement aléatoire en cheminement conscient vers notre étoile polaire.</p>
+            
+            <div class="sacred-geometry">
+                <div class="compass-container">
+                    <div class="compass" id="sacredCompass">
+                        <svg viewBox="0 0 100 100" class="compass-symbol">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1"/>
+                            <circle cx="50" cy="50" r="3" fill="currentColor"/>
+                            <line x1="50" y1="10" x2="50" y2="90" stroke="currentColor" stroke-width="1" class="compass-line vertical"/>
+                            <line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" stroke-width="1" class="compass-line horizontal"/>
+                            <polygon points="50,10 52,50 50,90 48,50" fill="currentColor" class="needle north"/>
+                            <polygon points="10,50 50,48 90,50 50,52" fill="currentColor" class="needle east" opacity="0.5"/>
+                            <text x="50" y="20" text-anchor="middle" fill="currentColor" font-size="5">N</text>
+                            <text x="50" y="85" text-anchor="middle" fill="currentColor" font-size="5">S</text>
+                            <text x="80" y="52" text-anchor="middle" fill="currentColor" font-size="5">E</text>
+                            <text x="20" y="52" text-anchor="middle" fill="currentColor" font-size="5">O</text>
+                        </svg>
+                    </div>
+                    <div class="orientation-controls">
+                        <button id="rotateCompass" class="compass-button">
+                            <i class="fas fa-compass"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
             
             <div class="principles">
                 <h3>Les Sept Directions</h3>
                 <ul>
-                    <li>Nord</li>
-                    <li>Sud</li>
-                    <li>Est</li>
-                    <li>Ouest</li>
-                    <li>Haut</li>
-                    <li>Bas</li>
-                    <li>Centre</li>
+                    <li>Le Centre (Présence)</li>
+                    <li>Le Nord (Vision)</li>
+                    <li>L'Est (Commencement)</li>
+                    <li>Le Sud (Croissance)</li>
+                    <li>L'Ouest (Introspection)</li>
+                    <li>Le Haut (Aspiration)</li>
+                    <li>Le Bas (Incarnation)</li>
                 </ul>
             </div>
         </div>
 
-        <div class="wisdom-card">
-            <h2>L'Heptagramme d'Orientation</h2>
-            <div class="sacred-symbol">
-                <div class="heptagram-container">
-                    <div class="heptagram"></div>
-                    <div class="heptagram-overlay"></div>
+        <div class="practice-section">
+            <div class="meditation-card">
+                <h2>Méditation des Sept Directions</h2>
+                <p class="meditation-text">Assis en position stable, oriente ton attention vers chacune des sept directions sacrées. Pour chacune, ressens sa qualité unique et sa guidance. Termine au centre, où toutes les directions convergent.</p>
+                <div class="meditation-controls">
+                    <button id="startMeditation" class="sacred-button">
+                        <i class="fas fa-compass"></i> Commencer la Méditation
+                    </button>
+                    <div class="timer-container">
+                        <div id="timer" class="timer">07:77</div>
+                        <div class="direction-indicator">
+                            <div class="current-direction">Centre</div>
+                        </div>
+                    </div>
+                    <div class="direction-compass">
+                        <div class="direction-marker center"></div>
+                        <div class="direction-marker north"></div>
+                        <div class="direction-marker east"></div>
+                        <div class="direction-marker south"></div>
+                        <div class="direction-marker west"></div>
+                        <div class="direction-marker up"></div>
+                        <div class="direction-marker down"></div>
+                    </div>
                 </div>
             </div>
-            <p>L'heptagramme symbolise les sept directions fondamentales qui structurent notre perception de l'espace et du temps.</p>
-        </div>
 
-        <div class="wisdom-card">
-            <h2>Méditation sur l'Orientation</h2>
-            <div class="meditation-section">
-                <p>Explorez les sept directions et trouvez votre chemin dans l'univers.</p>
-                <div class="meditation-timer">
-                    <button id="startMeditation" class="start-meditation">Commencer la Méditation</button>
-                    <div id="timer" class="timer-display">07:07</div>
+            <div class="exercise-card">
+                <h2>Pratique de l'Orientation</h2>
+                <p class="exercise-text">Identifie une décision importante que tu dois prendre. Physiquement, tourne-toi vers chacune des sept directions et pose ta question. Écoute la réponse qui émerge à chaque orientation. Reviens au centre pour intégrer toutes les perspectives.</p>
+                <div class="exercise-controls">
+                    <button id="startExercise" class="sacred-button">
+                        <i class="fas fa-map-marked-alt"></i> Démarrer l'Exercice
+                    </button>
+                    <div id="exerciseTimer" class="timer">05:00</div>
                 </div>
             </div>
         </div>
@@ -59,128 +97,362 @@
 
 {% block extra_css %}
 <style>
-.portal-7 {
-    background: linear-gradient(135deg, var(--portal-7), var(--color-black));
+:root {
+    --portal-color: #0066CC;
+    --portal-color-light: rgba(0, 102, 204, 0.3);
+    --portal-color-fade: rgba(0, 102, 204, 0.1);
+    --portal-color-glow: rgba(0, 102, 204, 0.2);
+}
+
+.portal-page {
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 2rem;
-    min-height: 100vh;
-    color: var(--color-gold);
+    position: relative;
+    background: radial-gradient(circle at center, var(--portal-color-fade) 0%, transparent 70%);
+}
+
+.portal-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--portal-color-fade) 0%, transparent 50%, var(--portal-color-fade) 100%);
+    pointer-events: none;
+    z-index: -1;
 }
 
 .portal-header {
     text-align: center;
-    margin-bottom: 3rem;
-    border-bottom: 2px solid var(--color-gold);
-    padding-bottom: 2rem;
+    margin-bottom: 4rem;
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(to bottom, var(--portal-color-fade), transparent);
+    border-radius: 20px;
+    box-shadow: 0 0 30px var(--portal-color-glow);
 }
 
-.portal-symbol {
-    font-size: 2.5rem;
-    margin: 1rem 0;
+.portal-header h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(to bottom, var(--portal-color), rgba(0, 102, 204, 0.7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+    letter-spacing: 0.5rem;
+    font-weight: 400;
+    text-shadow: 0 0 20px var(--portal-color-glow);
 }
 
 .portal-number {
-    color: var(--portal-7);
-    font-size: 3rem;
-    font-family: 'Cinzel Decorative', cursive;
-    margin-left: 1rem;
+    font-size: 12rem;
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    text-shadow: 0 0 50px var(--portal-color-glow);
 }
 
-.wisdom-card {
-    background: rgba(0, 0, 0, 0.7);
-    border: 2px solid var(--color-gold);
-    border-radius: 10px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    transition: all 0.3s ease;
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--color-pearl);
+    margin: 1rem 0;
+    font-style: italic;
 }
 
-.wisdom-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
-}
-
-.heptagram-container {
-    position: relative;
-    width: 200px;
-    height: 200px;
+.principle-quote {
+    font-size: 1.2rem;
+    color: var(--portal-color);
+    max-width: 700px;
     margin: 2rem auto;
+    font-style: italic;
+    line-height: 1.6;
 }
 
-.heptagram {
+.wisdom-section {
+    margin-bottom: 4rem;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--portal-color-fade);
+}
+
+.sacred-geometry {
+    height: 200px;
+    margin: 3rem 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, var(--portal-color-fade) 0%, transparent 70%);
+}
+
+.compass-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.compass {
     position: absolute;
     width: 100%;
     height: 100%;
-    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 90%, 25% 90%, 0% 60%, 10% 20%);
-    background: var(--color-gold);
-    animation: rotate 20s linear infinite;
+    color: var(--portal-color);
+    cursor: pointer;
+    transition: transform 2s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+    transform-origin: center;
 }
 
-.heptagram-overlay {
+.compass:hover {
+    filter: brightness(1.2);
+}
+
+.compass-line {
+    stroke-dasharray: 4, 2;
+    animation: dash 10s linear infinite;
+}
+
+.vertical {
+    animation-delay: -2s;
+}
+
+.horizontal {
+    animation-delay: -1s;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: -100;
+    }
+}
+
+.needle {
+    transition: all 0.5s ease;
+    transform-origin: center;
+}
+
+.orientation-controls {
     position: absolute;
+    bottom: -40px;
+    left: 0;
     width: 100%;
-    height: 100%;
-    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 90%, 25% 90%, 0% 60%, 10% 20%);
-    background: rgba(0, 0, 0, 0.7);
-    animation: rotate 20s linear infinite reverse;
-    transform: rotate(51.43deg);
+    display: flex;
+    justify-content: center;
+}
+
+.compass-button {
+    background: var(--portal-color-fade);
+    color: var(--portal-color);
+    border: 1px solid var(--portal-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px var(--portal-color-glow);
+}
+
+.compass-button:hover {
+    background: var(--portal-color-light);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--portal-color);
+}
+
+.principles {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border-radius: 15px;
+    border: 1px solid var(--portal-color-fade);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.principles h3 {
+    color: var(--portal-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .principles ul {
     list-style: none;
     padding: 0;
-    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 }
 
 .principles li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--color-gold);
-    transition: all 0.3s ease;
+    color: var(--color-pearl);
+    padding: 0.5rem;
+    font-size: 1.1rem;
 }
 
-.principles li:hover {
-    color: var(--color-gold);
+.practice-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
-.meditation-section {
+.meditation-card, .exercise-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border: 1px solid var(--portal-color-fade);
+    border-radius: 15px;
+    padding: 2rem;
     text-align: center;
-    padding: 1rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.start-meditation {
-    background: var(--color-gold);
-    color: var(--color-black);
-    border: none;
+.meditation-card:hover, .exercise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 40px var(--portal-color-glow);
+}
+
+.meditation-card h2, .exercise-card h2 {
+    color: var(--portal-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.meditation-text, .exercise-text {
+    color: var(--color-pearl);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.sacred-button {
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    border: 1px solid var(--portal-color);
+    color: var(--color-pearl);
     padding: 1rem 2rem;
+    font-size: 1.1rem;
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: 'Cinzel Decorative', cursive;
-    margin: 1rem 0;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px var(--portal-color-glow);
+    text-shadow: 0 0 10px var(--portal-color-glow);
 }
 
-.start-meditation:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px var(--color-gold);
+.sacred-button:hover {
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 30px var(--portal-color);
+    color: white;
 }
 
-.timer-display {
+.timer {
     font-size: 2.5rem;
+    background: linear-gradient(to bottom, var(--portal-color), rgba(0, 102, 204, 0.7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     margin: 1rem 0;
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px var(--portal-color-glow);
 }
 
-h1, h2, h3 {
-    font-family: 'Cinzel Decorative', cursive;
+.direction-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
 }
 
-p {
-    color: #fff;
-    line-height: 1.6;
+.current-direction {
+    color: var(--portal-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px var(--portal-color-glow);
+    transition: all 0.5s ease;
 }
 
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+.direction-compass {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 1rem auto;
+    border-radius: 50%;
+    border: 1px solid var(--portal-color-fade);
+    background: radial-gradient(circle at center, var(--portal-color-fade) 0%, transparent 70%);
+}
+
+.direction-marker {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--portal-color-fade);
+    transition: all 0.5s ease;
+}
+
+.direction-marker.active {
+    background-color: var(--portal-color);
+    box-shadow: 0 0 10px var(--portal-color);
+    transform: scale(1.5);
+}
+
+.direction-marker.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.direction-marker.north {
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.direction-marker.east {
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+
+.direction-marker.south {
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.direction-marker.west {
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+}
+
+.direction-marker.up {
+    top: 15px;
+    left: 15px;
+}
+
+.direction-marker.down {
+    bottom: 15px;
+    right: 15px;
+}
+
+@media (max-width: 768px) {
+    .practice-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .principles ul {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 {% endblock %}
@@ -188,35 +460,163 @@ p {
 {% block extra_js %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const timer = document.getElementById('timer');
-    const button = document.getElementById('startMeditation');
-    let timeLeft = 7 * 60 + 7; // 7:07 minutes
-    let interval;
-
-    button.addEventListener('click', function() {
-        if (button.textContent === 'Arrêter') {
-            clearInterval(interval);
-            button.textContent = 'Commencer la Méditation';
-            timer.textContent = '07:07';
-            return;
-        }
-
-        button.textContent = 'Arrêter';
+    // Boussole interactive
+    const compass = document.getElementById('sacredCompass');
+    const rotateButton = document.getElementById('rotateCompass');
+    let currentAngle = 0;
+    
+    rotateButton.addEventListener('click', function() {
+        currentAngle += 45;
+        compass.style.transform = `rotate(${currentAngle}deg)`;
+    });
+    
+    compass.addEventListener('click', function() {
+        const north = this.querySelector('.needle.north');
+        const east = this.querySelector('.needle.east');
         
-        interval = setInterval(() => {
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
+        // Animation de tremblement de l'aiguille
+        north.style.animation = 'none';
+        east.style.animation = 'none';
+        
+        setTimeout(() => {
+            north.style.animation = 'needle-shake 0.5s ease-in-out';
+            east.style.animation = 'needle-shake 0.5s ease-in-out';
+        }, 10);
+    });
+    
+    // Ajout d'une animation pour le tremblement de l'aiguille
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes needle-shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(-5deg); }
+            75% { transform: rotate(3deg); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Méditation des sept directions
+    const meditationButton = document.getElementById('startMeditation');
+    const timer = document.getElementById('timer');
+    const currentDirection = document.querySelector('.current-direction');
+    const directionMarkers = document.querySelectorAll('.direction-marker');
+    let meditationInterval;
+    let isMeditating = false;
+    let timeLeft = 7 * 60 + 7; // 7:07
+    let directionIndex = 0;
+    const directions = ['Centre', 'Nord', 'Est', 'Sud', 'Ouest', 'Haut', 'Bas', 'Centre'];
+    const directionClasses = ['center', 'north', 'east', 'south', 'west', 'up', 'down', 'center'];
+
+    meditationButton.addEventListener('click', function() {
+        isMeditating = !isMeditating;
+        
+        if (isMeditating) {
+            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            startMeditation();
+        } else {
+            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+            pauseMeditation();
+        }
+    });
+
+    function startMeditation() {
+        meditationInterval = setInterval(() => {
+            timeLeft--;
+            updateTimer(timer, timeLeft);
             
-            timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            
-            if (timeLeft <= 0) {
-                clearInterval(interval);
-                button.textContent = 'Commencer la Méditation';
+            // Changer de direction toutes les 60 secondes
+            if (timeLeft % 60 === 0 || timeLeft === 7 * 60 + 7 - 1) {
+                updateDirection();
             }
             
-            timeLeft--;
+            if (timeLeft <= 0) {
+                endMeditation();
+            }
         }, 1000);
+    }
+    
+    function updateDirection() {
+        directionMarkers.forEach(marker => marker.classList.remove('active'));
+        
+        currentDirection.textContent = directions[directionIndex];
+        const activeMarker = document.querySelector(`.direction-marker.${directionClasses[directionIndex]}`);
+        if (activeMarker) {
+            activeMarker.classList.add('active');
+        }
+        
+        directionIndex = (directionIndex + 1) % directions.length;
+    }
+
+    function pauseMeditation() {
+        clearInterval(meditationInterval);
+    }
+
+    function endMeditation() {
+        clearInterval(meditationInterval);
+        meditationButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        isMeditating = false;
+        timeLeft = 7 * 60 + 7;
+        updateTimer(timer, timeLeft);
+        directionIndex = 0;
+        currentDirection.textContent = 'Centre';
+        directionMarkers.forEach(marker => marker.classList.remove('active'));
+        document.querySelector('.direction-marker.center').classList.add('active');
+        new Audio('/static/audio/bell.mp3').play();
+    }
+
+    // Initialiser la direction au centre
+    document.querySelector('.direction-marker.center').classList.add('active');
+
+    // Exercice
+    const exerciseButton = document.getElementById('startExercise');
+    const exerciseTimer = document.getElementById('exerciseTimer');
+    let exerciseInterval;
+    let isExercising = false;
+    let exerciseTimeLeft = 5 * 60; // 5:00
+
+    exerciseButton.addEventListener('click', function() {
+        isExercising = !isExercising;
+        
+        if (isExercising) {
+            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            startExercise();
+        } else {
+            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+            pauseExercise();
+        }
     });
+
+    function startExercise() {
+        exerciseInterval = setInterval(() => {
+            exerciseTimeLeft--;
+            updateTimer(exerciseTimer, exerciseTimeLeft);
+            
+            if (exerciseTimeLeft <= 0) {
+                endExercise();
+            }
+        }, 1000);
+    }
+
+    function pauseExercise() {
+        clearInterval(exerciseInterval);
+    }
+
+    function endExercise() {
+        clearInterval(exerciseInterval);
+        exerciseButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        isExercising = false;
+        exerciseTimeLeft = 5 * 60;
+        updateTimer(exerciseTimer, exerciseTimeLeft);
+        new Audio('/static/audio/bell.mp3').play();
+    }
+
+    // Utilitaire pour formater le temps
+    function updateTimer(element, seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        element.textContent = `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+    }
 });
 </script>
 {% endblock %} 

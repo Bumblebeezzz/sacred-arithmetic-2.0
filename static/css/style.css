@@ -973,10 +973,10 @@ footer {
     color: #000;
     border: none;
     padding: 1rem 2rem;
+    border-radius: 8px;
     font-family: 'Cinzel Decorative', serif;
     font-size: 1.2rem;
     cursor: pointer;
-    border-radius: 5px;
     transition: all 0.3s;
 }
 
@@ -1798,42 +1798,144 @@ footer {
 
 /* Section de méditation uniforme */
 .meditation-section {
-    text-align: center;
-    margin: 4rem 0;
-    padding: 2rem;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.8);
     border: 2px solid var(--color-gold);
-}
-
-.meditation-timer {
+    border-radius: 15px;
+    padding: 2rem;
     margin: 2rem 0;
+    text-align: center;
 }
 
-.timer-display {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 3rem;
-    color: var(--color-gold);
-    margin-bottom: 1rem;
-    text-shadow: 0 0 10px var(--color-gold-glow);
+.meditation-visualizer {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    background: var(--color-black);
+    border: 2px solid var(--color-gold);
+    border-radius: 15px;
+    overflow: hidden;
 }
 
-.start-meditation {
+.consciousness-point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
     background: var(--color-gold);
-    color: var(--color-black);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 1.2rem;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px var(--color-gold-glow);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Styles des exercices interactifs */
+.interactive-exercise {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--color-gold);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
     cursor: pointer;
     transition: all var(--transition-medium);
 }
 
-.start-meditation:hover {
-    transform: scale(1.05);
-    background: var(--color-pearl);
-    box-shadow: 0 0 15px var(--color-gold-glow);
+.interactive-exercise:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+}
+
+.equivalence-mirror {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    background: var(--color-black);
+    border: 2px solid var(--color-gold);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.oscillation-rhythm {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    background: var(--color-black);
+    border: 2px solid var(--color-gold);
+    border-radius: 15px;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* Styles des textes de méditation */
+.meditation-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--color-pearl);
+    line-height: 1.8;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    border-left: 4px solid var(--color-gold);
+}
+
+.meditation-instructions {
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    color: var(--color-gold);
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+/* Styles des contrôles de méditation */
+.meditation-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.meditation-button {
+    background: var(--color-black);
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all var(--transition-medium);
+}
+
+.meditation-button:hover {
+    background: var(--color-gold);
+    color: var(--color-black);
+    box-shadow: var(--shadow-strong);
+}
+
+/* Styles des animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.meditation-section > * {
+    animation: fadeIn 0.5s ease-out;
 }
 
 /* Grilles responsives uniformes */
@@ -2244,4 +2346,97 @@ header {
     font-size: 1.1rem;
     line-height: 1.6;
     opacity: 0.9;
+}
+
+/* Mode parcours initiatique */
+.initiation-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.initiation-toggle {
+    background: var(--color-black);
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all var(--transition-medium);
+}
+
+.initiation-toggle:hover {
+    background: var(--color-gold);
+    color: var(--color-black);
+    box-shadow: var(--shadow-strong);
+}
+
+/* Portails verrouillés */
+.portal.locked {
+    opacity: 0.5;
+    pointer-events: none;
+    position: relative;
+}
+
+.portal.locked::after {
+    content: '🔒';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: var(--color-gold);
+}
+
+/* Effets de survol améliorés */
+.portal:hover {
+    transform: scale(1.05);
+    box-shadow: var(--portal-hover-shadow);
+    animation: portalPulse 2s infinite;
+}
+
+@keyframes portalPulse {
+    0% { box-shadow: var(--portal-shadow); }
+    50% { box-shadow: 0 0 30px var(--color-gold-glow); }
+    100% { box-shadow: var(--portal-shadow); }
+}
+
+/* Contrôle audio */
+.audio-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.audio-toggle {
+    background: var(--color-black);
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-medium);
+}
+
+.audio-toggle:hover {
+    background: var(--color-gold);
+    color: var(--color-black);
+    box-shadow: var(--shadow-strong);
+}
+
+/* Animation de déverrouillage */
+@keyframes unlockAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.portal.unlocked {
+    animation: unlockAnimation 1s ease-out;
 }

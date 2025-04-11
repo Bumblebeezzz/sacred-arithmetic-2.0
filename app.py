@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 import os
 from dotenv import load_dotenv
+import json
 
 load_dotenv()
 
@@ -26,9 +27,48 @@ class User(UserMixin, db.Model):
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+# Chargement des données des principes
+with open('data/principles.json', 'r', encoding='utf-8') as f:
+    principles_data = json.load(f)
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/principle/<int:number>')
+def principle(number):
+    if 1 <= number <= 9:
+        principle_data = principles_data[str(number)]
+        return render_template(f'principle{number}.html', principle=principle_data)
+    return render_template('404.html'), 404
+
+@app.route('/api/meditation/<int:principle_number>', methods=['POST'])
+def start_meditation(principle_number):
+    if 1 <= principle_number <= 9:
+        # Logique pour démarrer la méditation
+        return jsonify({
+            'status': 'success',
+            'message': f'Méditation du principe {principle_number} démarrée'
+        })
+    return jsonify({'status': 'error', 'message': 'Principe invalide'}), 400
+
+@app.route('/api/exercise/<int:principle_number>', methods=['POST'])
+def start_exercise(principle_number):
+    if 1 <= principle_number <= 9:
+        # Logique pour démarrer l'exercice
+        return jsonify({
+            'status': 'success',
+            'message': f'Exercice du principe {principle_number} démarré'
+        })
+    return jsonify({'status': 'error', 'message': 'Principe invalide'}), 400
+
+@app.route('/api/initiation/progress', methods=['GET'])
+def get_initiation_progress():
+    # Logique pour récupérer la progression
+    return jsonify({
+        'status': 'success',
+        'unlocked_principles': ['1']  # À implémenter avec une base de données
+    })
 
 @app.route('/porte1')
 def porte1():
@@ -113,4 +153,4 @@ def enneagramme():
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True, port=5002) 
+    app.run(debug=True, port=5003) 

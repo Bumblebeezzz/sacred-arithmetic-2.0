@@ -1,0 +1,182 @@
+{
+    "1": {
+        "name": "CONSCIENCE",
+        "subtitle": "L'Origine vivante du Réel",
+        "quote": "Tout est Esprit, l'Univers est Mental. La réalité que nous percevons est une manifestation de la conscience universelle.",
+        "description": "La Conscience est le fondement de toute existence, le principe premier qui permet la perception et la compréhension. Elle représente l'état de présence pure, la source de toute connaissance et de toute expérience.",
+        "principles": [
+            "La Présence Pure",
+            "L'Éveil Intérieur",
+            "La Perception Consciente",
+            "La Source de la Connaissance"
+        ],
+        "meditation": {
+            "text": "Ferme les yeux. Ressens le vide avant le mouvement. Un point naît, vibrant dans le noir cosmique. Tu es ce point. Tu es le germe. L'univers te respire.",
+            "duration": 180,
+            "instructions": {
+                "position": "Assis ou allongé, dos droit",
+                "focus": "Le point entre les sourcils"
+            }
+        },
+        "exercise": {
+            "description": "Pendant 3 minutes, concentre-toi sur un point fixe. Compte les respirations en silence. Observe le moment où la pensée tente d'émerger. Realise que tout ce qui est autour de toi est vide. Comme ta conscience. Les deux sont fait de la meme substance. Tu es cette pirece, Tu es le monde. Reviens au Un.",
+            "duration": 180,
+            "steps": [
+                "Trouve un point fixe",
+                "Compte les respirations",
+                "Observe les pensées",
+                "Retourne au point"
+            ]
+        },
+        "applications": [
+            "Méditation sur le point unique",
+            "Visualisation du centre",
+            "Exercices de concentration",
+            "Pratique du silence intérieur"
+        ]
+    },
+    "2": {
+        "name": "ÉQUIVALENCE",
+        "subtitle": "Ce qui est en haut est comme ce qui est en bas",
+        "quote": "Ce qui est en haut est comme ce qui est en bas, pour accomplir les miracles d'une seule chose.",
+        "description": "Le principe d'équivalence nous enseigne que tout dans l'univers est interconnecté, que chaque niveau de réalité reflète les autres.",
+        "principles": [
+            "La Loi du Miroir",
+            "L'Harmonie des Sphères",
+            "L'Unité dans la Dualité",
+            "Le Reflet Cosmique"
+        ],
+        "meditation": {
+            "text": "Imagine-toi face à un lac parfaitement calme. Ce que tu vois en toi se reflète dans le monde. Inverse la direction. Tu es miroir du divin.",
+            "duration": 180,
+            "instructions": {
+                "position": "Assis, face à un miroir",
+                "focus": "Le reflet de tes yeux"
+            }
+        },
+        "exercise": {
+            "description": "Observe une situation récente où tu as critiqué quelque chose. Que reflétait-elle en toi ? Note cette équivalence cachée.",
+            "duration": 300,
+            "steps": [
+                "Choisis une situation",
+                "Identifie la critique",
+                "Cherche l'équivalence",
+                "Note l'enseignement"
+            ]
+        },
+        "applications": [
+            "Pratique de la réflexion",
+            "Exercices de symétrie",
+            "Méditation sur les opposés",
+            "Visualisation des équivalences"
+        ]
+    },
+    "3": {
+        "name": "OSCILLATION",
+        "subtitle": "Le battement du Tout",
+        "quote": "Tout est en mouvement, tout vibre, rien n'est immobile.",
+        "description": "L'oscillation est le principe du mouvement perpétuel, de la vibration qui anime toute chose.",
+        "principles": [
+            "Le Rythme Universel",
+            "La Danse Cosmique",
+            "La Pulsation Divine",
+            "Le Souffle de Vie"
+        ],
+        "meditation": {
+            "text": "Écoute ton cœur. Inspire 3, expire 6. Répète. Ressens la pulsation de la vie en toi. Oscille. Respire. Danse entre les pôles.",
+            "duration": 180,
+            "instructions": {
+                "position": "Assis, mains sur le cœur",
+                "focus": "Le rythme de la respiration"
+            }
+        },
+        "exercise": {
+            "description": "Marche lentement en comptant : 1-2-3 / 1-2-3-4-5-6. Laisse ton corps se synchroniser à ton souffle.",
+            "duration": 300,
+            "steps": [
+                "Commence à marcher",
+                "Compte le rythme",
+                "Synchronise la respiration",
+                "Observe le mouvement"
+            ]
+        },
+        "applications": [
+            "Pratique du rythme ternaire",
+            "Exercices de respiration",
+            "Méditation sur le mouvement",
+            "Visualisation des cycles"
+        ]
+    },
+    "4": {
+        "name": "POLARITÉ",
+        "subtitle": "L'art de maintenir la tension",
+        "quote": "Tout est double, tout a deux pôles, tout a son contraire.",
+        "description": "La polarité est la force qui maintient l'équilibre dynamique de l'univers à travers l'interaction des opposés.",
+        "principles": [
+            "L'Équilibre des Forces",
+            "La Danse des Opposés",
+            "L'Unité des Contraires",
+            "La Tension Créatrice"
+        ]
+    },
+    "5": {
+        "name": "RYTHME",
+        "subtitle": "Le battement du monde",
+        "quote": "Tout s'écoule, tout va et vient selon la loi du rythme.",
+        "description": "Le rythme est la pulsation qui ordonne le temps et l'espace, créant les cycles de la vie.",
+        "principles": [
+            "Les Cycles Naturels",
+            "La Spirale du Temps",
+            "La Danse des Saisons",
+            "Le Pouls de l'Univers"
+        ]
+    },
+    "6": {
+        "name": "CAUSALITÉ",
+        "subtitle": "Ce qui fut engendre ce qui vient",
+        "quote": "Toute cause a son effet, tout effet a sa cause.",
+        "description": "La causalité est la loi qui relie les actions à leurs conséquences dans une chaîne infinie.",
+        "principles": [
+            "La Chaîne des Causes",
+            "Le Karma Cosmique",
+            "L'Héritage du Temps",
+            "La Responsabilité Divine"
+        ]
+    },
+    "7": {
+        "name": "ORIENTATION",
+        "subtitle": "La direction sacrée",
+        "quote": "Comme une boussole pointe vers le nord, l'âme pointe vers sa vérité.",
+        "description": "L'orientation est le principe qui guide toute chose vers sa destination ultime.",
+        "principles": [
+            "La Guidance Intérieure",
+            "Le Sens du Sacré",
+            "La Direction Divine",
+            "Le Chemin de l'Âme"
+        ]
+    },
+    "8": {
+        "name": "ÉQUILIBRE",
+        "subtitle": "Le centre aimant",
+        "quote": "Dans l'équilibre parfait réside la vérité ultime.",
+        "description": "L'équilibre est l'état de perfection où toutes les forces sont en harmonie.",
+        "principles": [
+            "L'Harmonie Parfaite",
+            "La Balance Cosmique",
+            "La Stabilité Divine",
+            "L'Union des Forces"
+        ]
+    },
+    "9": {
+        "name": "DIVIN",
+        "subtitle": "La synthèse sacrée",
+        "quote": "Dans le neuf réside la totalité de l'être.",
+        "description": "Le divin est le principe qui unifie tous les autres, la synthèse ultime de toute existence.",
+        "principles": [
+            "L'Unité Suprême",
+            "La Totalité Divine",
+            "La Perfection Ultime",
+            "La Conscience Cosmique"
+        ]
+    }
+} 

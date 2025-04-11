@@ -6,212 +6,394 @@
 <div class="portal-page portal-4">
     <header class="portal-header">
         <h1>POLARITÉ</h1>
-        <div class="portal-number">
-            <span class="principle-text">PRINCIPE 4</span>
-        </div>
-        <p class="subtitle">La Polarité, danse des opposés</p>
-        <p class="principle-quote">« Tout est double, tout a deux pôles, tout a son contraire. Les opposés sont identiques en nature mais différents en degré. »</p>
+        <div class="portal-number">4</div>
+        <p class="subtitle">L'art de maintenir la tension</p>
+        <p class="principle-quote">« Imagine une corde tendue entre deux montagnes. Tu es cette corde. Tu ne choisis pas un côté. Tu acceptes la tension. Elle te donne la forme. »</p>
     </header>
 
-    <section class="portal-content">
-        <div class="wisdom-container">
-            <div class="wisdom-card">
-                <h2>Le Carré de Polarité</h2>
-                <p>Le nombre 4 représente l'équilibre parfait entre les forces opposées, créant une stabilité dynamique dans l'univers.</p>
-                <div class="sacred-geometry">
-                    <div class="square-container">
-                        <div class="square" id="square1"></div>
-                        <div class="square" id="square2"></div>
-                        <div class="square" id="square3"></div>
-                        <div class="square" id="square4"></div>
+    <div class="portal-content">
+        <div class="wisdom-section">
+            <h2>L'Enseignement des Opposés</h2>
+            <p>La Polarité est la force qui maintient l'équilibre dynamique de l'univers à travers l'interaction des opposés. C'est la reconnaissance que tout phénomène existe dans une tension créatrice entre des pôles complémentaires et nécessaires.</p>
+            
+            <div class="sacred-geometry">
+                <div class="square-container">
+                    <div class="square" id="polaritySquare">
+                        <svg viewBox="0 0 100 100" class="square-symbol">
+                            <rect x="10" y="10" width="80" height="80" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <line x1="10" y1="10" x2="90" y2="90" stroke="currentColor" stroke-width="2"/>
+                            <line x1="90" y1="10" x2="10" y2="90" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="polarity-slider" id="polaritySlider">
+                        <div class="slider-track"></div>
+                        <div class="slider-thumb"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="principles">
+                <h3>Les Quatre Aspects</h3>
+                <ul>
+                    <li>L'Équilibre des Forces</li>
+                    <li>La Danse des Opposés</li>
+                    <li>L'Unité des Contraires</li>
+                    <li>La Tension Créatrice</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <div class="meditation-card">
+                <h2>Méditation de l'Équilibre</h2>
+                <p class="meditation-text">Imagine une corde tendue entre deux montagnes. Tu es cette corde. Tu ne choisis pas un côté. Tu acceptes la tension. Elle te donne la forme.</p>
+                <div class="meditation-controls">
+                    <button id="startMeditation" class="sacred-button">
+                        <i class="fas fa-balance-scale"></i> Commencer la Méditation
+                    </button>
+                    <div class="timer-container">
+                        <div id="timer" class="timer">04:44</div>
+                        <div class="polarity-indicator">
+                            <span class="pole pole-left">Yin</span>
+                            <span class="pole-center">•</span>
+                            <span class="pole pole-right">Yang</span>
+                        </div>
+                    </div>
+                    <div class="balance-beam">
+                        <div class="beam"></div>
+                        <div class="beam-center"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="wisdom-card">
-                <h2>Les Quatre Pôles</h2>
-                <div class="elements-grid">
-                    <div class="element" data-element="positif">
-                        <i class="fas fa-plus"></i>
-                        <span>Positif</span>
-                    </div>
-                    <div class="element" data-element="negatif">
-                        <i class="fas fa-minus"></i>
-                        <span>Négatif</span>
-                    </div>
-                    <div class="element" data-element="actif">
-                        <i class="fas fa-bolt"></i>
-                        <span>Actif</span>
-                    </div>
-                    <div class="element" data-element="passif">
-                        <i class="fas fa-pause"></i>
-                        <span>Passif</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="wisdom-card interactive">
-                <h2>Explorer les Polarités</h2>
-                <div class="dimension-explorer">
-                    <div class="dimension" id="dim1">Lumière</div>
-                    <div class="dimension" id="dim2">Ombre</div>
-                    <div class="dimension" id="dim3">Chaud</div>
-                    <div class="dimension" id="dim4">Froid</div>
+            <div class="exercise-card">
+                <h2>Pratique de la Polarité</h2>
+                <p class="exercise-text">Prends une décision dans ta vie. Liste ses deux extrêmes. Trouve le milieu parfait. Agis à partir de là. Observe comment les opposés se complètent plutôt que de s'annuler.</p>
+                <div class="exercise-controls">
+                    <button id="startExercise" class="sacred-button">
+                        <i class="fas fa-compress-alt"></i> Démarrer l'Exercice
+                    </button>
+                    <div id="exerciseTimer" class="timer">05:00</div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="meditation-section">
-        <h2>Méditation sur la Polarité</h2>
-        <p>Explorez l'équilibre entre les forces opposées qui animent l'univers.</p>
-        <div class="compass-meditation">
-            <div class="compass-point north">Positif</div>
-            <div class="compass-point east">Actif</div>
-            <div class="compass-point south">Négatif</div>
-            <div class="compass-point west">Passif</div>
-            <button id="startMeditation">Commencer la Méditation</button>
-            <div id="meditationTimer">04:44</div>
-        </div>
-    </section>
+    </div>
 </div>
 {% endblock %}
 
 {% block extra_css %}
 <style>
-.matter-portal {
-    background: linear-gradient(135deg, var(--portal-4), var(--color-black));
+:root {
+    --portal-color: #33CC66;
+    --portal-color-light: rgba(51, 204, 102, 0.3);
+    --portal-color-fade: rgba(51, 204, 102, 0.1);
+    --portal-color-glow: rgba(51, 204, 102, 0.2);
+}
+
+.portal-page {
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 2rem;
+    position: relative;
+    background: radial-gradient(circle at center, var(--portal-color-fade) 0%, transparent 70%);
+}
+
+.portal-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--portal-color-fade) 0%, transparent 50%, var(--portal-color-fade) 100%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.portal-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(to bottom, var(--portal-color-fade), transparent);
+    border-radius: 20px;
+    box-shadow: 0 0 30px var(--portal-color-glow);
+}
+
+.portal-header h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(to bottom, var(--portal-color), rgba(51, 204, 102, 0.7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+    letter-spacing: 0.5rem;
+    font-weight: 400;
+    text-shadow: 0 0 20px var(--portal-color-glow);
+}
+
+.portal-number {
+    font-size: 12rem;
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    text-shadow: 0 0 50px var(--portal-color-glow);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--color-pearl);
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.principle-quote {
+    font-size: 1.2rem;
+    color: var(--portal-color);
+    max-width: 700px;
+    margin: 2rem auto;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.wisdom-section {
+    margin-bottom: 4rem;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--portal-color-fade);
 }
 
 .sacred-geometry {
+    height: 200px;
+    margin: 3rem 0;
+    position: relative;
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
+    align-items: center;
+    background: radial-gradient(circle at center, var(--portal-color-fade) 0%, transparent 70%);
 }
 
 .square-container {
     position: relative;
-    width: 200px;
-    height: 200px;
-    transform: rotate(45deg);
+    width: 150px;
+    height: 150px;
 }
 
 .square {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    border: 2px solid var(--color-gold);
-    transition: all 0.5s ease;
+    width: 100%;
+    height: 100%;
+    color: var(--portal-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform-origin: center;
 }
 
-#square1 { top: 0; left: 0; }
-#square2 { top: 0; right: 0; }
-#square3 { bottom: 0; left: 0; }
-#square4 { bottom: 0; right: 0; }
+.square:hover {
+    transform: rotate(45deg);
+    filter: brightness(1.2);
+}
 
-.elements-grid {
+.polarity-slider {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
+.slider-track {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.2), var(--portal-color), rgba(255, 255, 255, 0.2));
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 2px;
+}
+
+.slider-thumb {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--portal-color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--portal-color);
+    transition: left 0.3s ease;
+}
+
+.principles {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border-radius: 15px;
+    border: 1px solid var(--portal-color-fade);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.principles h3 {
+    color: var(--portal-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.principles ul {
+    list-style: none;
+    padding: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.element {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem;
-    border: 1px solid var(--color-gold);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.element i {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-gold);
-}
-
-.element:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px var(--color-gold);
-}
-
-.dimension-explorer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
-    margin: 2rem 0;
 }
 
-.dimension {
-    padding: 1rem;
+.principles li {
+    color: var(--color-pearl);
+    padding: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.practice-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.meditation-card, .exercise-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border: 1px solid var(--portal-color-fade);
+    border-radius: 15px;
+    padding: 2rem;
     text-align: center;
-    border: 1px solid var(--color-gold);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.dimension:hover {
-    transform: scale(1.1);
-    background: rgba(255, 215, 0, 0.1);
+.meditation-card:hover, .exercise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 40px var(--portal-color-glow);
 }
 
-.compass-meditation {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 2rem auto;
+.meditation-card h2, .exercise-card h2 {
+    color: var(--portal-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.compass-point {
-    position: absolute;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid var(--color-gold);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.meditation-text, .exercise-text {
+    color: var(--color-pearl);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
 }
 
-.north { top: 0; left: 50%; transform: translateX(-50%); }
-.east { right: 0; top: 50%; transform: translateY(-50%); }
-.south { bottom: 0; left: 50%; transform: translateX(-50%); }
-.west { left: 0; top: 50%; transform: translateY(-50%); }
-
-.compass-point:hover {
-    background: rgba(255, 215, 0, 0.1);
-    transform: scale(1.1);
-}
-
-#meditationTimer {
-    font-size: 2rem;
-    font-family: 'Cinzel Decorative', cursive;
-    color: var(--color-gold);
-    margin: 1rem 0;
-    text-align: center;
-}
-
-#startMeditation {
-    display: block;
-    margin: 2rem auto;
-    background: var(--color-gold);
-    color: var(--color-black);
-    border: none;
+.sacred-button {
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    border: 1px solid var(--portal-color);
+    color: var(--color-pearl);
     padding: 1rem 2rem;
+    font-size: 1.1rem;
     border-radius: 30px;
     cursor: pointer;
-    font-family: 'EB Garamond', serif;
-    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px var(--portal-color-glow);
+    text-shadow: 0 0 10px var(--portal-color-glow);
+}
+
+.sacred-button:hover {
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 30px var(--portal-color);
+    color: white;
+}
+
+.timer {
+    font-size: 2.5rem;
+    background: linear-gradient(to bottom, var(--portal-color), rgba(51, 204, 102, 0.7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px var(--portal-color-glow);
+}
+
+.polarity-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.pole {
+    color: var(--color-pearl);
+    opacity: 0.7;
     transition: all 0.3s ease;
 }
 
-#startMeditation:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--color-gold);
+.pole.active {
+    color: var(--portal-color);
+    font-weight: bold;
+    opacity: 1;
+}
+
+.pole-center {
+    color: var(--portal-color);
+    font-size: 1.5rem;
+}
+
+.balance-beam {
+    position: relative;
+    height: 40px;
+    width: 80%;
+    margin: 1.5rem auto 0;
+}
+
+.beam {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background-color: var(--portal-color-fade);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 3px;
+    transition: transform 0.5s ease;
+}
+
+.beam-center {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--portal-color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px var(--portal-color);
+}
+
+@media (max-width: 768px) {
+    .practice-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .principles ul {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 {% endblock %}
@@ -219,67 +401,162 @@
 {% block extra_js %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const squares = document.querySelectorAll('.square');
-    const elements = document.querySelectorAll('.element');
-    const dimensions = document.querySelectorAll('.dimension');
-    let meditationInterval;
+    // Carré de polarité interactif
+    const square = document.getElementById('polaritySquare');
+    const slider = document.getElementById('polaritySlider');
+    const sliderThumb = slider.querySelector('.slider-thumb');
+    let isDragging = false;
     
-    // Animation des carrés
-    squares.forEach(square => {
-        square.addEventListener('mouseover', function() {
-            squares.forEach(s => s.style.transform = 'scale(0.9)');
-            this.style.transform = 'scale(1.1)';
-        });
-        
-        square.addEventListener('mouseout', function() {
-            squares.forEach(s => s.style.transform = 'scale(1)');
-        });
+    square.addEventListener('click', function() {
+        this.style.transform = this.style.transform === 'rotate(45deg)' ? 'rotate(0deg)' : 'rotate(45deg)';
     });
-
-    // Animation des éléments
-    elements.forEach(element => {
-        element.addEventListener('click', function() {
-            elements.forEach(e => e.classList.remove('active'));
-            this.classList.add('active');
-        });
+    
+    sliderThumb.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        document.addEventListener('mousemove', moveSlider);
+        document.addEventListener('mouseup', stopDragging);
+        e.preventDefault();
     });
-
-    // Animation des dimensions
-    dimensions.forEach(dimension => {
-        dimension.addEventListener('click', function() {
-            dimensions.forEach(d => d.style.transform = 'scale(1)');
-            this.style.transform = 'scale(1.1)';
-        });
-    });
+    
+    function moveSlider(e) {
+        if (!isDragging) return;
+        const sliderRect = slider.getBoundingClientRect();
+        let position = (e.clientX - sliderRect.left) / sliderRect.width;
+        position = Math.max(0, Math.min(1, position));
+        sliderThumb.style.left = `${position * 100}%`;
+        square.style.transform = `rotate(${position * 45}deg)`;
+    }
+    
+    function stopDragging() {
+        isDragging = false;
+        document.removeEventListener('mousemove', moveSlider);
+        document.removeEventListener('mouseup', stopDragging);
+    }
 
     // Méditation
-    document.getElementById('startMeditation').addEventListener('click', function() {
-        const timer = document.getElementById('meditationTimer');
-        let timeLeft = 4 * 60 + 44; // 4:44 minutes
+    const meditationButton = document.getElementById('startMeditation');
+    const timer = document.getElementById('timer');
+    const poleLeft = document.querySelector('.pole-left');
+    const poleRight = document.querySelector('.pole-right');
+    const beam = document.querySelector('.beam');
+    let meditationInterval;
+    let isMeditating = false;
+    let timeLeft = 4 * 60 + 44; // 4:44
+    let balancePosition = 0;
+    let balanceDirection = 1;
+
+    meditationButton.addEventListener('click', function() {
+        isMeditating = !isMeditating;
         
-        if (this.textContent === 'Arrêter') {
-            clearInterval(meditationInterval);
-            this.textContent = 'Commencer la Méditation';
-            timer.textContent = '04:44';
-            return;
+        if (isMeditating) {
+            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            startMeditation();
+            startBalanceBeam();
+        } else {
+            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+            pauseMeditation();
         }
-        
-        this.textContent = 'Arrêter';
-        
+    });
+
+    function startMeditation() {
         meditationInterval = setInterval(() => {
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
+            timeLeft--;
+            updateTimer(timer, timeLeft);
             
-            timer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-            
-            if (timeLeft <= 0) {
-                clearInterval(meditationInterval);
-                this.textContent = 'Commencer la Méditation';
+            // Alternance des pôles
+            if (timeLeft % 8 < 4) {
+                poleLeft.classList.add('active');
+                poleRight.classList.remove('active');
+            } else {
+                poleLeft.classList.remove('active');
+                poleRight.classList.add('active');
             }
             
-            timeLeft--;
+            if (timeLeft <= 0) {
+                endMeditation();
+            }
         }, 1000);
+    }
+
+    function startBalanceBeam() {
+        balanceInterval = setInterval(() => {
+            balancePosition += (0.02 * balanceDirection);
+            
+            if (balancePosition > 0.2 || balancePosition < -0.2) {
+                balanceDirection *= -1;
+            }
+            
+            beam.style.transform = `translateY(-50%) rotate(${balancePosition * 10}deg)`;
+        }, 100);
+    }
+
+    function pauseMeditation() {
+        clearInterval(meditationInterval);
+        clearInterval(balanceInterval);
+    }
+
+    function endMeditation() {
+        clearInterval(meditationInterval);
+        clearInterval(balanceInterval);
+        meditationButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        isMeditating = false;
+        timeLeft = 4 * 60 + 44;
+        updateTimer(timer, timeLeft);
+        beam.style.transform = 'translateY(-50%) rotate(0deg)';
+        poleLeft.classList.remove('active');
+        poleRight.classList.remove('active');
+        new Audio('/static/audio/bell.mp3').play();
+    }
+
+    // Exercice
+    const exerciseButton = document.getElementById('startExercise');
+    const exerciseTimer = document.getElementById('exerciseTimer');
+    let exerciseInterval;
+    let isExercising = false;
+    let exerciseTimeLeft = 3 * 60;
+
+    exerciseButton.addEventListener('click', function() {
+        isExercising = !isExercising;
+        
+        if (isExercising) {
+            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            startExercise();
+        } else {
+            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+            pauseExercise();
+        }
     });
+
+    function startExercise() {
+        exerciseInterval = setInterval(() => {
+            exerciseTimeLeft--;
+            updateTimer(exerciseTimer, exerciseTimeLeft);
+            
+            if (exerciseTimeLeft <= 0) {
+                endExercise();
+            }
+        }, 1000);
+    }
+
+    function pauseExercise() {
+        clearInterval(exerciseInterval);
+    }
+
+    function endExercise() {
+        clearInterval(exerciseInterval);
+        exerciseButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        isExercising = false;
+        exerciseTimeLeft = 3 * 60;
+        updateTimer(exerciseTimer, exerciseTimeLeft);
+        new Audio('/static/audio/bell.mp3').play();
+    }
+
+    // Utilitaire pour formater le temps
+    function updateTimer(element, seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        element.textContent = `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+    }
 });
 </script>
 {% endblock %} 

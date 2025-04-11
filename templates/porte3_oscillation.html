@@ -6,44 +6,73 @@
 <div class="portal-page portal-3">
     <header class="portal-header">
         <h1>OSCILLATION</h1>
-        <div class="portal-number">
-            <span class="principle-text">PRINCIPE 3</span>
-        </div>
-        <p class="subtitle">L'Oscillation, rythme de la vie</p>
-        <p class="principle-quote">« Rien ne repose, tout est en mouvement, tout vibre. L'univers est en perpétuelle oscillation. »</p>
+        <div class="portal-number">3</div>
+        <p class="subtitle">Le battement du Tout</p>
+        <p class="principle-quote">« Entre les pôles, la vie danse. Le trois est le rythme qui anime toute chose. »</p>
     </header>
 
     <div class="portal-content">
-        <div class="wisdom-card">
-            <h2>L'Enseignement de l'Oscillation</h2>
+        <div class="wisdom-section">
+            <h2>L'Enseignement de la Vibration</h2>
             <p>L'Oscillation représente le mouvement fondamental de l'univers, le rythme éternel entre les extrêmes. C'est le principe qui anime toute chose, créant un équilibre dynamique à travers le mouvement constant entre les pôles.</p>
             
+            <div class="sacred-geometry">
+                <div class="triangle-container">
+                    <div class="triangle" id="oscillationTriangle">
+                        <svg viewBox="0 0 100 90" class="triangle-symbol">
+                            <polygon points="50,0 100,90 0,90" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="50" cy="0" r="3" fill="currentColor"/>
+                            <circle cx="100" cy="90" r="3" fill="currentColor"/>
+                            <circle cx="0" cy="90" r="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="pulse-dot" id="pulseDot"></div>
+                </div>
+            </div>
+            
             <div class="principles">
-                <h3>Principes de l'Oscillation</h3>
+                <h3>Les Quatre Aspects</h3>
                 <ul>
-                    <li>Mouvement Perpétuel</li>
-                    <li>Rythme Universel</li>
-                    <li>Équilibre Dynamique</li>
-                    <li>Transformation Continue</li>
+                    <li>Le Rythme Universel</li>
+                    <li>La Danse Cosmique</li>
+                    <li>La Pulsation Divine</li>
+                    <li>Le Souffle de Vie</li>
                 </ul>
             </div>
         </div>
 
-        <div class="wisdom-card">
-            <h2>Le Triangle d'Oscillation</h2>
-            <div class="sacred-symbol">
-                <div class="triangle"></div>
+        <div class="practice-section">
+            <div class="meditation-card">
+                <h2>Méditation du Rythme</h2>
+                <p class="meditation-text">Écoute ton cœur. Inspire 3, expire 6. Répète. Ressens la pulsation de la vie en toi. Oscille. Respire. Danse entre les pôles.</p>
+                <div class="meditation-controls">
+                    <button id="startMeditation" class="sacred-button">
+                        <i class="fas fa-heartbeat"></i> Commencer la Méditation
+                    </button>
+                    <div class="timer-container">
+                        <div id="timer" class="timer">03:33</div>
+                        <div class="breath-guide">
+                            <span class="breath-in">Inspire</span>
+                            <span class="breath-pause">•</span>
+                            <span class="breath-out">Expire</span>
+                        </div>
+                    </div>
+                    <div class="rhythm-indicator">
+                        <div class="rhythm-dot"></div>
+                        <div class="rhythm-dot"></div>
+                        <div class="rhythm-dot"></div>
+                    </div>
+                </div>
             </div>
-            <p>Le triangle symbolise le mouvement oscillatoire à travers ses trois points, représentant les trois phases du mouvement : ascension, apogée et descente.</p>
-        </div>
 
-        <div class="wisdom-card">
-            <h2>Méditation sur l'Oscillation</h2>
-            <div class="meditation-section">
-                <p>Observez le mouvement naturel de votre respiration, symbole de l'oscillation universelle.</p>
-                <div class="meditation-timer">
-                    <button id="startMeditation" class="start-meditation">Commencer la Méditation</button>
-                    <div id="timer" class="timer-display">03:33</div>
+            <div class="exercise-card">
+                <h2>Pratique de l'Oscillation</h2>
+                <p class="exercise-text">Marche lentement en comptant : 1-2-3 / 1-2-3-4-5-6. Laisse ton corps se synchroniser à ton souffle. Observe comment le rythme crée une harmonie naturelle en toi.</p>
+                <div class="exercise-controls">
+                    <button id="startExercise" class="sacred-button">
+                        <i class="fas fa-walking"></i> Démarrer l'Exercice
+                    </button>
+                    <div id="exerciseTimer" class="timer">05:00</div>
                 </div>
             </div>
         </div>
@@ -53,99 +82,438 @@
 
 {% block extra_css %}
 <style>
-.trinity-portal {
-    background: linear-gradient(135deg, var(--portal-3), var(--color-black));
+:root {
+    --portal-color: #FFCC00;
+    --portal-color-light: rgba(255, 204, 0, 0.3);
+    --portal-color-fade: rgba(255, 204, 0, 0.1);
+    --portal-color-glow: rgba(255, 204, 0, 0.2);
+}
+
+.portal-page {
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 2rem;
+    position: relative;
+    background: radial-gradient(circle at center, var(--portal-color-fade) 0%, transparent 70%);
 }
 
-.trinity-explorer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem 0;
+.portal-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--portal-color-fade) 0%, transparent 50%, var(--portal-color-fade) 100%);
+    pointer-events: none;
+    z-index: -1;
 }
 
-.trinity-circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: var(--color-gold);
+.portal-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(to bottom, var(--portal-color-fade), transparent);
+    border-radius: 20px;
+    box-shadow: 0 0 30px var(--portal-color-glow);
+}
+
+.portal-header h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(to bottom, var(--portal-color), rgba(255, 204, 0, 0.7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+    letter-spacing: 0.5rem;
+    font-weight: 400;
+    text-shadow: 0 0 20px var(--portal-color-glow);
+}
+
+.portal-number {
+    font-size: 12rem;
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    text-shadow: 0 0 50px var(--portal-color-glow);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--color-pearl);
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.principle-quote {
+    font-size: 1.2rem;
+    color: var(--portal-color);
+    max-width: 700px;
+    margin: 2rem auto;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.wisdom-section {
+    margin-bottom: 4rem;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--portal-color-fade);
+}
+
+.sacred-geometry {
+    height: 200px;
+    margin: 3rem 0;
+    position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-weight: bold;
+    align-items: center;
+    background: radial-gradient(circle at center, var(--portal-color-fade) 0%, transparent 70%);
+}
+
+.triangle-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.triangle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: var(--portal-color);
     cursor: pointer;
     transition: all 0.3s ease;
+    transform-origin: center;
 }
 
-.trinity-circle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px var(--color-gold);
+.triangle:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
 }
 
-.meditation-timer {
+.pulse-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--portal-color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px var(--portal-color);
+    animation: trianglePath 6s infinite linear;
+}
+
+@keyframes trianglePath {
+    0% {
+        top: 0%;
+        left: 50%;
+    }
+    33% {
+        top: 90%;
+        left: 90%;
+    }
+    66% {
+        top: 90%;
+        left: 10%;
+    }
+    100% {
+        top: 0%;
+        left: 50%;
+    }
+}
+
+.principles {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border-radius: 15px;
+    border: 1px solid var(--portal-color-fade);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.principles h3 {
+    color: var(--portal-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.principles ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.principles li {
+    color: var(--color-pearl);
+    padding: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.practice-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.meditation-card, .exercise-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border: 1px solid var(--portal-color-fade);
+    border-radius: 15px;
+    padding: 2rem;
     text-align: center;
-    margin: 2rem 0;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#meditationTimer {
-    font-size: 2rem;
-    font-family: 'Cinzel Decorative', cursive;
-    color: var(--color-gold);
-    margin: 1rem 0;
+.meditation-card:hover, .exercise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 40px var(--portal-color-glow);
 }
 
-#startMeditation {
-    background: var(--color-gold);
-    color: var(--color-black);
-    border: none;
+.meditation-card h2, .exercise-card h2 {
+    color: var(--portal-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.meditation-text, .exercise-text {
+    color: var(--color-pearl);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.sacred-button {
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    border: 1px solid var(--portal-color);
+    color: var(--color-pearl);
     padding: 1rem 2rem;
+    font-size: 1.1rem;
     border-radius: 30px;
     cursor: pointer;
-    font-family: 'EB Garamond', serif;
-    font-size: 1.1rem;
     transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px var(--portal-color-glow);
+    text-shadow: 0 0 10px var(--portal-color-glow);
 }
 
-#startMeditation:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--color-gold);
+.sacred-button:hover {
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 30px var(--portal-color);
+    color: white;
+}
+
+.timer {
+    font-size: 2.5rem;
+    background: linear-gradient(to bottom, var(--portal-color), rgba(255, 204, 0, 0.7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px var(--portal-color-glow);
+}
+
+.breath-guide {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-pearl);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+}
+
+.breath-in.active, .breath-out.active {
+    color: var(--portal-color);
+    opacity: 1;
+}
+
+.rhythm-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.rhythm-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--portal-color-fade);
+}
+
+.rhythm-dot.active {
+    background-color: var(--portal-color);
+    box-shadow: 0 0 10px var(--portal-color);
+}
+
+@media (max-width: 768px) {
+    .practice-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .principles ul {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 {% endblock %}
 
 {% block extra_js %}
 <script>
-function startMeditation() {
-    const timer = document.getElementById('timer');
-    const button = document.getElementById('startMeditation');
-    let timeLeft = 3 * 60 + 33; // 3:33 minutes
-    let interval;
+document.addEventListener('DOMContentLoaded', function() {
+    // Triangle d'oscillation interactif
+    const triangle = document.getElementById('oscillationTriangle');
+    const pulseDot = document.getElementById('pulseDot');
+    
+    triangle.addEventListener('click', function() {
+        pulseDot.style.animation = 'none';
+        void pulseDot.offsetWidth;
+        pulseDot.style.animation = 'trianglePath 6s infinite linear';
+    });
 
-    if (button.textContent === 'Arrêter') {
-        clearInterval(interval);
-        button.textContent = 'Commencer la Méditation';
-        timer.textContent = '03:33';
-        return;
+    // Méditation
+    const meditationButton = document.getElementById('startMeditation');
+    const timer = document.getElementById('timer');
+    const breathIn = document.querySelector('.breath-in');
+    const breathOut = document.querySelector('.breath-out');
+    const rhythmDots = document.querySelectorAll('.rhythm-dot');
+    let meditationInterval;
+    let rhythmInterval;
+    let isMeditating = false;
+    let timeLeft = 3 * 60 + 33; // 3:33
+
+    meditationButton.addEventListener('click', function() {
+        isMeditating = !isMeditating;
+        
+        if (isMeditating) {
+            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            startMeditation();
+            startRhythm();
+        } else {
+            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+            pauseMeditation();
+            clearInterval(rhythmInterval);
+        }
+    });
+
+    function startMeditation() {
+        meditationInterval = setInterval(() => {
+            timeLeft--;
+            updateTimer(timer, timeLeft);
+            
+            // Alternance respiration
+            if (timeLeft % 9 < 3) {
+                breathIn.classList.add('active');
+                breathOut.classList.remove('active');
+            } else {
+                breathIn.classList.remove('active');
+                breathOut.classList.add('active');
+            }
+            
+            if (timeLeft <= 0) {
+                endMeditation();
+            }
+        }, 1000);
     }
 
-    button.textContent = 'Arrêter';
-    
-    interval = setInterval(() => {
-        const minutes = Math.floor(timeLeft / 60);
-        const seconds = timeLeft % 60;
+    function startRhythm() {
+        let activeIndex = 0;
         
-        timer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        // Reset all dots
+        rhythmDots.forEach(dot => dot.classList.remove('active'));
         
-        if (timeLeft <= 0) {
-            clearInterval(interval);
-            button.textContent = 'Commencer la Méditation';
-        }
-        
-        timeLeft--;
-    }, 1000);
-}
+        rhythmInterval = setInterval(() => {
+            // Clear all active dots
+            rhythmDots.forEach(dot => dot.classList.remove('active'));
+            
+            // Activate current dot
+            rhythmDots[activeIndex].classList.add('active');
+            
+            // Move to next dot
+            activeIndex = (activeIndex + 1) % rhythmDots.length;
+        }, 1000);
+    }
 
-document.getElementById('startMeditation').addEventListener('click', startMeditation);
+    function pauseMeditation() {
+        clearInterval(meditationInterval);
+    }
+
+    function endMeditation() {
+        clearInterval(meditationInterval);
+        clearInterval(rhythmInterval);
+        meditationButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        isMeditating = false;
+        timeLeft = 3 * 60 + 33;
+        updateTimer(timer, timeLeft);
+        rhythmDots.forEach(dot => dot.classList.remove('active'));
+        new Audio('/static/audio/bell.mp3').play();
+    }
+
+    // Exercice
+    const exerciseButton = document.getElementById('startExercise');
+    const exerciseTimer = document.getElementById('exerciseTimer');
+    let exerciseInterval;
+    let isExercising = false;
+    let exerciseTimeLeft = 3 * 60;
+
+    exerciseButton.addEventListener('click', function() {
+        isExercising = !isExercising;
+        
+        if (isExercising) {
+            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            startExercise();
+        } else {
+            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+            pauseExercise();
+        }
+    });
+
+    function startExercise() {
+        exerciseInterval = setInterval(() => {
+            exerciseTimeLeft--;
+            updateTimer(exerciseTimer, exerciseTimeLeft);
+            
+            if (exerciseTimeLeft <= 0) {
+                endExercise();
+            }
+        }, 1000);
+    }
+
+    function pauseExercise() {
+        clearInterval(exerciseInterval);
+    }
+
+    function endExercise() {
+        clearInterval(exerciseInterval);
+        exerciseButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        isExercising = false;
+        exerciseTimeLeft = 3 * 60;
+        updateTimer(exerciseTimer, exerciseTimeLeft);
+        new Audio('/static/audio/bell.mp3').play();
+    }
+
+    // Utilitaire pour formater le temps
+    function updateTimer(element, seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        element.textContent = `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+    }
+});
 </script>
 {% endblock %} 

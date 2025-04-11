@@ -6,20 +6,25 @@
 <div class="portal-page portal-1">
     <header class="portal-header">
         <h1>CONSCIENCE</h1>
-        <div class="portal-number">
-            <span class="principle-text">PRINCIPE 1</span>
-        </div>
-        <p class="subtitle">La Conscience, source de toute création</p>
-        <p class="principle-quote">« Tout est Esprit, l'Univers est Mental. La réalité que nous percevons est une manifestation de la conscience universelle. »</p>
+        <div class="portal-number">1</div>
+        <p class="subtitle">L'Origine vivante du Réel</p>
+        <p class="principle-quote">« Le point est l'essence de toute forme. Il est le germe, l'origine, le centre. En lui réside le potentiel infini de la création. »</p>
     </header>
 
     <div class="portal-content">
-        <div class="wisdom-card">
-            <h2>L'Enseignement de la Conscience</h2>
-            <p>La Conscience est le fondement de toute existence, le principe premier qui permet la perception et la compréhension. Elle représente l'état de présence pure, la source de toute connaissance et de toute expérience. Dans l'arithmétique sacrée, la Conscience est le point de départ de toute manifestation.</p>
+        <div class="wisdom-section">
+            <h2>L'Enseignement du Point</h2>
+            <p>La Conscience est le fondement de toute existence, le principe premier qui permet la perception et la compréhension. Elle représente l'état de présence pure, la source de toute connaissance et de toute expérience.</p>
+            
+            <div class="sacred-geometry">
+                <div class="point-container">
+                    <div class="point" id="consciousnessPoint">●</div>
+                    <div class="point-aura"></div>
+                </div>
+            </div>
             
             <div class="principles">
-                <h3>Principes Clés</h3>
+                <h3>Les Quatre Aspects</h3>
                 <ul>
                     <li>La Présence Pure</li>
                     <li>L'Éveil Intérieur</li>
@@ -29,19 +34,33 @@
             </div>
         </div>
 
-        <div class="wisdom-card">
-            <h2>Le Point de Conscience</h2>
-            <div class="sacred-symbol">●</div>
-            <p>Le point central représente la conscience pure, l'état d'être sans forme ni limite, d'où émerge toute perception et toute compréhension.</p>
-        </div>
+        <div class="practice-section">
+            <div class="meditation-card">
+                <h2>Méditation du Point</h2>
+                <p class="meditation-text">Ferme les yeux. Ressens le vide avant le mouvement. Un point naît, vibrant dans le noir cosmique. Tu es ce point. Tu es le germe. L'univers te respire.</p>
+                <div class="meditation-controls">
+                    <button id="startMeditation" class="sacred-button">
+                        <i class="fas fa-om"></i> Commencer la Méditation
+                    </button>
+                    <div class="timer-container">
+                        <div id="timer" class="timer">01:11</div>
+                        <div class="breath-guide">
+                            <span class="breath-in">Inspire</span>
+                            <span class="breath-pause">•</span>
+                            <span class="breath-out">Expire</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <div class="wisdom-card">
-            <h2>Méditation sur la Conscience</h2>
-            <div class="meditation-section">
-                <p>Concentrez-vous sur votre point de conscience intérieur, centre de votre être.</p>
-                <div class="meditation-timer">
-                    <button id="startMeditation" class="start-meditation">Commencer la Méditation</button>
-                    <div id="timer" class="timer-display">15:00</div>
+            <div class="exercise-card">
+                <h2>Pratique de l'Unité</h2>
+                <p class="exercise-text">Pendant 3 minutes, concentre-toi sur un point fixe. Compte les respirations en silence. Observe le moment où la pensée tente d'émerger. Réalise que tout ce qui est autour de toi est vide. Comme ta conscience. Les deux sont faits de la même substance.</p>
+                <div class="exercise-controls">
+                    <button id="startExercise" class="sacred-button">
+                        <i class="fas fa-seedling"></i> Démarrer l'Exercice
+                    </button>
+                    <div id="exerciseTimer" class="timer">03:00</div>
                 </div>
             </div>
         </div>
@@ -49,39 +68,400 @@
 </div>
 {% endblock %}
 
-{% block extra_js %}
-<script>
-function startMeditation() {
-    const timer = document.getElementById('timer');
-    const button = document.getElementById('startMeditation');
-    let timeLeft = 15 * 60; // 15 minutes
-    let interval;
-
-    if (button.textContent === 'Arrêter') {
-        clearInterval(interval);
-        button.textContent = 'Commencer la Méditation';
-        timer.textContent = '15:00';
-        return;
-    }
-
-    button.textContent = 'Arrêter';
-    
-    interval = setInterval(() => {
-        const minutes = Math.floor(timeLeft / 60);
-        const seconds = timeLeft % 60;
-        
-        timer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-        
-        if (timeLeft <= 0) {
-            clearInterval(interval);
-            button.textContent = 'Commencer la Méditation';
-            // Jouer un son doux de cloche ici
-        }
-        
-        timeLeft--;
-    }, 1000);
+{% block extra_css %}
+<style>
+:root {
+    --portal-color: #FF3333;
+    --portal-color-light: rgba(255, 51, 51, 0.3);
+    --portal-color-fade: rgba(255, 51, 51, 0.1);
+    --portal-color-glow: rgba(255, 51, 51, 0.2);
 }
 
-document.getElementById('startMeditation').addEventListener('click', startMeditation);
+.portal-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    background: radial-gradient(circle at center, var(--portal-color-fade) 0%, transparent 70%);
+}
+
+.portal-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--portal-color-fade) 0%, transparent 50%, var(--portal-color-fade) 100%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.portal-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(to bottom, var(--portal-color-fade), transparent);
+    border-radius: 20px;
+    box-shadow: 0 0 30px var(--portal-color-glow);
+}
+
+.portal-header h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(to bottom, var(--portal-color), rgba(255, 51, 51, 0.7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+    letter-spacing: 0.5rem;
+    font-weight: 400;
+    text-shadow: 0 0 20px var(--portal-color-glow);
+}
+
+.portal-number {
+    font-size: 12rem;
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    text-shadow: 0 0 50px var(--portal-color-glow);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--color-pearl);
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.principle-quote {
+    font-size: 1.2rem;
+    color: var(--portal-color);
+    max-width: 700px;
+    margin: 2rem auto;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.wisdom-section {
+    margin-bottom: 4rem;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--portal-color-fade);
+}
+
+.sacred-geometry {
+    height: 200px;
+    margin: 3rem 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, var(--portal-color-fade) 0%, transparent 70%);
+}
+
+.point-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.point {
+    font-size: 5rem;
+    background: linear-gradient(to bottom right, var(--portal-color), rgba(255, 51, 51, 0.7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 20px var(--portal-color-glow);
+}
+
+.point:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+    filter: brightness(1.2);
+}
+
+.point-aura {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--portal-color-light) 0%, transparent 70%);
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 30px var(--portal-color-glow);
+}
+
+.principles {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border-radius: 15px;
+    border: 1px solid var(--portal-color-fade);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.principles h3 {
+    color: var(--portal-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.principles ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.principles li {
+    color: var(--color-pearl);
+    padding: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.practice-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.meditation-card, .exercise-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border: 1px solid var(--portal-color-fade);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.meditation-card:hover, .exercise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 40px var(--portal-color-glow);
+}
+
+.meditation-card h2, .exercise-card h2 {
+    color: var(--portal-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.meditation-text, .exercise-text {
+    color: var(--color-pearl);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.sacred-button {
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    border: 1px solid var(--portal-color);
+    color: var(--color-pearl);
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px var(--portal-color-glow);
+    text-shadow: 0 0 10px var(--portal-color-glow);
+}
+
+.sacred-button:hover {
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 30px var(--portal-color);
+    color: white;
+}
+
+.timer {
+    font-size: 2.5rem;
+    background: linear-gradient(to bottom, var(--portal-color), rgba(255, 51, 51, 0.7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px var(--portal-color-glow);
+}
+
+.breath-guide {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-pearl);
+    opacity: 0.7;
+}
+
+.breath-in.active, .breath-out.active {
+    color: var(--portal-color);
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+        box-shadow: 0 0 30px var(--portal-color-glow);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.2;
+        box-shadow: 0 0 50px var(--portal-color);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+        box-shadow: 0 0 30px var(--portal-color-glow);
+    }
+}
+
+@media (max-width: 768px) {
+    .practice-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .principles ul {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Point de conscience interactif
+    const point = document.getElementById('consciousnessPoint');
+    const pointAura = document.querySelector('.point-aura');
+    
+    point.addEventListener('click', function() {
+        pointAura.style.animation = 'none';
+        void pointAura.offsetWidth;
+        pointAura.style.animation = 'pulse 2s infinite';
+    });
+
+    // Méditation
+    const meditationButton = document.getElementById('startMeditation');
+    const timer = document.getElementById('timer');
+    const breathIn = document.querySelector('.breath-in');
+    const breathOut = document.querySelector('.breath-out');
+    let meditationInterval;
+    let isMeditating = false;
+    let timeLeft = 15 * 60;
+
+    meditationButton.addEventListener('click', function() {
+        isMeditating = !isMeditating;
+        
+        if (isMeditating) {
+            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            startMeditation();
+        } else {
+            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+            pauseMeditation();
+        }
+    });
+
+    function startMeditation() {
+        meditationInterval = setInterval(() => {
+            timeLeft--;
+            updateTimer(timer, timeLeft);
+            
+            // Alternance respiration
+            if (timeLeft % 8 < 4) {
+                breathIn.classList.add('active');
+                breathOut.classList.remove('active');
+            } else {
+                breathIn.classList.remove('active');
+                breathOut.classList.add('active');
+            }
+            
+            if (timeLeft <= 0) {
+                endMeditation();
+            }
+        }, 1000);
+    }
+
+    function pauseMeditation() {
+        clearInterval(meditationInterval);
+    }
+
+    function endMeditation() {
+        clearInterval(meditationInterval);
+        meditationButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        isMeditating = false;
+        timeLeft = 15 * 60;
+        updateTimer(timer, timeLeft);
+        new Audio('/static/audio/bell.mp3').play();
+    }
+
+    // Exercice
+    const exerciseButton = document.getElementById('startExercise');
+    const exerciseTimer = document.getElementById('exerciseTimer');
+    let exerciseInterval;
+    let isExercising = false;
+    let exerciseTimeLeft = 3 * 60;
+
+    exerciseButton.addEventListener('click', function() {
+        isExercising = !isExercising;
+        
+        if (isExercising) {
+            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            startExercise();
+        } else {
+            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+            pauseExercise();
+        }
+    });
+
+    function startExercise() {
+        exerciseInterval = setInterval(() => {
+            exerciseTimeLeft--;
+            updateTimer(exerciseTimer, exerciseTimeLeft);
+            
+            if (exerciseTimeLeft <= 0) {
+                endExercise();
+            }
+        }, 1000);
+    }
+
+    function pauseExercise() {
+        clearInterval(exerciseInterval);
+    }
+
+    function endExercise() {
+        clearInterval(exerciseInterval);
+        exerciseButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        isExercising = false;
+        exerciseTimeLeft = 3 * 60;
+        updateTimer(exerciseTimer, exerciseTimeLeft);
+        new Audio('/static/audio/bell.mp3').play();
+    }
+
+    // Utilitaire pour formater le temps
+    function updateTimer(element, seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        element.textContent = `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+    }
+});
 </script>
 {% endblock %} 

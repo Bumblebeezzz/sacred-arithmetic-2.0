@@ -6,44 +6,80 @@
 <div class="portal-page portal-5">
     <header class="portal-header">
         <h1>RYTHME</h1>
-        <div class="portal-number">
-            <span class="principle-text">PRINCIPE 5</span>
-        </div>
-        <p class="subtitle">Le Rythme, Le pouls de l'univers</p>
-        <p class="principle-quote">« Tout s'écoule, tout entre et sort ; tout a ses marées ; toutes les choses montent et descendent ; la mesure du mouvement est le pendule. »</p>
+        <div class="portal-number">5</div>
+        <p class="subtitle">La danse cosmique des cycles</p>
+        <p class="principle-quote">« Le rythme est l'architecte du temps. Écoute les pulsations de l'univers et tu découvriras que ton cœur bat à l'unisson avec lui. »</p>
     </header>
 
     <div class="portal-content">
-        <div class="wisdom-card">
-            <h2>L'Enseignement du Rythme</h2>
-            <p>Le Cinq représente le rythme fondamental qui anime l'univers, le mouvement cyclique qui crée l'harmonie et l'équilibre. C'est le principe qui donne vie à toute chose à travers des cycles naturels.</p>
+        <div class="wisdom-section">
+            <h2>L'Art des Cycles Sacrés</h2>
+            <p>Le Rythme est la mesure fondamentale qui gouverne tous les cycles de l'existence. C'est l'alternance naturelle et l'ondulation qui soutient toute vie, de la respiration aux saisons, des battements cardiaques aux révolutions stellaires.</p>
+            
+            <div class="sacred-geometry">
+                <div class="rhythm-container">
+                    <div class="pendulum" id="pendulum">
+                        <svg viewBox="0 0 100 100" class="pendulum-symbol">
+                            <circle cx="50" cy="15" r="3" fill="currentColor"/>
+                            <line x1="50" y1="15" x2="50" y2="70" stroke="currentColor" stroke-width="1" id="pendulumLine"/>
+                            <circle cx="50" cy="70" r="8" fill="currentColor" id="pendulumWeight"/>
+                            <path d="M 30 15 C 30 5, 70 5, 70 15" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="rhythm-controls">
+                        <div class="rhythm-slider" id="rhythmSlider">
+                            <div class="slider-track"></div>
+                            <div class="slider-thumb"></div>
+                        </div>
+                        <div class="tempo-indicator">
+                            <span class="tempo tempo-slow">Lent</span>
+                            <span class="tempo tempo-medium">Modéré</span>
+                            <span class="tempo tempo-fast">Rapide</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <div class="principles">
-                <h3>Principes du Rythme</h3>
+                <h3>Les Cinq Flux</h3>
                 <ul>
-                    <li>Cycles Naturels</li>
-                    <li>Mouvement Harmonieux</li>
-                    <li>Régularité Universelle</li>
-                    <li>Équilibre Dynamique</li>
+                    <li>La Pulsation Primordiale</li>
+                    <li>Les Cycles Naturels</li>
+                    <li>La Synchronicité</li>
+                    <li>L'Alternance</li>
+                    <li>La Résonance</li>
                 </ul>
             </div>
         </div>
 
-        <div class="wisdom-card">
-            <h2>Le Pentagramme Rythmique</h2>
-            <div class="sacred-symbol">
-                <div class="pentagram"></div>
+        <div class="practice-section">
+            <div class="meditation-card">
+                <h2>Méditation du Souffle Rythmique</h2>
+                <p class="meditation-text">Inspire profondément pendant 4 temps. Retiens pendant 4 temps. Expire pendant 6 temps. Pause de 2 temps. Recommence. Sens-tu le rythme universel qui traverse ton corps?</p>
+                <div class="meditation-controls">
+                    <button id="startMeditation" class="sacred-button">
+                        <i class="fas fa-heartbeat"></i> Commencer la Méditation
+                    </button>
+                    <div class="timer-container">
+                        <div id="timer" class="timer">05:55</div>
+                        <div class="breath-indicator">
+                            <span class="breath-phase">Inspire</span>
+                        </div>
+                    </div>
+                    <div class="breath-animation">
+                        <div class="breath-circle"></div>
+                    </div>
+                </div>
             </div>
-            <p>Le pentagramme symbolise les cinq phases du cycle universel, créant un mouvement harmonieux et équilibré.</p>
-        </div>
 
-        <div class="wisdom-card">
-            <h2>Méditation sur le Rythme</h2>
-            <div class="meditation-section">
-                <p>Explorez le rythme naturel qui anime votre être et l'univers.</p>
-                <div class="meditation-timer">
-                    <button id="startMeditation" class="start-meditation">Commencer la Méditation</button>
-                    <div id="timer" class="timer-display">05:55</div>
+            <div class="exercise-card">
+                <h2>Pratique du Rythme</h2>
+                <p class="exercise-text">Observe les rythmes naturels de ta journée. Quand est-ce que tu as le plus d'énergie? Quand est-ce qu'elle baisse? Note les cycles de trois journées et commence à aligner tes activités avec ton rythme personnel.</p>
+                <div class="exercise-controls">
+                    <button id="startExercise" class="sacred-button">
+                        <i class="fas fa-sync-alt"></i> Démarrer l'Exercice
+                    </button>
+                    <div id="exerciseTimer" class="timer">05:00</div>
                 </div>
             </div>
         </div>
@@ -53,184 +89,526 @@
 
 {% block extra_css %}
 <style>
-.quintessence-portal {
-    background: linear-gradient(135deg, var(--portal-5), var(--color-black));
+:root {
+    --portal-color: #00CCCC;
+    --portal-color-light: rgba(0, 204, 204, 0.3);
+    --portal-color-fade: rgba(0, 204, 204, 0.1);
+    --portal-color-glow: rgba(0, 204, 204, 0.2);
+}
+
+.portal-page {
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 2rem;
-}
-
-.pentagram-container {
     position: relative;
-    width: 200px;
-    height: 200px;
+    background: radial-gradient(circle at center, var(--portal-color-fade) 0%, transparent 70%);
+}
+
+.portal-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--portal-color-fade) 0%, transparent 50%, var(--portal-color-fade) 100%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.portal-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(to bottom, var(--portal-color-fade), transparent);
+    border-radius: 20px;
+    box-shadow: 0 0 30px var(--portal-color-glow);
+}
+
+.portal-header h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(to bottom, var(--portal-color), rgba(0, 204, 204, 0.7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+    letter-spacing: 0.5rem;
+    font-weight: 400;
+    text-shadow: 0 0 20px var(--portal-color-glow);
+}
+
+.portal-number {
+    font-size: 12rem;
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    text-shadow: 0 0 50px var(--portal-color-glow);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--color-pearl);
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.principle-quote {
+    font-size: 1.2rem;
+    color: var(--portal-color);
+    max-width: 700px;
     margin: 2rem auto;
+    font-style: italic;
+    line-height: 1.6;
 }
 
-.pentagram {
+.wisdom-section {
+    margin-bottom: 4rem;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--portal-color-fade);
+}
+
+.sacred-geometry {
+    height: 200px;
+    margin: 3rem 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, var(--portal-color-fade) 0%, transparent 70%);
+}
+
+.rhythm-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.pendulum {
     position: absolute;
     width: 100%;
     height: 100%;
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    background: var(--color-gold);
-    animation: rotate 20s linear infinite;
+    color: var(--portal-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform-origin: 50% 15%;
 }
 
-.pentagram-overlay {
+.pendulum:hover {
+    filter: brightness(1.2);
+}
+
+.rhythm-slider {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
+.slider-track {
     position: absolute;
     width: 100%;
-    height: 100%;
-    clip-path: polygon(50% 5%, 59% 35%, 95% 35%, 68% 54%, 77% 85%, 50% 67%, 23% 85%, 32% 54%, 5% 35%, 41% 35%);
-    background: rgba(0, 0, 0, 0.7);
-    animation: rotate 20s linear infinite reverse;
+    height: 4px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.2), var(--portal-color), rgba(255, 255, 255, 0.2));
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 2px;
 }
 
-.cycles-grid {
+.slider-thumb {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--portal-color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--portal-color);
+    transition: left 0.3s ease;
+}
+
+.tempo-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.tempo {
+    font-size: 0.8rem;
+    color: var(--color-pearl);
+    opacity: 0.7;
+}
+
+.tempo.active {
+    color: var(--portal-color);
+    font-weight: bold;
+    opacity: 1;
+}
+
+.principles {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border-radius: 15px;
+    border: 1px solid var(--portal-color-fade);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.principles h3 {
+    color: var(--portal-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.principles ul {
+    list-style: none;
+    padding: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    margin: 2rem 0;
 }
 
-.cycle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    border: 1px solid var(--color-gold);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.principles li {
+    color: var(--color-pearl);
+    padding: 0.5rem;
+    font-size: 1.1rem;
 }
 
-.cycle i {
-    font-size: 2rem;
-    color: var(--color-gold);
-    margin-bottom: 0.5rem;
+.practice-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
-.cycle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px var(--color-gold);
-}
-
-.rhythm-phases {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.phase {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    border: 1px solid var(--color-gold);
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.phase-symbol {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.phase:hover {
-    transform: scale(1.1) rotate(360deg);
-    box-shadow: 0 0 20px var(--color-gold);
-}
-
-.meditation-levels {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.level {
-    padding: 1rem;
+.meditation-card, .exercise-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border: 1px solid var(--portal-color-fade);
+    border-radius: 15px;
+    padding: 2rem;
     text-align: center;
-    border: 1px solid var(--color-gold);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.level:hover {
-    transform: translateX(20px);
-    background: rgba(255, 215, 0, 0.1);
+.meditation-card:hover, .exercise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 40px var(--portal-color-glow);
 }
 
-#meditationTimer {
-    font-size: 2rem;
-    font-family: 'Cinzel Decorative', cursive;
-    color: var(--color-gold);
-    margin: 1rem 0;
-    text-align: center;
+.meditation-card h2, .exercise-card h2 {
+    color: var(--portal-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-#startMeditation {
-    display: block;
-    margin: 2rem auto;
-    background: var(--color-gold);
-    color: var(--color-black);
-    border: none;
+.meditation-text, .exercise-text {
+    color: var(--color-pearl);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.sacred-button {
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    border: 1px solid var(--portal-color);
+    color: var(--color-pearl);
     padding: 1rem 2rem;
+    font-size: 1.1rem;
     border-radius: 30px;
     cursor: pointer;
-    font-family: 'EB Garamond', serif;
-    font-size: 1.1rem;
     transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px var(--portal-color-glow);
+    text-shadow: 0 0 10px var(--portal-color-glow);
 }
 
-#startMeditation:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--color-gold);
+.sacred-button:hover {
+    background: linear-gradient(135deg, var(--portal-color-light), var(--portal-color-fade));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 30px var(--portal-color);
+    color: white;
 }
 
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+.timer {
+    font-size: 2.5rem;
+    background: linear-gradient(to bottom, var(--portal-color), rgba(0, 204, 204, 0.7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px var(--portal-color-glow);
+}
+
+.breath-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.breath-phase {
+    color: var(--portal-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px var(--portal-color-glow);
+}
+
+.breath-animation {
+    position: relative;
+    height: 40px;
+    margin: 1.5rem auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.breath-circle {
+    width: 30px;
+    height: 30px;
+    background-color: var(--portal-color-fade);
+    border: 2px solid var(--portal-color);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--portal-color-glow);
+    transition: all 1s ease;
+}
+
+@media (max-width: 768px) {
+    .practice-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .principles ul {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 {% endblock %}
 
 {% block extra_js %}
 <script>
-function startMeditation() {
-    const timer = document.getElementById('timer');
-    const button = document.getElementById('startMeditation');
-    let timeLeft = 5 * 60 + 55; // 5:55 minutes
-    let interval;
-
-    if (button.textContent === 'Arrêter') {
-        clearInterval(interval);
-        button.textContent = 'Commencer la Méditation';
-        timer.textContent = '05:55';
-        return;
-    }
-
-    button.textContent = 'Arrêter';
+document.addEventListener('DOMContentLoaded', function() {
+    // Pendule rythmique interactif
+    const pendulum = document.getElementById('pendulum');
+    const slider = document.getElementById('rhythmSlider');
+    const sliderThumb = slider.querySelector('.slider-thumb');
+    const tempoSlow = document.querySelector('.tempo-slow');
+    const tempoMedium = document.querySelector('.tempo-medium');
+    const tempoFast = document.querySelector('.tempo-fast');
+    let isDragging = false;
+    let swingAngle = 0;
+    let swingDirection = 1;
+    let swingSpeed = 0.05;
+    let swingAnimation;
     
-    interval = setInterval(() => {
-        const minutes = Math.floor(timeLeft / 60);
-        const seconds = timeLeft % 60;
+    // Animation du pendule
+    function animatePendulum() {
+        swingAngle += swingSpeed * swingDirection;
         
-        timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        
-        if (timeLeft <= 0) {
-            clearInterval(interval);
-            button.textContent = 'Commencer la Méditation';
+        if (Math.abs(swingAngle) > 20) {
+            swingDirection *= -1;
         }
         
-        timeLeft--;
-    }, 1000);
-}
+        pendulum.style.transform = `rotate(${swingAngle}deg)`;
+        swingAnimation = requestAnimationFrame(animatePendulum);
+    }
+    
+    // Démarrer l'animation du pendule
+    animatePendulum();
+    
+    sliderThumb.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        document.addEventListener('mousemove', moveSlider);
+        document.addEventListener('mouseup', stopDragging);
+        e.preventDefault();
+    });
+    
+    function moveSlider(e) {
+        if (!isDragging) return;
+        const sliderRect = slider.getBoundingClientRect();
+        let position = (e.clientX - sliderRect.left) / sliderRect.width;
+        position = Math.max(0, Math.min(1, position));
+        sliderThumb.style.left = `${position * 100}%`;
+        swingSpeed = 0.02 + position * 0.1;
+        
+        // Mise à jour des indicateurs de tempo
+        updateTempoIndicator(position);
+    }
+    
+    function updateTempoIndicator(position) {
+        tempoSlow.classList.remove('active');
+        tempoMedium.classList.remove('active');
+        tempoFast.classList.remove('active');
+        
+        if (position < 0.33) {
+            tempoSlow.classList.add('active');
+        } else if (position < 0.66) {
+            tempoMedium.classList.add('active');
+        } else {
+            tempoFast.classList.add('active');
+        }
+    }
+    
+    function stopDragging() {
+        isDragging = false;
+        document.removeEventListener('mousemove', moveSlider);
+        document.removeEventListener('mouseup', stopDragging);
+    }
 
-document.getElementById('startMeditation').addEventListener('click', startMeditation);
+    // Méditation du souffle rythmique
+    const meditationButton = document.getElementById('startMeditation');
+    const timer = document.getElementById('timer');
+    const breathPhase = document.querySelector('.breath-phase');
+    const breathCircle = document.querySelector('.breath-circle');
+    let meditationInterval;
+    let isMeditating = false;
+    let timeLeft = 5 * 60 + 55; // 5:55
+    let breathCycle = 0;
+    const breathCycleNames = ['Inspire', 'Retiens', 'Expire', 'Pause'];
+    const breathCycleDurations = [4, 4, 6, 2];
+    const breathCycleTotal = breathCycleDurations.reduce((a, b) => a + b, 0);
+
+    meditationButton.addEventListener('click', function() {
+        isMeditating = !isMeditating;
+        
+        if (isMeditating) {
+            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            startMeditation();
+        } else {
+            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+            pauseMeditation();
+        }
+    });
+
+    function startMeditation() {
+        meditationInterval = setInterval(() => {
+            timeLeft--;
+            updateTimer(timer, timeLeft);
+            
+            // Cycle de respiration
+            breathCycle = (breathCycle + 1) % breathCycleTotal;
+            let currentPhase = 0;
+            let cumulativeDuration = 0;
+            
+            for (let i = 0; i < breathCycleDurations.length; i++) {
+                cumulativeDuration += breathCycleDurations[i];
+                if (breathCycle < cumulativeDuration) {
+                    currentPhase = i;
+                    break;
+                }
+            }
+            
+            updateBreathAnimation(currentPhase);
+            
+            if (timeLeft <= 0) {
+                endMeditation();
+            }
+        }, 1000);
+    }
+    
+    function updateBreathAnimation(phase) {
+        breathPhase.textContent = breathCycleNames[phase];
+        
+        switch(phase) {
+            case 0: // Inspire
+                breathCircle.style.transform = 'scale(2)';
+                breathCircle.style.opacity = '1';
+                break;
+            case 1: // Retiens
+                breathCircle.style.transform = 'scale(2)';
+                breathCircle.style.opacity = '0.8';
+                break;
+            case 2: // Expire
+                breathCircle.style.transform = 'scale(1)';
+                breathCircle.style.opacity = '0.6';
+                break;
+            case 3: // Pause
+                breathCircle.style.transform = 'scale(1)';
+                breathCircle.style.opacity = '0.4';
+                break;
+        }
+    }
+
+    function pauseMeditation() {
+        clearInterval(meditationInterval);
+    }
+
+    function endMeditation() {
+        clearInterval(meditationInterval);
+        meditationButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        isMeditating = false;
+        timeLeft = 5 * 60 + 55;
+        updateTimer(timer, timeLeft);
+        breathCycle = 0;
+        breathPhase.textContent = breathCycleNames[0];
+        breathCircle.style.transform = 'scale(1)';
+        breathCircle.style.opacity = '0.6';
+        new Audio('/static/audio/bell.mp3').play();
+    }
+
+    // Exercice
+    const exerciseButton = document.getElementById('startExercise');
+    const exerciseTimer = document.getElementById('exerciseTimer');
+    let exerciseInterval;
+    let isExercising = false;
+    let exerciseTimeLeft = 4 * 60;
+
+    exerciseButton.addEventListener('click', function() {
+        isExercising = !isExercising;
+        
+        if (isExercising) {
+            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            startExercise();
+        } else {
+            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+            pauseExercise();
+        }
+    });
+
+    function startExercise() {
+        exerciseInterval = setInterval(() => {
+            exerciseTimeLeft--;
+            updateTimer(exerciseTimer, exerciseTimeLeft);
+            
+            if (exerciseTimeLeft <= 0) {
+                endExercise();
+            }
+        }, 1000);
+    }
+
+    function pauseExercise() {
+        clearInterval(exerciseInterval);
+    }
+
+    function endExercise() {
+        clearInterval(exerciseInterval);
+        exerciseButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        isExercising = false;
+        exerciseTimeLeft = 4 * 60;
+        updateTimer(exerciseTimer, exerciseTimeLeft);
+        new Audio('/static/audio/bell.mp3').play();
+    }
+
+    // Utilitaire pour formater le temps
+    function updateTimer(element, seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        element.textContent = `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+    }
+});
 </script>
 {% endblock %} 
