@@ -275,32 +275,59 @@ p {
 
 /* Styles pour les carrés des portes */
 .portal-square {
+    position: relative;
     width: var(--portal-square-size);
     height: var(--portal-square-size);
     border: 2px solid var(--color-gold);
     border-radius: 8px;
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    color: var(--color-gold);
+    transition: var(--portal-transition);
+    margin: 1rem;
     padding: 1rem;
-    background: rgba(0, 0, 0, 0.3);
-    position: relative;
-    gap: 0.5rem;
+    text-align: center;
 }
 
-/* Container pour l'icône géométrique */
+.portal-number {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2.5rem;
+    color: var(--color-gold);
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.portal-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.8rem;
+    color: var(--color-gold);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0.5rem;
+    width: 100%;
+}
+
 .portal-icon {
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 2rem;
-    margin-bottom: 0.25rem;
-}
-
-.portal-icon i {
-    font-size: 1.5rem;
-    color: var(--color-gold);
 }
 
 /* Container principal des portes */
