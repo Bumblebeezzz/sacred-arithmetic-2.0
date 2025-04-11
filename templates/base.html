@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ g.lang }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %} | Arithmétique Sacrée</title>
+    <title>{% block title %}{{ g.translations['Sacred Arithmetic'] }}{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -11,6 +11,11 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
+    <div class="language-selector">
+        <a href="{{ url_for('set_language', lang='fr') }}" class="{% if g.lang == 'fr' %}active{% endif %}">FR</a>
+        <span>|</span>
+        <a href="{{ url_for('set_language', lang='en') }}" class="{% if g.lang == 'en' %}active{% endif %}">EN</a>
+    </div>
     <header>
         <h1 class="site-title">ARITHMÉTIQUE SACRÉE</h1>
         

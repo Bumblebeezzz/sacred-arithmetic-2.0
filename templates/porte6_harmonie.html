@@ -1,26 +1,26 @@
 {% extends "base.html" %}
 
-{% block title %}Porte 6 - Harmonie{% endblock %}
+{% block title %}{{ g.translations['Harmony'] }}{% endblock %}
 
 {% block content %}
 <div class="portal-page portal-6">
     <div class="portal-decoration"></div>
     <header class="portal-header">
-        <h1>L'Harmonie</h1>
+        <h1>{{ g.translations['Harmony'] }}</h1>
         <div class="portal-symbol">
             <i class="fas fa-hexagon"></i>
             <span class="portal-number">6</span>
         </div>
-        <p class="subtitle">Le Six, équilibre parfait entre le ciel et la terre</p>
+        <p class="subtitle">{{ g.translations['The teaching of'] }} {{ g.translations['Harmony'] }}</p>
     </header>
 
     <div class="portal-content">
         <div class="wisdom-card">
-            <h2>L'Enseignement de l'Harmonie</h2>
+            <h2>{{ g.translations['The teaching of'] }} {{ g.translations['Harmony'] }}</h2>
             <p>Le Six représente l'équilibre parfait, l'union du triangle céleste et du triangle terrestre. C'est le nombre de la création accomplie et de la beauté divine.</p>
             
             <div class="principles">
-                <h3>Principes de l'Harmonie</h3>
+                <h3>{{ g.translations['Principles of'] }} {{ g.translations['Harmony'] }}</h3>
                 <ul>
                     <li>Équilibre</li>
                     <li>Beauté</li>
@@ -42,11 +42,11 @@
         </div>
 
         <div class="wisdom-card">
-            <h2>Méditation sur l'Harmonie</h2>
+            <h2>{{ g.translations['Meditation on'] }} {{ g.translations['Harmony'] }}</h2>
             <div class="meditation-section">
                 <p>Ressentez l'équilibre parfait entre les forces célestes et terrestres.</p>
                 <div class="meditation-timer">
-                    <button id="startMeditation" class="start-meditation">Commencer la Méditation</button>
+                    <button id="startMeditation" class="start-meditation">{{ g.translations['Start Meditation'] }}</button>
                     <div id="timer" class="timer-display">06:06</div>
                 </div>
             </div>

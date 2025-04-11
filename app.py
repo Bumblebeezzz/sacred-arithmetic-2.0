@@ -1,13 +1,14 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for, session, g
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+from flask_babel import Babel, gettext as _
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev')
+app.secret_key = os.getenv('SECRET_KEY', 'dev')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sacred_arithmetic.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -15,6 +16,60 @@ db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
+
+# Configuration de Babel
+babel = Babel(app)
+
+# Dictionnaires de traduction
+TRANSLATIONS = {
+    'fr': {
+        'Sacred Arithmetic': 'Arithmétique Sacrée',
+        'Origin': 'Origine',
+        'Duality': 'Dualité',
+        'Trinity': 'Trinité',
+        'Matter': 'Matière',
+        'Quintessence': 'Quintessence',
+        'Harmony': 'Harmonie',
+        'Wisdom': 'Sagesse',
+        'Infinity': 'Infini',
+        'Unity': 'Unité',
+        'The teaching of': 'L\'enseignement de',
+        'Principles of': 'Principes de',
+        'Meditation on': 'Méditation sur',
+        'Start Meditation': 'Commencer la Méditation'
+    },
+    'en': {
+        'Sacred Arithmetic': 'Sacred Arithmetic',
+        'Origin': 'Origin',
+        'Duality': 'Duality',
+        'Trinity': 'Trinity',
+        'Matter': 'Matter',
+        'Quintessence': 'Quintessence',
+        'Harmony': 'Harmony',
+        'Wisdom': 'Wisdom',
+        'Infinity': 'Infinity',
+        'Unity': 'Unity',
+        'The teaching of': 'The teaching of',
+        'Principles of': 'Principles of',
+        'Meditation on': 'Meditation on',
+        'Start Meditation': 'Start Meditation'
+    }
+}
+
+@babel.localeselector
+def get_locale():
+    return session.get('lang', 'fr')
+
+@app.before_request
+def before_request():
+    g.lang = session.get('lang', 'fr')
+    g.translations = TRANSLATIONS[g.lang]
+
+@app.route('/set_language/<lang>')
+def set_language(lang):
+    if lang in TRANSLATIONS:
+        session['lang'] = lang
+    return redirect(request.referrer or url_for('index'))
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
