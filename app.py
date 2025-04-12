@@ -157,84 +157,9 @@ def enneagramme():
 def geometrie():
     return render_template('geometrie.html')
 
-@app.route('/gematria', methods=['GET', 'POST'])
+@app.route('/gematria')
 def gematria():
-    resultat = None
-    mot = None
-    systeme = None
-    
-    systemes_gematria = {'latin_simple': {
-            'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9,
-            'j': 10, 'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18,
-            's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26
-        }
-    }
-    
-    # Dictionnaire d'interprétations des nombres
-    interpretations_numerologiques = {
-        1: "Unité, commencement, leadership, indépendance",
-        2: "Dualité, équilibre, harmonie, coopération",
-        3: "Trinité, créativité, expression, croissance",
-        4: "Stabilité, ordre, structure, fondation",
-        5: "Changement, liberté, adaptation, voyages",
-        6: "Harmonie, responsabilité, amour, guérison",
-        7: "Mystère, spiritualité, sagesse, introspection",
-        8: "Pouvoir, abondance, infini, réalisation",
-        9: "Accomplissement, humanitarisme, compassion, universalité",
-        11: "Illumination, intuition, idéalisme, inspiration",
-        22: "Maître bâtisseur, manifestation, pouvoir spirituel",
-        33: "Maître enseignant, service désintéressé, amour inconditionnel",
-    }
-    
-    # Nombres associés à des concepts spirituels spécifiques
-    nombres_sacres = {
-        13: "Transformation, passage",
-        18: "Vie (חי) dans la tradition juive",
-        26: "Tétragramme divin YHWH (יהוה)",
-        72: "Nom divin, 72 noms de Dieu",
-        108: "Nombre sacré dans l'hindouisme et le bouddhisme",
-        144: "Perfection spirituelle, 12×12",
-        216: "Nom de Dieu à 72 lettres (3×72)",
-        666: "Nombre solaire/matériel, nombre de l'homme",
-        888: "Christ (Ἰησοῦς) en gématria grecque"
-    }
-    
-    if request.method == 'POST':
-        mot = request.form.get('mot', '').lower()
-        systeme = request.form.get('systeme', 'latin_simple')
-        
-        if systeme in systemes_gematria:
-            valeurs = systemes_gematria[systeme]
-            total = 0
-            calcul_detaille = []
-            
-            for lettre in mot:
-                if lettre in valeurs:
-                    total += valeurs[lettre]
-                    calcul_detaille.append(f"{lettre} ({valeurs[lettre]})")
-            
-            # Réduction numérique (calcul du nombre réduit)
-            nombre_reduit = total
-            while nombre_reduit > 9 and nombre_reduit not in [11, 22, 33]:
-                nombre_reduit = sum(int(chiffre) for chiffre in str(nombre_reduit))
-            
-            # Recherche d'interprétations
-            interpretation = None
-            if total in nombres_sacres:
-                interpretation = nombres_sacres[total]
-            elif nombre_reduit in interpretations_numerologiques:
-                interpretation = interpretations_numerologiques[nombre_reduit]
-            
-            resultat = {
-                'mot': mot,
-                'systeme': systeme,
-                'valeur': total,
-                'calcul_detaille': ' + '.join(calcul_detaille) + f" = {total}",
-                'nombre_reduit': nombre_reduit,
-                'interpretation': interpretation
-            }
-    
-    return render_template('gematria.html', resultat=resultat, mot=mot, systeme=systeme, systemes=systemes_gematria.keys())
+    return render_template('gematria.html')
 
 if __name__ == '__main__':
     with app.app_context():
