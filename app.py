@@ -31,6 +31,10 @@ def load_user(user_id):
 with open('data/principles.json', 'r', encoding='utf-8') as f:
     principles_data = json.load(f)
 
+# Chargement des données des portes
+with open('data/portes.json', 'r', encoding='utf-8') as f:
+    portes_data = json.load(f)
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -70,49 +74,40 @@ def get_initiation_progress():
         'unlocked_principles': ['1']  # À implémenter avec une base de données
     })
 
-@app.route('/porte1')
-def porte1():
-    return render_template('porte1_conscience.html')
-
-@app.route('/porte2')
-def porte2():
-    return render_template('porte2_equivalence.html')
-
-@app.route('/porte3')
-def porte3():
-    return render_template('porte3_oscillation.html')
-
-@app.route('/porte4')
-def porte4():
-    return render_template('porte4_polarite.html')
-
-@app.route('/porte5')
-def porte5():
-    return render_template('porte5_rythme.html')
-
-@app.route('/porte6')
-def porte6():
-    return render_template('porte6_causalite.html')
-
-@app.route('/porte7')
-def porte7():
-    return render_template('porte7_orientation.html')
-
-@app.route('/porte8')
-def porte8():
-    return render_template('porte8_equilibre.html')
-
-@app.route('/porte9')
-def porte9():
-    return render_template('porte9_divin.html')
+@app.route('/porte<int:numero>')
+def porte(numero):
+    if 1 <= numero <= 9:
+        porte_data = portes_data[str(numero)]
+        porte_data['numero'] = numero  # Ajout du numéro de la porte
+        template_name = f'porte{numero}_'
+        if numero == 1:
+            template_name += 'conscience.html'
+        elif numero == 2:
+            template_name += 'equivalence.html'
+        elif numero == 3:
+            template_name += 'oscillation.html'
+        elif numero == 4:
+            template_name += 'polarite.html'
+        elif numero == 5:
+            template_name += 'rythme.html'
+        elif numero == 6:
+            template_name += 'causalite.html'
+        elif numero == 7:
+            template_name += 'orientation.html'
+        elif numero == 8:
+            template_name += 'equilibre.html'
+        else:
+            template_name += 'divin.html'
+        return render_template(template_name, porte=porte_data)
+    return render_template('404.html'), 404
 
 @app.route('/arithmetique-sacree')
 def arithmetique_sacree():
     return render_template('arithmetique_sacree.html')
 
-@app.route('/cycles-mod9')
-def cycles_mod9():
-    return render_template('cycles_mod9.html')
+@app.route('/cycles-numeriques')
+def cycles_numeriques():
+    return render_template('cycles_numeriques.html')
 
 @app.route('/principes-hermetiques')
 def principes_hermetiques():
@@ -150,7 +145,97 @@ def lois_hermetiques():
 def enneagramme():
     return render_template('enneagramme.html')
 
+@app.route('/geometrie')
+def geometrie():
+    return render_template('geometrie.html')
+
+@app.route('/gematria', methods=['GET', 'POST'])
+def gematria():
+    resultat = None
+    mot = None
+    systeme = None
+    
+    systemes_gematria = {'latin_simple': {
+            'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9,
+            'j': 10, 'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18,
+            's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26
+        }
+    }
+    
+    # Dictionnaire d'interprétations des nombres
+    interpretations_numerologiques = {
+        1: "Unité, commencement, leadership, indépendance",
+        2: "Dualité, équilibre, harmonie, coopération",
+        3: "Trinité, créativité, expression, croissance",
+        4: "Stabilité, ordre, structure, fondation",
+        5: "Changement, liberté, adaptation, voyages",
+        6: "Harmonie, responsabilité, amour, guérison",
+        7: "Mystère, spiritualité, sagesse, introspection",
+        8: "Pouvoir, abondance, infini, réalisation",
+        9: "Accomplissement, humanitarisme, compassion, universalité",
+        11: "Illumination, intuition, idéalisme, inspiration",
+        22: "Maître bâtisseur, manifestation, pouvoir spirituel",
+        33: "Maître enseignant, service désintéressé, amour inconditionnel",
+    }
+    
+    # Nombres associés à des concepts spirituels spécifiques
+    nombres_sacres = {
+        13: "Transformation, passage",
+        18: "Vie (חי) dans la tradition juive",
+        26: "Tétragramme divin YHWH (יהוה)",
+        72: "Nom divin, 72 noms de Dieu",
+        108: "Nombre sacré dans l'hindouisme et le bouddhisme",
+        144: "Perfection spirituelle, 12×12",
+        216: "Nom de Dieu à 72 lettres (3×72)",
+        666: "Nombre solaire/matériel, nombre de l'homme",
+        888: "Christ (Ἰησοῦς) en gématria grecque"
+    }
+    
+    if request.method == 'POST':
+        mot = request.form.get('mot', '').lower()
+        systeme = request.form.get('systeme', 'latin_simple')
+        
+        if systeme in systemes_gematria:
+            valeurs = systemes_gematria[systeme]
+            total = 0
+            calcul_detaille = []
+            
+            for lettre in mot:
+                if lettre in valeurs:
+                    total += valeurs[lettre]
+                    calcul_detaille.append(f"{lettre} ({valeurs[lettre]})")
+            
+            # Réduction numérique (calcul du nombre réduit)
+            nombre_reduit = total
+            while nombre_reduit > 9 and nombre_reduit not in [11, 22, 33]:
+                nombre_reduit = sum(int(chiffre) for chiffre in str(nombre_reduit))
+            
+            # Recherche d'interprétations
+            interpretation = None
+            if total in nombres_sacres:
+                interpretation = nombres_sacres[total]
+            elif nombre_reduit in interpretations_numerologiques:
+                interpretation = interpretations_numerologiques[nombre_reduit]
+            
+            resultat = {
+                'mot': mot,
+                'systeme': systeme,
+                'valeur': total,
+                'calcul_detaille': ' + '.join(calcul_detaille) + f" = {total}",
+                'nombre_reduit': nombre_reduit,
+                'interpretation': interpretation
+            }
+    
+    return render_template('gematria.html', resultat=resultat, mot=mot, systeme=systeme, systemes=systemes_gematria.keys())
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True, port=5003) 
+    port = int(os.getenv('PORT', 8080))
+    app.run(
+        host='0.0.0.0',
+        port=port,
+        debug=os.getenv('DEBUG', 'True').lower() == 'true',
+        use_reloader=True,
+        threaded=True
+    ) 
