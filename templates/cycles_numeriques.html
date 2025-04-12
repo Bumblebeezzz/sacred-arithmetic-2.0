@@ -1,0 +1,1093 @@
+{% extends "base.html" %}
+
+{% block title %}Cycles Numériques et Réductions{% endblock %}
+
+{% block content %}
+<div class="cycles-container">
+    <div class="portal-header">
+        <h1>Les Cycles Numériques</h1>
+        <div class="portal-symbol">
+            <svg viewBox="0 0 100 100" class="cycle-symbol">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="var(--portal-color)" stroke-width="2"/>
+                <rect x="20" y="20" width="60" height="60" fill="none" stroke="var(--portal-color)" stroke-width="1.5" transform-origin="50 50"/>
+                <rect x="30" y="30" width="40" height="40" fill="none" stroke="var(--portal-color)" stroke-width="1.5" transform-origin="50 50"/>
+            </svg>
+        </div>
+        <p class="subtitle">Découvrez les secrets cachés dans les nombres</p>
+        <p class="principle-quote">« Les nombres sont la langue de l'univers, et l'arithmétique est sa grammaire. » - Pythagore</p>
+    </div>
+
+    <div class="portal-content">
+        <section class="wisdom-section">
+            <h2>Introduction aux Cycles Numériques</h2>
+            <p>En arithmétique sacrée, chaque nombre raconte une histoire à travers sa réduction digitale. Cette science ancestrale révèle comment tous les nombres se réduisent naturellement en un cycle de 1 à 9, créant des motifs fascinants qui se répètent à l'infini.</p>
+        </section>
+
+        <section class="wisdom-section">
+            <h2>Le Mystère du Nombre 9</h2>
+            <p>Le nombre 9 est la clé de voûte de l'arithmétique sacrée. Il représente la complétude et le retour à l'unité. Tout nombre multiplié par 9 se réduit à 9, créant un cycle parfait.</p>
+            <div class="sacred-geometry">
+                <div class="cycle-example">
+                    <h3>Exemples de Réduction Digitale :</h3>
+                    <div class="example-grid">
+                        <div class="example">
+                            <p>278 → 2+7+8 = 17 → 1+7 = 8</p>
+                            <span class="explanation">Signification : Expression de l'infini</span>
+                        </div>
+                        <div class="example">
+                            <p>365 → 3+6+5 = 14 → 1+4 = 5</p>
+                            <span class="explanation">Signification : Nombre du changement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wisdom-section">
+            <h2>La Matrice 3-6-9 de Tesla</h2>
+            <p class="wisdom-quote">« Si vous connaissiez la magnificence des nombres 3, 6 et 9, vous auriez la clé de l'univers. » - Nikola Tesla</p>
+            <div class="tesla-grid">
+                <div class="number-grid">
+                    <div onclick="highlightNumber(1)" class="number-cell">
+                        <span class="number">1</span>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="50" cy="50" r="4" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="principle">CONSCIENCE</span>
+                    </div>
+                    <div onclick="highlightNumber(2)" class="number-cell">
+                        <span class="number">2</span>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <line x1="20" y1="50" x2="80" y2="50" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">ÉQUIVALENCE</span>
+                    </div>
+                    <div onclick="highlightNumber(3)" class="number-cell special">
+                        <span class="number">3</span>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M 50,12 L 84,70 L 16,70 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">OSCILLATION</span>
+                    </div>
+                    <div onclick="highlightNumber(4)" class="number-cell">
+                        <span class="number">4</span>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <rect x="23" y="23" width="55" height="55" fill="none" stroke="currentColor" stroke-width="2.5" transform="rotate(45, 50, 50)"/>
+                            </svg>
+                        </div>
+                        <span class="principle">POLARITÉ</span>
+                    </div>
+                    <div onclick="highlightNumber(5)" class="number-cell">
+                        <span class="number">5</span>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M 50.0,12.0 L 72.34,80.74 L 13.86,38.26 L 86.14,38.26 L 27.66,80.74 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">RYTHME</span>
+                    </div>
+                    <div onclick="highlightNumber(6)" class="number-cell special">
+                        <span class="number">6</span>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M50,12 L84,70 L16,70 Z M50,88 L15,33 L85,33 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">CAUSALITÉ</span>
+                    </div>
+                    <div onclick="highlightNumber(7)" class="number-cell">
+                        <span class="number">7</span>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M50,10 L88.99,58.9 L32.64,86.04 L18.72,25.06 L81.28,25.06 L67.36,86.04 L11.01,58.9 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">ORIENTATION</span>
+                    </div>
+                    <div onclick="highlightNumber(8)" class="number-cell">
+                        <span class="number">8</span>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+
+                                <!-- Octagramme par lignes -->
+                                <line x1="50" y1="10" x2="90" y2="50" stroke="currentColor" stroke-width="2" />
+                                <line x1="90" y1="50" x2="50" y2="90" stroke="currentColor" stroke-width="2" />
+                                <line x1="50" y1="90" x2="10" y2="50" stroke="currentColor" stroke-width="2" />
+                                <line x1="10" y1="50" x2="50" y2="10" stroke="currentColor" stroke-width="2" />
+                            
+                                <line x1="78.3" y1="21.7" x2="78.3" y2="78.3" stroke="currentColor" stroke-width="2" />
+                                <line x1="78.3" y1="78.3" x2="21.7" y2="78.3" stroke="currentColor" stroke-width="2" />
+                                <line x1="21.7" y1="78.3" x2="21.7" y2="21.7" stroke="currentColor" stroke-width="2" />
+                                <line x1="21.7" y1="21.7" x2="78.3" y2="21.7" stroke="currentColor" stroke-width="2" />
+                              </svg>
+                            </div>
+                        <span class="principle">ÉQUILIBRE</span>
+                    </div>
+                    <div onclick="highlightNumber(9)" class="number-cell special">
+                        <span class="number">9</span>
+                        <div class="portal-icon">
+                            <svg viewBox="0 0 100 100" class="polygram">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M 50.0,10.0 L 89.39,43.05 L 63.68,87.59 L 15.36,70.0 L 24.29,19.36 L 75.71,19.36 L 84.64,70.0 L 36.32,87.59 L 10.61,43.05 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <span class="principle">DIVIN</span>
+                    </div>
+                </div>
+                <div id="number-info" class="number-info"></div>
+            </div>
+        </section>
+
+        <section class="wisdom-section">
+            <h2>Explorateur de Cycles</h2>
+            <p class="subtitle">Découvrez la signification cachée de n'importe quel nombre en calculant sa réduction digitale</p>
+            
+            <div class="calculator-module">
+                <div class="calculator-body">
+                    <form id="cycleForm" class="sacred-form">
+                        <div class="form-group">
+                            <label for="cycle-input">Entrez un nombre</label>
+                            <div class="input-group">
+                                <input type="number" id="cycle-input" class="sacred-input" placeholder="Ex: 1234" min="1" required>
+                                <button type="submit" class="sacred-button">
+                                    <i class="fas fa-infinity"></i>
+                                    Explorer
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div id="cycle-result" class="sacred-result">
+                        <div class="initial-message">Les résultats s'afficheront ici</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    :root {
+        --portal-color: #3366FF;
+        --portal-color-light: #6699FF;
+        --portal-color-dark: #0033CC;
+        --portal-color-fade: rgba(51, 102, 255, 0.2);
+        --portal-color-glow: rgba(51, 102, 255, 0.5);
+        --color-gold: #FFD700;
+        --color-gold-light: #FFE55C;
+        --color-gold-dark: #B8860B;
+    }
+
+    /* Structure de base standardisée */
+    .cycles-container {
+        max-width: 1050px;
+        width: calc(100% - 40px);
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+    }
+    
+    /* Ajout d'effets de fond mystérieux avec des dégradés */
+    .cycles-container::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 30%, rgba(0, 51, 204, 0.1) 0%, transparent 30%),
+            radial-gradient(circle at 80% 70%, rgba(0, 51, 204, 0.1) 0%, transparent 30%),
+            radial-gradient(circle at 50% 50%, rgba(0, 51, 204, 0.05) 0%, transparent 60%);
+        z-index: -1;
+        pointer-events: none;
+    }
+    
+    /* Ajout de symboles cycliques subtils en arrière-plan */
+    .cycles-container::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='rgba(255, 215, 0, 0.05)' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='rgba(255, 215, 0, 0.05)' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='rgba(255, 215, 0, 0.05)' stroke-width='1'/%3E%3C/svg%3E"),
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 100 100'%3E%3Ctext x='40' y='65' font-family='serif' font-size='40' fill='rgba(255, 215, 0, 0.03)'%3E9%3C/text%3E%3C/svg%3E");
+        background-position: 5% 15%, 90% 80%;
+        background-repeat: no-repeat;
+        opacity: 0.6;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .portal-header {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 3rem 2rem;
+        background: radial-gradient(circle, rgba(0, 51, 204, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+        border-radius: 20px;
+        box-shadow: 0 0 30px var(--portal-color-glow);
+        position: relative;
+        overflow: hidden;
+        max-width: 100%;
+    }
+    
+    /* Ajout d'un effet subtil de symbole doré en arrière-plan du header */
+    .portal-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='none' stroke='rgba(255, 215, 0, 0.03)' stroke-width='1'/%3E%3Ccircle cx='100' cy='100' r='60' fill='none' stroke='rgba(255, 215, 0, 0.03)' stroke-width='1'/%3E%3Ccircle cx='100' cy='100' r='40' fill='none' stroke='rgba(255, 215, 0, 0.03)' stroke-width='1'/%3E%3C/svg%3E");
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        opacity: 0.7;
+    }
+
+    .portal-header h1 {
+        width: 100%;
+        box-sizing: border-box;
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 3.5rem;
+        background: linear-gradient(to right, var(--portal-color), var(--portal-color-light));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin: 0;
+        letter-spacing: 0.3rem;
+        font-weight: 400;
+        text-shadow: 0 0 20px var(--portal-color-glow);
+    }
+
+    .portal-symbol {
+        width: 120px;
+        height: 120px;
+        margin: 1.5rem auto;
+        animation: spin 50s linear infinite;
+    }
+
+    .portal-symbol .cycle-symbol {
+        width: 100%;
+        height: 100%;
+        animation: spin 50s linear infinite;
+        transform-origin: center;
+        stroke: var(--color-gold) !important;
+        stroke-width: 2.5;
+    }
+
+    .cycle-symbol {
+        width: 100%;
+        height: 100%;
+        animation: spin 50s linear infinite;
+        transform-origin: center;
+        stroke: var(--color-gold) !important;
+    }
+
+    .subtitle, .principle-quote {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 1.5rem;
+        color: var(--color-pearl);
+        margin: 1rem 0;
+        font-style: italic;
+    }
+
+    .principle-quote {
+        font-size: 1.2rem;
+        color: var(--portal-color);
+        max-width: 700px;
+        margin: 2rem auto;
+        font-style: italic;
+        line-height: 1.6;
+    }
+
+    .wisdom-section {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 2rem;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--portal-color-fade);
+        margin-bottom: 4rem;
+        max-width: 100%;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+    
+    .wisdom-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(51, 102, 255, 0.2);
+        border-color: var(--portal-color);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+    }
+    
+    .wisdom-section h2 {
+        width: 100%;
+        box-sizing: border-box;
+        font-family: 'Cinzel Decorative', serif;
+        color: var(--portal-color);
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        text-shadow: 0 0 10px rgba(51, 102, 255, 0.2);
+        letter-spacing: 0.1rem;
+    }
+    
+    .principle-content {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 1.5rem;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+    
+    .cycle-explorer {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        border: 2px solid var(--color-gold);
+    }
+    
+    .practice-section {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--portal-color-fade);
+        margin-bottom: 2rem;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    .wisdom-section p {
+        width: 100%;
+        box-sizing: border-box;
+        color: var(--color-pearl);
+        line-height: 1.8;
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .wisdom-quote {
+        font-style: italic;
+        color: var(--portal-color);
+        margin: 2rem auto;
+        font-size: 1.3rem;
+        max-width: 700px;
+    }
+
+    .sacred-geometry {
+        height: auto;
+        margin: 3rem 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle at center, var(--portal-color-fade) 0%, transparent 70%);
+    }
+
+    .cycle-example {
+        background: rgba(255, 215, 0, 0.05);
+        padding: 2rem;
+        border-radius: 12px;
+        margin: 2rem 0;
+        border: 1px solid var(--portal-color-fade);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .cycle-example h3 {
+        color: var(--portal-color);
+        margin-bottom: 1.5rem;
+        font-family: 'Cinzel Decorative', cursive;
+    }
+
+    .example-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .example {
+        background: rgba(0,0,0,0.3);
+        padding: 1.5rem;
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .example:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+        background: rgba(0,0,0,0.5);
+        border-color: var(--color-gold);
+    }
+
+    .example p {
+        font-size: 1.3rem;
+        color: var(--color-gold);
+        margin-bottom: 0.5rem;
+    }
+
+    .example .explanation {
+        font-size: 1rem;
+        color: var(--color-pearl);
+        font-style: italic;
+    }
+
+    .tesla-grid {
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    .number-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin: 2rem auto;
+        max-width: 500px;
+    }
+
+    .number-cell {
+        background: rgba(255, 215, 0, 0.05);
+        border: 2px solid var(--color-gold);
+        border-radius: 12px;
+        padding: 2rem 1rem;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+    }
+
+    .number-cell .number {
+        font-size: 2rem;
+        font-family: 'Cinzel Decorative', cursive;
+        color: #A62929;
+    }
+
+    .portal-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-gold);
+    }
+
+    .portal-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .principle {
+        font-family: 'Cinzel Decorative', cursive;
+        font-size: 0.8rem;
+        color: var(--color-pearl);
+        text-align: center;
+        margin-top: 0.5rem;
+        opacity: 0.8;
+    }
+
+    .number-cell:hover {
+        background: rgba(255, 215, 0, 0.15);
+    }
+
+    .special {
+        border-color: #A62929;
+        background: rgba(166, 41, 41, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .number-info {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        text-align: center;
+        min-height: 80px;
+        font-size: 1.2rem;
+        background: rgba(255, 215, 0, 0.05);
+        border-radius: 12px;
+        border: 2px solid var(--color-gold);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s ease;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .number-info:not(:empty) {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .number-info h3 {
+        color: var(--color-gold);
+        margin-bottom: 1rem;
+        font-family: 'Cinzel Decorative', cursive;
+    }
+
+    .number-info p {
+        color: var(--color-pearl);
+        line-height: 1.6;
+    }
+
+    .practice-section {
+        margin-bottom: 4rem;
+        text-align: center;
+        padding: 2rem;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--portal-color-fade);
+    }
+
+    .practice-section h2 {
+        color: var(--portal-color);
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        font-family: 'Cinzel Decorative', cursive;
+        text-shadow: 0 0 10px var(--portal-color-glow);
+    }
+
+    .input-group {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .cycle-input {
+        flex: 1;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.5);
+        border: 2px solid var(--color-gold);
+        border-radius: 8px;
+        color: var(--color-pearl);
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+    .cycle-input:focus {
+        outline: none;
+        box-shadow: 0 0 20px var(--color-gold-light);
+    }
+
+    .sacred-button {
+        padding: 1rem 2rem;
+        background: linear-gradient(45deg, var(--color-gold), var(--color-gold-light));
+        border: none;
+        border-radius: 8px;
+        color: #000;
+        font-weight: bold;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .sacred-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    }
+
+    .cycle-result {
+        padding: 2rem;
+        min-height: 150px;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 12px;
+        border: 1px solid var(--color-gold);
+        transition: all 0.5s ease;
+    }
+
+    .cycle-result.active {
+        border-color: var(--color-gold-light);
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+    }
+
+    .initial-message {
+        color: var(--color-pearl);
+        opacity: 0.6;
+        font-style: italic;
+    }
+
+    .cycle-step {
+        margin: 1rem 0;
+        padding: 1rem;
+        background: rgba(255, 215, 0, 0.1);
+        border-radius: 8px;
+        color: var(--color-pearl);
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+
+    .cycle-step:hover {
+        background: rgba(255, 215, 0, 0.15);
+        transform: translateX(5px);
+    }
+
+    .cycle-final {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: rgba(255, 215, 0, 0.15);
+        border-radius: 12px;
+        border: 2px solid var(--color-gold);
+        text-align: center;
+    }
+
+    .cycle-final .number {
+        font-size: 3rem;
+        color: var(--color-gold);
+        margin: 1rem 0;
+        text-shadow: 0 0 10px var(--color-gold);
+    }
+
+    .cycle-final .meaning {
+        color: var(--color-pearl);
+        font-style: italic;
+        margin-top: 1rem;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .error-message {
+        color: #ff6b6b;
+        background: rgba(255, 107, 107, 0.1);
+        border: 1px solid #ff6b6b;
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    /* Style pour la cellule active */
+    .number-cell.active {
+        background: rgba(255, 215, 0, 0.2);
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        .number-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        .number-cell {
+            padding: 1rem 0.5rem;
+        }
+        
+        .portal-header h1 {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .number-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+        }
+        
+        .number-cell .number {
+            font-size: 1.5rem;
+        }
+        
+        .portal-icon {
+            width: 30px;
+            height: 30px;
+        }
+        
+        .principle {
+            font-size: 0.7rem;
+        }
+    }
+
+    .calculator-module {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--portal-color-fade);
+        border-radius: 15px;
+        padding: 2rem;
+        margin: 2rem 0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .calculator-module:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(51, 102, 255, 0.2);
+    }
+
+    .calculator-body {
+        padding: 1rem;
+    }
+
+    .sacred-form {
+        margin-bottom: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        color: var(--color-pearl);
+        margin-bottom: 0.8rem;
+        font-size: 1.1rem;
+    }
+
+    .input-group {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .sacred-input {
+        flex: 1;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--portal-color-fade);
+        border-radius: 8px;
+        padding: 1rem;
+        color: var(--color-pearl);
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+
+    .sacred-input:focus {
+        outline: none;
+        border-color: var(--portal-color);
+        box-shadow: 0 0 15px var(--portal-color-fade);
+    }
+
+    .sacred-button {
+        background: linear-gradient(135deg, var(--portal-color), var(--portal-color-dark));
+        border: none;
+        border-radius: 8px;
+        padding: 1rem 2rem;
+        color: var(--color-pearl);
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .sacred-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px var(--portal-color-fade);
+    }
+
+    .sacred-button i {
+        font-size: 1.2rem;
+    }
+
+    .sacred-result {
+        background: rgba(0, 0, 0, 0.3);
+        border-left: 3px solid var(--portal-color);
+        border-radius: 8px;
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+
+    .result-details {
+        animation: fadeIn 0.5s ease;
+    }
+
+    .number-properties {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: rgba(51, 102, 255, 0.1);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+    }
+
+    .number-properties:hover {
+        background: rgba(51, 102, 255, 0.15);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(51, 102, 255, 0.2);
+        border-color: var(--portal-color-fade);
+    }
+
+    .number-properties h3 {
+        color: var(--portal-color);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .number-properties ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .number-properties li {
+        background: rgba(51, 102, 255, 0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 15px;
+        color: var(--color-pearl);
+        font-size: 0.9rem;
+    }
+
+    .reduction-steps {
+        margin: 2rem 0;
+    }
+
+    .reduction-steps h3 {
+        color: var(--portal-color);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .step {
+        background: rgba(51, 102, 255, 0.1);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        color: var(--color-pearl);
+        text-align: center;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+    }
+
+    .step:hover {
+        background: rgba(51, 102, 255, 0.2);
+        transform: translateX(5px) translateY(-2px);
+        box-shadow: 0 5px 15px rgba(51, 102, 255, 0.15);
+        border-color: var(--portal-color-fade);
+    }
+
+    .final-number {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(51, 102, 255, 0.1);
+        border-radius: 8px;
+        margin-top: 2rem;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+    }
+
+    .final-number:hover {
+        background: rgba(51, 102, 255, 0.2);
+        transform: scale(1.02);
+        box-shadow: 0 10px 25px rgba(51, 102, 255, 0.25);
+        border-color: var(--portal-color);
+    }
+
+    .final-number h3 {
+        color: var(--portal-color);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .final-number .number {
+        font-size: 3rem;
+        color: var(--portal-color);
+        margin: 1rem 0;
+        text-shadow: 0 0 10px var(--portal-color-fade);
+    }
+
+    .final-number .meaning {
+        color: var(--color-pearl);
+        font-style: italic;
+        line-height: 1.6;
+        margin-top: 1rem;
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cycleForm = document.getElementById('cycleForm');
+    const resultDiv = document.getElementById('cycle-result');
+
+    // Fonction pour calculer la réduction digitale
+    function calculateDigitalRoot(number) {
+        let steps = [];
+        let currentNumber = number;
+        let calculation = String(number).split('').join(' + ');
+        
+        // Première somme
+        let sum = String(number).split('').reduce((a, b) => parseInt(a) + parseInt(b), 0);
+        steps.push({
+            calculation: calculation,
+            result: sum
+        });
+        
+        currentNumber = sum;
+        
+        // Continuer la réduction jusqu'à obtenir un nombre à un chiffre
+        // sauf pour les nombres maîtres 11, 22, 33
+        while (currentNumber > 9 && currentNumber !== 11 && currentNumber !== 22 && currentNumber !== 33) {
+            calculation = String(currentNumber).split('').join(' + ');
+            sum = String(currentNumber).split('').reduce((a, b) => parseInt(a) + parseInt(b), 0);
+            steps.push({
+                calculation: calculation,
+                result: sum
+            });
+            currentNumber = sum;
+        }
+        
+        return {
+            steps: steps,
+            finalNumber: currentNumber
+        };
+    }
+    
+    // Fonction pour obtenir les propriétés mathématiques d'un nombre
+    function getNumberProperties(num) {
+        let properties = [];
+        
+        // Vérifier si le nombre est premier
+        function isPrime(n) {
+            if (n < 2) return false;
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i === 0) return false;
+            }
+            return true;
+        }
+        
+        // Vérifier si le nombre est parfait
+        function isPerfect(n) {
+            let sum = 1;
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i === 0) {
+                    sum += i;
+                    if (i !== n/i) sum += n/i;
+                }
+            }
+            return sum === n;
+        }
+        
+        if (isPrime(num)) properties.push("Nombre Premier");
+        if (num % 2 === 0) properties.push("Nombre Pair");
+        else properties.push("Nombre Impair");
+        if (isPerfect(num)) properties.push("Nombre Parfait");
+        if (Math.sqrt(num) % 1 === 0) properties.push("Carré Parfait");
+        
+        return properties;
+    }
+    
+    // Fonction pour obtenir la signification d'un nombre
+    function getNumberMeaning(num) {
+        const meanings = {
+            1: "Le Commencement - Indépendance, leadership, originalité",
+            2: "La Dualité - Coopération, diplomatie, sensibilité",
+            3: "La Création - Expression, joie de vivre, créativité",
+            4: "La Structure - Stabilité, ordre, travail",
+            5: "Le Changement - Liberté, aventure, adaptabilité",
+            6: "L'Harmonie - Responsabilité, amour, équilibre",
+            7: "Le Mystère - Spiritualité, sagesse, introspection",
+            8: "Le Pouvoir - Abondance, autorité, succès matériel",
+            9: "L'Accomplissement - Humanité, compassion, universalité",
+            11: "Le Maître Spirituel - Illumination, inspiration, intuition",
+            22: "Le Maître Bâtisseur - Manifestation, réalisation des grands projets",
+            33: "Le Maître Enseignant - Service, guérison universelle"
+        };
+        return meanings[num] || "Nombre aux vibrations mystérieuses";
+    }
+
+    // Gestionnaire du formulaire
+    cycleForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const input = document.getElementById('cycle-input');
+        const number = parseInt(input.value);
+        
+        if (isNaN(number) || number < 1) {
+            resultDiv.innerHTML = '<div class="error-message">Veuillez entrer un nombre positif valide</div>';
+            return;
+        }
+        
+        const result = calculateDigitalRoot(number);
+        const properties = getNumberProperties(number);
+        
+        let html = '<div class="result-details">';
+        
+        // Propriétés du nombre original
+        html += `
+            <div class="number-properties">
+                <h3>Propriétés de ${number}</h3>
+                <ul>
+                    ${properties.map(prop => `<li>${prop}</li>`).join('')}
+                </ul>
+            </div>
+        `;
+        
+        // Étapes de réduction
+        html += '<div class="reduction-steps">';
+        html += '<h3>Réduction Digitale</h3>';
+        result.steps.forEach((step, index) => {
+            html += `
+                <div class="step">
+                    ${step.calculation} = ${step.result}
+                </div>
+            `;
+        });
+        html += '</div>';
+        
+        // Nombre final et sa signification
+        html += `
+            <div class="final-number">
+                <h3>Nombre Racine</h3>
+                <div class="number">${result.finalNumber}</div>
+                <div class="meaning">${getNumberMeaning(result.finalNumber)}</div>
+            </div>
+        `;
+        
+        html += '</div>';
+        resultDiv.innerHTML = html;
+    });
+});
+</script>
+{% endblock %} 
