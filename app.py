@@ -28,12 +28,20 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 # Chargement des données des principes
-with open('data/principles.json', 'r', encoding='utf-8') as f:
-    principles_data = json.load(f)
+try:
+    with open('data/principles.json', 'r', encoding='utf-8') as f:
+        principles_data = json.load(f)
+except FileNotFoundError:
+    print("Fichier principles.json non trouvé, création d'un dictionnaire vide")
+    principles_data = {}
 
 # Chargement des données des portes
-with open('data/portes.json', 'r', encoding='utf-8') as f:
-    portes_data = json.load(f)
+try:
+    with open('data/portes.json', 'r', encoding='utf-8') as f:
+        portes_data = json.load(f)
+except FileNotFoundError:
+    print("Fichier portes.json non trouvé, création d'un dictionnaire vide")
+    portes_data = {}
 
 @app.route('/')
 def index():
