@@ -1,352 +1,35 @@
+/* Variables globales */
 :root {
     /* Couleurs de base */
-    --color-black: #000000;
     --color-gold: #FFD700;
-    --color-gold-glow: rgba(255, 215, 0, 0.3);
-    --color-pearl: #f8f8f8;
+    --color-pearl: #F5F5F5;
+    --color-dark: #0A0A0A;
+    --color-bg: #0A0A0A;
     
-    /* Couleurs des portails avec effets de profondeur */
-    --portal-1: rgba(220, 20, 60, 0.8);    /* Rouge Cramoisi - Origine */
-    --portal-2: rgba(255, 69, 0, 0.8);     /* Rouge-Orange - Dualité */
-    --portal-3: rgba(255, 140, 0, 0.8);    /* Orange Doré - Trinité */
-    --portal-4: rgba(255, 215, 0, 0.8);    /* Jaune - Matière */
-    --portal-5: rgba(50, 205, 50, 0.8);    /* Vert Émeraude - Quintessence */
-    --portal-6: rgba(30, 144, 255, 0.8);   /* Bleu Dodger - Harmonie */
-    --portal-7: rgba(65, 105, 225, 0.8);   /* Bleu Royal - Sagesse */
-    --portal-8: rgba(138, 43, 226, 0.8);   /* Bleu Violet - Infini */
-    --portal-9: rgba(186, 85, 211, 0.8);   /* Violet Orchidée - Unité */
+    /* Variables pour les thèmes des pages */
+    --portal-color: #50C878;       /* Vert émeraude par défaut */
+    --portal-color-light: rgba(80, 200, 120, 0.7);
+    --portal-color-dark: #228B22;  /* Version plus foncée */
+    --portal-color-fade: rgba(80, 200, 120, 0.1);
+    --portal-color-glow: rgba(80, 200, 120, 0.3);
     
-    /* Effets de profondeur */
-    --shadow-soft: 0 5px 15px rgba(255, 215, 0, 0.1);
-    --shadow-medium: 0 8px 25px rgba(255, 215, 0, 0.2);
-    --shadow-strong: 0 12px 35px rgba(255, 215, 0, 0.3);
+    /* Variables pour l'espacement */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
     
-    /* Transitions */
-    --transition-fast: 0.2s ease;
-    --transition-medium: 0.3s ease;
-    --transition-slow: 0.5s ease;
+    /* Variables pour les bordures et ombres */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --gold-border: 1px solid rgba(255, 215, 0, 0.3);
+    
+    /* Animation */
     --transition-speed: 0.3s;
-
-    --portal-shadow: 0 4px 15px rgba(218, 165, 32, 0.2);
-    --portal-hover-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
 }
 
-body {
-    background-color: var(--color-black);
-    color: var(--color-pearl);
-    font-family: 'EB Garamond', serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Navigation et Portails */
-.sacred-circle {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    padding: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-    justify-items: center;
-    align-items: center;
-}
-
-.portal {
-    position: relative;
-    background: var(--color-black);
-    border: 2px solid var(--color-gold);
-    border-radius: 15px;
-    padding: 2rem;
-    margin: 1rem;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: var(--portal-shadow);
-    overflow: hidden;
-}
-
-.portal-icon {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-}
-
-/* Styles de base pour tous les polygrammes */
-.portal-icon::before,
-.portal-icon::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.8;
-    transition: all 0.3s ease;
-}
-
-/* Point (Porte 1) */
-.portal[data-number="1"] .portal-icon::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: var(--color-gold);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Ligne (Porte 2) */
-.portal[data-number="2"] .portal-icon::before {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 2px;
-    background: var(--color-gold);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Triangle (Porte 3) */
-.portal[data-number="3"] .portal-icon::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 35px solid transparent;
-    border-right: 35px solid transparent;
-    border-bottom: 60px solid var(--color-gold);
-    background: transparent;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Carré (Porte 4) */
-.portal[data-number="4"] .portal-icon::before {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border: 2px solid var(--color-gold);
-    background: transparent;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Pentagramme (Porte 5) */
-.portal[data-number="5"] .portal-icon::before {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: transparent;
-    border: 2px solid var(--color-gold);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Hexagramme (Porte 6) */
-.portal[data-number="6"] .portal-icon::before,
-.portal[data-number="6"] .portal-icon::after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border: 2px solid var(--color-gold);
-    background: transparent;
-    top: 50%;
-    left: 50%;
-}
-
-.portal[data-number="6"] .portal-icon::before {
-    transform: translate(-50%, -50%);
-}
-
-.portal[data-number="6"] .portal-icon::after {
-    transform: translate(-50%, -50%) rotate(30deg);
-}
-
-/* Heptagramme (Porte 7) */
-.portal[data-number="7"] .portal-icon::before {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: transparent;
-    border: 2px solid var(--color-gold);
-    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 90%, 25% 90%, 0% 60%, 10% 20%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Octogramme (Porte 8) */
-.portal[data-number="8"] .portal-icon::before,
-.portal[data-number="8"] .portal-icon::after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border: 2px solid var(--color-gold);
-    background: transparent;
-    top: 50%;
-    left: 50%;
-}
-
-.portal[data-number="8"] .portal-icon::before {
-    transform: translate(-50%, -50%);
-}
-
-.portal[data-number="8"] .portal-icon::after {
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-/* Ennéagramme (Porte 9) */
-.portal[data-number="9"] .portal-icon::before {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: transparent;
-    border: 2px solid var(--color-gold);
-    clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.portal-number {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 2.5rem;
-    color: var(--color-gold);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-}
-
-.portal-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.2rem;
-    color: var(--color-gold);
-    text-align: center;
-    position: absolute;
-    bottom: 1rem;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
-
-.portal-description {
-    font-size: 0.9rem;
-    color: var(--color-light);
-    line-height: 1.4;
-    opacity: 0.9;
-}
-
-.portal::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at center, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.portal:hover::before {
-    opacity: 1;
-}
-
-/* Cartes de contenu */
-.wisdom-card {
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid var(--color-gold);
-    border-radius: 15px;
-    padding: 2rem;
-    margin: 1rem;
-    box-shadow: var(--shadow-medium);
-    transition: all var(--transition-medium);
-}
-
-.wisdom-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-strong);
-}
-
-/* Animations */
-@keyframes glow {
-    0% { box-shadow: 0 0 5px var(--color-gold); }
-    50% { box-shadow: 0 0 20px var(--color-gold); }
-    100% { box-shadow: 0 0 5px var(--color-gold); }
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* Responsive Design */
-@media (max-width: 900px) {
-    .sacred-circle {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        max-width: 600px;
-    }
-    
-    .portal {
-        width: 180px;
-        height: 180px;
-    }
-    
-    .portal-icon {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-@media (max-width: 600px) {
-    .sacred-circle {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        max-width: 300px;
-    }
-    
-    .portal {
-        width: 160px;
-        height: 160px;
-    }
-    
-    .portal-icon {
-        width: 60px;
-        height: 60px;
-    }
-}
-
+/* Reset et base */
 * {
     margin: 0;
     padding: 0;
@@ -355,2088 +38,517 @@ body {
 
 body {
     font-family: 'EB Garamond', serif;
-    background-color: rgba(0, 0, 0, 0.85);
-    color: var(--color-pearl);
+    font-size: 18px;
     line-height: 1.6;
+    color: var(--color-pearl);
+    background-color: #000 !important;
+    background-image: none !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.main-nav {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 1rem 0;
+/* Animation d'étoiles en arrière-plan */
+.stars-container {
     position: fixed;
     width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    display: none !important; /* Masquer complètement */
+}
+
+#stars, #stars2, #stars3 {
+    position: absolute;
     top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid var(--color-gold);
-    backdrop-filter: blur(10px);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: none !important; /* Masquer complètement */
+}
+
+#stars {
+    background: none !important;
+    animation: none !important;
+    display: none !important;
+}
+
+#stars2 {
+    background: none !important;
+    animation: none !important;
+    display: none !important;
+}
+
+#stars3 {
+    background: none !important;
+    animation: none !important;
+    display: none !important;
+}
+
+@keyframes animateStars {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-2000px);
+    }
+}
+
+/* Background gradient */
+.background-gradient {
+    display: none !important;
+    background: none !important;
+}
+
+/* Ajoutons un fond noir solide pour remplacer */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000 !important;
+    z-index: -2;
+}
+
+/* Header et Navigation */
+.main-nav {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 2rem;
-    color: var(--color-gold);
-    text-decoration: none;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.circle-menu {
-    position: relative;
-    width: 100%;
-    padding-bottom: 30%;
-    margin: 0 auto;
-}
-
-/* Positionnement des portes en cercle - ajustement des positions */
-.portal[data-number="1"] { top: 0; left: 50%; transform: translateX(-50%); }
-.portal[data-number="2"] { top: 10%; right: 10%; }
-.portal[data-number="3"] { top: 50%; right: 0; transform: translateY(-50%); }
-.portal[data-number="4"] { bottom: 10%; right: 10%; }
-.portal[data-number="5"] { bottom: 0; left: 50%; transform: translateX(-50%); }
-.portal[data-number="6"] { bottom: 10%; left: 10%; }
-.portal[data-number="7"] { top: 50%; left: 0; transform: translateY(-50%); }
-.portal[data-number="8"] { top: 10%; left: 10%; }
-.portal[data-number="9"] { top: 50%; left: 50%; transform: translate(-50%, -50%); }
-
-.portal:hover .number {
-    transform: scale(1.2);
-}
-
-main {
-    margin-top: 200px;
-    min-height: calc(100vh - 280px);
-    padding: 2rem;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-.hero {
-    text-align: center;
-    padding: 6rem 0;
-    background: radial-gradient(circle at center, rgba(26, 35, 126, 0.3), rgba(0, 0, 0, 0.9));
-    border-bottom: 1px solid var(--color-gold);
-    margin-bottom: 4rem;
-}
-
-.hero h1 {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 4rem;
-    color: var(--color-gold);
-    margin-bottom: 1.5rem;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from {
-        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    }
-    to {
-        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6);
-    }
-}
-
-.hero .subtitle {
-    font-size: 1.8rem;
-    color: var(--color-pearl);
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.card {
-    background-color: rgba(26, 35, 126, 0.2);
-    border: 1px solid var(--color-gold);
-    border-radius: 8px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.exercise {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid var(--color-gold);
-    backdrop-filter: blur(5px);
-}
-
-.start-meditation {
-    background: linear-gradient(45deg, var(--portal-1), var(--portal-2));
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.start-meditation:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.number-mirror {
-    margin: 2rem auto;
-    max-width: 400px;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--color-gold);
-}
-
-.mirror-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem 0;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-    transition: all 0.3s ease;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
 }
 
-.mirror-row:hover {
-    background: rgba(255, 215, 0, 0.1);
-    transform: scale(1.02);
-}
-
-.mirror-row span {
-    font-size: 1.5rem;
-    color: var(--color-gold);
-}
-
-.mirror-center {
-    text-align: center;
-    margin: 2rem 0;
-    font-size: 2.5rem;
-    color: var(--color-gold);
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-/* Styles pour la matrice 3-6-9 */
-.number-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin: 2rem auto;
-    max-width: 300px;
-}
-
-.number-grid div {
-    background: rgba(255, 215, 0, 0.05);
-    border: 2px solid var(--color-gold);
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-align: center;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.number-grid div:hover {
-    transform: scale(1.1);
-    background: rgba(255, 215, 0, 0.1);
-    box-shadow: 0 0 15px var(--color-gold);
-}
-
-/* Styles pour l'explorateur de cycles */
-.cycle-explorer {
+.logo {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    margin: 2rem 0;
+    text-decoration: none;
+    color: var(--color-pearl);
 }
 
-.cycle-input {
-    padding: 1rem;
-    border: 2px solid var(--color-gold);
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.2);
-    color: var(--color-pearl);
-    font-size: 1.2rem;
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
+.logo-symbol {
+    font-size: 1.8rem;
+    color: var(--color-gold);
+    margin-right: var(--spacing-xs);
 }
 
-.cycle-button {
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(45deg, var(--color-gold), var(--portal-1));
+.logo-text {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+.logo-text span {
+    color: var(--color-gold);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: var(--spacing-md);
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
     color: var(--color-pearl);
-    font-size: 1.2rem;
+    font-family: 'Cinzel', serif;
+    transition: color var(--transition-speed);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: var(--color-gold);
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.cycle-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--color-gold);
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-pearl);
+    margin: 3px 0;
+    transition: var(--transition-speed);
 }
 
-.cycle-result {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: rgba(255, 215, 0, 0.05);
-    border-radius: 8px;
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: var(--border-radius);
+    z-index: 100;
+}
+
+.dropdown-content a {
+    color: var(--color-pearl);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color var(--transition-speed);
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    flex: 1;
+}
+
+/* Titres et texte */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
     text-align: center;
-    min-height: 100px;
+    margin-bottom: var(--spacing-lg);
+    }
+
+h2 {
+        font-size: 2rem;
+    margin-top: var(--spacing-lg);
 }
 
-/* Animation pour les transitions */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+h3 {
+    font-size: 1.5rem;
+    margin-top: var(--spacing-md);
 }
 
-.cycle-result div {
-    animation: fadeIn 0.5s ease-out;
+p {
+    margin-bottom: var(--spacing-md);
 }
 
-footer {
+a {
+    color: var(--color-gold);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Sections et cartes */
+.section {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    background-color: rgba(0, 0, 0, 0.6);
+    border: var(--gold-border);
+    box-shadow: var(--box-shadow);
+}
+
+.card {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 2rem 0;
-    border-top: 1px solid var(--color-gold);
-    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    border: var(--gold-border);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    transition: transform var(--transition-speed);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Titre avec gradient */
+.gradient-title {
+    color: transparent;
+    background: linear-gradient(to right, var(--portal-color), var(--portal-color-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 2px 10px rgba(80, 200, 120, 0.2);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to right, var(--color-dark), #333);
+    color: var(--color-pearl);
+    border: 1px solid var(--color-gold);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    text-align: center;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #333, #444);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--portal-color-dark), var(--portal-color));
+    border: 1px solid var(--portal-color-light);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, var(--portal-color), var(--portal-color-light));
+}
+
+/* Formulaires */
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: var(--border-radius);
+    background-color: rgba(10, 10, 10, 0.8);
+    color: var(--color-pearl);
+    font-family: inherit;
+    margin-bottom: var(--spacing-xs);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--color-gold);
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Footer */
+.site-footer {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85));
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
+    padding: var(--spacing-lg) 0 var(--spacing-sm);
+    margin-top: var(--spacing-xl);
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
-}
-
-.footer-nav {
+    padding: 0 var(--spacing-md);
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 1rem;
-}
-
-.footer-link {
-    color: var(--color-gold);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-link:hover {
-    color: var(--color-pearl);
-}
-
-.copyright {
-    color: var(--color-pearl);
-    font-size: 0.9rem;
-}
-
-/* Animations */
-@keyframes portalPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-.portal.active::before {
-    animation: portalPulse 2s infinite;
-}
-
-/* Styles du titre et du lien */
-.site-title-link {
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    width: auto;
-}
-
-.site-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 2.5rem;
-    color: var(--color-gold);
-    text-align: center;
-    margin: 0;
-    padding: 0.5rem;
-}
-
-.site-title:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 30px var(--color-gold-glow);
-}
-
-/* Suppression des styles du menu déroulant */
-.portal-menu,
-.portal-menu .portal,
-.portal-menu.open,
-.portal-menu .portal[data-number],
-.portal-menu .close-menu {
-    display: none;
-}
-
-/* Styles spécifiques pour les portes 7, 8, 9 */
-.porte7-hero, .porte8-hero, .porte9-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('/static/images/wisdom-bg.jpg') center/cover;
-    color: var(--color-gold);
-    padding: 4rem 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-/* Porte 7 - Sagesse */
-.wisdom-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-}
-
-.wisdom-card {
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid var(--color-gold);
-    border-radius: 15px;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.wisdom-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px var(--color-gold-glow);
-}
-
-.wisdom-icon {
-    font-size: 3rem;
-    color: var(--color-gold);
-    margin-bottom: 1rem;
-}
-
-/* Porte 8 - Infini */
-.infinity-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-    padding: 2rem;
-}
-
-.infinity-symbol {
-    font-size: 6rem;
-    color: var(--color-gold);
-    animation: rotateInfinity 10s linear infinite;
-}
-
-@keyframes rotateInfinity {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.fractal-container {
-    width: 100%;
-    max-width: 600px;
-    aspect-ratio: 1;
-    border: 2px solid var(--color-gold);
-    margin: 2rem auto;
-    overflow: hidden;
-    position: relative;
-}
-
-/* Porte 9 - Unité */
-.unity-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.unity-element {
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid var(--color-gold);
-    border-radius: 15px;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.unity-element:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px var(--color-gold-glow);
-}
-
-.unity-icon {
-    font-size: 2.5rem;
-    color: var(--color-gold);
-    margin-bottom: 1rem;
-}
-
-/* Styles communs pour les sections de contenu */
-.section-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 2.5rem;
-    color: var(--color-gold);
-    text-align: center;
-    margin: 2rem 0;
-    text-shadow: 0 0 15px var(--color-gold-glow);
-}
-
-.section-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    line-height: 1.8;
-}
-
-/* Responsive design pour les nouvelles sections */
-@media (max-width: 768px) {
-    .unity-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .wisdom-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .unity-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .section-title {
-        font-size: 1.75rem;
-    }
-}
-
-/* Styles pour la page Harmonie */
-.porte6-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('/static/images/harmony-bg.jpg') center/cover;
-    color: var(--color-gold);
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.porte6-hero h1 {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.golden-ratio-section {
-    background: var(--portal-6);
-    padding: 2rem;
-    border-radius: 15px;
-    margin: 2rem 0;
-}
-
-.fibonacci-spiral {
-    width: 400px;
-    height: 400px;
-    margin: 0 auto;
-}
-
-.cube-container {
-    perspective: 1000px;
-    width: 200px;
-    height: 200px;
-    margin: 2rem auto;
-}
-
-.cube {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-}
-
-.face {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border: 2px solid var(--color-gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cinzel Decorative', serif;
-    color: var(--color-gold);
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.face.front  { transform: translateZ(100px); }
-.face.back   { transform: translateZ(-100px) rotateY(180deg); }
-.face.right  { transform: rotateY(90deg) translateZ(100px); }
-.face.left   { transform: rotateY(-90deg) translateZ(100px); }
-.face.top    { transform: rotateX(90deg) translateZ(100px); }
-.face.bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-.piano-keys {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-    margin: 2rem 0;
-}
-
-.key {
-    width: 60px;
-    height: 200px;
-    background: linear-gradient(to bottom, var(--color-pearl), #fff);
-    border: 1px solid #000;
-    border-radius: 0 0 5px 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 1rem;
-    font-family: 'Cinzel Decorative', serif;
-    transition: background 0.3s;
-}
-
-.key:hover {
-    background: var(--color-gold);
-    color: #000;
-}
-
-.balance-container {
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.balance {
-    width: 400px;
-    height: 200px;
-    position: relative;
-}
-
-.balance-beam {
-    width: 100%;
-    height: 10px;
-    background: var(--color-gold);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.scale {
-    width: 100px;
-    height: 100px;
-    background: rgba(255, 215, 0, 0.2);
-    border: 2px solid var(--color-gold);
-    border-radius: 50%;
-    margin: 2rem;
+.footer-section {
+    flex: 1;
+    margin-bottom: var(--spacing-md);
+    min-width: 250px;
+    padding: 0 var(--spacing-sm);
 }
 
-.meditation-timer {
-    text-align: center;
-    margin: 2rem 0;
-}
-
-.timer-display {
-    font-size: 3rem;
-    font-family: 'Cinzel Decorative', serif;
+.footer-section h3 {
     color: var(--color-gold);
-    margin-bottom: 1rem;
-}
-
-.start-meditation {
-    background: var(--color-gold);
-    color: #000;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-family: 'Cinzel Decorative', serif;
+    margin-bottom: var(--spacing-sm);
     font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s;
 }
 
-.start-meditation:hover {
-    background: #fff;
-    color: var(--color-gold);
+.footer-section p {
+    margin-bottom: var(--spacing-sm);
 }
 
-/* Animation du titre */
-@keyframes titleGlow {
-    0% { text-shadow: 0 0 20px var(--color-gold-glow); }
-    50% { text-shadow: 0 0 30px var(--color-gold-glow); }
-    100% { text-shadow: 0 0 20px var(--color-gold-glow); }
+.footer-section ul {
+    list-style: none;
 }
 
-/* Responsive design */
-@media (max-width: 900px) {
-    .portal-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .portal {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .portal .number {
-        font-size: 2.5rem;
-    }
-
-    .site-title {
-        font-size: 2rem;
-        margin: 0.75rem 0;
-    }
-}
-
-@media (max-width: 600px) {
-    .portal-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .site-title {
-        font-size: 1.75rem;
-        margin: 0.5rem 0;
-    }
-}
-
-/* Styles pour la page Harmonie */
-.porte6-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('/static/images/harmony-bg.jpg') center/cover;
-    color: var(--color-gold);
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.porte6-hero h1 {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.golden-ratio-section {
-    background: var(--portal-6);
-    padding: 2rem;
-    border-radius: 15px;
-    margin: 2rem 0;
-}
-
-.fibonacci-spiral {
-    width: 400px;
-    height: 400px;
-    margin: 0 auto;
-}
-
-.cube-container {
-    perspective: 1000px;
-    width: 200px;
-    height: 200px;
-    margin: 2rem auto;
-}
-
-.cube {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-}
-
-.face {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border: 2px solid var(--color-gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cinzel Decorative', serif;
-    color: var(--color-gold);
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.face.front  { transform: translateZ(100px); }
-.face.back   { transform: translateZ(-100px) rotateY(180deg); }
-.face.right  { transform: rotateY(90deg) translateZ(100px); }
-.face.left   { transform: rotateY(-90deg) translateZ(100px); }
-.face.top    { transform: rotateX(90deg) translateZ(100px); }
-.face.bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-.piano-keys {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-    margin: 2rem 0;
-}
-
-.key {
-    width: 60px;
-    height: 200px;
-    background: linear-gradient(to bottom, var(--color-pearl), #fff);
-    border: 1px solid #000;
-    border-radius: 0 0 5px 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 1rem;
-    font-family: 'Cinzel Decorative', serif;
-    transition: background 0.3s;
-}
-
-.key:hover {
-    background: var(--color-gold);
-    color: #000;
-}
-
-.balance-container {
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.balance {
-    width: 400px;
-    height: 200px;
-    position: relative;
-}
-
-.balance-beam {
-    width: 100%;
-    height: 10px;
-    background: var(--color-gold);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-}
-
-.scale {
-    width: 100px;
-    height: 100px;
-    background: rgba(255, 215, 0, 0.2);
-    border: 2px solid var(--color-gold);
-    border-radius: 50%;
-    margin: 2rem;
-}
-
-.meditation-timer {
-    text-align: center;
-    margin: 2rem 0;
-}
-
-.timer-display {
-    font-size: 3rem;
-    font-family: 'Cinzel Decorative', serif;
-    color: var(--portal-color);
-    margin-bottom: 1rem;
-    text-shadow: 0 0 15px rgba(var(--portal-color), 0.5);
-}
-
-.start-meditation {
-    background: var(--portal-color);
-    color: var(--color-black);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.start-meditation:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(var(--portal-color), 0.4);
-}
-
-/* Animation spéciale pour le portail central */
-.portal-menu .portal[data-number="9"] .portal-icon {
-    font-size: 3rem;
-    width: 80px;
-    height: 80px;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-/* Ajustements responsifs pour les portails */
-@media (max-width: 900px) {
-    .portal-menu .portal {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .portal-menu .portal[data-number="9"] {
-        width: 140px;
-        height: 140px;
-    }
-    
-    .portal-icon {
-        font-size: 2rem;
-        width: 50px;
-        height: 50px;
-    }
-    
-    .portal-number {
-        font-size: 1.5rem;
-    }
-    
-    .portal-title {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .portal-menu .portal {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .portal-menu .portal[data-number="9"] {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .portal-icon {
-        font-size: 1.5rem;
-        width: 40px;
-        height: 40px;
-    }
-    
-    .portal-number {
-        font-size: 1.2rem;
-    }
-    
-    .portal-title {
-        font-size: 0.7rem;
-    }
-}
-
-/* Styles des symboles géométriques */
-.geometric-symbol {
-    width: 60px;
-    height: 60px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-}
-
-/* Point - Porte 1 */
-.symbol-1 {
-    width: 12px;
-    height: 12px;
-    border: 2px solid var(--color-gold);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--color-gold-glow);
-}
-
-/* Ligne - Porte 2 */
-.symbol-2 {
-    width: 40px;
-    height: 0;
-    border-top: 2px solid var(--color-gold);
-    box-shadow: 0 0 10px var(--color-gold-glow);
-}
-
-/* Triangle - Porte 3 */
-.symbol-3 {
-    width: 40px;
-    height: 35px;
-    position: relative;
-}
-
-.symbol-3::before,
-.symbol-3::after,
-.symbol-3 span {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 2px;
-    background: var(--color-gold);
-    box-shadow: 0 0 10px var(--color-gold-glow);
-}
-
-.symbol-3::before {
-    transform: rotate(60deg);
-    transform-origin: left;
-}
-
-.symbol-3::after {
-    transform: rotate(-60deg);
-    transform-origin: right;
-}
-
-.symbol-3 span {
-    bottom: 0;
-}
-
-/* Carré - Porte 4 */
-.symbol-4 {
-    width: 35px;
-    height: 35px;
-    border: 2px solid var(--color-gold);
-    box-shadow: 0 0 10px var(--color-gold-glow);
-}
-
-/* Étoile à 5 branches - Porte 5 */
-.symbol-5 {
-    width: 40px;
-    height: 40px;
-    position: relative;
-}
-
-.symbol-5::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--color-gold);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    box-shadow: 0 0 10px var(--color-gold-glow);
-}
-
-/* Hexagramme - Porte 6 */
-.symbol-6 {
-    width: 40px;
-    height: 40px;
-    position: relative;
-}
-
-.symbol-6::before,
-.symbol-6::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--color-gold);
-    box-shadow: 0 0 10px var(--color-gold-glow);
-}
-
-.symbol-6::before {
-    clip-path: polygon(50% 0%, 100% 75%, 0% 75%);
-}
-
-.symbol-6::after {
-    clip-path: polygon(50% 100%, 0% 25%, 100% 25%);
-}
-
-/* Heptagramme - Porte 7 */
-.symbol-7 {
-    width: 40px;
-    height: 40px;
-    position: relative;
-}
-
-.symbol-7::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--color-gold);
-    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 90%, 25% 90%, 0% 60%, 10% 20%);
-    box-shadow: 0 0 10px var(--color-gold-glow);
-}
-
-/* Octogramme - Porte 8 */
-.symbol-8 {
-    width: 40px;
-    height: 40px;
-    position: relative;
-}
-
-.symbol-8::before,
-.symbol-8::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--color-gold);
-    box-shadow: 0 0 10px var(--color-gold-glow);
-}
-
-.symbol-8::before {
-    clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
-}
-
-.symbol-8::after {
-    clip-path: polygon(29% 0%, 71% 0%, 100% 29%, 100% 71%, 71% 100%, 29% 100%, 0% 71%, 0% 29%);
-}
-
-/* Énéagramme - Porte 9 */
-.symbol-9 {
-    width: 40px;
-    height: 40px;
-    position: relative;
-}
-
-.symbol-9::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--color-gold);
-    clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-    box-shadow: 0 0 10px var(--color-gold-glow);
-}
-
-/* Animation au survol */
-.portal:hover .geometric-symbol {
-    transform: rotate(360deg);
-    transition: transform 0.6s ease-in-out;
-}
-
-/* Container des portails dans le menu */
-.portal-grid {
-    position: relative;
-    width: 800px;
-    height: 800px;
-    margin: 0 auto;
-}
-
-/* Style des portails dans le menu */
-.portal-menu .portal {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid var(--color-gold);
-    border-radius: 15px;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Positionnement circulaire des portails */
-.portal-menu .portal[data-number="1"] { 
-    left: 50%;
-    top: 5%;
-}
-
-.portal-menu .portal[data-number="2"] { 
-    left: 90%;
-    top: 20%;
-}
-
-.portal-menu .portal[data-number="3"] { 
-    left: 95%;
-    top: 50%;
-}
-
-.portal-menu .portal[data-number="4"] { 
-    left: 90%;
-    top: 80%;
-}
-
-.portal-menu .portal[data-number="5"] { 
-    left: 50%;
-    top: 95%;
-}
-
-.portal-menu .portal[data-number="6"] { 
-    left: 10%;
-    top: 80%;
-}
-
-.portal-menu .portal[data-number="7"] { 
-    left: 5%;
-    top: 50%;
-}
-
-.portal-menu .portal[data-number="8"] { 
-    left: 10%;
-    top: 20%;
-}
-
-.portal-menu .portal[data-number="9"] { 
-    left: 50%;
-    top: 50%;
-    width: 180px;
-    height: 180px;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 0 30px var(--color-gold-glow);
-}
-
-/* Animation d'entrée des portails */
-.portal-menu.open .portal {
-    opacity: 1;
-    animation: portalAppear 0.5s ease-out forwards;
-}
-
-@keyframes portalAppear {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-
-/* Styles de l'Ennéagramme */
-.enneagram-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 2rem auto;
-    aspect-ratio: 1;
-}
-
-.enneagram-circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    height: 90%;
-    border: 2px solid var(--color-gold);
-    border-radius: 50%;
-}
-
-.enneagram-point {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--color-black);
-    border: 2px solid var(--color-gold);
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cinzel Decorative', cursive;
-    color: var(--color-gold);
-    cursor: pointer;
-    transition: all var(--transition-medium);
-}
-
-.enneagram-point:hover {
-    background: var(--color-gold);
-    color: var(--color-black);
-    box-shadow: 0 0 15px var(--color-gold-glow);
-}
-
-.enneagram-line {
-    position: absolute;
-    height: 2px;
-    background: var(--color-gold);
-    transform-origin: 0 50%;
-    opacity: 0.6;
-    transition: opacity var(--transition-medium);
-}
-
-.enneagram-line.active {
-    opacity: 1;
-    box-shadow: 0 0 10px var(--color-gold-glow);
-}
-
-.shape-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.shape-button {
-    background: var(--color-black);
-    color: var(--color-gold);
-    border: 1px solid var(--color-gold);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all var(--transition-medium);
-    font-family: 'Cinzel Decorative', cursive;
-}
-
-.shape-button:hover {
-    background: var(--color-gold);
-    color: var(--color-black);
-    box-shadow: 0 0 10px var(--color-gold-glow);
-}
-
-.shape-button.active {
-    background: var(--color-gold);
-    color: var(--color-black);
-}
-
-.enneagram-description {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.9);
-    border: 1px solid var(--color-gold);
-    padding: 1rem;
-    border-radius: 5px;
-    color: var(--color-pearl);
-    font-size: 0.9rem;
-    max-width: 200px;
-    opacity: 0;
-    transition: opacity var(--transition-medium);
-    pointer-events: none;
-    z-index: 10;
-}
-
-.enneagram-point:hover + .enneagram-description {
-    opacity: 1;
-}
-
-/* Animations de l'Ennéagramme */
-@keyframes pointPulse {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.1); }
-    100% { transform: translate(-50%, -50%) scale(1); }
-}
-
-.enneagram-point.active {
-    animation: pointPulse 1s infinite;
-}
-
-/* Responsive design pour l'ennéagramme */
-@media (max-width: 768px) {
-    .enneagram-container {
-        width: 400px;
-        height: 400px;
-    }
-    
-    .enneagram-point {
-        width: 16px;
-        height: 16px;
-        font-size: 0.7rem;
-    }
-    
-    .enneagram-description {
-        width: 150px;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .enneagram-container {
-        width: 300px;
-        height: 300px;
-        padding: 1rem;
-    }
-    
-    .enneagram-point {
-        width: 14px;
-        height: 14px;
-        font-size: 0.6rem;
-    }
-    
-    .enneagram-description {
-        width: 120px;
-        font-size: 0.8rem;
-        padding: 0.5rem;
-    }
-}
-
-/* Styles communs pour toutes les pages de portes */
-.portal-page {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* En-tête uniforme pour toutes les portes */
-.portal-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 4rem;
-    margin-bottom: 5rem;
-    padding-top: 4rem;
-}
-
-.portal-header h1 {
-    font-size: 5rem;
-    letter-spacing: 1rem;
-    margin: 0;
-    color: var(--color-gold);
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-}
-
-.portal-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-}
-
-.portal-title h1 {
-    font-size: 6rem;
-    font-family: 'Cinzel Decorative', cursive;
-    color: var(--color-gold);
-    letter-spacing: 1rem;
-    margin: 0;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-    line-height: 1;
-}
-
-.principle-number {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-.principle-label {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 2rem;
-    color: var(--color-gold);
-    letter-spacing: 0.5rem;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+.footer-section ul li {
     margin-bottom: 0.5rem;
 }
 
-.principle-number .number {
-    font-size: 10rem;
-    font-family: 'Cinzel Decorative', cursive;
-    color: var(--color-gold);
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-    line-height: 1;
-}
-
-.portal-title .subtitle {
-    font-size: 2rem;
-    font-family: 'EB Garamond', serif;
-    font-style: italic;
-    color: var(--color-gold);
-    opacity: 0.9;
-    margin: 0;
-}
-
-.principle-quote {
-    font-family: 'EB Garamond', serif;
-    font-style: italic;
-    font-size: 1.8rem;
+.footer-section a {
     color: var(--color-pearl);
-    max-width: 800px;
-    line-height: 1.6;
-    margin: 0;
-    opacity: 0.9;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 215, 0, 0.3);
-}
-
-.portal-symbol {
-    display: none;
-}
-
-/* Conteneur de contenu uniforme */
-.portal-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* Style uniforme des cartes */
-.wisdom-card {
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid var(--color-gold);
-    border-radius: 15px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    transition: all var(--transition-medium);
-    backdrop-filter: blur(5px);
-}
-
-.wisdom-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px var(--color-gold-glow);
-}
-
-/* Style uniforme des icônes */
-.wisdom-icon {
-    font-size: 2.5rem;
-    color: var(--color-gold);
-    margin-bottom: 1rem;
-    transition: all var(--transition-medium);
-}
-
-.wisdom-card:hover .wisdom-icon {
-    transform: scale(1.1) rotate(360deg);
-}
-
-/* Section de méditation uniforme */
-.meditation-section {
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid var(--color-gold);
-    border-radius: 15px;
-    padding: 2rem;
-    margin: 2rem 0;
-    text-align: center;
-}
-
-.meditation-visualizer {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
-    background: var(--color-black);
-    border: 2px solid var(--color-gold);
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.consciousness-point {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: var(--color-gold);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px var(--color-gold-glow);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.2); }
-    100% { transform: translate(-50%, -50%) scale(1); }
-}
-
-/* Styles des exercices interactifs */
-.interactive-exercise {
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid var(--color-gold);
-    border-radius: 15px;
-    padding: 2rem;
-    margin: 2rem 0;
-    cursor: pointer;
-    transition: all var(--transition-medium);
-}
-
-.interactive-exercise:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-strong);
-}
-
-.equivalence-mirror {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
-    background: var(--color-black);
-    border: 2px solid var(--color-gold);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.oscillation-rhythm {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
-    background: var(--color-black);
-    border: 2px solid var(--color-gold);
-    border-radius: 15px;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.2); }
-}
-
-/* Styles des textes de méditation */
-.meditation-text {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.2rem;
-    color: var(--color-pearl);
-    line-height: 1.8;
-    margin: 2rem 0;
-    padding: 2rem;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 15px;
-    border-left: 4px solid var(--color-gold);
-}
-
-.meditation-instructions {
-    font-family: 'EB Garamond', serif;
-    font-size: 1rem;
-    color: var(--color-gold);
-    margin: 1rem 0;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-}
-
-/* Styles des contrôles de méditation */
-.meditation-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.meditation-button {
-    background: var(--color-black);
-    border: 2px solid var(--color-gold);
-    color: var(--color-gold);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all var(--transition-medium);
-}
-
-.meditation-button:hover {
-    background: var(--color-gold);
-    color: var(--color-black);
-    box-shadow: var(--shadow-strong);
-}
-
-/* Styles des animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.meditation-section > * {
-    animation: fadeIn 0.5s ease-out;
-}
-
-/* Grilles responsives uniformes */
-.wisdom-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-/* Styles spécifiques aux portails */
-.portal-1 { 
-    background: linear-gradient(135deg, var(--portal-1), var(--color-black));
-    --portal-color: var(--portal-1);
-}
-
-.portal-2 { 
-    background: linear-gradient(135deg, var(--portal-2), var(--color-black));
-    --portal-color: var(--portal-2);
-}
-
-.portal-3 { 
-    background: linear-gradient(135deg, var(--portal-3), var(--color-black));
-    --portal-color: var(--portal-3);
-}
-
-.portal-4 { 
-    background: linear-gradient(135deg, var(--portal-4), var(--color-black));
-    --portal-color: var(--portal-4);
-}
-
-.portal-5 { 
-    background: linear-gradient(135deg, var(--portal-5), var(--color-black));
-    --portal-color: var(--portal-5);
-}
-
-.portal-6 { 
-    background: linear-gradient(135deg, var(--portal-6), var(--color-black));
-    --portal-color: var(--portal-6);
-}
-
-.portal-7 { 
-    background: linear-gradient(135deg, var(--portal-7), var(--color-black));
-    --portal-color: var(--portal-7);
-}
-
-.portal-8 { 
-    background: linear-gradient(135deg, var(--portal-8), var(--color-black));
-    --portal-color: var(--portal-8);
-}
-
-.portal-9 { 
-    background: linear-gradient(135deg, var(--portal-9), var(--color-black));
-    --portal-color: var(--portal-9);
-}
-
-/* Styles des symboles sacrés */
-.sacred-symbol {
-    width: 120px;
-    height: 120px;
-    margin: 2rem auto;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pentagram {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.pentagram::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: 2px solid var(--portal-color);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    animation: rotate 20s linear infinite;
-}
-
-.hexagram {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.hexagram::before,
-.hexagram::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: 2px solid var(--portal-color);
-}
-
-.hexagram::before {
-    clip-path: polygon(50% 0%, 100% 75%, 0% 75%);
-}
-
-.hexagram::after {
-    clip-path: polygon(50% 100%, 0% 25%, 100% 25%);
-}
-
-/* Animation des symboles */
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* Styles des cartes de sagesse */
-.wisdom-card {
-    background: rgba(0, 0, 0, 0.7);
-    border: 2px solid var(--portal-color);
-    box-shadow: 0 0 20px rgba(var(--portal-color), 0.2);
-}
-
-.wisdom-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(var(--portal-color), 0.3);
-}
-
-/* Style du timer de méditation */
-.meditation-timer {
-    text-align: center;
-    margin: 2rem 0;
-}
-
-.timer-display {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 3rem;
-    color: var(--portal-color);
-    margin-bottom: 1rem;
-    text-shadow: 0 0 15px rgba(var(--portal-color), 0.5);
-}
-
-.start-meditation {
-    background: var(--portal-color);
-    color: var(--color-black);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.start-meditation:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(var(--portal-color), 0.4);
-}
-
-/* Styles des principes */
-.principles {
-    margin-top: 2rem;
-    padding: 1rem;
-    border: 1px solid var(--portal-color);
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.principles h3 {
-    color: var(--portal-color);
-    font-family: 'Cinzel Decorative', cursive;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.principles ul {
-    list-style: none;
-    padding: 0;
-}
-
-.principles li {
-    padding: 0.5rem 0;
-    text-align: center;
-    color: var(--color-pearl);
-    transition: all 0.3s ease;
-}
-
-.principles li:hover {
-    color: var(--portal-color);
-    transform: translateX(10px);
-}
-
-/* Responsive design uniforme */
-@media (max-width: 768px) {
-    .portal-header h1 {
-        font-size: 2.5rem;
-    }
-    
-    .portal-header .subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .wisdom-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .meditation-section {
-        padding: 1rem;
-    }
-    
-    .timer-display {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .portal-header h1 {
-        font-size: 2rem;
-    }
-    
-    .portal-header .subtitle {
-        font-size: 1rem;
-    }
-    
-    .wisdom-card {
-        padding: 1.5rem;
-    }
-    
-    .timer-display {
-        font-size: 2rem;
-    }
-}
-
-/* Suppression des styles des cartes en orange */
-.doors-grid,
-.door-link,
-.door,
-.door-frame,
-.door i,
-.door:hover i,
-.door-number,
-.door-label {
-    display: none;
-}
-
-/* Styles du titre principal */
-header {
-    text-align: center;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-}
-
-.site-title-link {
     text-decoration: none;
-    display: inline-block;
+    transition: color var(--transition-speed);
 }
 
-.site-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 3.5rem;
+.footer-section a:hover {
     color: var(--color-gold);
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-    letter-spacing: 2px;
-    line-height: 1.2;
-    margin: 0;
-    padding: 1rem 0;
-    transition: all 0.3s ease;
 }
 
-.site-title:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+.contact {
+    margin-top: var(--spacing-sm);
 }
 
-/* Styles du conteneur principal */
-.container {
+.contact span {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
-}
-
-/* Styles de l'en-tête */
-.main-header {
+    padding: var(--spacing-md);
     text-align: center;
-    margin-bottom: 2rem;
-    padding: 2rem 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
-    position: relative;
-    z-index: 1;
-    pointer-events: none;
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
 }
 
-.title-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1rem;
-    pointer-events: none;
-}
-
-.site-subtitle {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.5rem;
-    color: var(--color-gold);
-    opacity: 0.9;
-    margin-bottom: 1.5rem;
-    line-height: 1.4;
-    max-width: 600px;
-    margin: 0 auto;
-    pointer-events: none;
-}
-
-.welcome-text {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.2rem;
-    color: var(--color-pearl);
-    opacity: 0.9;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
-    pointer-events: none;
-}
-
-.sacred-introduction {
-    position: relative;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.introduction-content {
-    pointer-events: none;
-}
-
-.introduction-content p {
-    pointer-events: none;
-}
-
-.section-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-.section-card {
-    text-decoration: none;
-    color: var(--color-pearl);
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid var(--color-gold);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: all 0.4s ease;
-    height: 100%;
-    display: block;
-    position: relative;
-    z-index: 2;
-}
-
-.card-content {
-    pointer-events: none;
-}
-
-.card-content i,
-.card-content h2,
-.card-content p {
-    pointer-events: none;
-}
-
-.header-wrapper {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    width: 100%;
-    pointer-events: none;
-}
-
-.site-title-link {
-    text-decoration: none;
-    display: inline-block;
-    pointer-events: auto;
-    position: relative;
-    z-index: 10;
-}
-
-.site-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 2.5rem;
-    color: var(--color-gold);
-    text-align: center;
-    margin: 0;
-    padding: 0.5rem;
-    position: relative;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.principle-quote {
-    font-family: 'EB Garamond', serif;
-    font-style: italic;
-    color: var(--color-pearl);
-    text-align: center;
-    max-width: 800px;
-    margin: 1rem auto;
-    padding: 0 2rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
-/* Mode parcours initiatique */
-.initiation-mode {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.initiation-toggle {
-    background: var(--color-black);
-    border: 2px solid var(--color-gold);
-    color: var(--color-gold);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all var(--transition-medium);
-}
-
-.initiation-toggle:hover {
-    background: var(--color-gold);
-    color: var(--color-black);
-    box-shadow: var(--shadow-strong);
-}
-
-/* Portails verrouillés */
-.portal.locked {
-    opacity: 0.5;
-    pointer-events: none;
-    position: relative;
-}
-
-.portal.locked::after {
-    content: '🔒';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    color: var(--color-gold);
-}
-
-/* Effets de survol améliorés */
-.portal:hover {
-    transform: scale(1.05);
-    box-shadow: var(--portal-hover-shadow);
-    animation: portalPulse 2s infinite;
-}
-
-@keyframes portalPulse {
-    0% { box-shadow: var(--portal-shadow); }
-    50% { box-shadow: 0 0 30px var(--color-gold-glow); }
-    100% { box-shadow: var(--portal-shadow); }
-}
-
-/* Contrôle audio */
-.audio-control {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.audio-toggle {
-    background: var(--color-black);
-    border: 2px solid var(--color-gold);
-    color: var(--color-gold);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-container {
+    flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .menu-toggle {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all var(--transition-medium);
+    position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+    
+    .nav-links {
+        display: none;
+    flex-direction: column;
+    position: absolute;
+        top: 60px;
+        left: 0;
+    width: 100%;
+        background-color: rgba(10, 10, 10, 0.95);
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+    display: flex;
+    }
+    
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+    
+    .dropdown-content {
+        position: static;
+    width: 100%;
+        box-shadow: none;
+        padding-left: var(--spacing-md);
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
 }
 
-.audio-toggle:hover {
-    background: var(--color-gold);
-    color: var(--color-black);
-    box-shadow: var(--shadow-strong);
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-/* Animation de déverrouillage */
-@keyframes unlockAnimation {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
 }
 
-.portal.unlocked {
-    animation: unlockAnimation 1s ease-out;
+/* Classes utilitaires */
+.text-center {
+    text-align: center;
 }
+
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+.mt-5 { margin-top: var(--spacing-xl); }
+
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-5 { margin-bottom: var(--spacing-xl); }
+
+.gold-text {
+    color: var(--color-gold);
+}
+
+.portal-text {
+    color: var(--portal-color);
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.flex-item {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Curseur personnalisé (optionnel) */
+/* 
+html {
+    cursor: url('/static/img/cursor.png'), auto;
+}
+*/

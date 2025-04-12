@@ -1,73 +1,322 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" style="background: #000 !important;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Arithmétique Sacrée{% endblock %}</title>
+    <title>{% block title %}{% endblock %} - Arithmétique Sacrée</title>
     
-    <!-- Polices -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- CSS principal -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/spiral.css') }}">
-    
-    <!-- Variables CSS -->
+    <!-- Style minimal pour corriger le fond noir -->
     <style>
-        :root {
-            --color-gold: #FFD700;
-            --color-pearl: #F5F5F5;
-            --color-dark: #1A1A1A;
-            --color-bg: #0A0A0A;
+        html, body {
+            background: #000 !important;
+            color: #F5F5F5;
         }
         
-        body {
-            font-family: 'EB Garamond', serif;
-            background-color: var(--color-bg);
-            color: var(--color-pearl);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+        /* Garantir qu'aucun élément d'arrière-plan ne puisse apparaître */
+        body::before, 
+        body::after,
+        html::before, 
+        html::after,
+        .stars-container, 
+        #stars, 
+        #stars2, 
+        #stars3, 
+        .background-gradient {
+            display: none !important;
+            content: none !important;
+            background: none !important;
         }
     </style>
     
+    <!-- Préchargement des ressources -->
+    <link rel="preload" href="{{ url_for('static', filename='css/style.css') }}" as="style">
+    <link rel="preload" href="{{ url_for('static', filename='css/fixes.css') }}" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=MedievalSharp&family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="{{ url_for('static', filename='audio/background.mp3') }}" as="audio">
+    <link rel="preload" href="{{ url_for('static', filename='audio/hover.mp3') }}" as="audio">
+    <link rel="preload" href="{{ url_for('static', filename='audio/bell.mp3') }}" as="audio">
+    
+    <!-- Chargement des styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fixes.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=MedievalSharp&family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Script pour forcer l'uniformité des conteneurs -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Forcer les mêmes dimensions pour tous les conteneurs
+            const containerStyles = document.createElement('style');
+            containerStyles.textContent = `
+                .cycles-container {
+                    max-width: 1050px !important;
+                    width: calc(100% - 40px) !important;
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                    padding: 2rem !important;
+                    position: relative !important;
+                    z-index: 1 !important;
+                    box-sizing: border-box !important;
+                }
+            `;
+            document.head.appendChild(containerStyles);
+        });
+    </script>
+    
     {% block extra_css %}{% endblock %}
+    
+    <!-- Styles de correction pour la navigation -->
+    <style>
+        /* Correction de l'alignement du menu */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links > li {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .nav-links > li > a,
+        .nav-links .dropbtn {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            margin: 0;
+        }
+        
+        /* Correction spécifique pour le dropdown Portes */
+        .dropdown {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 0;
+            z-index: 1001;
+        }
+        
+        /* Assurer que les liens du menu ont tous la même hauteur */
+        .nav-container, .nav-links, .nav-links > li, .nav-links > li > a {
+            height: auto;
+        }
+    </style>
 </head>
-<body>
-    <header class="main-header">
+<body style="background: #000 !important;" {% block body_class %}{% endblock %}>
+    <!-- Audio de fond -->
+    <audio id="background-music" loop preload="auto">
+        <source src="{{ url_for('static', filename='audio/background.mp3') }}" type="audio/mpeg">
+    </audio>
+    
+    <!-- Contrôle audio -->
+    <div id="audio-control" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; cursor: pointer; color: var(--color-gold); background: rgba(0,0,0,0.5); padding: 10px; border-radius: 50%;">
+        <i class="fas fa-volume-mute" id="audio-icon"></i>
+    </div>
+    
+    <!-- Fond noir fixe -->
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000 !important; z-index: -10;"></div>
+    
+    <!-- Dégradés latéraux et vignette -->
+    <div id="side-gradient-left" style="position: fixed; top: 0; left: 0; width: 15%; height: 100%; background: linear-gradient(to right, var(--portal-color-fade), transparent); opacity: 0.12; z-index: -5; pointer-events: none;"></div>
+    
+    <div id="side-gradient-right" style="position: fixed; top: 0; right: 0; width: 15%; height: 100%; background: linear-gradient(to left, var(--portal-color-fade), transparent); opacity: 0.12; z-index: -5; pointer-events: none;"></div>
+    
+    <div id="vignette-gradient" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at center, transparent 40%, var(--portal-color-fade) 100%); opacity: 0.15; z-index: -6; pointer-events: none;"></div>
+    
+    <div id="vignette-top-bottom" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, var(--portal-color-fade), transparent 20%, transparent 80%, var(--portal-color-fade)); opacity: 0.1; z-index: -7; pointer-events: none;"></div>
+
+    <header>
         <nav class="main-nav">
-            <a href="{{ url_for('index') }}" class="nav-logo">
-                <span class="logo-text">Arithmétique Sacrée</span>
-            </a>
-            <div class="nav-links">
-                <a href="{{ url_for('lois_hermetiques') }}">Lois Hermétiques</a>
-                <a href="{{ url_for('cycles_mod9') }}">Cycles et Mod 9</a>
-                <a href="{{ url_for('geometrie_nombres') }}">Géométrie des Nombres</a>
+            <div class="nav-container">
+                <a href="{{ url_for('index') }}" class="logo">
+                    <div class="logo-symbol">∞</div>
+                    <div class="logo-text"><span>A</span>rithmétique <span>S</span>acrée</div>
+                </a>
+                
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                
+                <ul class="nav-links" style="display: flex; align-items: center; margin: 0; padding: 0;">
+                    <li style="display: flex; align-items: center;"><a href="{{ url_for('index') }}" style="padding: 10px 15px; display: flex; align-items: center;">Accueil</a></li>
+                    <li class="dropdown" style="display: flex; align-items: center; position: relative;">
+                        <a href="#" class="dropbtn" style="padding: 10px 15px; display: flex; align-items: center;">Portes <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content" style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0;">
+                            {% for i in range(1, 10) %}
+                            <a href="{{ url_for('porte', numero=i) }}">Porte {{ i }}</a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                    <li style="display: flex; align-items: center;"><a href="{{ url_for('gematria') }}" style="padding: 10px 15px; display: flex; align-items: center;">Gématrie</a></li>
+                    <li style="display: flex; align-items: center;"><a href="{{ url_for('cycles_numeriques') }}" class="nav-link" style="padding: 10px 15px; display: flex; align-items: center;">Cycles Numériques</a></li>
+                    <li style="display: flex; align-items: center;"><a href="{{ url_for('lois_hermetiques') }}" style="padding: 10px 15px; display: flex; align-items: center;">Lois Hermétiques</a></li>
+                    <li style="display: flex; align-items: center;"><a href="{{ url_for('geometrie_nombres') }}" style="padding: 10px 15px; display: flex; align-items: center;">Géométrie des Nombres</a></li>
+                </ul>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main class="container">
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="main-footer">
+    <footer class="site-footer">
         <div class="footer-content">
-            <p>&copy; 2024 Arithmétique Sacrée. Tous droits réservés.</p>
-            <div class="footer-links">
-                <a href="#">Mentions légales</a>
-                <a href="#">Contact</a>
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <p>Arithmétique Sacrée est dédié à l'exploration des propriétés mystiques des nombres et leurs liens avec l'harmonie universelle, la conscience et la métaphysique.</p>
+                <div class="contact">
+                    <span><i class="fas fa-envelope"></i> contact@arithmetique-sacree.com</span>
+                    <span><i class="fas fa-globe"></i> www.arithmetique-sacree.com</span>
+                </div>
             </div>
+            
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Accueil</a></li>
+                    <li><a href="{{ url_for('gematria') }}">Gématrie</a></li>
+                    <li><a href="{{ url_for('cycles_numeriques') }}" class="nav-link">Cycles Numériques</a></li>
+                    <li><a href="{{ url_for('lois_hermetiques') }}">Lois Hermétiques</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Ressources</h3>
+                <ul>
+                    <li><a href="#">Bibliographie</a></li>
+                    <li><a href="#">Méditations Numériques</a></li>
+                    <li><a href="#">Glossaire</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> Arithmétique Sacrée. Tous droits réservés.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    {% block extra_js %}{% endblock %}
+    <script>
+        // Navigation responsive
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            // Affichage de l'année actuelle
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Force le fond noir uniquement
+            document.body.style.backgroundColor = "#000";
+            document.documentElement.style.backgroundColor = "#000";
+            
+            // Gestion de l'audio
+            const backgroundMusic = document.getElementById('background-music');
+            const audioControl = document.getElementById('audio-control');
+            const audioIcon = document.getElementById('audio-icon');
+            let isPlaying = false;
+            
+            // Réduire le volume
+            backgroundMusic.volume = 0.15;
+            
+            // Fonction pour gérer le son sur clic
+            audioControl.addEventListener('click', function() {
+                if (isPlaying) {
+                    backgroundMusic.pause();
+                    audioIcon.className = 'fas fa-volume-mute';
+                } else {
+                    backgroundMusic.play();
+                    audioIcon.className = 'fas fa-volume-up';
+                }
+                isPlaying = !isPlaying;
+            });
+            
+            // Précharger les sons d'interaction
+            const hoverSound = new Audio("{{ url_for('static', filename='audio/hover.mp3') }}");
+            const bellSound = new Audio("{{ url_for('static', filename='audio/bell.mp3') }}");
+            hoverSound.volume = 0.1;
+            bellSound.volume = 0.2;
+            
+            // Ajouter des sons aux éléments de navigation
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    hoverSound.currentTime = 0;
+                    hoverSound.play();
+                });
+                item.addEventListener('click', function() {
+                    bellSound.currentTime = 0;
+                    bellSound.play();
+                });
+            });
+        });
+    </script>
+    
+    <!-- Script d'animations -->
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+    
+    <!-- Script pour détecter et appliquer les classes de portail -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Détection de la page courante
+            const path = window.location.pathname;
+            const bodyElement = document.body;
+            
+            // Détecter les pages de portes
+            if (path.includes('/porte/')) {
+                const porteNum = path.split('/').pop();
+                if (porteNum && !isNaN(porteNum) && porteNum >= 1 && porteNum <= 9) {
+                    bodyElement.classList.add('porte' + porteNum);
+                    
+                    // Ajouter la classe pour le style de transparence
+                    document.querySelectorAll('.portal-page').forEach(page => {
+                        page.classList.add('transparent-bg');
+                    });
+                }
+            } 
+            // Détecter les autres pages spéciales
+            else if (path.includes('/gematria')) {
+                bodyElement.classList.add('gematria');
+            }
+            else if (path.includes('/cycles_numeriques')) {
+                bodyElement.classList.add('cycles');
+            }
+            else if (path.includes('/lois_hermetiques')) {
+                bodyElement.classList.add('lois');
+            }
+            else if (path.includes('/geometrie_nombres')) {
+                bodyElement.classList.add('geometrie');
+            }
+            else if (path === '/' || path === '/index.html') {
+                bodyElement.classList.add('home');
+            }
+            
+            // Supprimer les conteneurs de fond inutiles
+            const bgElements = document.querySelectorAll('.background-gradient, .stars-container, .grid-overlay, .page-overlay');
+            bgElements.forEach(el => {
+                if (el) el.style.display = 'none';
+            });
+        });
+    </script>
+    
+    {% block scripts %}{% endblock %}
 </body>
 </html> 

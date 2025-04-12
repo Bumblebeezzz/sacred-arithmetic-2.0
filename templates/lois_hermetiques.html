@@ -3,65 +3,242 @@
 {% block title %}Les Lois Hermétiques{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="hero">
+<div class="cycles-container">
+    <div class="portal-header">
         <h1>Les Lois Hermétiques</h1>
+        <div class="portal-symbol">
+            <svg viewBox="0 0 100 100" class="cycle-symbol">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-gold)" stroke-width="2"/>
+                <path d="M 50,10 L 90,50 L 50,90 L 10,50 Z" fill="none" stroke="var(--color-gold)" stroke-width="1.5"/>
+                <polygon points="50,20 80,50 50,80 20,50" fill="none" stroke="var(--color-gold)" stroke-width="1"/>
+            </svg>
+        </div>
         <p class="subtitle">Les principes éternels qui gouvernent l'univers</p>
+        <p class="principle-quote">« Ce qui est en haut est comme ce qui est en bas, pour accomplir le miracle d'une seule chose. » - Hermès Trismégiste</p>
     </div>
 
-    <div class="principles-grid">
+    <div class="portal-content">
+        <section class="wisdom-section">
+            <h2>Les Huit Principes Fondamentaux</h2>
+            <p>Les principes hermétiques sont les lois fondamentales qui régissent tous les plans de l'existence. Transmis depuis l'ancienne Égypte, ces principes nous enseignent comment fonctionne le cosmos dans sa totalité.</p>
+        </section>
+
         <!-- Principe de Conscience -->
-        <div class="principle-card consciousness">
+        <section class="wisdom-section principle-card" data-principle="1">
             <div class="principle-header">
-                <i class="fas fa-brain"></i>
-                <h2>Principe de Conscience</h2>
-                <span class="number">1</span>
+                <div class="principle-number">1</div>
+                <h2>Principe de Mentalisme</h2>
+                <i class="fas fa-brain principle-icon"></i>
             </div>
+            
             <div class="principle-content">
-                <p class="quote">"L'Univers est Mental — Le TOUT se manifeste par un mouvement vivant — Le Réel est une spirale inscrite dans l'Éther."</p>
-                <div class="principle-details">
+                <div class="principle-description">
+                    <div class="principle-quote-small">
+                        <p>"L'Univers est Mental — Le TOUT se manifeste par un mouvement vivant."</p>
+                    </div>
                     <p>La réalité entière naît d'un Esprit Universel vivant, un Souffle primordial qui imprime sa trace dans l'invisible pour donner naissance au visible.</p>
-                    <ul class="key-points">
+                    
+                    <ul class="principle-aspects">
                         <li>L'univers est un rêve en mouvement</li>
                         <li>Nous sommes des étincelles d'un feu cosmique unifié</li>
-                        <li>La conscience est le souffle créateur</li>
                     </ul>
                 </div>
-                <div class="sacred-geometry">
-                    <svg viewBox="0 0 200 200" class="spiral-animation">
-                        <path d="M100,100 Q150,50 100,0 T100,100" class="spiral-path"/>
+                
+                <div class="principle-symbol">
+                    <svg viewBox="0 0 100 100" class="principle-svg">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-gold)" stroke-width="1"/>
+                        <circle cx="50" cy="50" r="4" fill="var(--color-gold)"/>
                     </svg>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Principe d'Équivalence -->
-        <div class="principle-card equivalence">
+        <section class="wisdom-section principle-card" data-principle="2">
             <div class="principle-header">
-                <i class="fas fa-infinity"></i>
-                <h2>Principe d'Équivalence</h2>
-                <span class="number">2</span>
+                <div class="principle-number">2</div>
+                <h2>Principe de Correspondance</h2>
+                <i class="fas fa-infinity principle-icon"></i>
             </div>
+            
             <div class="principle-content">
-                <p class="quote">"Ce qui est en haut est comme ce qui est en bas"</p>
-                <div class="principle-details">
-                    <p>Les mêmes lois régissent tous les plans de l'existence, du plus subtil au plus dense.</p>
-                    <ul class="key-points">
+                <div class="principle-description">
+                    <div class="principle-quote-small">
+                        <p>"Ce qui est en haut est comme ce qui est en bas, pour accomplir le miracle d'une seule chose."</p>
+                    </div>
+                    <p>Les mêmes lois régissent tous les plans de l'existence, du plus subtil au plus dense. Chaque partie contient le tout, et le tout est présent dans chaque partie.</p>
+                    
+                    <ul class="principle-aspects">
                         <li>L'analogie est la clé de la compréhension</li>
                         <li>Le microcosme reflète le macrocosme</li>
-                        <li>Chaque niveau contient tous les autres</li>
                     </ul>
                 </div>
+                
+                <div class="principle-symbol">
+                    <svg viewBox="0 0 100 100" class="principle-svg">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-gold)" stroke-width="1"/>
+                        <line x1="20" y1="50" x2="80" y2="50" stroke="var(--color-gold)" stroke-width="2.5"/>
+                    </svg>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Autres principes à suivre -->
+        <!-- Principe de Vibration -->
+        <section class="wisdom-section principle-card">
+            <div class="principle-header">
+                <div class="principle-number">3</div>
+                <h2>Le Principe de Vibration</h2>
+                <i class="fas fa-sync principle-icon"></i>
+            </div>
+            
+            <div class="principle-content">
+                <div class="principle-description">
+                    <div class="principle-quote-small">
+                        <p>"Rien ne repose ; tout remue ; tout vibre."</p>
+                    </div>
+                    <p>Tout est en mouvement constant, rien n'est immobile. La matière, l'énergie, et même la pensée sont des manifestations de différentes fréquences vibratoires. Les variations de ces vibrations produisent les différents états de la matière et de la conscience.</p>
+                    
+                    <ul class="principle-aspects">
+                        <li>La fréquence vibratoire et ses effets</li>
+                        <li>La transformation des états</li>
+                    </ul>
+                </div>
+                
+                <div class="principle-symbol">
+                    <svg viewBox="0 0 100 100" class="principle-svg">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-gold)" stroke-width="1"/>
+                        <path d="M 50.0,20.0 L 80.0,70.0 L 20.0,70.0 Z" fill="none" stroke="var(--color-gold)" stroke-width="2.5"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principe de Polarité -->
+        <section class="wisdom-section principle-card">
+            <div class="principle-header">
+                <div class="principle-number">4</div>
+                <h2>Le Principe de Polarité</h2>
+                <i class="fas fa-venus-mars principle-icon"></i>
+            </div>
+            
+            <div class="principle-content">
+                <div class="principle-description">
+                    <div class="principle-quote-small">
+                        <p>"Tout est double ; tout a deux pôles ; tout a sa paire d'opposés."</p>
+                    </div>
+                    <p>Les opposés ne sont que les deux extrêmes de la même chose, séparés par différents degrés. Chaud et froid, lumière et obscurité, amour et haine ne sont que des variations d'un même phénomène, différant uniquement en degré.</p>
+                    
+                    <ul class="principle-aspects">
+                        <li>La dualité yin-yang et la polarité magnétique</li>
+                        <li>La transmutation des états négatifs en positifs</li>
+                    </ul>
+                </div>
+                
+                <div class="principle-symbol">
+                    <svg viewBox="0 0 100 100" class="principle-svg">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-gold)" stroke-width="1"/>
+                        <rect x="25" y="25" width="50" height="50" fill="none" stroke="var(--color-gold)" stroke-width="2.5"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principe de Rythme -->
+        <section class="wisdom-section principle-card" data-principle="5">
+            <div class="principle-header">
+                <div class="principle-number">5</div>
+                <h2>Principe de Rythme</h2>
+                <i class="fas fa-sync principle-icon"></i>
+            </div>
+            
+            <div class="principle-content">
+                <div class="principle-description">
+                    <div class="principle-quote-small">
+                        <p>"Tout s'écoule, tout a ses marées ; toutes choses montent et descendent."</p>
+                    </div>
+                    <p>Le rythme est la mesure du mouvement entre les pôles. Tout ce qui existe est soumis à des cycles d'aller-retour, de flux et de reflux, d'action et de repos.</p>
+                    
+                    <ul class="principle-aspects">
+                        <li>Les cycles naturels et les saisons</li>
+                        <li>Les phases de croissance et de déclin</li>
+                        <li>Le balancier perpétuel de la vie</li>
+                    </ul>
+                </div>
+                
+                <div class="principle-symbol">
+                    <svg viewBox="0 0 100 100" class="principle-svg">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-gold)" stroke-width="1"/>
+                        <path d="M 50.0,10.0 L 72.34,80.74 L 13.86,38.26 L 86.14,38.26 L 27.66,80.74 Z" fill="none" stroke="var(--color-gold)" stroke-width="2.5"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principe de Cause et Effet -->
+        <section class="wisdom-section principle-card" data-principle="6">
+            <div class="principle-header">
+                <div class="principle-number">6</div>
+                <h2>Principe de Cause et Effet</h2>
+                <i class="fas fa-sync-alt principle-icon"></i>
+            </div>
+            
+            <div class="principle-content">
+                <div class="principle-description">
+                    <div class="principle-quote-small">
+                        <p>"Toute cause a son effet, tout effet a sa cause."</p>
+                    </div>
+                    <p>Le hasard n'existe pas, il n'est qu'une loi non reconnue. Chaque action engendre une réaction correspondante, chaque pensée crée une réalité.</p>
+                    
+                    <ul class="principle-aspects">
+                        <li>La loi du karma et des cycles de conséquences</li>
+                        <li>Les chaînes causales et l'action-réaction</li>
+                    </ul>
+                </div>
+                
+                <div class="principle-symbol">
+                    <svg viewBox="0 0 100 100" class="principle-svg">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-gold)" stroke-width="1"/>
+                        <path d="M50,12 L84,70 L16,70 Z M50,88 L15,33 L85,33 Z" fill="none" stroke="var(--color-gold)" stroke-width="2.5"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principe de Genre -->
+        <section class="wisdom-section principle-card" data-principle="7">
+            <div class="principle-header">
+                <div class="principle-number">7</div>
+                <h2>Principe de Genre</h2>
+                <i class="fas fa-venus-mars principle-icon"></i>
+            </div>
+            
+            <div class="principle-content">
+                <div class="principle-description">
+                    <div class="principle-quote-small">
+                        <p>"Le genre est en toutes choses ; tout a ses principes masculin et féminin."</p>
+                    </div>
+                    <p>L'équilibre entre les forces masculines et féminines est la clé de toute création. Ces deux aspects complémentaires se retrouvent dans toute manifestation.</p>
+                    
+                    <ul class="principle-aspects">
+                        <li>La dualité yin-yang et la polarité magnétique</li>
+                        <li>L'union des complémentaires pour la création</li>
+                    </ul>
+                </div>
+                
+                <div class="principle-symbol">
+                    <svg viewBox="0 0 100 100" class="principle-svg">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-gold)" stroke-width="1"/>
+                        <path d="M50,10 L88.99,58.9 L32.64,86.04 L18.72,25.06 L81.28,25.06 L67.36,86.04 L11.01,58.9 Z" fill="none" stroke="var(--color-gold)" stroke-width="2.5"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="sacred-text">
+    <div class="sacred-quote">
         <blockquote>
-            "Les nombres sont les entités vivantes qui gouvernent le monde."
-            <cite>- Pythagore</cite>
+            "Les lèvres de la sagesse sont closes, excepté aux oreilles de la Compréhension."
+            <cite>— Le Kybalion</cite>
         </blockquote>
     </div>
 </div>
@@ -69,198 +246,413 @@
 
 {% block extra_css %}
 <style>
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-.hero {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.hero h1 {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 3rem;
-    color: var(--color-gold);
-    margin-bottom: 1rem;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-}
-
-.hero .subtitle {
-    font-size: 1.2rem;
-    color: var(--color-pearl);
-    opacity: 0.9;
-}
-
-.principles-grid {
-    display: grid;
-    gap: 3rem;
-    margin-bottom: 4rem;
-}
-
-.principle-card {
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid var(--color-gold);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.principle-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.principle-card:hover::before {
-    opacity: 1;
-}
-
-.principle-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.principle-header i {
-    font-size: 2rem;
-    color: var(--color-gold);
-}
-
-.principle-header h2 {
-    font-family: 'Cinzel Decorative', cursive;
-    color: var(--color-gold);
-    font-size: 1.8rem;
-    margin: 0;
-    flex-grow: 1;
-}
-
-.principle-header .number {
-    font-size: 3rem;
-    color: rgba(255, 215, 0, 0.2);
-    font-family: 'Cinzel Decorative', cursive;
-}
-
-.quote {
-    font-family: 'EB Garamond', serif;
-    font-style: italic;
-    font-size: 1.3rem;
-    color: var(--color-gold);
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.principle-details {
-    color: var(--color-pearl);
-    line-height: 1.6;
-}
-
-.key-points {
-    list-style: none;
-    padding: 0;
-    margin-top: 1.5rem;
-}
-
-.key-points li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.key-points li::before {
-    content: '✧';
-    position: absolute;
-    left: 0;
-    color: var(--color-gold);
-}
-
-.sacred-geometry {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.spiral-animation {
-    width: 200px;
-    height: 200px;
-}
-
-.spiral-path {
-    fill: none;
-    stroke: var(--color-gold);
-    stroke-width: 2;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: drawSpiral 3s ease-out forwards;
-}
-
-@keyframes drawSpiral {
-    to {
-        stroke-dashoffset: 0;
+    :root {
+        --portal-color: #FF3333; /* Couleur rouge pour les lois hermétiques */
+        --portal-color-light: #FF6666;
+        --portal-color-dark: #CC0000;
+        --portal-color-fade: rgba(255, 51, 51, 0.2);
+        --portal-color-glow: rgba(255, 51, 51, 0.5);
+        --color-gold: #FFD700;
+        --color-gold-light: #FFE55C;
+        --color-gold-dark: #B8860B;
     }
-}
 
-.sacred-text {
-    text-align: center;
-    margin: 4rem 0;
-    padding: 3rem;
-    background: rgba(255, 215, 0, 0.05);
-    border-radius: 12px;
-}
-
-blockquote {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.5rem;
-    color: var(--color-gold);
-    font-style: italic;
-    margin: 0;
-}
-
-cite {
-    display: block;
-    margin-top: 1rem;
-    color: var(--color-pearl);
-    font-size: 1rem;
-    opacity: 0.8;
-}
-
-@media (max-width: 768px) {
-    .principle-header {
+    /* Ajustement spécifique pour cette page */
+    .cycles-container {
+        max-width: 1050px;
+        width: calc(100% - 40px);
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+    }
+    
+    /* Correction des marges et des conteneurs */
+    .portal-content {
+        display: flex;
         flex-direction: column;
-        text-align: center;
+        gap: 2.5rem;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+    
+    /* Styles spécifiques pour les cartes de principes */
+    .principle-card {
+        position: relative;
+        overflow: hidden;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Adaptation des contenus des cartes */
+    .principle-content {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 1.5rem;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Ajustement des citations pour les cartes */
+    .principle-quote-small {
+        width: 100%;
+        box-sizing: border-box;
+        font-family: 'EB Garamond', serif;
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--portal-color);
+        margin-bottom: 1rem;
+        text-align: left;
+        line-height: 1.5;
+        padding-left: 1rem;
+        border-left: 2px solid var(--portal-color-fade);
+    }
+    
+    .sacred-quote {
+        margin: 3rem 0 2rem;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+    
+    /* Ajustements responsifs */
+    @media (max-width: 768px) {
+        .principle-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .principle-symbol {
+            margin: 0 auto;
+        }
     }
 
-    .principle-header .number {
-        font-size: 2rem;
+    /* Structure de base standardisée et autres styles déjà définis */
+    .portal-header {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 3rem 2rem;
+        background: radial-gradient(circle, rgba(139, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+        border-radius: 20px;
+        box-shadow: 0 0 30px var(--portal-color-glow);
+        position: relative;
+        overflow: hidden;
+        max-width: 100%;
     }
-}
+    
+    /* Ajout d'un effet subtil de symbole doré en arrière-plan du header */
+    .portal-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='none' stroke='rgba(255, 215, 0, 0.03)' stroke-width='1'/%3E%3Cpath d='M 100,20 L 180,100 L 100,180 L 20,100 Z' fill='none' stroke='rgba(255, 215, 0, 0.03)' stroke-width='1'/%3E%3Ccircle cx='100' cy='100' r='40' fill='none' stroke='rgba(255, 215, 0, 0.03)' stroke-width='1'/%3E%3C/svg%3E");
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        opacity: 0.7;
+    }
+
+    .portal-header h1 {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 3.5rem;
+        background: linear-gradient(to right, var(--portal-color), var(--portal-color-light));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin: 0;
+        letter-spacing: 0.3rem;
+        font-weight: 400;
+        text-shadow: 0 0 20px var(--portal-color-glow);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .portal-symbol {
+        width: 120px;
+        height: 120px;
+        margin: 1.5rem auto;
+        animation: rotate 180s linear infinite;  /* Ralenti de 60s à 180s */
+    }
+
+    .cycle-symbol {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 0 5px var(--color-gold));
+    }
+
+    .cycle-symbol circle,
+    .cycle-symbol path,
+    .cycle-symbol polygon {
+        stroke: var(--color-gold);
+        transition: all 0.3s ease;
+    }
+
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        color: var(--color-pearl);
+        margin: 1rem 0;
+        font-style: italic;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .principle-quote {
+        font-size: 1.2rem;
+        color: var(--portal-color);
+        max-width: 700px;
+        margin: 2rem auto;
+        font-style: italic;
+        line-height: 1.6;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .wisdom-section {
+        text-align: center;
+        padding: 2rem;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--portal-color-fade);
+        margin-bottom: 2rem;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    .wisdom-section h2 {
+        font-family: 'Cinzel Decorative', serif;
+        color: var(--portal-color);
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        text-shadow: 0 0 10px rgba(255, 51, 51, 0.2);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .wisdom-section p {
+        color: var(--color-pearl);
+        line-height: 1.8;
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .principle-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid var(--portal-color-fade);
+        padding-bottom: 0.8rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .principle-number {
+        font-size: 2.5rem;
+        font-family: 'Cinzel Decorative', serif;
+        color: var(--color-gold);
+        margin-right: 1rem;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        position: relative;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+    .principle-number::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--color-gold);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.5;
+        animation: numberPulse 3s infinite ease-in-out;
+    }
+
+    @keyframes numberPulse {
+        0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.2; }
+        50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.5; }
+        100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.2; }
+    }
+
+    .principle-card:hover .principle-number::after {
+        animation-duration: 1.5s;
+        opacity: 0.8;
+    }
+
+    .principle-header h2 {
+        flex-grow: 1;
+        margin: 0;
+        text-align: left;
+        font-size: 1.5rem;
+    }
+
+    .principle-icon {
+        font-size: 1.8rem;
+        color: var(--portal-color);
+        margin-left: 1rem;
+    }
+
+    .principle-description {
+        color: var(--color-pearl);
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .principle-description p {
+        text-align: left;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .principle-aspects {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .principle-aspects li {
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+        color: var(--color-pearl);
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .principle-aspects li::before {
+        content: '✧';
+        position: absolute;
+        left: 0;
+        color: var(--portal-color);
+    }
+
+    .principle-symbol {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .principle-svg {
+        width: 100px;
+        height: 100px;
+        filter: drop-shadow(0 0 5px var(--portal-color-fade));
+        animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(0.95); opacity: 0.7; }
+        50% { transform: scale(1.05); opacity: 1; }
+        100% { transform: scale(0.95); opacity: 0.7; }
+    }
+
+    .sacred-quote blockquote {
+        font-family: 'EB Garamond', serif;
+        font-size: 1.3rem;
+        font-style: italic;
+        color: var(--color-pearl);
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .sacred-quote cite {
+        display: block;
+        margin-top: 1rem;
+        color: var(--portal-color);
+        font-size: 1rem;
+        font-style: normal;
+    }
 </style>
 {% endblock %}
 
-{% block extra_js %}
+{% block scripts %}
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Animation des cartes de principes
-    const cards = document.querySelectorAll('.principle-card');
-    cards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.2}s`;
+document.addEventListener('DOMContentLoaded', function() {
+    // Animation des éléments au chargement
+    const animateElements = () => {
+        const elements = document.querySelectorAll('.wisdom-section');
+        elements.forEach((element, index) => {
+            setTimeout(() => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, 150 * index);
+        });
+    };
+
+    // Gestion des cycles numériques
+    const principleCards = document.querySelectorAll('.principle-card');
+    principleCards.forEach(card => {
+        const number = card.querySelector('.principle-number');
+        
+        card.addEventListener('mouseenter', () => {
+            number.style.transform = 'scale(1.2)';
+            number.style.textShadow = '0 0 15px var(--color-gold)';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            number.style.transform = 'scale(1)';
+            number.style.textShadow = '0 0 10px rgba(255, 215, 0, 0.3)';
+        });
+
+        // Animation cyclique des nombres
+        const startCycle = () => {
+            const currentNumber = parseInt(number.textContent);
+            const nextNumber = currentNumber % 7 + 1;
+            
+            number.style.transform = 'scale(0.8) rotate(360deg)';
+            number.style.opacity = '0.5';
+            
+            setTimeout(() => {
+                number.textContent = nextNumber;
+                number.style.transform = 'scale(1) rotate(0deg)';
+                number.style.opacity = '1';
+            }, 1000);
+        };
+
+        // Démarrer le cycle au clic
+        card.addEventListener('click', () => {
+            startCycle();
+        });
     });
 
-    // Animation de la spirale
-    const spiral = document.querySelector('.spiral-path');
-    if (spiral) {
-        spiral.style.animation = 'drawSpiral 3s ease-out forwards';
-    }
+    // Appliquer l'animation initiale
+    document.querySelectorAll('.wisdom-section').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    // Déclencher l'animation après un court délai
+    setTimeout(animateElements, 300);
 });
 </script>
 {% endblock %} 

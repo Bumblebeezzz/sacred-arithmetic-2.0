@@ -3,578 +3,700 @@
 {% block title %}Arithmétique Sacrée{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="main-header">
-        <div class="title-container">
-            <p class="site-subtitle">Explorer les mystères des nombres et leur relation avec l'univers</p>
-            <p class="welcome-text">Bienvenue dans ce voyage initiatique à travers les nombres sacrés. Chaque porte que vous franchirez vous révélera une facette de la sagesse universelle, où les nombres deviennent les clés de compréhension de l'ordre cosmique.</p>
-            
-            <div class="mode-selector">
-                <button id="initiationMode" class="mode-button">Mode Parcours Initiatique</button>
-                <button id="musicToggle" class="mode-button">
-                    <i class="fas fa-music"></i> Musique
-                </button>
-            </div>
-        </div>
+<div class="sacred-introduction">
+    <h1 class="main-title">Arithmétique Sacrée</h1>
+    <p class="intro-text">Plongez dans l'univers fascinant des nombres sacrés et découvrez comment les mathématiques 
+    ancestrales révèlent l'harmonie cachée de notre réalité. Ce site explore les mystères 
+    numériques qui ont fasciné les civilisations à travers les âges.</p>
     </div>
 
-    <div class="sacred-introduction">
-        <div class="introduction-content">
-            <p>Les neuf portes qui s'offrent à vous représentent les neuf nombres fondamentaux de l'arithmétique sacrée. Chacune d'entre elles est une invitation à explorer une dimension particulière de la réalité, où les nombres ne sont plus de simples quantités, mais des principes vivants qui structurent l'univers.</p>
-            <p>De l'Unité primordiale à l'Infini, en passant par la Dualité et la Trinité, chaque nombre porte en lui une sagesse millénaire. Laissez-vous guider par leur symbolisme et découvrez comment ils s'entrelacent pour former la trame de la création.</p>
-        </div>
-    </div>
-
-    <section class="sacred-doors">
-        <div class="portal-grid">
-            <a href="{{ url_for('porte1') }}" class="portal-square portal-1" data-portal="1">
-                <div class="portal-icon">
-                    <svg viewBox="0 0 100 100" class="polygram">
+<div class="sacred-doors">
+    <h2 class="section-title">Principes Sacrés</h2>
+    <p class="section-description">Chaque principe est une porte vers une dimension de connaissance unique. 
+    Explorez les neuf lois fondamentales qui façonnent notre réalité.</p>
+    
+    <div class="portal-container">
+        <a href="{{ url_for('porte', numero=1) }}" class="portal-link">
+            <div class="portal-square portal-1">
+                <div class="sacred-geometry">
+                    <svg viewBox="0 0 100 100" class="geometry-symbol">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
                         <circle cx="50" cy="50" r="4" fill="currentColor"/>
                     </svg>
                 </div>
-                <div class="portal-number">1</div>
-                <div class="portal-title">CONSCIENCE</div>
-                <div class="portal-lock" style="display: none;">
-                    <i class="fas fa-lock"></i>
+                <div class="name">CONSCIENCE</div>
                 </div>
             </a>
-            
-            <a href="{{ url_for('porte2') }}" class="portal-square portal-2">
-                <div class="portal-icon">
-                    <svg viewBox="0 0 100 100" class="polygram">
+        <a href="{{ url_for('porte', numero=2) }}" class="portal-link">
+            <div class="portal-square portal-2">
+                <div class="sacred-geometry">
+                    <svg viewBox="0 0 100 100" class="geometry-symbol">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
                         <line x1="20" y1="50" x2="80" y2="50" stroke="currentColor" stroke-width="2.5"/>
                     </svg>
                 </div>
-                <div class="portal-number">2</div>
-                <div class="portal-title">ÉQUIVALENCE</div>
-            </a>
-            
-            <a href="{{ url_for('porte3') }}" class="portal-square portal-3">
-                <div class="portal-icon">
-                    <svg viewBox="0 0 100 100" class="polygram">
+                <div class="name">ÉQUIVALENCE</div>
+            </div>
+        </a>
+        <a href="{{ url_for('porte', numero=3) }}" class="portal-link">
+            <div class="portal-square portal-3">
+                <div class="sacred-geometry">
+                    <svg viewBox="0 0 100 100" class="geometry-symbol">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <polygon points="50,20 80,70 20,70" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M 50,12 L 84,70 L 16,70 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
                     </svg>
                 </div>
-                <div class="portal-number">3</div>
-                <div class="portal-title">OSCILLATION</div>
-            </a>
-            
-            <a href="{{ url_for('porte4') }}" class="portal-square portal-4">
-                <div class="portal-icon">
-                    <svg viewBox="0 0 100 100" class="polygram">
+                <div class="name">OSCILLATION</div>
+            </div>
+        </a>
+        <a href="{{ url_for('porte', numero=4) }}" class="portal-link">
+            <div class="portal-square portal-4">
+                <div class="sacred-geometry">
+                    <svg viewBox="0 0 100 100" class="geometry-symbol">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <rect x="25" y="25" width="50" height="50" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                        <rect x="23" y="23" width="55" height="55" fill="none" stroke="currentColor" stroke-width="2.5" transform="rotate(45, 50, 50)"/>
                     </svg>
                 </div>
-                <div class="portal-number">4</div>
-                <div class="portal-title">POLARITÉ</div>
-            </a>
-            
-            <a href="{{ url_for('porte5') }}" class="portal-square portal-5">
-                <div class="portal-icon">
-                    <svg viewBox="0 0 100 100" class="polygram">
+                <div class="name">POLARITÉ</div>
+            </div>
+        </a>
+        <a href="{{ url_for('porte', numero=5) }}" class="portal-link">
+            <div class="portal-square portal-5">
+                <div class="sacred-geometry">
+                    <svg viewBox="0 0 100 100" class="geometry-symbol">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <path d="M50,10 L20.5,80 L97.5,35 L2.5,35 L79.5,80 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M 50.0,12.0 L 72.34,80.74 L 13.86,38.26 L 86.14,38.26 L 27.66,80.74 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
                     </svg>
                 </div>
-                <div class="portal-number">5</div>
-                <div class="portal-title">RYTHME</div>
-            </a>
-            
-            <a href="{{ url_for('porte6') }}" class="portal-square portal-6">
-                <div class="portal-icon">
-                    <svg viewBox="0 0 100 100" class="polygram">
+                <div class="name">RYTHME</div>
+            </div>
+        </a>
+        <a href="{{ url_for('porte', numero=6) }}" class="portal-link">
+            <div class="portal-square portal-6">
+                <div class="sacred-geometry">
+                    <svg viewBox="0 0 100 100" class="geometry-symbol">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <path d="M50,15 L85,67 L15,67 Z M50,85 L15,33 L85,33 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M50,12 L84,70 L16,70 Z M50,88 L15,33 L85,33 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
                     </svg>
                 </div>
-                <div class="portal-number">6</div>
-                <div class="portal-title">CAUSALITÉ</div>
-            </a>
-            
-            <a href="{{ url_for('porte7') }}" class="portal-square portal-7">
-                <div class="portal-icon">
-                    <svg viewBox="0 0 100 100" class="polygram">
+                <div class="name">CAUSALITÉ</div>
+            </div>
+        </a>
+        <a href="{{ url_for('porte', numero=7) }}" class="portal-link">
+            <div class="portal-square portal-7">
+                <div class="sacred-geometry">
+                    <svg viewBox="0 0 100 100" class="geometry-symbol">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <path d="M50,15 L65,45 L95,45 L70,65 L80,95 L50,80 L20,95 L30,65 L5,45 L35,45 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M50,10 L88.99,58.9 L32.64,86.04 L18.72,25.06 L81.28,25.06 L67.36,86.04 L11.01,58.9 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
                     </svg>
                 </div>
-                <div class="portal-number">7</div>
-                <div class="portal-title">ORIENTATION</div>
-            </a>
-            
-            <a href="{{ url_for('porte8') }}" class="portal-square portal-8">
-                <div class="portal-icon">
-                    <svg viewBox="0 0 100 100" class="polygram">
+                <div class="name">ORIENTATION</div>
+            </div>
+        </a>
+        <a href="{{ url_for('porte', numero=8) }}" class="portal-link">
+            <div class="portal-square portal-8">
+                <div class="sacred-geometry">
+                    <svg viewBox="0 0 100 100" class="geometry-symbol">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <rect x="30" y="30" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.5" transform="rotate(45, 50, 50)"/>
-                        <rect x="30" y="30" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.5"/>
+
+                        <!-- Octagramme par lignes -->
+                        <line x1="50" y1="10" x2="90" y2="50" stroke="currentColor" stroke-width="2" />
+                        <line x1="90" y1="50" x2="50" y2="90" stroke="currentColor" stroke-width="2" />
+                        <line x1="50" y1="90" x2="10" y2="50" stroke="currentColor" stroke-width="2" />
+                        <line x1="10" y1="50" x2="50" y2="10" stroke="currentColor" stroke-width="2" />
+                    
+                        <line x1="78.3" y1="21.7" x2="78.3" y2="78.3" stroke="currentColor" stroke-width="2" />
+                        <line x1="78.3" y1="78.3" x2="21.7" y2="78.3" stroke="currentColor" stroke-width="2" />
+                        <line x1="21.7" y1="78.3" x2="21.7" y2="21.7" stroke="currentColor" stroke-width="2" />
+                        <line x1="21.7" y1="21.7" x2="78.3" y2="21.7" stroke="currentColor" stroke-width="2" />
                     </svg>
                 </div>
-                <div class="portal-number">8</div>
-                <div class="portal-title">ÉQUILIBRE</div>
-            </a>
-            
-            <a href="{{ url_for('porte9') }}" class="portal-square portal-center">
-                <div class="portal-icon">
-                    <svg viewBox="0 0 100 100" class="polygram">
+                <div class="name">ÉQUILIBRE</div>
+            </div>
+        </a>
+        <a href="{{ url_for('porte', numero=9) }}" class="portal-link">
+            <div class="portal-square portal-9">
+                <div class="sacred-geometry">
+                    <svg viewBox="0 0 100 100" class="geometry-symbol">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <path d="M50,10 L56.8,30.9 L77.1,23.4 L73.4,44.3 L93.1,50 L73.4,55.7 L77.1,76.6 L56.8,69.1 L50,90 L43.2,69.1 L22.9,76.6 L26.6,55.7 L6.9,50 L26.6,44.3 L22.9,23.4 L43.2,30.9 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M 50.0,10.0 L 89.39,43.05 L 63.68,87.59 L 15.36,70.0 L 24.29,19.36 L 75.71,19.36 L 84.64,70.0 L 36.32,87.59 L 10.61,43.05 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
                     </svg>
                 </div>
-                <div class="portal-number">9</div>
-                <div class="portal-title">DIVIN</div>
+                <div class="name">DIVIN</div>
+            </div>
             </a>
         </div>
-    </section>
+</div>
 
-    <section class="main-sections">
-        <div class="section-grid">
+<div class="main-sections">
+    <h2 class="section-title">Sections Principales</h2>
+    <div class="section-cards">
             <a href="{{ url_for('lois_hermetiques') }}" class="section-card">
-                <div class="card-content">
-                    <i class="fas fa-scroll"></i>
-                    <h2>Lois Hermétiques</h2>
-                    <p>Les principes éternels qui gouvernent l'univers</p>
-                </div>
+            <div class="card-icon">✦</div>
+            <h3>Lois Hermétiques</h3>
+            <p>Les sept principes fondamentaux qui gouvernent l'univers selon la sagesse hermétique.</p>
             </a>
-            <a href="{{ url_for('cycles_mod9') }}" class="section-card">
-                <div class="card-content">
-                    <i class="fas fa-sync-alt"></i>
-                    <h2>Cycles et Mod 9</h2>
-                    <p>Explorer les cycles mystérieux des nombres</p>
-                </div>
+            <a href="{{ url_for('cycles_numeriques') }}" class="section-card">
+            <div class="card-icon">⟳</div>
+            <h3>Cycles Numeriques</h3>
+            <p>Explorez les motifs cycliques et la réduction digitale qui révèlent l'essence des nombres.</p>
             </a>
             <a href="{{ url_for('geometrie_nombres') }}" class="section-card">
-                <div class="card-content">
-                    <i class="fas fa-shapes"></i>
-                    <h2>Géométrie des Nombres</h2>
-                    <p>Les formes sacrées dans les nombres</p>
-                </div>
+            <div class="card-icon">△</div>
+            <h3>Géométrie des Nombres</h3>
+            <p>Découvrez comment les nombres sacrés se manifestent à travers des formes géométriques parfaites.</p>
+        </a>
+        <a href="{{ url_for('gematria') }}" class="section-card">
+            <div class="card-icon">א</div>
+            <h3>Gématrie</h3>
+            <p>L'art ancien de déchiffrer les valeurs numériques cachées dans les mots et les textes.</p>
             </a>
         </div>
-    </section>
+</div>
 
-    <section class="sacred-quote">
+<div class="wisdom-quote">
         <blockquote>
-            "Les nombres sont la langue de l'univers, et l'arithmétique est sa grammaire."
-            <cite>- Pythagore</cite>
+        "Les nombres règnent sur l'univers."
+        <cite>— Pythagore</cite>
         </blockquote>
-    </section>
 </div>
 {% endblock %}
 
 {% block extra_css %}
 <style>
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-}
+    /* Optimisation des variables globales */
+    :root {
+        --portal-color: #FFD700;
+        --portal-color-light: #FFDF4F;
+        --portal-color-dark: #D4AF37;
+        --portal-color-fade: rgba(255, 215, 0, 0.2);
+        --portal-color-glow: rgba(255, 215, 0, 0.5);
+        --section-bg: rgba(0, 0, 0, 0.85);
+        --section-border: 1px solid rgba(255, 215, 0, 0.2);
+        --section-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        --section-hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.3);
+        --section-hover-border: 1px solid rgba(255, 215, 0, 0.4);
+    }
+    
+    /* Correction des z-index et des menus */
+    header {
+        position: relative;
+        z-index: 1000; /* S'assurer que le header est toujours au-dessus de tout */
+    }
+    
+    .main-nav {
+        position: relative;
+        z-index: 1000;
+    }
+    
+    .nav-links {
+        position: relative;
+        z-index: 1000;
+    }
+    
+    .dropdown {
+        position: relative;
+        z-index: 1000;
+    }
+    
+    .dropdown-content {
+        position: absolute;
+        z-index: 1001;
+        background-color: rgba(0, 0, 0, 0.95);
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--portal-color-fade);
+        border-radius: 4px;
+        display: none;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px 0;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown-content a {
+        color: var(--portal-color);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        transition: background-color 0.3s;
+        font-family: 'Cinzel', serif;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: rgba(255, 215, 0, 0.1);
+    }
+    
+    .dropbtn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .dropbtn i {
+        margin-left: 5px;
+        transition: transform 0.3s;
+    }
+    
+    .dropdown:hover .dropbtn i {
+        transform: rotate(180deg);
+    }
+    
+    /* Optimisation du fond */
+    body {
+        background-color: #0A0A0A;
+        background-image: none;
+        will-change: transform;
+        position: relative;
+    }
+    
+    /* Ajout d'éléments en filigrane */
+    body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='1000' viewBox='0 0 1000 1000'%3E%3Cg opacity='0.05' fill='%23FFD700'%3E%3Ctext x='100' y='200' font-family='serif' font-size='80'%3Eφ%3C/text%3E%3Ctext x='700' y='600' font-family='serif' font-size='100'%3Eπ%3C/text%3E%3Ctext x='400' y='800' font-family='serif' font-size='120'%3E∞%3C/text%3E%3Ctext x='800' y='300' font-family='serif' font-size='90'%3E√2%3C/text%3E%3Ctext x='150' y='500' font-family='serif' font-size='60'%3Eα%3C/text%3E%3Ctext x='500' y='400' font-family='serif' font-size='70'%3EΩ%3C/text%3E%3Ctext x='300' y='300' font-family='serif' font-size='40'%3E1.618%3C/text%3E%3Ccircle cx='250' cy='750' r='50' fill='none' stroke='%23FFD700' stroke-width='2'/%3E%3Ccircle cx='650' cy='150' r='40' fill='none' stroke='%23FFD700' stroke-width='2'/%3E%3Cpath d='M800,800 L900,850 L850,950 L750,900 Z' fill='none' stroke='%23FFD700' stroke-width='2'/%3E%3Cpath d='M150,650 L200,700 L150,750 L100,700 Z' fill='none' stroke='%23FFD700' stroke-width='2'/%3E%3Cpath d='M500,100 L550,200 L450,200 Z' fill='none' stroke='%23FFD700' stroke-width='2'/%3E%3Cpath d='M880,400 A40,40 0 0,1 920,440 A40,40 0 0,1 880,480 A40,40 0 0,1 840,440 A40,40 0 0,1 880,400 Z' fill='none' stroke='%23FFD700' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 1000px 1000px;
+        opacity: 0.07;
+        z-index: -3;
+        pointer-events: none;
+    }
+    
+    /* Ajout de symboles hermétiques en filigrane */
+    .sacred-introduction::after,
+    .sacred-doors::after,
+    .main-sections::after,
+    .wisdom-quote::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cg opacity='0.04' fill='%23FFD700'%3E%3Cpath d='M250,50 A200,200 0 0,1 450,250 A200,200 0 0,1 250,450 A200,200 0 0,1 50,250 A200,200 0 0,1 250,50 Z M250,100 A150,150 0 0,1 400,250 A150,150 0 0,1 250,400 A150,150 0 0,1 100,250 A150,150 0 0,1 250,100 Z' fill='none' stroke='%23FFD700' stroke-width='2'/%3E%3Cpath d='M100,100 L400,400 M400,100 L100,400 M250,50 L250,450 M50,250 L450,250' stroke='%23FFD700' stroke-width='1.5'/%3E%3Ctext x='190' y='260' font-family='serif' font-size='20'%3EAUM%3C/text%3E%3Ctext x='230' y='190' font-family='serif' font-size='18'%3E4%3C/text%3E%3Ctext x='270' y='260' font-family='serif' font-size='16'%3E7%3C/text%3E%3Ctext x='230' y='320' font-family='serif' font-size='18'%3E9%3C/text%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 75% 75%;
+        opacity: 0.1;
+        z-index: -1;
+        pointer-events: none;
+    }
+    
+    /* Filigrane spécifique pour chaque section */
+    .sacred-introduction::after {
+        background-image: 
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cg opacity='0.05' fill='%23FFD700'%3E%3Ccircle cx='250' cy='250' r='200' fill='none' stroke='%23FFD700' stroke-width='1'/%3E%3Ccircle cx='250' cy='250' r='150' fill='none' stroke='%23FFD700' stroke-width='1'/%3E%3Ccircle cx='250' cy='250' r='100' fill='none' stroke='%23FFD700' stroke-width='1'/%3E%3Ccircle cx='250' cy='250' r='50' fill='none' stroke='%23FFD700' stroke-width='1'/%3E%3Ctext x='200' y='260' font-family='serif' font-size='30'%3EUNUS%3C/text%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .sacred-doors::after {
+        background-image: 
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg opacity='0.05' fill='%23FFD700'%3E%3Cpath d='M300,100 L500,400 L100,400 Z' fill='none' stroke='%23FFD700' stroke-width='1'/%3E%3Cpath d='M300,400 L500,100 L100,100 Z' fill='none' stroke='%23FFD700' stroke-width='1'/%3E%3Ctext x='280' y='270' font-family='serif' font-size='30'%3E3%3C/text%3E%3Ctext x='280' y='330' font-family='serif' font-size='30'%3E6%3C/text%3E%3Ctext x='200' y='250' font-family='serif' font-size='25'%3Eα%3C/text%3E%3Ctext x='370' y='250' font-family='serif' font-size='25'%3Eω%3C/text%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .main-sections::after {
+        background-image: 
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cg opacity='0.05' fill='%23FFD700'%3E%3Crect x='150' y='150' width='200' height='200' fill='none' stroke='%23FFD700' stroke-width='1'/%3E%3Ccircle cx='250' cy='250' r='141' fill='none' stroke='%23FFD700' stroke-width='1'/%3E%3Cpath d='M150,150 L350,350 M350,150 L150,350' stroke='%23FFD700' stroke-width='1'/%3E%3Ctext x='225' y='260' font-family='serif' font-size='30'%3E1.618%3C/text%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .wisdom-quote::after {
+        background-image: 
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='200' viewBox='0 0 500 200'%3E%3Cg opacity='0.05' fill='%23FFD700'%3E%3Cpath d='M50,100 L450,100' stroke='%23FFD700' stroke-width='1'/%3E%3Ctext x='100' y='90' font-family='serif' font-size='20'%3E1 2 3 5 8 13 21%3C/text%3E%3Ctext x='320' y='130' font-family='serif' font-size='22'%3Eφ%3C/text%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    /* Optimisé: dégradé latéral avec moins de composants */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            linear-gradient(to right, rgba(255, 215, 0, 0.1) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, rgba(255, 215, 0, 0.1) 100%);
+        opacity: 0.8;
+        pointer-events: none;
+        z-index: -2;
+        will-change: opacity;
+    }
+    
+    /* Style du titre principal optimisé */
+    .main-title {
+        font-family: 'Cinzel', serif;
+        font-size: 4.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--portal-color);
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        letter-spacing: 0.15em;
+        position: relative;
+        animation: mystical-glow 3s ease-in-out infinite alternate;
+        background: linear-gradient(45deg, var(--portal-color), var(--portal-color-light));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+        line-height: 1.2;
+        font-weight: 700;
+        will-change: transform, filter;
+    }
 
-.main-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 2rem 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
-}
+    /* Structure de conteneur principal optimisée */
+    .sacred-introduction {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        margin-bottom: 2rem;
+        padding: 3rem 2rem;
+        background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+        border-radius: 20px;
+        box-shadow: 0 0 20px var(--portal-color-glow);
+        position: relative;
+        border: 1px solid rgba(255, 215, 0, 0.2);
+    }
+    
+    /* Animation du titre optimisée */
+    @keyframes mystical-glow {
+        0% {
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+        }
+        100% {
+            text-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.7));
+        }
+    }
 
-.title-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1rem;
-}
+    /* Style uniforme pour les sections optimisé */
+    .sacred-doors, .main-sections, .wisdom-quote {
+        padding: 2rem;
+        background: var(--section-bg);
+        border: var(--section-border);
+        border-radius: 20px;
+        margin-bottom: 2rem;
+        box-shadow: var(--section-shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Effet de relief simplifié */
+    .sacred-doors::before, .main-sections::before, .wisdom-quote::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(0, 0, 0, 0) 60%);
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.8;
+    }
 
-.site-subtitle {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.5rem;
-    color: var(--color-gold);
-    opacity: 0.9;
-    margin-bottom: 1.5rem;
-    line-height: 1.4;
-    max-width: 600px;
-    margin: 0 auto;
-}
+    /* Style des titres de section */
+    .section-title {
+        font-family: 'Cinzel', serif;
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: var(--portal-color);
+        text-shadow: 0 1px 5px rgba(255, 215, 0, 0.3);
+        position: relative;
+    }
 
-.welcome-text {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.2rem;
-    color: var(--color-pearl);
-    opacity: 0.9;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
-    font-style: italic;
-}
+    /* Style des paragraphes optimisé */
+    .intro-text, .section-description {
+        max-width: 800px;
+        margin: 0 auto 1.5rem;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1.7;
+        font-family: 'EB Garamond', serif;
+        color: #E6E6E6;
+    }
 
-.sacred-doors {
-    margin-bottom: 2rem;
-}
+    /* Géométrie sacrée et portails */
+    .sacred-geometry {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        transition: all 0.6s ease;
+        will-change: transform;
+    }
 
-.portal-grid {
+    /* Force la couleur dorée - optimisé */
+    .sacred-geometry,
+    .sacred-geometry svg,
+    .sacred-geometry .geometry-symbol,
+    [class*="portal-"] .sacred-geometry {
+        color: var(--portal-color) !important;
+        transition: all 0.6s ease;
+    }
+
+    /* Style de base pour les symboles géométriques - optimisé */
+    .geometry-symbol {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+        animation: gold-glow 8s infinite ease-in-out;
+        transition: all 0.6s ease;
+        will-change: filter, transform;
+    }
+
+    /* Effet de survol optimisé */
+    .portal-square:hover .sacred-geometry {
+        transform: scale(1.12) rotate(360deg);
+    }
+
+    .portal-square:hover .sacred-geometry,
+    .portal-square:hover .sacred-geometry svg,
+    .portal-square:hover .geometry-symbol {
+        color: #FFFFFF !important;
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+    }
+
+    /* Animation dorée optimisée */
+    @keyframes gold-glow {
+        0%, 100% { filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6)); }
+        50% { filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.8)); }
+    }
+
+    /* Style uniforme pour les portails - optimisé */
+    .portal-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 1rem;
-    position: relative;
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 2rem auto;
+        contain: layout style;
+        position: relative;
+        z-index: 5;
+    }
+
+    .portal-link {
+        position: relative;
+        z-index: 10;
+        display: block;
+        text-decoration: none;
+        color: inherit;
 }
 
 .portal-square {
-    text-decoration: none;
-    color: var(--color-pearl);
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid var(--color-gold);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 1;
+        width: 200px;
+        height: 250px;
+        margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.portal-center {
-    grid-column: 2;
-    grid-row: 2;
-    transform: scale(1.1);
-    z-index: 2;
-}
-
-.portal-1 {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.portal-2 {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-.portal-3 {
-    grid-column: 3;
-    grid-row: 2;
-}
-
-.portal-4 {
-    grid-column: 3;
-    grid-row: 3;
-}
-
-.portal-5 {
-    grid-column: 2;
-    grid-row: 3;
-}
-
-.portal-6 {
-    grid-column: 1;
-    grid-row: 3;
-}
-
-.portal-7 {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-.portal-8 {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.portal-center:hover {
-    transform: scale(1.15) translateY(-5px);
-}
-
-.portal-square::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.portal-square:hover::before {
-    opacity: 1;
-}
-
-.portal-square:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-}
-
-.portal-square:hover .portal-icon {
-    animation: pulse 1.5s infinite;
-}
-
-.portal-icon {
+        border-radius: 15px;
+        background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.9));
+        border: 2px solid rgba(255, 215, 0, 0.3);
+        transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+        padding: 15px;
+        will-change: transform, box-shadow;
+        z-index: 5;
+    }
+    
+    /* Effet de relief plus léger */
+    .portal-square::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-}
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(0, 0, 0, 0) 60%);
+        pointer-events: none;
+        z-index: 1;
+    }
 
-.polygram {
-    width: 75%;
-    height: 75%;
-    color: var(--color-gold);
-    transition: all 0.6s ease;
-    opacity: 0.9;
-}
+    .portal-square:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+        border-color: rgba(255, 215, 0, 0.6);
+    }
 
-.portal-square:hover .polygram {
-    transform: scale(1.1) rotate(0deg);
-    color: var(--color-gold-light);
-    opacity: 1;
-    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
-}
-
-.portal-center .polygram {
-    width: 85%;
-    height: 85%;
-    opacity: 1;
-    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.2));
-}
-
-.portal-center:hover .polygram {
-    transform: scale(1.15);
-    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
-}
-
-.portal-number {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.5rem;
-    color: var(--color-pearl);
-    margin-bottom: 0.25rem;
-}
-
-.portal-title {
-    font-size: 0.8rem;
-    color: var(--color-pearl);
-    opacity: 0.9;
-    text-align: center;
+    /* Style des noms des principes */
+    .name {
+        font-size: 1.2rem;
+        margin-top: 1.2rem;
+        color: var(--portal-color);
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
     text-transform: uppercase;
-    letter-spacing: 1px;
-}
+        letter-spacing: 0.05rem;
+        font-weight: 500;
+        font-family: 'Cinzel', serif;
+        position: relative;
+        z-index: 2;
+    }
 
-.main-sections {
-    margin-bottom: 4rem;
-}
-
-.section-grid {
+    /* Cartes de section optimisées */
+    .section-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 900px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 1000px;
     margin: 0 auto;
+        contain: layout style;
 }
 
 .section-card {
-    text-decoration: none;
-    color: var(--color-pearl);
     background: rgba(0, 0, 0, 0.6);
-    border: 2px solid var(--color-gold);
-    border-radius: 12px;
     padding: 1.5rem;
-    transition: all 0.4s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.section-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.section-card:hover::before {
-    opacity: 1;
+        border-radius: 15px;
+        text-align: center;
+        border: 1px solid var(--portal-color-fade);
+        transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        color: #E6E6E6;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+        will-change: transform, box-shadow;
+    }
+    
+    /* Effet de relief plus léger */
+    .section-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(0, 0, 0, 0) 60%);
+        pointer-events: none;
+        z-index: 1;
 }
 
 .section-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
-}
+        box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+        border-color: var(--portal-color);
+    }
 
-.card-content {
-    text-align: center;
-}
-
-.card-content i {
+    .card-icon {
     font-size: 2rem;
-    color: var(--color-gold);
     margin-bottom: 1rem;
-}
+        color: var(--portal-color);
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+        position: relative;
+        z-index: 2;
+    }
+    
+    .section-card h3 {
+        font-family: 'Cinzel', serif;
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+        color: var(--portal-color);
+        position: relative;
+        z-index: 2;
+    }
+    
+    .section-card p {
+        font-family: 'EB Garamond', serif;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        position: relative;
+        z-index: 2;
+    }
 
-.card-content h2 {
-    font-family: 'Cinzel Decorative', cursive;
-    color: var(--color-gold);
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    height: 2.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-content p {
-    color: var(--color-pearl);
-    opacity: 0.9;
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-.sacred-quote {
+    /* Citation de sagesse optimisée */
+    .wisdom-quote {
     text-align: center;
-    margin: 4rem 0;
-    padding: 3rem;
-    background: rgba(255, 215, 0, 0.05);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 215, 0, 0.1);
-}
+        padding: 2.5rem;
+        background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+    }
 
-blockquote {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.2rem;
-    color: var(--color-gold);
+    .wisdom-quote blockquote {
+        font-family: 'EB Garamond', serif;
+        font-size: 1.5rem;
     font-style: italic;
+        line-height: 1.6;
     margin: 0;
-    line-height: 1.6;
+        padding: 0;
+        color: var(--portal-color);
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
 }
 
-cite {
+    .wisdom-quote cite {
     display: block;
-    margin-top: 0.5rem;
-    color: var(--color-pearl);
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        color: #E6E6E6;
+    }
 
-@media (max-width: 768px) {
-    .portal-grid {
+    /* Responsive design optimisé */
+    @media (max-width: 900px) {
+        .portal-container {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
+            gap: 1.5rem;
     }
     
-    .section-grid {
+    .portal-square {
+            width: 170px;
+            height: 210px;
+        }
+        
+        .sacred-geometry {
+            width: 120px;
+            height: 120px;
+        }
+        
+        .section-cards {
         grid-template-columns: 1fr;
+        }
+        
+        .main-title {
+            font-size: 3.5rem;
+        }
     }
-    
-    .portal-square {
-        padding: 1.5rem;
+
+    @media (max-width: 600px) {
+        .portal-container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+        }
+        
+        .portal-square {
+            width: 150px;
+            height: 180px;
+        }
+        
+        .sacred-geometry {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
     }
-    
-    .portal-center {
-        transform: scale(1.05);
-    }
-}
 
-@media (max-width: 480px) {
-    .portal-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
-    }
-    
-    .portal-square {
-        padding: 1rem;
-    }
-    
-    .portal-center {
-        transform: scale(1.02);
-    }
-}
-
-.sacred-introduction {
-    margin: 4rem 0;
-    padding: 0 2rem;
-}
-
-.introduction-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.introduction-content p {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.2rem;
-    color: var(--color-pearl);
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
-}
-
-.introduction-content p:last-child {
-    margin-bottom: 0;
-}
-
-.mode-selector {
-    margin-top: 2rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.mode-button {
-    padding: 0.8rem 1.5rem;
-    background: rgba(255, 215, 0, 0.1);
-    border: 1px solid var(--color-gold);
-    color: var(--color-gold);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'EB Garamond', serif;
-}
-
-.mode-button:hover {
-    background: rgba(255, 215, 0, 0.2);
-    transform: translateY(-2px);
-}
-
-.portal-lock {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    color: var(--color-gold);
-    font-size: 1.2rem;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-.portal-square.locked {
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.portal-square.locked:hover {
-    transform: none;
-    box-shadow: none;
+    /* Optimisation des traits */
+    .geometry-symbol circle,
+    .geometry-symbol path,
+    .geometry-symbol line,
+    .geometry-symbol rect,
+    .geometry-symbol polygon {
+        stroke-width: 2;
+        vector-effect: non-scaling-stroke;
 }
 </style>
 {% endblock %}
@@ -582,60 +704,131 @@ cite {
 {% block extra_js %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Gestion du mode parcours initiatique
-    const initiationMode = document.getElementById('initiationMode');
-    const portals = document.querySelectorAll('.portal-square');
-    let isInitiationMode = false;
-
-    initiationMode.addEventListener('click', function() {
-        isInitiationMode = !isInitiationMode;
-        this.classList.toggle('active');
-        
-        if (isInitiationMode) {
-            // Verrouiller toutes les portes sauf la première
-            portals.forEach(portal => {
-                if (portal.dataset.portal !== '1') {
-                    portal.classList.add('locked');
-                    portal.querySelector('.portal-lock').style.display = 'block';
-                }
-            });
-        } else {
-            // Déverrouiller toutes les portes
-            portals.forEach(portal => {
-                portal.classList.remove('locked');
-                portal.querySelector('.portal-lock').style.display = 'none';
-            });
-        }
-    });
-
-    // Gestion de la musique ambiante
-    const musicToggle = document.getElementById('musicToggle');
-    const backgroundMusic = new Audio('/static/audio/ambient.mp3');
-    backgroundMusic.loop = true;
-    let isMusicPlaying = false;
-
-    musicToggle.addEventListener('click', function() {
-        isMusicPlaying = !isMusicPlaying;
-        this.classList.toggle('active');
-        
-        if (isMusicPlaying) {
-            backgroundMusic.play();
-        } else {
-            backgroundMusic.pause();
-        }
-    });
-
-    // Effet sonore au survol des portes
-    const hoverSound = new Audio('/static/audio/hover.mp3');
-    
-    portals.forEach(portal => {
-        portal.addEventListener('mouseenter', function() {
-            if (!this.classList.contains('locked')) {
-                hoverSound.currentTime = 0;
-                hoverSound.play();
+    // Correction pour s'assurer que les portes sont toujours cliquables
+    const portalLinks = document.querySelectorAll('.portal-link');
+    const checkPortalInteractivity = () => {
+        portalLinks.forEach(portal => {
+            // Vérifier si le lien est cliquable (en testant s'il est recouvert par d'autres éléments)
+            const rect = portal.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            // Trouve l'élément au point central
+            const elementAtPoint = document.elementFromPoint(centerX, centerY);
+            
+            // Si le lien n'est pas cliquable (un autre élément le recouvre)
+            if (!portal.contains(elementAtPoint) && elementAtPoint !== portal) {
+                // Augmenter le z-index pour le rendre cliquable
+                const currentZIndex = parseInt(window.getComputedStyle(portal).zIndex) || 10;
+                portal.style.zIndex = currentZIndex + 5;
+                portal.querySelector('.portal-square').style.zIndex = currentZIndex + 4;
+                
+                console.log('Porte corrigée pour être cliquable');
             }
         });
+    };
+    
+    // Vérifier lors du chargement et après un petit délai (pour les transitions CSS)
+    setTimeout(checkPortalInteractivity, 500);
+    window.addEventListener('resize', checkPortalInteractivity);
+    
+    // Attendre que la page soit complètement chargée
+    window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
+        checkPortalInteractivity();
     });
+    
+    // Lazy loading pour les effets visuels
+    const portals = document.querySelectorAll('.portal-square');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+                
+                // Vérifier à nouveau l'interactivité après que l'élément soit visible
+                setTimeout(checkPortalInteractivity, 100);
+            }
+        });
+    }, {
+        rootMargin: '0px',
+        threshold: 0.1
+    });
+    
+    // Observer chaque portail pour le lazy loading
+    portals.forEach(portal => {
+        observer.observe(portal);
+    });
+    
+    // Optimisation des événements de survol
+    portals.forEach(portal => {
+        let hoverTimer;
+        
+        portal.addEventListener('mouseenter', function() {
+            clearTimeout(hoverTimer);
+            this.classList.add('hover-active');
+        });
+        
+        portal.addEventListener('mouseleave', function() {
+            const self = this;
+            hoverTimer = setTimeout(function() {
+                self.classList.remove('hover-active');
+            }, 50);
+        });
+    });
+    
+    // Correction du menu dropdown
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        const dropdownContent = dropdown.querySelector('.dropdown-content');
+        if (dropdownContent) {
+            // Assurer que le menu déroulant est bien positionné
+            dropdown.addEventListener('mouseenter', function() {
+                const rect = dropdown.getBoundingClientRect();
+                dropdownContent.style.top = rect.height + 'px';
+                dropdownContent.style.zIndex = '1001';
+            });
+        }
+    });
+
+    // Préchargement des sons
+    const audioContext = window.AudioContext || window.webkitAudioContext;
+    let context;
+    
+    // Charger les sons uniquement après interaction utilisateur
+    document.body.addEventListener('click', function() {
+        if (!context) {
+            context = new audioContext();
+        }
+    }, { once: true });
+    
+    // Gestion des sons au survol - seulement si nécessaire
+    if (window.innerWidth > 768) { // Pas de son sur mobile
+        const hoverSound = new Audio();
+        let soundLoaded = false;
+        
+        // Charger le son uniquement après interaction
+        document.body.addEventListener('mousemove', function() {
+            if (!soundLoaded) {
+                hoverSound.src = '/static/audio/hover.mp3';
+                hoverSound.volume = 0.3;
+                hoverSound.load();
+                soundLoaded = true;
+            }
+        }, { once: true });
+        
+        let lastPlayTime = 0;
+        portals.forEach(portal => {
+            portal.addEventListener('mouseenter', function() {
+                const now = Date.now();
+                if (soundLoaded && now - lastPlayTime > 300) { // Limiter la fréquence de lecture
+                    hoverSound.currentTime = 0;
+                    hoverSound.play().catch(() => {}); // Ignorer les erreurs
+                    lastPlayTime = now;
+                }
+            });
+        });
+    }
 });
 </script>
 {% endblock %} 

@@ -49,7 +49,7 @@
                         <i class="fas fa-water"></i> Commencer la Méditation
                     </button>
                     <div class="timer-container">
-                        <div id="timer" class="timer">02:22</div>
+                        <div id="meditationTimer" class="timer">02:22</div>
                         <div class="breath-guide">
                             <span class="breath-in">Inspire</span>
                             <span class="breath-pause">•</span>
@@ -339,45 +339,52 @@ document.addEventListener('DOMContentLoaded', function() {
     const line = document.getElementById('equivalenceLine');
     const lineAura = document.querySelector('.line-aura');
     
-    line.addEventListener('click', function() {
-        lineAura.style.animation = 'none';
-        void lineAura.offsetWidth;
-        lineAura.style.animation = 'flow 4s infinite';
-    });
+    if (line && lineAura) {
+        line.addEventListener('click', function() {
+            lineAura.style.animation = 'none';
+            void lineAura.offsetWidth;
+            lineAura.style.animation = 'flow 4s infinite';
+        });
+    }
 
     // Méditation
     const meditationButton = document.getElementById('startMeditation');
-    const timer = document.getElementById('timer');
+    const meditationTimer = document.getElementById('meditationTimer');
     const breathIn = document.querySelector('.breath-in');
     const breathOut = document.querySelector('.breath-out');
     let meditationInterval;
     let isMeditating = false;
-    let timeLeft = 15 * 60;
+    let timeLeft = 142; // 2:22 en secondes
 
-    meditationButton.addEventListener('click', function() {
-        isMeditating = !isMeditating;
-        
-        if (isMeditating) {
-            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
-            startMeditation();
-        } else {
-            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
-            pauseMeditation();
-        }
-    });
+    if (meditationButton && meditationTimer) {
+        meditationButton.addEventListener('click', function() {
+            if (!isMeditating) {
+                // Démarrer
+                this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+                timeLeft = 142; // Reset à 2:22
+                startMeditation();
+            } else {
+                // Pause
+                this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+                pauseMeditation();
+            }
+            isMeditating = !isMeditating;
+        });
+    }
 
     function startMeditation() {
+        updateTimer(meditationTimer, timeLeft);
         meditationInterval = setInterval(() => {
             timeLeft--;
-            updateTimer(timer, timeLeft);
+            updateTimer(meditationTimer, timeLeft);
             
-            // Alternance respiration
-            if (timeLeft % 8 < 4) {
-                breathIn.classList.add('active');
-                breathOut.classList.remove('active');
+            // Gestion de la respiration (4 secondes par cycle)
+            if (timeLeft % 4 < 2) {
+                if (breathIn) breathIn.classList.add('active');
+                if (breathOut) breathOut.classList.remove('active');
             } else {
-                breathIn.classList.remove('active');
-                breathOut.classList.add('active');
+                if (breathIn) breathIn.classList.remove('active');
+                if (breathOut) breathOut.classList.add('active');
             }
             
             if (timeLeft <= 0) {
@@ -392,11 +399,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function endMeditation() {
         clearInterval(meditationInterval);
-        meditationButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        if (meditationButton) meditationButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
         isMeditating = false;
-        timeLeft = 15 * 60;
-        updateTimer(timer, timeLeft);
-        new Audio('/static/audio/bell.mp3').play();
+        timeLeft = 142;
+        updateTimer(meditationTimer, timeLeft);
+        if (breathIn) breathIn.classList.remove('active');
+        if (breathOut) breathOut.classList.remove('active');
+        try {
+            new Audio('/static/audio/bell.mp3').play();
+        } catch (e) {
+            console.log('Son de cloche non disponible');
+        }
     }
 
     // Exercice
@@ -404,21 +417,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const exerciseTimer = document.getElementById('exerciseTimer');
     let exerciseInterval;
     let isExercising = false;
-    let exerciseTimeLeft = 3 * 60;
+    let exerciseTimeLeft = 300; // 5:00 en secondes
 
-    exerciseButton.addEventListener('click', function() {
-        isExercising = !isExercising;
-        
-        if (isExercising) {
-            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
-            startExercise();
-        } else {
-            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
-            pauseExercise();
-        }
-    });
+    if (exerciseButton && exerciseTimer) {
+        exerciseButton.addEventListener('click', function() {
+            if (!isExercising) {
+                // Démarrer
+                this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+                exerciseTimeLeft = 300; // Reset à 5:00
+                startExercise();
+            } else {
+                // Pause
+                this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+                pauseExercise();
+            }
+            isExercising = !isExercising;
+        });
+    }
 
     function startExercise() {
+        updateTimer(exerciseTimer, exerciseTimeLeft);
         exerciseInterval = setInterval(() => {
             exerciseTimeLeft--;
             updateTimer(exerciseTimer, exerciseTimeLeft);
@@ -435,18 +453,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function endExercise() {
         clearInterval(exerciseInterval);
-        exerciseButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        if (exerciseButton) exerciseButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
         isExercising = false;
-        exerciseTimeLeft = 3 * 60;
+        exerciseTimeLeft = 300;
         updateTimer(exerciseTimer, exerciseTimeLeft);
-        new Audio('/static/audio/bell.mp3').play();
+        try {
+            new Audio('/static/audio/bell.mp3').play();
+        } catch (e) {
+            console.log('Son de cloche non disponible');
+        }
     }
 
     // Utilitaire pour formater le temps
     function updateTimer(element, seconds) {
+        if (!element) return;
         const minutes = Math.floor(seconds / 60);
         const remainingSeconds = seconds % 60;
-        element.textContent = `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+        element.textContent = `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
     }
 });
 </script>

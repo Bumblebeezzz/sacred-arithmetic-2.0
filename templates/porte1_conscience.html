@@ -18,7 +18,7 @@
             
             <div class="sacred-geometry">
                 <div class="point-container">
-                    <div class="point" id="consciousnessPoint">●</div>
+                    <div class="point" id="consciousnessPoint">•</div>
                     <div class="point-aura"></div>
                 </div>
             </div>
@@ -26,24 +26,24 @@
             <div class="principles">
                 <h3>Les Quatre Aspects</h3>
                 <ul>
+                    <li>Le Pouvoir Créateur</li>
+                    <li>La Source de Tout</li>
+                    <li>L'Unicité Fondamentale</li>
                     <li>La Présence Pure</li>
-                    <li>L'Éveil Intérieur</li>
-                    <li>La Perception Consciente</li>
-                    <li>La Source de la Connaissance</li>
                 </ul>
             </div>
         </div>
 
         <div class="practice-section">
             <div class="meditation-card">
-                <h2>Méditation du Point</h2>
-                <p class="meditation-text">Ferme les yeux. Ressens le vide avant le mouvement. Un point naît, vibrant dans le noir cosmique. Tu es ce point. Tu es le germe. L'univers te respire.</p>
+                <h2>Méditation sur le Point</h2>
+                <p class="meditation-text">Asseyez-vous confortablement et fixez votre attention sur un point unique. Laissez ce point devenir le centre de votre conscience. Observez comment toute expérience émerge de ce point et y retourne. Ressentez l'unité fondamentale de toute chose.</p>
                 <div class="meditation-controls">
                     <button id="startMeditation" class="sacred-button">
                         <i class="fas fa-om"></i> Commencer la Méditation
                     </button>
                     <div class="timer-container">
-                        <div id="timer" class="timer">01:11</div>
+                        <div id="meditationTimer" class="timer">01:11</div>
                         <div class="breath-guide">
                             <span class="breath-in">Inspire</span>
                             <span class="breath-pause">•</span>
@@ -54,13 +54,13 @@
             </div>
 
             <div class="exercise-card">
-                <h2>Pratique de l'Unité</h2>
-                <p class="exercise-text">Pendant 3 minutes, concentre-toi sur un point fixe. Compte les respirations en silence. Observe le moment où la pensée tente d'émerger. Réalise que tout ce qui est autour de toi est vide. Comme ta conscience. Les deux sont faits de la même substance.</p>
+                <h2>Pratique de la Conscience</h2>
+                <p class="exercise-text">Choisissez un objet simple de votre environnement. Pendant cinq minutes, observez-le comme si c'était la première fois, en portant une attention totale à chacun de ses aspects. Notez comment votre conscience crée l'expérience de cet objet.</p>
                 <div class="exercise-controls">
                     <button id="startExercise" class="sacred-button">
-                        <i class="fas fa-seedling"></i> Démarrer l'Exercice
+                        <i class="fas fa-eye"></i> Démarrer l'Exercice
                     </button>
-                    <div id="exerciseTimer" class="timer">03:00</div>
+                    <div id="exerciseTimer" class="timer">05:00</div>
                 </div>
             </div>
         </div>
@@ -115,7 +115,7 @@
     color: transparent;
     margin: 0;
     letter-spacing: 0.5rem;
-    font-weight: 400;
+    font-weight: normal;
     text-shadow: 0 0 20px var(--portal-color-glow);
 }
 
@@ -131,6 +131,7 @@
     transform: translateX(-50%);
     z-index: -1;
     text-shadow: 0 0 50px var(--portal-color-glow);
+    opacity: 0.5;
 }
 
 .subtitle {
@@ -206,35 +207,6 @@
     background: radial-gradient(circle, var(--portal-color-light) 0%, transparent 70%);
     animation: pulse 2s infinite;
     box-shadow: 0 0 30px var(--portal-color-glow);
-}
-
-.principles {
-    margin-top: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
-    border-radius: 15px;
-    border: 1px solid var(--portal-color-fade);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-}
-
-.principles h3 {
-    color: var(--portal-color);
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-}
-
-.principles ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-}
-
-.principles li {
-    color: var(--color-pearl);
-    padding: 0.5rem;
-    font-size: 1.1rem;
 }
 
 .practice-section {
@@ -316,6 +288,45 @@
     opacity: 1;
 }
 
+.principles {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    border-radius: 15px;
+    border: 1px solid var(--portal-color-fade);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.principles h3 {
+    color: var(--portal-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.principles ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.principles li {
+    color: var(--color-pearl);
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    border: 1px solid var(--portal-color-fade);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.principles li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 15px var(--portal-color-glow);
+    border-color: var(--portal-color);
+}
+
 @keyframes pulse {
     0% {
         transform: translate(-50%, -50%) scale(1);
@@ -342,6 +353,15 @@
     .principles ul {
         grid-template-columns: 1fr;
     }
+    
+    .portal-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .portal-number {
+        font-size: 8rem;
+        top: -2rem;
+    }
 }
 </style>
 {% endblock %}
@@ -353,45 +373,52 @@ document.addEventListener('DOMContentLoaded', function() {
     const point = document.getElementById('consciousnessPoint');
     const pointAura = document.querySelector('.point-aura');
     
-    point.addEventListener('click', function() {
-        pointAura.style.animation = 'none';
-        void pointAura.offsetWidth;
-        pointAura.style.animation = 'pulse 2s infinite';
-    });
+    if (point && pointAura) {
+        point.addEventListener('click', function() {
+            pointAura.style.animation = 'none';
+            void pointAura.offsetWidth;
+            pointAura.style.animation = 'pulse 2s infinite';
+        });
+    }
 
     // Méditation
     const meditationButton = document.getElementById('startMeditation');
-    const timer = document.getElementById('timer');
+    const meditationTimer = document.getElementById('meditationTimer');
     const breathIn = document.querySelector('.breath-in');
     const breathOut = document.querySelector('.breath-out');
     let meditationInterval;
     let isMeditating = false;
-    let timeLeft = 15 * 60;
+    let timeLeft = 71; // 1:11 en secondes
 
-    meditationButton.addEventListener('click', function() {
-        isMeditating = !isMeditating;
-        
-        if (isMeditating) {
-            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
-            startMeditation();
-        } else {
-            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
-            pauseMeditation();
-        }
-    });
+    if (meditationButton && meditationTimer) {
+        meditationButton.addEventListener('click', function() {
+            if (!isMeditating) {
+                // Démarrer
+                this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+                timeLeft = 71; // Reset à 1:11
+                startMeditation();
+            } else {
+                // Pause
+                this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+                pauseMeditation();
+            }
+            isMeditating = !isMeditating;
+        });
+    }
 
     function startMeditation() {
+        updateTimer(meditationTimer, timeLeft);
         meditationInterval = setInterval(() => {
             timeLeft--;
-            updateTimer(timer, timeLeft);
+            updateTimer(meditationTimer, timeLeft);
             
-            // Alternance respiration
-            if (timeLeft % 8 < 4) {
-                breathIn.classList.add('active');
-                breathOut.classList.remove('active');
+            // Gestion de la respiration (4 secondes par cycle)
+            if (timeLeft % 4 < 2) {
+                if (breathIn) breathIn.classList.add('active');
+                if (breathOut) breathOut.classList.remove('active');
             } else {
-                breathIn.classList.remove('active');
-                breathOut.classList.add('active');
+                if (breathIn) breathIn.classList.remove('active');
+                if (breathOut) breathOut.classList.add('active');
             }
             
             if (timeLeft <= 0) {
@@ -406,11 +433,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function endMeditation() {
         clearInterval(meditationInterval);
-        meditationButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        if (meditationButton) meditationButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
         isMeditating = false;
-        timeLeft = 15 * 60;
-        updateTimer(timer, timeLeft);
-        new Audio('/static/audio/bell.mp3').play();
+        timeLeft = 71;
+        updateTimer(meditationTimer, timeLeft);
+        if (breathIn) breathIn.classList.remove('active');
+        if (breathOut) breathOut.classList.remove('active');
+        try {
+            new Audio('/static/audio/bell.mp3').play();
+        } catch (e) {
+            console.log('Son de cloche non disponible');
+        }
     }
 
     // Exercice
@@ -418,21 +451,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const exerciseTimer = document.getElementById('exerciseTimer');
     let exerciseInterval;
     let isExercising = false;
-    let exerciseTimeLeft = 3 * 60;
+    let exerciseTimeLeft = 300; // 5:00 en secondes
 
-    exerciseButton.addEventListener('click', function() {
-        isExercising = !isExercising;
-        
-        if (isExercising) {
-            this.innerHTML = '<i class="fas fa-pause"></i> Pause';
-            startExercise();
-        } else {
-            this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
-            pauseExercise();
-        }
-    });
+    if (exerciseButton && exerciseTimer) {
+        exerciseButton.addEventListener('click', function() {
+            if (!isExercising) {
+                // Démarrer
+                this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+                exerciseTimeLeft = 300; // Reset à 5:00
+                startExercise();
+            } else {
+                // Pause
+                this.innerHTML = '<i class="fas fa-play"></i> Reprendre';
+                pauseExercise();
+            }
+            isExercising = !isExercising;
+        });
+    }
 
     function startExercise() {
+        updateTimer(exerciseTimer, exerciseTimeLeft);
         exerciseInterval = setInterval(() => {
             exerciseTimeLeft--;
             updateTimer(exerciseTimer, exerciseTimeLeft);
@@ -449,18 +487,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function endExercise() {
         clearInterval(exerciseInterval);
-        exerciseButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
+        if (exerciseButton) exerciseButton.innerHTML = '<i class="fas fa-redo"></i> Recommencer';
         isExercising = false;
-        exerciseTimeLeft = 3 * 60;
+        exerciseTimeLeft = 300;
         updateTimer(exerciseTimer, exerciseTimeLeft);
-        new Audio('/static/audio/bell.mp3').play();
+        try {
+            new Audio('/static/audio/bell.mp3').play();
+        } catch (e) {
+            console.log('Son de cloche non disponible');
+        }
     }
 
     // Utilitaire pour formater le temps
     function updateTimer(element, seconds) {
+        if (!element) return;
         const minutes = Math.floor(seconds / 60);
         const remainingSeconds = seconds % 60;
-        element.textContent = `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+        element.textContent = `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
     }
 });
 </script>

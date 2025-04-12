@@ -3,24 +3,38 @@
 {% block title %}Géométrie des Nombres{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="hero">
-        <h1>Géométrie des Nombres</h1>
+<div class="cycles-container">
+    <div class="portal-header">
+        <h1>La Géométrie des Nombres</h1>
+        <div class="portal-symbol">
+            <svg viewBox="0 0 100 100" class="cycle-symbol">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-gold)" stroke-width="2"/>
+                <path d="M 50,10 L 90,50 L 50,90 L 10,50 Z" fill="none" stroke="var(--color-gold)" stroke-width="1.5"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="var(--color-gold)" stroke-width="1.5"/>
+            </svg>
+        </div>
         <p class="subtitle">Les formes sacrées dans les nombres</p>
+        <p class="principle-quote">« La géométrie est le langage de l'univers. » - Galilée</p>
     </div>
 
-    <div class="sacred-grid">
-        <div class="sacred-card golden-ratio">
+    <div class="portal-content">
+        <section class="wisdom-section">
+            <h2>Introduction à la Géométrie Sacrée</h2>
+            <p>La géométrie sacrée révèle comment les nombres se manifestent à travers des formes parfaites qui reflètent les structures fondamentales de la création. Elle nous montre que l'univers est construit selon des principes mathématiques précis.</p>
+        </section>
+
+        <section class="wisdom-section golden-ratio">
             <h2>Le Nombre d'Or (φ)</h2>
-            <div class="content">
-                <div class="text">
+            <div class="dual-content">
+                <div class="text-content">
                     <p>Le nombre d'or (1.618033988749895...) est une proportion divine que l'on retrouve partout dans la nature et l'art. Il représente l'harmonie parfaite entre deux grandeurs.</p>
-                    <ul class="properties">
+                    <ul class="sacred-properties">
                         <li>φ = (1 + √5) / 2</li>
                         <li>φ² = φ + 1</li>
                         <li>1/φ = φ - 1</li>
                     </ul>
                 </div>
+                <div class="visual-content">
                 <div class="golden-spiral">
                     <svg viewBox="0 0 200 200">
                         <path d="M200,200 L200,0 L0,0 L0,200 Z" class="golden-rect"/>
@@ -29,11 +43,11 @@
                 </div>
             </div>
         </div>
+        </section>
 
-        <div class="sacred-card platonic-solids">
+        <section class="wisdom-section platonic-solids">
             <h2>Les Solides de Platon</h2>
-            <div class="content">
-                <p>Les cinq solides platoniciens sont des formes géométriques parfaites qui représentent les éléments fondamentaux de l'univers :</p>
+            <p>Les cinq solides platoniciens sont des formes géométriques parfaites qui représentent les éléments fondamentaux de l'univers.</p>
                 <div class="solids-grid">
                     <div class="solid">
                         <i class="fas fa-fire"></i>
@@ -61,20 +75,20 @@
                         <p>20 faces - Eau</p>
                     </div>
                 </div>
-            </div>
-        </div>
+        </section>
 
-        <div class="sacred-card flower-of-life">
+        <section class="wisdom-section flower-of-life">
             <h2>La Fleur de Vie</h2>
-            <div class="content">
-                <div class="text">
+            <div class="dual-content">
+                <div class="text-content">
                     <p>Ce motif géométrique sacré est composé de cercles équidistants qui s'entrecroisent. Il contient tous les modèles de la création et représente l'interconnexion de toute vie.</p>
-                    <ul class="properties">
+                    <ul class="sacred-properties">
                         <li>Symbole de la Création Divine</li>
                         <li>Matrice de l'Arbre de Vie</li>
                         <li>Source du Fruit de Vie</li>
                     </ul>
                 </div>
+                <div class="visual-content">
                 <div class="flower-pattern">
                     <svg viewBox="0 0 200 200">
                         <!-- Cercles de la Fleur de Vie -->
@@ -89,12 +103,76 @@
                 </div>
             </div>
         </div>
+        </section>
+
+        <section class="wisdom-section sacred-polygons">
+            <h2>Les Polygones Sacrés</h2>
+            <p>Chaque nombre sacré donne naissance à une forme géométrique parfaite. Les polygones réguliers incarnent les principes hermétiques fondamentaux.</p>
+            
+            <div class="polygons-grid">
+                <div class="polygon-item">
+                    <div class="polygon-visual">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-gold)" stroke-width="1"/>
+                            <path d="M 50,10 L 84,70 L 16,70 Z" fill="none" stroke="var(--color-gold)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="polygon-info">
+                        <h3>Triangle</h3>
+                        <p>Principe: Oscillation</p>
+                        <p>La trinité divine, l'harmonie entre corps, âme et esprit.</p>
+                    </div>
+                </div>
+                
+                <div class="polygon-item">
+                    <div class="polygon-visual">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-gold)" stroke-width="1"/>
+                            <rect x="23" y="23" width="55" height="55" fill="none" stroke="var(--color-gold)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="polygon-info">
+                        <h3>Carré</h3>
+                        <p>Principe: Polarité</p>
+                        <p>Les quatre éléments, la stabilité de la matière.</p>
+                    </div>
+                </div>
+                
+                <div class="polygon-item">
+                    <div class="polygon-visual">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-gold)" stroke-width="1"/>
+                            <path d="M50,10 L80,36 L67,76 L33,76 L20,36 Z" fill="none" stroke="var(--color-gold)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="polygon-info">
+                        <h3>Pentagone</h3>
+                        <p>Principe: Rythme</p>
+                        <p>L'étoile à cinq branches, la perfection divine.</p>
+                    </div>
+                </div>
+                
+                <div class="polygon-item">
+                    <div class="polygon-visual">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-gold)" stroke-width="1"/>
+                            <path d="M50,10 L80,25 L90,55 L70,80 L30,80 L10,55 L20,25 Z" fill="none" stroke="var(--color-gold)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="polygon-info">
+                        <h3>Hexagone</h3>
+                        <p>Principe: Causalité</p>
+                        <p>Les six jours de la création, l'harmonie cosmique.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="quote-section">
+    <div class="sacred-quote">
         <blockquote>
-            "La géométrie est le langage de l'univers."
-            <cite>- Galilée</cite>
+            "Dieu est un géomètre. Il a créé le monde selon des formes et des nombres qui expriment les lois universelles."
+            <cite>— Platon</cite>
         </blockquote>
     </div>
 </div>
@@ -102,97 +180,203 @@
 
 {% block extra_css %}
 <style>
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+    :root {
+        --portal-color: #33CC33; /* Couleur verte pour la géométrie */
+        --portal-color-light: #66FF66;
+        --portal-color-dark: #009900;
+        --portal-color-fade: rgba(51, 204, 51, 0.2);
+        --portal-color-glow: rgba(51, 204, 51, 0.5);
+    }
+
+    /* Ajustement spécifique pour cette page */
+    .cycles-container {
+        max-width: 1050px;
+        width: calc(100% - 40px);
+        margin-left: auto;
+        margin-right: auto;
     padding: 2rem;
-}
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+    }
+    
+    /* Conteneur principal avec largeur ajustée */
+    .portal-content {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    
+    /* Grilles et sections */
+    .polygons-grid, .solids-grid {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Styles pour les catégories de formes */
+    .category-container {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Style pour les quotations */
+    .sacred-quote {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 3rem 0 2rem;
+    }
+    
+    .wisdom-section {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Styles des sections de sagesse déjà définis */
+    .portal-header {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 3rem 2rem;
+        background: radial-gradient(circle, rgba(0, 153, 0, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+        border-radius: 20px;
+        box-shadow: 0 0 30px var(--portal-color-glow);
+        position: relative;
+        overflow: hidden;
+        max-width: 100%;
+    }
+    
+    /* Ajout d'un effet subtil de symbole doré en arrière-plan du header */
+    .portal-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='none' stroke='rgba(255, 215, 0, 0.03)' stroke-width='1'/%3E%3Cpolygon points='100,20 180,100 100,180 20,100' fill='none' stroke='rgba(255, 215, 0, 0.03)' stroke-width='1'/%3E%3Cpolygon points='100,40 160,100 100,160 40,100' fill='none' stroke='rgba(255, 215, 0, 0.03)' stroke-width='1'/%3E%3C/svg%3E");
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        opacity: 0.7;
+    }
 
-.hero {
-    text-align: center;
-    margin-bottom: 4rem;
-}
+    .portal-header h1 {
+        width: 100%;
+        box-sizing: border-box;
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 3.5rem;
+        background: linear-gradient(to right, var(--portal-color), var(--portal-color-light));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin: 0;
+        letter-spacing: 0.3rem;
+        font-weight: 400;
+        text-shadow: 0 0 20px var(--portal-color-glow);
+    }
 
-.hero h1 {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 3rem;
-    color: var(--color-gold);
-    margin-bottom: 1rem;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-}
+    .portal-symbol {
+        width: 120px;
+        height: 120px;
+        margin: 1.5rem auto;
+        animation: rotate 60s linear infinite;
+    }
 
-.hero .subtitle {
-    font-size: 1.2rem;
-    color: var(--color-pearl);
-    opacity: 0.9;
-}
+    .cycle-symbol {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 0 5px var(--portal-color-light));
+    }
 
-.sacred-grid {
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .subtitle, .principle-quote {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 1.5rem;
+        color: var(--color-pearl);
+        margin: 1rem 0;
+        font-style: italic;
+    }
+
+    .principle-quote {
+        line-height: 1.6;
+    }
+
+    .dual-content {
     display: grid;
-    gap: 3rem;
-    margin-bottom: 4rem;
-}
-
-.sacred-card {
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid var(--color-gold);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: all 0.4s ease;
-}
-
-.sacred-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
-}
-
-.sacred-card h2 {
-    font-family: 'Cinzel Decorative', cursive;
-    color: var(--color-gold);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
     align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+        margin: 0 auto;
 }
 
-.text p {
+    .text-content {
+        width: 100%;
+        box-sizing: border-box;
     color: var(--color-pearl);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+        padding: 0 1rem;
 }
 
-.properties {
+    .sacred-properties {
     list-style: none;
     padding: 0;
-}
+        margin: 1.5rem 0;
+    }
 
-.properties li {
-    color: var(--color-gold);
-    margin-bottom: 0.5rem;
+    .sacred-properties li {
+        width: 100%;
+        box-sizing: border-box;
+        color: var(--portal-color);
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
     font-family: 'EB Garamond', serif;
     font-style: italic;
 }
 
-.golden-spiral svg {
+    .sacred-properties li::before {
+        content: '✧';
+        position: absolute;
+        left: 0;
+        color: var(--portal-color);
+    }
+
+    .visual-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .golden-spiral svg, .flower-pattern svg {
     width: 100%;
+        max-width: 300px;
     height: auto;
 }
 
 .golden-rect {
     fill: none;
-    stroke: var(--color-gold);
+        stroke: var(--portal-color);
     stroke-width: 2;
 }
 
 .spiral {
     fill: none;
-    stroke: var(--color-gold);
+        stroke: var(--portal-color);
     stroke-width: 2;
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
@@ -205,29 +389,47 @@
     }
 }
 
+    .flower-circle {
+        fill: none;
+        stroke: var(--portal-color);
+        stroke-width: 1.5;
+        opacity: 0.6;
+        animation: pulsate 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulsate {
+        0% { opacity: 0.4; }
+        100% { opacity: 0.8; }
+    }
+
 .solids-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
 }
 
 .solid {
     text-align: center;
     padding: 1.5rem;
-    background: rgba(255, 215, 0, 0.1);
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--portal-color-fade);
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .solid:hover {
     transform: scale(1.05);
-    background: rgba(255, 215, 0, 0.15);
+        background: rgba(255, 215, 0, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .solid i {
     font-size: 2rem;
-    color: var(--color-gold);
+        color: var(--portal-color);
     margin-bottom: 1rem;
 }
 
@@ -240,68 +442,104 @@
     color: var(--color-pearl);
     opacity: 0.8;
     font-size: 0.9rem;
-}
+        margin: 0;
+    }
 
-.flower-pattern svg {
+    .polygons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
     width: 100%;
-    height: auto;
-}
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 
-.flower-circle {
-    fill: none;
-    stroke: var(--color-gold);
-    stroke-width: 1;
-    opacity: 0.6;
-}
+    .polygon-item {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--portal-color-fade);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
 
-.quote-section {
+    .polygon-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .polygon-visual {
+        padding: 1.5rem;
+        display: flex;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .polygon-visual svg {
+        width: 100px;
+        height: 100px;
+        filter: drop-shadow(0 0 5px var(--portal-color-fade));
+    }
+
+    .polygon-info {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .polygon-info h3 {
+        color: var(--portal-color);
+        margin: 0 0 0.5rem;
+        font-size: 1.3rem;
+    }
+
+    .polygon-info p {
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
     text-align: center;
-    margin: 4rem 0;
-    padding: 3rem;
-    background: rgba(255, 215, 0, 0.05);
-    border-radius: 12px;
 }
 
-blockquote {
+    .sacred-quote blockquote {
     font-family: 'EB Garamond', serif;
-    font-size: 1.5rem;
-    color: var(--color-gold);
+        font-size: 1.3rem;
     font-style: italic;
-    margin: 0;
+        color: var(--color-pearl);
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
 }
 
-cite {
+    .sacred-quote cite {
     display: block;
     margin-top: 1rem;
-    color: var(--color-pearl);
+        color: var(--portal-color);
     font-size: 1rem;
-    opacity: 0.8;
+        font-style: normal;
 }
 
 @media (max-width: 768px) {
-    .content {
+        .portal-header h1 {
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+        }
+        
+        .dual-content {
         grid-template-columns: 1fr;
     }
 
-    .solids-grid {
-        grid-template-columns: repeat(2, 1fr);
+        .visual-content {
+            margin-top: 2rem;
     }
 }
 </style>
 {% endblock %}
 
-{% block extra_js %}
+{% block scripts %}
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Animation des solides platoniciens
-    const solids = document.querySelectorAll('.solid');
-    solids.forEach((solid, index) => {
-        solid.style.animationDelay = `${index * 0.2}s`;
-    });
-
-    // Animation de la spirale d'or
-    const spiral = document.querySelector('.spiral');
-    spiral.style.animation = 'drawSpiral 3s ease forwards';
+    document.addEventListener('DOMContentLoaded', function() {
+        // Scripts spécifiques à cette page
 });
 </script>
 {% endblock %} 
